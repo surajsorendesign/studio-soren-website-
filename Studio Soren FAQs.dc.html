@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <nav style="{{ navWrapStyle }}">
+    <div style="{{ navInnerStyle }}">
+      <a href="./Studio Soren Home.dc.html" style="{{ logoLinkStyle }}"><img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/></a>
+      <div style="{{ navLinksStyle }}">
+        <a href="./Studio Soren About.dc.html" style="{{ navLinkStyle }}">About</a>
+        <a href="./Studio Soren Case Studies.dc.html" style="{{ navLinkStyle }}">Case studies</a>
+        <a href="./Studio Soren Insights.dc.html" style="{{ navLinkStyle }}">Insights</a>
+        <a href="./Studio Soren FAQs.dc.html" style="{{ navLinkActiveStyle }}">FAQs</a>
+        <a href="./Studio Soren Services.dc.html" style="{{ navLinkStyle }}">Services</a>
+      </div>
+      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
+    </div>
+  </nav>
+
+  <header style="{{ heroSectionStyle }}">
+    <p style="{{ eyebrowStyle }}">FAQs</p>
+    <h1 style="{{ h1Style }}">Learn more about our work</h1>
+    <p style="{{ heroSubStyle }}">Detailed expertise in digital experience design</p>
+  </header>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ sectionInnerStyle }}">
+      <div style="{{ topicCardStyle }}">
+        <label style="{{ topicLabelStyle }}">Topic</label>
+        <select style="{{ selectStyle }}" value="{{ activeTopic }}" onChange="{{ onTopicChange }}">
+          <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6">
+            <option value="{{ t }}">{{ t }}</option>
+          </sc-for>
+        </select>
+      </div>
+
+      <div style="{{ listStyle }}">
+        <sc-for list="{{ filteredFaqs }}" as="f" hint-placeholder-count="6">
+          <div style="{{ f.cardStyle }}">
+            <button onClick="{{ f.onToggle }}" style="{{ questionRowStyle }}">
+              <span style="{{ questionTextStyle }}">{{ f.title }}</span>
+              <span style="{{ chevronStyle }}">{{ f.chevron }}</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ answerBodyStyle }}">
+                <p style="{{ answerTextStyle }}">{{ f.short }}</p>
+                <sc-if value="{{ f.blogReady }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ f.href }}" style="{{ learnMoreBtnStyle }}">Learn more</a>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ true }}" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeTopic: 'All', openSlug: null };
+
+  faqs = [
+    { slug: 'what-does-a-typical-ai-integration-project-look-like-for-a-business', title: 'What does a typical AI integration project look like for a business?', topic: 'AI', short: 'We focus purely on practical, ROI-driven use cases. Our team audits your current workflows to identify manual bottlenecks, builds a rapid and secure private Proof of Concept to test internal utility, and then seamlessly deploys the AI functionality directly into your custom software with an intuitive UI.', blogReady: false },
+    { slug: 'how-can-our-business-integrate-ai-without-risking-our-proprietary-data-privacy', title: 'How can our business integrate AI without risking our proprietary data privacy?', topic: 'AI', short: 'Data sovereignty is our top priority. We strictly avoid public, consumer-facing models. Instead, we architect secure, private API pipelines and deploy enterprise-grade, isolated cloud environments. Your sensitive company data remains completely secure and entirely yours.', blogReady: false },
+    { slug: 'we-have-a-legacy-system', title: 'We have a legacy system. Do you offer software modernisation, or do we need a full rebuild?', topic: 'Engineering', short: 'We prefer to optimise before we replace. We can modernise legacy systems by wrapping them in modern APIs, upgrading the frontend user interface, or modularising your infrastructure. We only recommend a full custom software rebuild if it is the most cost-effective and secure long-term solution.', blogReady: false },
+    { slug: 'what-codebases-and-frameworks', title: 'What codebases and frameworks does your software engineering team specialise in?', topic: 'Engineering', short: "We select the right tech stack based on your product's scale and security needs — typically robust, scalable applications using modern ecosystems like React, Next.js, and Node.js, alongside cloud architecture via AWS and GCP.", blogReady: false },
+    { slug: 'how-do-you-ensure-accessible', title: 'How do you ensure our new digital platform is fully accessible and compliant?', topic: 'Accessibility', short: 'Accessibility is baked into our human-centred design process from day one. We build and code all digital products to comply fully with WCAG 2.2 AA and GDS standards, and rigorously test with assistive technologies and real users.', blogReady: false },
+    { slug: 'can-you-redesign-without-breaking', title: 'Can you redesign an existing digital product without breaking our current tech stack?', topic: 'Engineering', short: 'Yes. We specialise in evolutionary design — auditing your current software architecture first, then implementing UI/UX upgrades incrementally to ensure zero operational downtime.', blogReady: false },
+    { slug: 'what-is-the-difference-between-product-design-and-traditional-ux-ui-design', title: 'What is the difference between Product Design and traditional UX/UI design?', topic: 'Design', short: 'Traditional UX/UI focuses primarily on user journeys and how a digital interface looks and feels. Product Design takes a holistic view, aligning those user experiences with your overarching business strategy, commercial viability, market positioning, and long-term technical scalability.', blogReady: true, href: './Studio Soren FAQ - Product Design vs UX.dc.html' },
+    { slug: 'how-does-studio-soren-support-enterprise-level-projects', title: 'How does Studio Soren support enterprise-level projects?', topic: 'Scale', short: 'We are built to scale. Studio Soren provides the high-level strategic oversight and specialised execution required for large-scale corporate initiatives, working seamlessly with internal stakeholders to ensure project goals are met with professional precision.', blogReady: true, href: './Studio Soren FAQ - Enterprise Support.dc.html' },
+    { slug: 'how-much-does-a-typical-digital-transformation-project-cost', title: 'How much does a typical digital transformation project cost?', topic: 'Cost', short: 'Digital transformation costs at Studio Soren are bespoke. We invest significant time upfront — including free consultations and mini-audits — to understand your needs before any commitment is made.', blogReady: true, href: './Studio Soren FAQ - Digital Transformation Cost.dc.html' },
+    { slug: 'how-can-design-help-increase-non-profit-fundraising', title: 'How can design help increase non-profit fundraising and commerciality?', topic: 'Impact', short: 'Design increases fundraising by building institutional trust. Through clear data visualisation and frictionless donation UX, we reduce the cognitive load on donors.', blogReady: true, href: './Studio Soren FAQ - Non-Profit Fundraising Design.dc.html' },
+    { slug: 'how-do-you-run-a-design-review', title: 'How do you run a design review?', topic: 'Design', short: 'At Studio Soren, we run design reviews by shifting the focus from aesthetics to strategic alignment, using a three-stage "North Star" framework: Preparation, Review, and Post-Review.', blogReady: true, href: './Studio Soren FAQ - Design Review Process.dc.html' },
+    { slug: 'how-do-you-measure-the-success-of-a-design-project', title: 'How do you measure the success of a design project?', topic: 'Impact', short: 'Success is measured through collaboration on milestones that support your wider OKRs. We provide the design evidence and user research insights to help you make informed decisions.', blogReady: true, href: './Studio Soren FAQ - Measuring Design Success.dc.html' },
+    { slug: 'how-do-you-align-branding-with-a-charitys-mission', title: "How do you align branding with a charity's mission?", topic: 'Design', short: "We ensure every visual choice reflects your mission's urgency and empathy. Our digital storytelling service is designed to help charities communicate their Theory of Change to both long-term supporters and new beneficiaries.", blogReady: false },
+    { slug: 'what-is-human-centered-design', title: 'What is human-centered design in the context of social impact?', topic: 'Design', short: 'Human-centred design (HCD) is a framework that places the end-user — the beneficiary or donor — at the heart of the process. We use user research and service design to ensure final products solve real-world problems.', blogReady: false },
+    { slug: 'what-accessibility-standards-public-sector', title: 'What accessibility standards do you follow for public sector projects?', topic: 'Accessibility', short: 'We strive for WCAG 2.2 AA excellence in our product design work, and can collaborate with accessibility experts for deep-level technical remediation or AAA certification where required.', blogReady: false },
+    { slug: 'gds-standards', title: 'Does Studio Soren design according to GDS (Government Digital Service) standards?', topic: 'Accessibility', short: 'We align our design thinking with the GDS Service Standards to ensure public sector tools are consistent and user-focussed, bringing in specialised auditors for high-stakes delivery where needed.', blogReady: false },
+    { slug: 'what-is-ux-design', title: 'What is User Experience (UX) Design?', topic: 'Design', short: 'User Experience (UX) design is the process of creating products, systems, or services that provide meaningful, intuitive, and enjoyable experiences for users, ensuring products are useful, easy to use, and accessible.', blogReady: false },
+  ];
+
+  topicList = ['All', 'AI', 'Design', 'Engineering', 'Accessibility', 'Scale', 'Cost', 'Impact'];
+
+  onTopicChange = (e) => this.setState({ activeTopic: e.target.value });
+  toggleFaq = (slug) => this.setState((s) => ({ openSlug: s.openSlug === slug ? null : slug }));
+
+  renderVals() {
+    const accent = '#8B6CF5', bg = '#0C0A12', cardBg = 'rgba(255,255,255,0.04)', border = 'rgba(255,255,255,0.1)', text = '#F3F1F9', muted = '#A69FBE';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    const active = this.state.activeTopic;
+    const filtered = (active === 'All' ? this.faqs : this.faqs.filter((f) => f.topic === active)).map((f) => {
+      const open = this.state.openSlug === f.slug;
+      return {
+        ...f,
+        open,
+        chevron: open ? '\u2303' : '\u2304',
+        onToggle: () => this.toggleFaq(f.slug),
+        cardStyle: { background: cardBg, border: `1px solid ${open ? accent : border}`, borderRadius: '16px', overflow: 'hidden' },
+      };
+    });
+
+    return {
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh' },
+      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
+      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoImgStyle: { height: '30px', width: 'auto', filter: 'brightness(0) invert(1)' },
+      navLinksStyle: { display: 'flex', gap: '24px', flexWrap: 'wrap' },
+      navLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500 },
+      navLinkActiveStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 700 },
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap' },
+      heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center' },
+      eyebrowStyle: { fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '44px', lineHeight: 1.15, fontWeight: 700, margin: '0 0 16px' },
+      heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, margin: 0 },
+      sectionStyle: { padding: '20px 24px 100px' },
+      sectionInnerStyle: { maxWidth: '900px', margin: '0 auto' },
+      topicCardStyle: { background: cardBg, border: `1px solid ${border}`, borderRadius: '16px', padding: '20px 24px', marginBottom: '32px', maxWidth: '280px' },
+      topicLabelStyle: { display: 'block', fontSize: '13px', fontWeight: 700, color: text, marginBottom: '8px' },
+      selectStyle: { width: '100%', padding: '10px 12px', borderRadius: '10px', border: `1px solid ${border}`, background: bg, color: text, fontSize: '14px', fontFamily: fontBody },
+      listStyle: { display: 'flex', flexDirection: 'column', gap: '14px' },
+      questionRowStyle: { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', padding: '20px 22px', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' },
+      questionTextStyle: { fontSize: '16px', fontWeight: 700, color: text, lineHeight: 1.4 },
+      chevronStyle: { color: accent, fontSize: '18px', flexShrink: 0 },
+      answerBodyStyle: { padding: '0 22px 22px' },
+      answerTextStyle: { fontSize: '14px', lineHeight: 1.7, color: muted, margin: '0 0 16px' },
+      learnMoreBtnStyle: { display: 'inline-block', background: accent, color: '#fff', textDecoration: 'none', padding: '10px 20px', borderRadius: '999px', fontSize: '13px', fontWeight: 600 },
+      topics: this.topicList,
+      activeTopic: active,
+      onTopicChange: this.onTopicChange,
+      filteredFaqs: filtered,
+    };
+  }
+}
+</script>
+</body>
+</html>
