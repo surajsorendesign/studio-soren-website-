@@ -44,11 +44,11 @@
           </sc-if>
         </a>
         <div style="{{ navLinksStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ navLinkStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ navLinkStyle }}">Case studies</a>
-          <a href="./Studio Soren Services.dc.html" style="{{ navLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ navLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ navLinkStyle }}">FAQs</a>
+          <a href="about.html" style="{{ navLinkStyle }}">About</a>
+          <a href="case-studies.html" style="{{ navLinkStyle }}">Case studies</a>
+          <a href="services.html" style="{{ navLinkStyle }}">Services</a>
+          <a href="insights.html" style="{{ navLinkStyle }}">Insights</a>
+          <a href="faqs.html" style="{{ navLinkStyle }}">FAQs</a>
         </div>
         <div style="{{ navRightStyle }}">
           <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
@@ -58,11 +58,11 @@
       </div>
       <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
         <div style="{{ mobileMenuStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ mobileNavLinkStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
-          <a href="./Studio Soren Services.dc.html" style="{{ mobileNavLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ mobileNavLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
+          <a href="about.html" style="{{ mobileNavLinkStyle }}">About</a>
+          <a href="case-studies.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
+          <a href="services.html" style="{{ mobileNavLinkStyle }}">Services</a>
+          <a href="insights.html" style="{{ mobileNavLinkStyle }}">Insights</a>
+          <a href="faqs.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
           <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
         </div>
       </sc-if>
@@ -78,7 +78,7 @@
         <p style="{{ heroSubStyle }}">We create digital products that turn your mission into your competitive advantage through user insights &amp; strategic design.</p>
         <div style="{{ heroCtaRowStyle }}">
           <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnStyle }}">Book a free call</a>
-          <a href="./Studio Soren About.dc.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
+          <a href="about.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
         </div>
         <p style="{{ workedWithLabelStyle }}">Worked with</p>
         <div style="{{ logoRowStyle }}">
@@ -93,7 +93,7 @@
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
           <a href="{{ cs.href }}" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
-              <image-slot id="{{ cs.slotId }}" shape="rect" placeholder="Case study visual" style="width:100%;height:100%"></image-slot>
+              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
               <div style="{{ filmstripStatWrapStyle }}">
                 <span style="{{ filmstripStatStyle }}">{{ cs.metric }}</span>
                 <span style="{{ filmstripStatLabelStyle }}">{{ cs.metricLabel }}</span>
@@ -184,7 +184,7 @@
     <div style="{{ founderInnerStyle }}">
       <div style="{{ founderImageColStyle }}">
         <div style="{{ badgeWrapStyle }}">
-          <image-slot id="founder-suraj" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
+          <image-slot id="founder-suraj" src="./uploads/founder-suraj.webp" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
         </div>
       </div>
       <div style="{{ founderTextColStyle }}">
@@ -456,12 +456,12 @@ class Component extends DCLogic {
   ];
 
   caseStudies = [
-    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', slotId: 'cs-bt' },
-    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', slotId: 'cs-mind' },
-    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', slotId: 'cs-keys' },
-    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', slotId: 'cs-carelink' },
-    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', slotId: 'cs-ee' },
-    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', slotId: 'cs-kindred' },
+    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png' },
+    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png' },
+    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png' },
+    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png' },
+    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png' },
+    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png' },
   ];
 
   clientNames = [

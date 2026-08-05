@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#0C0A12">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="34" fill="#8B6CF5"/>
+  <text x="50" y="62" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#0C0A12" text-anchor="middle">S</text>
+</svg>
+</template>
+
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'p', text: 'Strategic design increases non-profit fundraising and commerciality by building institutional trust, reducing transaction friction, and creating a "value-exchange" that appeals to modern donors and commercial partners alike. In an era of digital-first giving, your design is your digital storefront; it is the primary tool for converting passive observers into active, long-term financial contributors.' },
+    { type: 'h2', text: 'The Strategic Intersection of Design and Revenue' },
+    { type: 'p', text: 'For leadership in the public and third sectors, design is often the missing link between a powerful mission and a healthy balance sheet. While the mission provides the "why," design provides the "how." A future-driven digital strategy ensures that your organisation doesn\'t just survive on grants, but thrives through optimised, user-centric revenue streams.' },
+    { type: 'h3', text: 'Step 1: Building "Digital Authority" to Attract High-Value Partners' },
+    { type: 'p', text: 'Commerciality in the non-profit sector often relies on corporate partnerships and major donors. These stakeholders perform rigorous due diligence.' },
+    { type: 'list', items: ['The Trust Proxy: A dated, broken, or inaccessible website signals organisational stagnation. High-quality design acts as a proxy for operational competence.', 'Professional Storytelling: Design transforms dry data into compelling impact reports, using clear data visualisation to make the business case to corporate ESG officers.', 'Consistency as Security: When your branding is cohesive across every touchpoint, it reduces the perceived risk for commercial partners looking to align their brand with yours.'] },
+    { type: 'h3', text: 'Step 2: Optimising the "Donation Funnel" (UX for Fundraising)' },
+    { type: 'p', text: 'Every click a donor has to make is an opportunity for them to change their mind. Strategic UX design identifies and removes these friction points.' },
+    { type: 'list', items: ['Reducing Cognitive Load: Streamlining a 10-field form into a 3-click process can increase conversion rates by over 30%.', 'Mobile-First Giving: With over 60% of charity traffic now occurring on mobile devices, thumb-friendly design is a financial necessity.', 'Choice Architecture: Visually highlighting a "Most Popular" donation amount or tying specific figures to tangible outcomes increases the average gift value.'] },
+    { type: 'h3', text: 'Step 3: Enhancing Social Enterprise and Commercial Services' },
+    { type: 'p', text: 'Many non-profits are moving toward commerciality through selling products or services. Here, design is your greatest competitive advantage.' },
+    { type: 'list', items: ["Product Desirability: If your charity sells physical goods or training services, the UI must compete with for-profit giants like Amazon or LinkedIn Learning.", "The Value-Exchange Model: Design for Social Impact ensures the user feels they're receiving high value for their money, rather than just making a sacrifice for a good cause.", 'Service Design for Scalability: Digital service blueprints let public sector organisations automate low-touch interactions, freeing up staff to focus on high-value commercial growth.'] },
+    { type: 'h2', text: 'Common Questions from Public Sector COOs' },
+    { type: 'h3', text: 'Won\'t "commercial" design alienate our traditional donors?' },
+    { type: 'p', text: 'No. Quality design doesn\'t mean "corporate" or "cold." It means "clear" and "capable." Donors today expect the same ease of use from a charity as they do from their favourite apps.' },
+    { type: 'h3', text: 'How do we justify the cost of a redesign to our board?' },
+    { type: 'p', text: 'Frame it as conversion rate optimisation. If a £10k investment in design increases your annual digital donations from £100k to £150k, the design has paid for itself within months and continues to yield profit for years.' },
+    { type: 'h3', text: 'Can design help us win more government contracts?' },
+    { type: 'p', text: 'Yes. Professional, accessible, and user-tested service prototypes demonstrate that your organisation is "digital ready," a key requirement in most modern public sector procurement processes.' },
+    { type: 'h2', text: 'Conclusion: Designing for a Sustainable Future' },
+    { type: 'p', text: 'At Studio Soren, we believe that social impact and commerciality are not mutually exclusive. By applying high-level design thinking to your fundraising and service delivery, you create a resilient organisation capable of scaling its mission indefinitely.' },
+    { type: 'p', text: 'Is your digital presence helping or hindering your growth? Contact Studio Soren today to discuss a strategic design overhaul.' },
+  ];
+
+  renderVals() {
+    return {
+      title: 'How can design help increase non-profit fundraising and commerciality?',
+      category: 'FAQ · Impact',
+      person: 'suraj-soren',
+      date: '2026-04-16T00:00:00.000Z',
+      minutes: '5',
+      image: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png',
+      imageAlt: 'Non-profit fundraising design',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

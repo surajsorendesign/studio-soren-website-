@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <nav style="{{ navWrapStyle }}">
+    <div style="{{ navInnerStyle }}">
+      <a href="index.html" style="{{ logoLinkStyle }}"><img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"></a>
+      <div style="{{ navLinksStyle }}">
+        <a href="about.html" style="{{ navLinkStyle }}">About</a>
+        <a href="case-studies.html" style="{{ navLinkStyle }}">Case studies</a>
+        <a href="services.html" style="{{ navLinkStyle }}">Services</a>
+        <a href="insights.html" style="{{ navLinkActiveStyle }}">Insights</a>
+        <a href="faqs.html" style="{{ navLinkStyle }}">FAQs</a>
+      </div>
+      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
+    </div>
+  </nav>
+
+  <header style="{{ heroSectionStyle }}">
+    <p style="{{ eyebrowStyle }}">Articles</p>
+    <h1 style="{{ h1Style }}">Design strategy for businesses &amp; impactful thought leaders</h1>
+    <p style="{{ heroSubStyle }}">Explore insights by category</p>
+  </header>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ sectionInnerStyle }}">
+      <div style="justify-content: center; padding-top: 24px; padding-bottom: 24px">
+        <sc-for list="{{ categories }}" as="c" hint-placeholder-count="7">
+          <button onClick="{{ c.onClick }}" style="{{ c.chipStyle }}">{{ c.label }}</button>
+        </sc-for>
+      </div>
+
+      <div style="{{ gridStyle }}">
+        <sc-for list="{{ filteredArticles }}" as="a" hint-placeholder-count="6">
+          <a href="{{ a.href }}" style="{{ cardStyle }}">
+            <div style="{{ cardImgWrapStyle }}"><img src="{{ a.image }}" style="{{ cardImgStyle }}" alt="{{ a.imageAlt }}"></div>
+            <div style="{{ cardBodyStyle }}">
+              <p style="{{ cardMetaStyle }}">{{ a.minutes }} minute read</p>
+              <h3 style="{{ cardTitleStyle }}">{{ a.title }}</h3>
+              <p style="{{ cardExcerptStyle }}">{{ a.meta }}</p>
+              <span style="{{ cardLinkStyle }}">Read more →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ true }}" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeCategory: 'All' };
+
+  articles = [
+    { slug: 'thoughtful-ai-for-real-organisations', title: 'The Future Is Already Here: Thoughtful AI for Real Organisations', category: 'AI Integration & Adoption', meta: 'How to integrate artificial intelligence into your daily workflows ethically, humanely, and in a way that actually scales for long-term impact.', minutes: '5', image: 'https://framerusercontent.com/images/aizBPUAS6VgXTqKG7k3av818.png', imageAlt: 'AI collage', href: './Studio Soren Article - Thoughtful AI.dc.html' },
+    { slug: 'why-a-growth-mindset-matters-in-digital-transformation', title: 'Why a Growth Mindset Matters in Digital Transformation', category: 'Research & Data', meta: 'Technology is only half the battle. Discover why fostering an adaptable, learning-first culture within your team is the true driver of successful digital change.', minutes: '5', image: 'https://framerusercontent.com/images/nydBhrlzA7hkiUE0vdxj75LaR6U.png', imageAlt: 'Growth collage', href: './Studio Soren Article - Growth Mindset.dc.html' },
+    { slug: 'the-hidden-costs-of-poor-strategic-planning', title: 'The Hidden Costs of Poor Strategic Planning', category: 'Design Strategy', meta: 'Misaligned goals cost more than just time. An exploration into the financial, operational, and cultural deficits businesses face when executing without a clear, design-led strategy.', minutes: '5', image: 'https://framerusercontent.com/images/jwEDOr7LEotaIK4V6X9Ge6SCA.png', imageAlt: 'Strategy chess piece', href: './Studio Soren Article - Hidden Costs.dc.html' },
+    { slug: 'the-path-to-product-market-fit', title: "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond", category: 'Software Engineering', meta: 'Learn the difference between Alpha and Beta stages, how to build a Minimum Viable Product (MVP), and professional strategies for scaling design and software.', minutes: '5', image: 'https://framerusercontent.com/images/a9TvCn7m5uPEVVepzABGMZ4KenI.png', imageAlt: 'MVP illustration', href: './Studio Soren Article - Product Market Fit.dc.html' },
+    { slug: 'design-strategy-for-enterprises', title: 'Design strategy for enterprises: Driving growth through operational excellence', category: 'Design Strategy', meta: 'Unlock growth and operational excellence with Design Strategy. Learn how Studio Soren helps large enterprises align business goals with user-centered innovation.', minutes: '3', image: 'https://framerusercontent.com/images/kEys52OiND88VpkYlxsEaXdNJw.jpg', imageAlt: '', href: './Studio Soren Article - Enterprise Design Strategy.dc.html' },
+    { slug: 'why-accessibility-standards-matter', title: 'Why accessibility standards matter in public sector design', category: 'Web & App Design', meta: 'Public services must work for everyone, regardless of ability, context, or circumstance. This is not only a legal requirement, but a moral and societal responsibility.', minutes: '3', image: 'https://framerusercontent.com/images/KuJSfSLquCNaw3PhVRO5uzY4BWU.png', imageAlt: 'GDS illustration', href: './Studio Soren Article - Accessibility Standards.dc.html' },
+    { slug: 'why-agentic-ai-is-the-ultimate-impact-multiplier', title: 'The speed of intent: Why agentic AI is the ultimate impact multiplier', category: 'AI Integration & Adoption', meta: 'If you\u2019ve been using AI to simply "do things faster," you\u2019re missing the bigger picture. The real revolution isn\u2019t about personal speed; it\u2019s about organisational velocity.', minutes: '5', image: 'https://framerusercontent.com/images/r4goOSNOFtgVTZmO7JDNOdjIAzU.jpg', imageAlt: '', href: './Studio Soren Article - Agentic AI.dc.html' },
+    { slug: 'digital-storytelling-for-charities', title: 'Digital storytelling for charities: Turning data into understanding', category: 'Digital Storytelling', meta: 'In a tense fundraising and service environment, charities are under unprecedented pressure to communicate both what they do and why it matters.', minutes: '5', image: 'https://framerusercontent.com/images/Gwy9NxG76Ao5gQgolKMxPTgBeWs.jpg', imageAlt: '', href: './Studio Soren Article - Digital Storytelling Charities.dc.html' },
+    { slug: 'can-you-measure-a-feeling', title: 'Can you measure a feeling? Bridging the gap between data and human impact', category: 'Research & Data', meta: 'In the social impact sector, we often find ourselves caught between two conflicting worlds.', minutes: '2', image: 'https://framerusercontent.com/images/mINupToTqi7gUkNu4LPYglq42YI.jpg', imageAlt: '', href: './Studio Soren Article - Measure a Feeling.dc.html' },
+    { slug: 'listening-before-launching', title: 'Listening before launching: Why co-design matters in the third sector', category: 'Design Strategy', meta: 'How designing with communities, not for them, leads to safer, more trusted services.', minutes: '2', image: 'https://framerusercontent.com/images/zxFhSDDzk7pv0oepgdBJIFQOz70.jpg', imageAlt: 'Group therapy meeting', href: './Studio Soren Article - Listening Before Launching.dc.html' },
+    { slug: 'community-effort-and-service-design', title: 'Designing for dignity: What community effort taught us about service design', category: 'Design Strategy', meta: "In the public and third sectors, the most effective digital services aren't built in isolation — they are grown from the ground up by the communities they serve.", minutes: '2', image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg', imageAlt: '', href: './Studio Soren Article - Community Effort.dc.html' },
+    { slug: 'more-than-a-number', title: 'More than a number: Navigating the digital maze of disability support', category: 'Research & Data', meta: '"Digital transformation" sounds like a success story for many. But for someone living with a disability in the UK today, that access can feel more like a locked door.', minutes: '2', image: 'https://framerusercontent.com/images/mpiShXg0GTCLAe12IPgRl1xY.jpg', imageAlt: '', href: './Studio Soren Article - More Than A Number.dc.html' },
+  ];
+
+  categoryList = ['All', 'Research & Data', 'Web & App Design', 'AI Integration & Adoption', 'Software Engineering', 'Design Strategy', 'Digital Storytelling'];
+
+  setCategory = (c) => this.setState({ activeCategory: c });
+
+  renderVals() {
+    const accent = '#8B6CF5', bg = '#0C0A12', cardBg = 'rgba(255,255,255,0.04)', border = 'rgba(255,255,255,0.1)', text = '#F3F1F9', muted = '#A69FBE';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    const active = this.state.activeCategory;
+    const filtered = active === 'All' ? this.articles : this.articles.filter((a) => a.category === active);
+
+    const categories = this.categoryList.map((c) => ({
+      label: c,
+      onClick: () => this.setCategory(c),
+      chipStyle: {
+        border: `1px solid ${c === active ? accent : border}`,
+        background: c === active ? accent : cardBg,
+        color: c === active ? '#fff' : text,
+        fontWeight: 600, fontSize: '14px', padding: '10px 18px', borderRadius: '999px', cursor: 'pointer',
+      },
+    }));
+
+    return {
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh' },
+      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
+      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoImgStyle: { height: '30px', width: 'auto', filter: 'brightness(0) invert(1)' },
+      navLinksStyle: { display: 'flex', gap: '24px', flexWrap: 'wrap' },
+      navLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500 },
+      navLinkActiveStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 700 },
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap' },
+      heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center' },
+      eyebrowStyle: { fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '44px', lineHeight: 1.15, fontWeight: 700, margin: '0 0 16px' },
+      heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, margin: 0 },
+      sectionStyle: { padding: '20px 24px 100px' },
+      sectionInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      filterRowStyle: { display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '40px' },
+      gridStyle: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' },
+      cardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+      cardImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
+      cardImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+      cardBodyStyle: { padding: '22px 24px 26px', display: 'flex', flexDirection: 'column', gap: '6px' },
+      cardMetaStyle: { fontSize: '12px', color: muted, margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.03em', fontWeight: 600 },
+      cardTitleStyle: { fontSize: '19px', fontWeight: 700, margin: '0 0 8px', lineHeight: 1.35 },
+      cardExcerptStyle: { fontSize: '14px', color: muted, lineHeight: 1.6, margin: '0 0 10px' },
+      cardLinkStyle: { fontSize: '13px', fontWeight: 600, color: accent },
+      categories,
+      filteredArticles: filtered,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#0C0A12">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="34" fill="#8B6CF5"/>
+  <text x="50" y="62" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#0C0A12" text-anchor="middle">S</text>
+</svg>
+</template>
+
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'h2', text: 'The Great Acceleration' },
+    { type: 'p', text: 'At Studio Soren, we talk to a lot of leaders who feel like they are running a race where the finish line keeps moving. If you\u2019ve been using AI to simply "do things faster," you\u2019re missing the bigger picture. The real revolution isn\'t about personal speed; it\'s about organizational velocity.' },
+    { type: 'p', text: 'We are shifting from Generative AI (a tool that helps you write) to Agentic AI (a system that helps you work). This shift is the difference between a faster typewriter and a self-driving fleet.' },
+    { type: 'h2', text: 'Beyond the Chatbot' },
+    { type: 'p', text: 'The era of individual user benefits is a stepping stone, not the destination. If your AI strategy currently starts and ends with a chat interface, you are hitting a ceiling. To create real impact, you must move toward systems capable of autonomous, multi-step execution.' },
+    { type: 'h3', text: 'The Impact Gap' },
+    { type: 'p', text: 'Most companies suffer from "Digital Friction" — the time lost between a human having an idea and a system executing it. Agentic AI closes this gap by acting as the connective tissue between your data, your tools, and your goals.' },
+    { type: 'list', items: ['Linear Impact: You use AI to draft an email. (Saves 5 minutes).', 'Agentic Impact: You define a goal ("Onboard this new client"). The Agent pulls the contract, sets up the Slack channel, creates the first tasks, and sends a personalised welcome kit. (Saves 5 hours and eliminates human error).'] },
+    { type: 'h2', text: 'The Mindset Shift: From Linear Flows to Outcomes' },
+    { type: 'p', text: 'For decades, we\u2019ve been trained to think in linear flows, building "if/then" logic into every process. But in the agentic era, rigid step-by-step journeys are too slow and too brittle.' },
+    { type: 'h3', text: 'The Death of the Fixed Funnel' },
+    { type: 'p', text: 'In the old way, we meticulously designed every click. In the new agentic way, we design the goal state and allow the AI agent to orchestrate the best, fastest, and most personalised path to achieve it. Software is moving from a tool we use to a partner that acts.' },
+    { type: 'h2', text: 'Style Guides 3.0: From Components to Character' },
+    { type: 'p', text: 'Back in the "old days," style guides were just PDFs about logo placement. Then came design systems, which gave us reusable components. Now, we are entering the era of agentic guides.' },
+    { type: 'h3', text: 'The Evolution of Design Strategy' },
+    { type: 'list', items: ['Style Guides 1.0 (Aesthetics): Focused on logos, typography and colours.', 'Design Systems 2.0 (Interactions): Focused on reusable components — buttons, modals, forms.', 'Style Guides 3.0 (Agency): Focused on behaviour and intent — defining the agent\u2019s persona, tone, and risk boundaries.'] },
+    { type: 'p', text: 'To move fast without breaking things, your organisation needs an Intent Guide dictating how the agent communicates and where its operational limits lie.' },
+    { type: 'h2', text: 'The Rising Powerhouse: The AI Content Designer' },
+    { type: 'p', text: 'As interfaces become conversational and agentic, language becomes the most powerful code on earth. This has birthed a new, high-value discipline: the AI Content Designer — the architect of the agent\u2019s logic.' },
+    { type: 'h3', text: 'Key Responsibilities of the AI Content Designer' },
+    { type: 'list', items: ['Prompt Engineering & Goal Definition: Crafting the recursive prompts that define the agent\u2019s objective and success metrics.', 'Agent Persona Development: Ensuring the agent\u2019s voice remains consistent across all channels.', 'Boundary & Error Design: Designing the handoff protocols for when things get complex.', 'Training Data Curation: Selecting the data the agent uses to learn, ensuring it is relevant and high-quality.'] },
+    { type: 'h2', text: 'How to Be a First Mover: The 3-Step Velocity Roadmap' },
+    { type: 'p', text: "The companies that win the next decade won't be the ones with the smartest AI; they will be the ones that implemented it fastest." },
+    { type: 'p', text: 'Prioritise orchestration over execution — focus on connecting existing tools to complete a goal without human intervention.' },
+    { type: 'p', text: 'Learn conversation and prompt design — the ability to design structured, effective prompts is the new wireframe.' },
+    { type: 'p', text: 'Embrace risk and rapid prototyping — build small, contained agents that solve a single business problem and iterate rapidly.' },
+    { type: 'h2', text: 'Conclusion: Design Your Agentic Future' },
+    { type: 'p', text: "We are witnessing the final phase of the digital revolution. Software doesn't just assist anymore — it acts. The leaders who embrace the shift from linear flows to agentic design will be the winners of the next decade." },
+    { type: 'p', text: "At Studio Soren, we aren't just watching this happen; we are here to help you lead it." },
+  ];
+
+  renderVals() {
+    return {
+      title: 'The speed of intent: Why agentic AI is the ultimate impact multiplier',
+      category: 'AI Integration & Adoption',
+      person: 'suraj-soren',
+      date: '2026-04-10T00:00:00.000Z',
+      minutes: '5',
+      image: 'https://framerusercontent.com/images/r4goOSNOFtgVTZmO7JDNOdjIAzU.jpg',
+      imageAlt: 'Abstract AI illustration',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

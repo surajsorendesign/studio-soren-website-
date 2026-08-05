@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#0C0A12">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="34" fill="#8B6CF5"/>
+  <text x="50" y="62" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#0C0A12" text-anchor="middle">S</text>
+</svg>
+</template>
+
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'p', text: 'Building a high-growth digital product is rarely about having the "perfect" idea; it is about having the most disciplined execution. At Studio Soren, we\u2019ve seen countless founders approach us with a "Version 1.0" blueprint that looks like a spaceship, only to realise that the market actually just needs a better bicycle.' },
+    { type: 'p', text: 'This is the "North Star" for product managers: the fundamental difference between Incremental Construction (building parts of a car that don\'t work until the end) and Iterative Evolution (building functional tools that get better over time).' },
+    { type: 'h2', text: 'The Philosophy of the MVP (Minimum Viable Product)' },
+    { type: 'p', text: 'The term "MVP" is often thrown around in boardrooms, but it is frequently misunderstood. Many see it as a "cheap" or "half-baked" version of a product. In reality, a true MVP is a high-precision tool for risk mitigation.' },
+    { type: 'h3', text: 'The Skateboard vs. The Car Wheel' },
+    { type: 'p', text: 'The goal is a car. Stage 1 is a wheel — useless on its own. You don\'t have a functional product until much later. This is the "Waterfall" trap: you spend months and a fortune building something that might not even be what the customer wants.' },
+    { type: 'p', text: 'The Skateboard gets the user from A to B. The Scooter adds a handle. The Bicycle adds efficiency. The Motorcycle adds power. By the time you reach the Convertible, you haven\'t just built a car — you\'ve built a loyal customer base that has told you exactly what kind of car they want.' },
+    { type: 'h3', text: 'Why the MVP approach is mandatory' },
+    { type: 'list', items: ['Validate Demand: Do people actually have the problem you think they have?', 'Reduce Time-to-Market: Get in front of users in weeks, not years.', 'Pivot with Ease: It is much easier to turn a skateboard into a scooter than a half-finished car into a boat.'] },
+    { type: 'h2', text: 'Navigating the Stages – From Alpha to Beta' },
+    { type: 'h3', text: 'The Alpha Stage: The "Founders\' Build"' },
+    { type: 'p', text: 'Alpha is an internal phase focused on logic and architecture rather than visual polish — making sure the API calls don\'t time out before worrying about button colours. The user base is restricted to the development team and "friendly" internal testers, and the goal is finding the "showstopper" bugs.' },
+    { type: 'h3', text: 'The Beta Stage: The First Contact' },
+    { type: 'p', text: 'Beta is where the product meets reality — a closed beta with invite-only early adopters, followed by an open beta as a final stress test. The goal is UX validation: does the user understand how to get from point A to point B? This is the most critical time to listen — if most beta users ignore a feature you spent months building, you need the courage to kill it.' },
+    { type: 'h2', text: 'Scaling Design – From One-Offs to Systems' },
+    { type: 'h3', text: 'The Design System' },
+    { type: 'p', text: 'As a product grows, you cannot design every page from scratch. A design system is a library of reusable components — buttons, input fields, modals, navigation — governed by clear standards, giving consistency and efficiency across the whole product.' },
+    { type: 'h3', text: 'Accessibility and Inclusive Design' },
+    { type: 'p', text: 'Scaling means expanding your user base, including users with visual, auditory or motor impairments. Colour contrast, screen reader support and localisation all become essential considerations.' },
+    { type: 'h3', text: 'Emotional Design and Micro-interactions' },
+    { type: 'p', text: 'In the later stages, the goal moves from function to delight — subtle animations and haptic feedback that build brand loyalty.' },
+    { type: 'h2', text: 'Scaling Software Development – Building for Scale' },
+    { type: 'h3', text: 'From Monolith to Microservices' },
+    { type: 'p', text: 'A monolithic architecture is faster to build early on, but becomes a bottleneck at scale. Microservices break the app into smaller, independent pieces that communicate via APIs, letting teams work on different parts of the product without stepping on each other\'s toes.' },
+    { type: 'h3', text: 'Infrastructure and the Cloud' },
+    { type: 'p', text: 'Scaling requires elasticity for traffic spikes — containerisation and serverless computing let teams run code reliably while only paying for what they use.' },
+    { type: 'h3', text: 'Database Scaling: SQL vs. NoSQL' },
+    { type: 'p', text: 'Choosing between a relational database and a NoSQL database depends entirely on your data structure and scale goals.' },
+    { type: 'h2', text: 'The Studio Soren Methodology' },
+    { type: 'p', text: 'At Studio Soren, we don\'t believe in "set it and forget it" development. We believe in the iterative cycle of Build → Measure → Learn: discovery to identify the "skateboard", agile development in short sprints, and technical debt management so the code we write for your MVP won\'t need to be thrown away when you scale.' },
+    { type: 'h3', text: 'Why Partner with a Studio?' },
+    { type: 'p', text: 'Building a fully-scaled product requires a diverse team of designers, engineers, architects and DevOps specialists. Most startups cannot afford to hire all these roles full-time from day one — partnering with a studio gives you an on-demand, executive-level team that scales with you.' },
+    { type: 'h2', text: "Conclusion: Don't Build the Car First" },
+    { type: 'p', text: 'The path to a successful digital product is littered with "perfect" cars that never left the garage. Success belongs to founders who start with a skateboard, listen to their users, and scale their design and tech with precision.' },
+    { type: 'p', text: "Ready to start your journey? Let's build your skateboard — and eventually, your supercar." },
+  ];
+
+  renderVals() {
+    return {
+      title: "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond",
+      category: 'Software Engineering',
+      person: 'suraj-soren',
+      date: '2026-04-28T00:00:00.000Z',
+      minutes: '5',
+      image: 'https://framerusercontent.com/images/a9TvCn7m5uPEVVepzABGMZ4KenI.png',
+      imageAlt: 'Illustration of MVP stages from skateboard to car',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>
