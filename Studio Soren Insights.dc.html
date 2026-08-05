@@ -21,19 +21,7 @@
 </helmet>
 
 <div style="{{ pageStyle }}">
-  <nav style="{{ navWrapStyle }}">
-    <div style="{{ navInnerStyle }}">
-      <a href="./Studio Soren Home.dc.html" style="{{ logoLinkStyle }}"><img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"></a>
-      <div style="{{ navLinksStyle }}">
-        <a href="./Studio Soren About.dc.html" style="{{ navLinkStyle }}">About</a>
-        <a href="./Studio Soren Case Studies.dc.html" style="{{ navLinkStyle }}">Case studies</a>
-        <a href="./Studio Soren Services.dc.html" style="{{ navLinkStyle }}">Services</a>
-        <a href="./Studio Soren Insights.dc.html" style="{{ navLinkActiveStyle }}">Insights</a>
-        <a href="./Studio Soren FAQs.dc.html" style="{{ navLinkStyle }}">FAQs</a>
-      </div>
-      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
-    </div>
-  </nav>
+  <dc-import name="Nav" active="insights" dark="{{ true }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Articles</p>
@@ -109,7 +97,7 @@ class Component extends DCLogic {
     }));
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
       navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },

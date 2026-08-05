@@ -32,42 +32,7 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <nav style="{{ navWrapStyle }}">
-    <div style="{{ navStackStyle }}">
-      <div style="{{ navInnerStyle }}">
-        <a href="#top" style="{{ logoLinkStyle }}">
-          <sc-if value="{{ logoIsImage }}" hint-placeholder-val="{{ true }}">
-            <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
-          </sc-if>
-          <sc-if value="{{ logoIsText }}" hint-placeholder-val="{{ false }}">
-            <span style="{{ logoStyle }}">Studio Soren</span>
-          </sc-if>
-        </a>
-        <div style="{{ navLinksStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ navLinkStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ navLinkStyle }}">Case studies</a>
-          <a href="./Studio Soren Services.dc.html" style="{{ navLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ navLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ navLinkStyle }}">FAQs</a>
-        </div>
-        <div style="{{ navRightStyle }}">
-          <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
-          <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
-        </div>
-      </div>
-      <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="{{ mobileMenuStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ mobileNavLinkStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
-          <a href="./Studio Soren Services.dc.html" style="{{ mobileNavLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ mobileNavLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
-        </div>
-      </sc-if>
-    </div>
-  </nav>
+  <dc-import name="Nav" active="" dark="{{ true }}" hint-size="100%,64px"></dc-import>
 
   <header id="top" style="{{ heroSectionStyle }}">
     <canvas ref="{{ heroCanvasRef }}" style="{{ heroCanvasStyle }}"></canvas>
@@ -83,7 +48,7 @@
         <p style="{{ workedWithLabelStyle }}">Worked with</p>
         <div style="{{ logoRowStyle }}">
           <sc-for list="{{ clientNames }}" as="c" hint-placeholder-count="6">
-            <img src="{{ c.logo }}" alt="{{ c.name }}" style="{{ clientLogoStyle }}"/>
+            <img src="{{ c.logo }}" alt="{{ c.name }}" style="{{ clientLogoStyle }}">
           </sc-for>
         </div>
       </div>
@@ -93,12 +58,15 @@
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
           <a href="{{ cs.href }}" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
-              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
               <div style="{{ filmstripStatWrapStyle }}">
+                <div style="{{ filmstripTopRowStyle }}">
+                  <span style="{{ filmstripTagStyle }}">{{ cs.tag }}</span>
+                  <img src="{{ cs.logo }}" alt="{{ cs.title }} logo" style="{{ filmstripLogoStyle }}">
+                </div>
                 <span style="{{ filmstripStatStyle }}">{{ cs.metric }}</span>
                 <span style="{{ filmstripStatLabelStyle }}">{{ cs.metricLabel }}</span>
               </div>
-              <span style="{{ filmstripTagStyle }}">{{ cs.tag }}</span>
             </div>
             <div style="{{ filmstripCaptionStyle }}">
               <span style="{{ filmstripTitleStyle }}">{{ cs.title }}</span>
@@ -180,23 +148,7 @@
     </div>
   </section>
 
-  <section style="{{ founderSectionStyle }}" data-reveal="1">
-    <div style="{{ founderInnerStyle }}">
-      <div style="{{ founderImageColStyle }}">
-        <div style="{{ badgeWrapStyle }}">
-          <image-slot id="founder-suraj" src="./uploads/founder-suraj.webp" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
-        </div>
-      </div>
-      <div style="{{ founderTextColStyle }}">
-        <p style="{{ kickerLightStyle }}">Grab a cuppa with Suraj</p>
-        <h2 style="{{ h2LightStyle }}">Founder &amp; Creative Director</h2>
-        <p style="{{ founderQuoteStyle }}">"I believe that the organisations doing the most good for society deserve the best tools."</p>
-        <p style="{{ founderBodyStyle }}">At Studio Soren, we partner exclusively with charities, government-led initiatives, and public sector bodies to bridge the gap between complex social needs and high-performance digital solutions. I started my career as an industrial design engineer and gradually moved into human-centered digital design strategy.</p>
-        <p style="{{ founderBodyStyle }}">If you share the same vision of making a difference for society, let's grab a cuppa sometime! ☕️</p>
-        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a free call</a>
-      </div>
-    </div>
-  </section>
+  
 
   <section style="{{ sectionAltStyle }}" data-reveal="1">
     <div style="{{ sectionInnerStyle }}">
@@ -209,7 +161,7 @@
           <p style="{{ testimonialBodyStyle }}">{{ activeTestimonial.body }}</p>
           <div style="{{ testimonialAuthorRowStyle }}">
             <sc-if value="{{ activeTestimonial.hasPhoto }}" hint-placeholder-val="{{ false }}">
-              <img src="{{ activeTestimonial.photo }}" style="{{ testimonialAvatarImgStyle }}" alt="{{ activeTestimonial.name }}"/>
+              <img src="{{ activeTestimonial.photo }}" style="{{ testimonialAvatarImgStyle }}" alt="{{ activeTestimonial.name }}">
             </sc-if>
             <sc-if value="{{ activeTestimonial.noPhoto }}" hint-placeholder-val="{{ true }}">
               <div style="{{ testimonialAvatarStyle }}">{{ activeTestimonial.initial }}</div>
@@ -243,6 +195,16 @@
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ services }}" case-studies="{{ caseStudies }}" hint-size="100%,320px"></dc-import>
 
+  <sc-if value="{{ showCookieBanner }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ cookieBannerStyle }}">
+      <p style="{{ cookieTextStyle }}">We use cookies to improve your experience. See our <a href="./Studio Soren Cookies Policy.dc.html" style="{{ cookieLinkStyle }}">Cookies policy</a>.</p>
+      <div style="{{ cookieBtnRowStyle }}">
+        <button onClick="{{ declineCookies }}" style="{{ cookieDeclineBtnStyle }}">Decline</button>
+        <button onClick="{{ acceptCookies }}" style="{{ cookieAcceptBtnStyle }}">Accept</button>
+      </div>
+    </div>
+  </sc-if>
+
 </div>
 
 </x-dc>
@@ -273,6 +235,7 @@ class Component extends DCLogic {
   ];
 
   componentDidMount() {
+    this.setState({ cookieChoice: (typeof localStorage !== 'undefined' && localStorage.getItem('soren-cookie-consent')) || null });
     this.heroMountRetries = 0;
     this.tryMountHeroCanvas();
     this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
@@ -456,12 +419,12 @@ class Component extends DCLogic {
   ];
 
   caseStudies = [
-    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png' },
-    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png' },
-    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png' },
-    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png' },
-    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png' },
-    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png' },
+    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', logo: 'https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png' },
+    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', logo: 'https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png' },
+    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', logo: 'https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png' },
+    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', logo: 'https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png' },
+    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', logo: 'https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png' },
+    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', logo: 'https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png' },
   ];
 
   clientNames = [
@@ -521,6 +484,15 @@ class Component extends DCLogic {
   nextTestimonial = () => this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length }));
   prevTestimonial = () => this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + this.testimonialsData.length) % this.testimonialsData.length }));
 
+  acceptCookies = () => {
+    if (typeof localStorage !== 'undefined') localStorage.setItem('soren-cookie-consent', 'accepted');
+    this.setState({ cookieChoice: 'accepted' });
+  };
+  declineCookies = () => {
+    if (typeof localStorage !== 'undefined') localStorage.setItem('soren-cookie-consent', 'declined');
+    this.setState({ cookieChoice: 'declined' });
+  };
+
   renderVals() {
     const dark = this.state.theme === 'dark';
     const vw = this.state.viewportWidth;
@@ -550,7 +522,7 @@ class Component extends DCLogic {
     const activeTestimonialData = testimonials[this.state.testimonialIndex];
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
 
       navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px', transform: this.state.navHidden ? 'translateY(-140%)' : 'translateY(0)', transition: 'transform .35s ease' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
@@ -608,16 +580,20 @@ class Component extends DCLogic {
       filmstripCardStyle: { flex: '0 0 auto', width: '420px', textDecoration: 'none', color: text },
       filmstripImgWrapStyle: { position: 'relative', width: '100%', aspectRatio: '2/3', borderRadius: '18px', overflow: 'hidden', border: `1px solid ${border}`, boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -40px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.06)', background: dark ? 'linear-gradient(155deg, rgba(139,108,245,0.35), #17131F 55%, #0A0810)' : 'linear-gradient(155deg, rgba(139,108,245,0.2), #EFEAFB 55%, #E3DCF7)' },
       filmstripImgHoverStyle: { opacity: 0.9 },
-      filmstripStatWrapStyle: { position: 'absolute', top: '16px', left: '16px', right: '16px', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '4px' },
+      filmstripStatWrapStyle: { position: 'absolute', bottom: '16px', left: '16px', right: '16px', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '4px', background: 'rgba(12,10,18,0.55)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '16px', padding: '14px 16px' },
       filmstripStatStyle: { color: '#fff', fontFamily: fontDisplay, fontWeight: 800, fontSize: '38px', lineHeight: 1, letterSpacing: '-0.02em', textShadow: '0 4px 20px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.6)' },
       filmstripStatLabelStyle: { color: 'rgba(255,255,255,0.9)', fontFamily: fontBody, fontWeight: 600, fontSize: '13px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' },
-      filmstripTagStyle: { position: 'absolute', top: '12px', right: '12px', zIndex: 2, background: 'rgba(0,0,0,0.55)', color: '#fff', fontFamily: fontBody, fontWeight: 600, fontSize: '11px', padding: '5px 10px', borderRadius: '999px', letterSpacing: '0.02em' },
+      filmstripTagStyle: { background: 'rgba(255,255,255,0.1)', color: '#fff', fontFamily: fontBody, fontWeight: 600, fontSize: '11px', padding: '4px 10px', borderRadius: '999px' },
+      filmstripTopRowStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '4px' },
+      filmstripLogoStyle: { height: '18px', width: 'auto', maxWidth: '70px', objectFit: 'contain', display: 'block', filter: 'brightness(0) invert(1)' },
       filmstripCaptionStyle: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '14px', gap: '10px' },
       filmstripTitleStyle: { fontSize: '15px', fontWeight: 700 },
       filmstripLinkStyle: { fontSize: '13px', color: muted, fontWeight: 600, whiteSpace: 'nowrap' },
 
-      serviceGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '40px' },
-      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+      serviceGridStyle: isMobile
+        ? { display: 'flex', gap: '16px', marginTop: '40px', overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingBottom: '8px', margin: '40px -24px 0', paddingLeft: '24px', paddingRight: '24px' }
+        : { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '40px' },
+      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column', scrollSnapAlign: isMobile ? 'start' : undefined, flex: isMobile ? '0 0 85%' : undefined, minWidth: isMobile ? '260px' : undefined },
       serviceImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
       serviceImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
       serviceBodyStyle: { padding: '22px 26px 26px', display: 'flex', flexDirection: 'column', gap: '4px' },
@@ -648,7 +624,8 @@ class Component extends DCLogic {
       founderSectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' },
       founderInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '56px', alignItems: 'center' },
       founderImageColStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center' },
-      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '360px', aspectRatio: '1/1' },
+      founderPhotoMaxWidth: '220px',
+      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '220px', aspectRatio: '1/1' },
       badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
       founderTextColStyle: {},
       founderQuoteStyle: { fontFamily: fontDisplay, fontSize: '24px', lineHeight: 1.4, fontStyle: 'italic', color: '#fff', margin: '0 0 20px' },
@@ -694,6 +671,15 @@ class Component extends DCLogic {
       services: this.services,
       caseStudies: this.caseStudies,
       dark,
+      showCookieBanner: !this.state.cookieChoice,
+      acceptCookies: this.acceptCookies,
+      declineCookies: this.declineCookies,
+      cookieBannerStyle: { position: 'fixed', bottom: '20px', right: '20px', zIndex: 100, maxWidth: '340px', background: dark ? '#171225' : '#fff', border: `1px solid ${border}`, borderRadius: '18px', padding: '20px', boxShadow: '0 12px 40px rgba(0,0,0,0.45)' },
+      cookieTextStyle: { fontSize: '13px', lineHeight: 1.6, color: dark ? '#C7BEDC' : '#635C77', margin: '0 0 14px' },
+      cookieLinkStyle: { color: '#8B6CF5', textDecoration: 'underline' },
+      cookieBtnRowStyle: { display: 'flex', gap: '10px' },
+      cookieDeclineBtnStyle: { flex: 1, background: 'transparent', border: `1px solid ${border}`, color: dark ? '#F3F1F9' : '#171325', borderRadius: '999px', padding: '9px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' },
+      cookieAcceptBtnStyle: { flex: 1, background: '#8B6CF5', border: 'none', color: '#fff', borderRadius: '999px', padding: '9px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' },
       clientNames: this.clientNames,
       comparisonRows: this.buildComparisonRows(border),
       caseStudiesTicker: [...this.caseStudies, ...this.caseStudies],

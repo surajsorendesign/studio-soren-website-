@@ -23,37 +23,7 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <nav style="{{ navWrapStyle }}">
-    <div style="{{ navStackStyle }}">
-      <div style="{{ navInnerStyle }}">
-        <a href="./Studio Soren Home.dc.html" style="{{ logoLinkStyle }}">
-          <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
-        </a>
-        <div style="{{ navLinksStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ navLinkActiveStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ navLinkStyle }}">Case studies</a>
-          <a href="https://studiosoren.com/services" style="{{ navLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ navLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ navLinkStyle }}">FAQs</a>
-        </div>
-        <div style="{{ navRightStyle }}">
-          <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
-          <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
-        </div>
-      </div>
-      <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="{{ mobileMenuStyle }}">
-          <a href="./Studio Soren About.dc.html" style="{{ mobileNavLinkStyle }}">About</a>
-          <a href="./Studio Soren Case Studies.dc.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
-          <a href="https://studiosoren.com/services" style="{{ mobileNavLinkStyle }}">Services</a>
-          <a href="./Studio Soren Insights.dc.html" style="{{ mobileNavLinkStyle }}">Insights</a>
-          <a href="./Studio Soren FAQs.dc.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
-        </div>
-      </sc-if>
-    </div>
-  </nav>
+  <dc-import name="Nav" active="about" dark="{{ true }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">About us</p>
@@ -79,7 +49,7 @@
         <sc-for list="{{ team }}" as="m" hint-placeholder-count="8">
           <a href="{{ m.linkedin }}" style="{{ teamCardStyle }}" style-hover="{{ teamCardHoverStyle }}">
             <div style="{{ teamImgWrapStyle }}">
-              <image-slot id="{{ m.slotId }}" src="{{ m.photo }}" shape="rect" placeholder="Team photo" style="width:100%;height:100%"></image-slot>
+              <img src="{{ m.photo }}" alt="{{ m.name }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
             </div>
             <p style="{{ teamNameStyle }}">{{ m.name }}</p>
             <p style="{{ teamRoleStyle }}">{{ m.role }}</p>
@@ -97,7 +67,7 @@
         <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
           <div style="{{ valueCardStyle }}">
             <div style="{{ valueImgWrapStyle }}">
-              <image-slot id="{{ v.slotId }}" src="{{ v.img }}" shape="rect" placeholder="Value visual" style="width:100%;height:100%"></image-slot>
+              <img src="{{ v.img }}" alt="{{ v.title }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
             </div>
             <h3 style="{{ valueTitleStyle }}">{{ v.title }}</h3>
             <p style="{{ valueBodyStyle }}">{{ v.body }}</p>
@@ -110,9 +80,7 @@
   <section style="{{ founderSectionStyle }}" data-reveal="1">
     <div style="{{ founderInnerStyle }}">
       <div style="{{ founderImageColStyle }}">
-        <div style="{{ badgeWrapStyle }}">
-          <image-slot id="founder-suraj" src="./uploads/founder-suraj.webp" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
-        </div>
+        <dc-import name="FounderPhoto" max-width="360px" hint-size="360px,360px"></dc-import>
       </div>
       <div style="{{ founderTextColStyle }}">
         <p style="{{ kickerLightStyle }}">Hi there! I'm Suraj</p>
@@ -228,7 +196,7 @@ class Component extends DCLogic {
     const revealStyle = { opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' };
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
       navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
