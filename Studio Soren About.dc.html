@@ -79,7 +79,7 @@
         <sc-for list="{{ team }}" as="m" hint-placeholder-count="8">
           <a href="{{ m.linkedin }}" style="{{ teamCardStyle }}" style-hover="{{ teamCardHoverStyle }}">
             <div style="{{ teamImgWrapStyle }}">
-              <image-slot id="{{ m.slotId }}" shape="rect" placeholder="Team photo" style="width:100%;height:100%"></image-slot>
+              <image-slot id="{{ m.slotId }}" src="{{ m.photo }}" shape="rect" placeholder="Team photo" style="width:100%;height:100%"></image-slot>
             </div>
             <p style="{{ teamNameStyle }}">{{ m.name }}</p>
             <p style="{{ teamRoleStyle }}">{{ m.role }}</p>
@@ -111,7 +111,7 @@
     <div style="{{ founderInnerStyle }}">
       <div style="{{ founderImageColStyle }}">
         <div style="{{ badgeWrapStyle }}">
-          <image-slot id="about-founder-suraj" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
+          <image-slot id="founder-suraj" src="./uploads/founder-suraj.webp" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
         </div>
       </div>
       <div style="{{ founderTextColStyle }}">
@@ -147,20 +147,20 @@ class Component extends DCLogic {
   rootRef = React.createRef();
 
   team = [
-    { name: 'Suraj Soren', role: 'Founder & Creative Director', linkedin: 'https://www.linkedin.com/in/suraj-soren-6bb85994/', slotId: 'team-suraj' },
-    { name: 'James Longbottom', role: 'Development Lead', linkedin: 'https://www.linkedin.com/in/james-longbottom-a2320a42/', slotId: 'team-james' },
-    { name: 'Victor Barreto', role: 'Lead Product Designer', linkedin: 'https://www.linkedin.com/in/victorbarretoalves/', slotId: 'team-victor' },
-    { name: 'Josh Simpson', role: 'Principal Product Designer', linkedin: 'https://www.linkedin.com/in/joshsimpson94/', slotId: 'team-josh' },
-    { name: 'Umay Hussain', role: 'Content Writer', linkedin: 'https://www.linkedin.com/in/umay-h-b00468263/', slotId: 'team-umay' },
-    { name: 'Piyush Pant', role: 'Product Designer', linkedin: 'https://www.linkedin.com/in/piyush-pant-71013ba8/', slotId: 'team-piyush' },
-    { name: 'Fabio Cunha', role: 'Video & Motion Designer', linkedin: 'https://www.linkedin.com/in/fabiocunhamotion/', slotId: 'team-fabio' },
-    { name: 'Adetola Ayomide', role: 'Brand & UX Designer', linkedin: 'https://www.linkedin.com/in/adetola-adetula-0768a0173/', slotId: 'team-adetola' },
+    { name: 'Suraj Soren', role: 'Founder & Creative Director', linkedin: 'https://www.linkedin.com/in/suraj-soren-6bb85994/', slotId: 'team-suraj', photo: './uploads/team-suraj.webp' },
+    { name: 'James Longbottom', role: 'Development Lead', linkedin: 'https://www.linkedin.com/in/james-longbottom-a2320a42/', slotId: 'team-james', photo: './uploads/team-james.webp' },
+    { name: 'Victor Barreto', role: 'Lead Product Designer', linkedin: 'https://www.linkedin.com/in/victorbarretoalves/', slotId: 'team-victor', photo: './uploads/team-victor.webp' },
+    { name: 'Josh Simpson', role: 'Principal Product Designer', linkedin: 'https://www.linkedin.com/in/joshsimpson94/', slotId: 'team-josh', photo: './uploads/team-josh.webp' },
+    { name: 'Umay Hussain', role: 'Content Writer', linkedin: 'https://www.linkedin.com/in/umay-h-b00468263/', slotId: 'team-umay', photo: './uploads/team-umay.webp' },
+    { name: 'Piyush Pant', role: 'Product Designer', linkedin: 'https://www.linkedin.com/in/piyush-pant-71013ba8/', slotId: 'team-piyush', photo: './uploads/team-piyush.webp' },
+    { name: 'Fabio Cunha', role: 'Video & Motion Designer', linkedin: 'https://www.linkedin.com/in/fabiocunhamotion/', slotId: 'team-fabio', photo: './uploads/team-fabio.webp' },
+    { name: 'Adetola Ayomide', role: 'Brand & UX Designer', linkedin: 'https://www.linkedin.com/in/adetola-adetula-0768a0173/', slotId: 'team-adetola', photo: './uploads/team-adetola.webp' },
   ];
 
   values = [
-    { title: 'Strategic clarity', body: 'We cut through the noise. When things are clear, you can focus on what truly matters for success.', slotId: 'value-clarity' },
-    { title: 'Excellence in Craft', body: 'World-class execution. We build high-fidelity products that make the complex feel effortless.', slotId: 'value-craft' },
-    { title: 'Growth mindset', body: 'Cultivating a collaborative spirit where our team and our clients evolve through every project.', slotId: 'value-growth' },
+    { title: 'Strategic clarity', body: 'We cut through the noise. When things are clear, you can focus on what truly matters for success.', slotId: 'value-clarity', img: './uploads/Design Strategy.png' },
+    { title: 'Excellence in Craft', body: 'World-class execution. We build high-fidelity products that make the complex feel effortless.', slotId: 'value-craft', img: './uploads/value-craft.webp' },
+    { title: 'Growth mindset', body: 'Cultivating a collaborative spirit where our team and our clients evolve through every project.', slotId: 'value-growth', img: './uploads/value-growth.webp' },
     { title: 'The Future is Today', body: 'AI is moving fast and attention spans are shrinking. We future-proof your products to ensure you stay ahead.', slotId: 'value-future', img: 'https://framerusercontent.com/images/By0HXw01D9ZkPIitbZvJLrQyrqs.jpg' },
   ];
 
