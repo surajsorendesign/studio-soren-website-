@@ -21,21 +21,7 @@
 </helmet>
 
 <div style="{{ pageStyle }}">
-  <nav style="{{ navWrapStyle }}">
-    <div style="{{ navInnerStyle }}">
-      <a href="index.html" style="{{ logoLinkStyle }}">
-        <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
-      </a>
-      <div style="{{ navLinksStyle }}">
-        <a href="about.html" style="{{ navLinkStyle }}">About</a>
-        <a href="case-studies.html" style="{{ navLinkActiveStyle }}">Case studies</a>
-        <a href="services.html" style="{{ navLinkStyle }}">Services</a>
-        <a href="insights.html" style="{{ navLinkStyle }}">Insights</a>
-        <a href="faqs.html" style="{{ navLinkStyle }}">FAQs</a>
-      </div>
-      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
-    </div>
-  </nav>
+  <dc-import name="Nav" active="case-studies" dark="{{ true }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Case studies</p>

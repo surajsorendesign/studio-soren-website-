@@ -23,37 +23,7 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <nav style="{{ navWrapStyle }}">
-    <div style="{{ navStackStyle }}">
-      <div style="{{ navInnerStyle }}">
-        <a href="index.html" style="{{ logoLinkStyle }}">
-          <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
-        </a>
-        <div style="{{ navLinksStyle }}">
-          <a href="about.html" style="{{ navLinkStyle }}">About</a>
-          <a href="case-studies.html" style="{{ navLinkStyle }}">Case studies</a>
-          <a href="services.html" style="{{ navLinkActiveStyle }}">Services</a>
-          <a href="insights.html" style="{{ navLinkStyle }}">Insights</a>
-          <a href="faqs.html" style="{{ navLinkStyle }}">FAQs</a>
-        </div>
-        <div style="{{ navRightStyle }}">
-          <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
-          <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
-        </div>
-      </div>
-      <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="{{ mobileMenuStyle }}">
-          <a href="about.html" style="{{ mobileNavLinkStyle }}">About</a>
-          <a href="case-studies.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
-          <a href="services.html" style="{{ mobileNavLinkStyle }}">Services</a>
-          <a href="insights.html" style="{{ mobileNavLinkStyle }}">Insights</a>
-          <a href="faqs.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
-        </div>
-      </sc-if>
-    </div>
-  </nav>
+  <dc-import name="Nav" active="services" dark="{{ true }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Services</p>
