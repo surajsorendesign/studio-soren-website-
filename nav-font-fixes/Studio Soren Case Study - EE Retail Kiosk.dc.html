@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <dc-import name="Nav" active="case-studies" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <span style="{{ tagStyle }}">Commercial</span>
+    <h1 style="{{ h1Style }}">Pioneering a Multi-Sensory Digital Showroom for EE's new Marketplace</h1>
+    <img src="https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png" style="{{ heroImgStyle }}" alt="EE Retail Kiosk Experience"/>
+  </header>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ narrowStyle }}">
+      <sc-for list="{{ problem }}" as="p" hint-placeholder-count="2"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+    </div>
+  </section>
+
+  <section style="{{ sectionAltStyle }}">
+    <div style="{{ wideStyle }}">
+      <h2 style="{{ h2Style }}">Introducing a Multi-Sensory Experience</h2>
+      <div style="{{ insightImgWrapStyle }}"><img src="https://framerusercontent.com/images/73yR8TOby54bZAOWRfERxsOgk.png" style="{{ insightImgStyle }}" alt="Insight"/></div>
+      <div style="{{ narrowStyle }}">
+        <sc-for list="{{ insight }}" as="p" hint-placeholder-count="3"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ sectionAltStyle }}">
+    <div style="{{ wideStyle }}">
+      <p style="{{ kickerStyle }}">Bridging the gap between physical and digital journeys</p>
+      <h2 style="{{ h2Style }}">Before investing in high-fidelity prototyping, we rapidly iterated on the user journey to validate our core concepts</h2>
+      <div style="{{ narrowStyle }}">
+        <sc-for list="{{ serviceDesign }}" as="p" hint-placeholder-count="8"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+      </div>
+      <div style="{{ dotPanelStyle }}"><img src="https://framerusercontent.com/images/Iu9aqnAQIVzj8j60XPLJeoyjAk.png" style="{{ dotPanelImgStyle }}" alt="Storyboard of the magic wall concept"/></div>
+    </div>
+  </section>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ wideStyle }}">
+      <h2 style="{{ h2Style }}">Building a multi-sensory prototype using Figma x ProtoPie</h2>
+      <div style="{{ narrowStyle }}">
+        <sc-for list="{{ solution }}" as="p" hint-placeholder-count="4"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+      </div>
+      <img src="https://framerusercontent.com/images/0L6hzossV6X59RCxpsEzgqKkVI.png" style="{{ solutionImgStyle }}" alt="Solution"/>
+      <div style="{{ featureGridStyle }}">
+        <sc-for list="{{ keyFeatures }}" as="f" hint-placeholder-count="4">
+          <div style="{{ featureCardStyle }}"><p style="{{ paraStyle }}">{{ f }}</p></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ statsSectionStyle }}">
+    <div style="{{ statsRowStyle }}">
+      <div style="{{ statCardStyle }}"><p style="{{ statNumStyle }}">£2.3M</p><p style="{{ statLabelStyle }}">Investment saved</p></div>
+      <div style="{{ statCardStyle }}"><p style="{{ statNumStyle }}">50%</p><p style="{{ statLabelStyle }}">Customers found the experience beneficial</p></div>
+    </div>
+  </section>
+
+  <section style="{{ inquirySectionStyle }}">
+    <div style="{{ inquiryInnerStyle }}">
+      <h2 style="{{ inquiryHeadStyle }}">Need to validate a bold concept before you build it?</h2>
+      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnStyle }}">Book a virtual coffee</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ true }}" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  problem = [
+    "Studio Soren collaborated with a dynamic team of Service Designers, Product Managers, Developers, and the EE Retail Design and Marketing teams to tackle the challenge of securing funding for a groundbreaking retail self-service concept.",
+    "This initiative was a prime opportunity to use strategic design to redefine the in-store experience, aligning seamlessly with EE's goal of 'winning in new markets.'",
+  ];
+  insight = [
+    "The mission was to introduce an exciting, multi-sensory experience for customers exploring EE's expanding world of consumer electronics.",
+    "Our user-centred design approach aimed for efficiency, discoverability, and immersive showcasing.",
+    "The target persona, the \"soft purchaser,\" symbolised the high-footfall customer eager to embrace the latest in consumer electronics. The core challenge was to design a concept that would redefine the in-store experience and demonstrate its value to stakeholders.",
+  ];
+  solution = [
+    "Our prototyping phase focused on \"Real-Tech\" validation. By linking Figma and ProtoPie to physical LED lighting and sound systems, we moved beyond simple screens to create a truly multi-sensory environment.",
+    "Figma to ProtoPie: We utilized Figma for high-fidelity UI design, then moved into ProtoPie to handle complex logic, sensor integration, and hardware communication.",
+    "Multi-Sensory Triggers: We integrated ProtoPie's voice transcription to simulate Siri-style control, allowing users to adjust in-store lighting and sound through natural language.",
+    "Physical Feedback Loops: The prototype didn't just show a change on screen; it triggered actual LED shifts and sound nesting to signal successful interactions.",
+  ];
+  serviceDesign = [
+    "Through multiple rounds of storyboarding, we mapped out the user flow to define seamless transitions across various touchpoints. Our goal was to visualise how a user would navigate the \"phygital\" landscape:",
+    "Customer researching at home: Initial interest in products sold at EE alongside their plans.",
+    "Physical Retail Space: Initial entry and environmental engagement.",
+    "Human Interaction: Consulting with staff members for expert advice.",
+    "Self-Service Touchpoints: Checking in via interactive kiosk screens.",
+    "Extended Range Browsing: Exploring products not currently stocked on the showroom floor.",
+    "Mobile Conversion: Completing the purchase journey directly through their smartphone.",
+    "By the time we reached the final solution, we had established a perfect harmony between physical and digital spaces, ensuring the technology felt like a natural extension of the in-store experience rather than a distraction from it.",
+  ];
+  keyFeatures = [
+    "We validated the \"phygital\" experience using Figma and ProtoPie, linking digital UIs to physical LED lighting and sound systems. Testing followed a two-tier approach: an internal alpha with 5 participants, followed by live beta testing with 10 customers at our Oxford Street flagship to stress-test the \"Magic Wall\" against real-world noise and lighting.",
+    "Voice-Activated Environments: Used ProtoPie's transcription to trigger physical responses (light/temp/audio).",
+    "The \"Magic Wall\" Handover: QR-triggered data transfer from public kiosk to private mobile checkout.",
+    "After this 6-month deep dive, our primary result was the recommendation not to pursue the concept. Testing revealed that environmental factors and high scaling costs outweighed the CX benefits. By identifying these barriers through high-fidelity prototyping rather than a full-scale rollout, we saved the business significant capital and technical debt, allowing funds and engineering resources to be redirected toward higher-priority, proven initiatives.",
+  ];
+
+  renderVals() {
+    const accent = '#8B6CF5', bg = '#0C0A12', cardBg = 'rgba(255,255,255,0.04)', border = 'rgba(255,255,255,0.1)', text = '#F3F1F9', muted = '#A69FBE';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    return {
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
+      heroSectionStyle: { padding: '72px 24px 0', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' },
+      tagStyle: { fontWeight: 700, fontSize: '12px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '42px', lineHeight: 1.15, fontWeight: 700, margin: '0 0 32px' },
+      heroImgStyle: { width: '100%', maxWidth: '1120px', borderRadius: '20px', display: 'block' },
+      sectionStyle: { padding: '64px 24px' },
+      sectionAltStyle: { padding: '64px 24px', background: cardBg },
+      narrowStyle: { maxWidth: '720px', margin: '0 auto' },
+      wideStyle: { maxWidth: '900px', margin: '0 auto' },
+      h2Style: { fontFamily: fontDisplay, fontSize: '28px', lineHeight: 1.3, fontWeight: 700, margin: '0 0 28px', textAlign: 'center' },
+      insightImgWrapStyle: { maxWidth: '480px', margin: '0 auto 32px' },
+      insightImgStyle: { width: '100%', borderRadius: '16px', display: 'block' },
+      solutionImgStyle: { width: '100%', borderRadius: '16px', display: 'block', margin: '32px 0' },
+      dotPanelStyle: { marginTop: '32px', borderRadius: '24px', background: '#F4F2F9', border: `1px solid ${border}`, padding: '40px', backgroundImage: 'radial-gradient(rgba(20,15,35,0.14) 1.5px, transparent 1.5px)', backgroundSize: '22px 22px' },
+      dotPanelImgStyle: { width: '100%', display: 'block', borderRadius: '12px' },
+      serviceDesign: this.serviceDesign,
+      paraStyle: { fontSize: '16px', lineHeight: 1.75, color: muted, margin: '0 0 16px' },
+      featureGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginTop: '24px' },
+      featureCardStyle: { background: cardBg, border: `1px solid ${border}`, borderRadius: '14px', padding: '22px' },
+      statsSectionStyle: { padding: '20px 24px 64px' },
+      statsRowStyle: { maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' },
+      statCardStyle: { textAlign: 'center', padding: '32px 20px', border: `1px solid ${border}`, borderRadius: '18px' },
+      statNumStyle: { fontFamily: fontDisplay, fontSize: '44px', fontWeight: 700, color: accent, margin: '0 0 8px' },
+      statLabelStyle: { fontSize: '14px', color: muted, margin: 0 },
+      inquirySectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', textAlign: 'center' },
+      inquiryInnerStyle: { maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' },
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: 0, color: '#fff' },
+      primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600 },
+      problem: this.problem, insight: this.insight, solution: this.solution, keyFeatures: this.keyFeatures,
+    };
+  }
+}
+</script>
+</body>
+</html>
