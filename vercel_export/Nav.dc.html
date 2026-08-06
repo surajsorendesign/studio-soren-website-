@@ -10,15 +10,15 @@
 <nav style="{{ navWrapStyle }}">
   <div style="{{ navStackStyle }}">
     <div style="{{ navInnerStyle }}">
-      <a href="index.html" style="{{ logoLinkStyle }}">
+      <a href="./Studio Soren Home.dc.html" style="{{ logoLinkStyle }}">
         <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
       </a>
       <div style="{{ navLinksStyle }}">
-        <a href="about.html" style="{{ aboutStyle }}">About</a>
-        <a href="case-studies.html" style="{{ caseStudiesStyle }}">Case studies</a>
-        <a href="services.html" style="{{ servicesStyle }}">Services</a>
-        <a href="insights.html" style="{{ insightsStyle }}">Insights</a>
-        <a href="faqs.html" style="{{ faqsStyle }}">FAQs</a>
+        <a href="./Studio Soren About.dc.html" style="{{ aboutStyle }}">About</a>
+        <a href="./Studio Soren Case Studies.dc.html" style="{{ caseStudiesStyle }}">Case studies</a>
+        <a href="./Studio Soren Services.dc.html" style="{{ servicesStyle }}">Services</a>
+        <a href="./Studio Soren Insights.dc.html" style="{{ insightsStyle }}">Insights</a>
+        <a href="./Studio Soren FAQs.dc.html" style="{{ faqsStyle }}">FAQs</a>
       </div>
       <div style="{{ navRightStyle }}">
         <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
@@ -28,11 +28,11 @@
     </div>
     <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="{{ mobileMenuStyle }}">
-        <a href="about.html" style="{{ mobileNavLinkStyle }}">About</a>
-        <a href="case-studies.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
-        <a href="services.html" style="{{ mobileNavLinkStyle }}">Services</a>
-        <a href="insights.html" style="{{ mobileNavLinkStyle }}">Insights</a>
-        <a href="faqs.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
+        <a href="./Studio Soren About.dc.html" style="{{ mobileNavLinkStyle }}">About</a>
+        <a href="./Studio Soren Case Studies.dc.html" style="{{ mobileNavLinkStyle }}">Case studies</a>
+        <a href="./Studio Soren Services.dc.html" style="{{ mobileNavLinkStyle }}">Services</a>
+        <a href="./Studio Soren Insights.dc.html" style="{{ mobileNavLinkStyle }}">Insights</a>
+        <a href="./Studio Soren FAQs.dc.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
         <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
       </div>
     </sc-if>
@@ -41,10 +41,17 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:80},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;&quot;,&quot;about&quot;,&quot;case-studies&quot;,&quot;services&quot;,&quot;insights&quot;,&quot;faqs&quot;]}}">
 class Component extends DCLogic {
-  state = { theme: 'dark', navOpen: false };
+  state = { navOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
 
   toggleTheme = () => {
-    this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
     if (this.props.onThemeChange) this.props.onThemeChange();
   };
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
@@ -52,7 +59,7 @@ class Component extends DCLogic {
   renderVals() {
     const dark = this.props.dark ?? true;
     const active = this.props.active ?? '';
-    const isMobile = (this.props.isMobile ?? false);
+    const isMobile = this.state.viewportWidth < 860;
     const accent = '#8B6CF5';
     const border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)';
     const text = dark ? '#F3F1F9' : '#171325';

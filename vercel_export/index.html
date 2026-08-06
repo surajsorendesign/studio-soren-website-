@@ -32,23 +32,23 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <dc-import name="Nav" active="" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+  <dc-import name="Nav" active="" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
 
   <header id="top" style="{{ heroSectionStyle }}">
     <canvas ref="{{ heroCanvasRef }}" style="{{ heroCanvasStyle }}"></canvas>
     <div style="{{ heroInnerStyle }}">
       <div style="{{ heroTextColStyle }}">
-        <p style="font-family: DM Sans">Hi there, we are Studio Soren</p>
+        <p style="{{ eyebrowStyle }}">Hi there, we are Studio Soren</p>
         <h1 style="{{ h1Style }}">Digital design and development agency</h1>
         <p style="{{ heroSubStyle }}">We create digital products that turn your mission into your competitive advantage through user insights &amp; strategic design.</p>
         <div style="{{ heroCtaRowStyle }}">
           <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnStyle }}">Book a free call</a>
-          <a href="about.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
+          <a href="./Studio Soren About.dc.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
         </div>
         <p style="{{ workedWithLabelStyle }}">Worked with</p>
         <div style="{{ logoRowStyle }}">
           <sc-for list="{{ clientNames }}" as="c" hint-placeholder-count="6">
-            <img src="{{ c.logo }}" alt="{{ c.name }}" style="{{ clientLogoStyle }}"/>
+            <img src="{{ c.logo }}" alt="{{ c.name }}" style="{{ clientLogoStyle }}">
           </sc-for>
         </div>
       </div>
@@ -58,11 +58,11 @@
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
           <a href="{{ cs.href }}" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
-              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
               <div style="{{ filmstripStatWrapStyle }}">
                 <div style="{{ filmstripTopRowStyle }}">
                   <span style="{{ filmstripTagStyle }}">{{ cs.tag }}</span>
-                  <img src="{{ cs.logo }}" alt="{{ cs.title }} logo" style="{{ filmstripLogoStyle }}"/>
+                  <img src="{{ cs.logo }}" alt="{{ cs.title }} logo" style="{{ filmstripLogoStyle }}">
                 </div>
                 <span style="{{ filmstripStatStyle }}">{{ cs.metric }}</span>
                 <span style="{{ filmstripStatLabelStyle }}">{{ cs.metricLabel }}</span>
@@ -148,21 +148,7 @@
     </div>
   </section>
 
-  <section style="{{ founderSectionStyle }}" data-reveal="1">
-    <div style="{{ founderInnerStyle }}">
-      <div style="{{ founderImageColStyle }}">
-        <dc-import name="FounderPhoto" max-width="360px" hint-size="360px,360px"></dc-import>
-      </div>
-      <div style="{{ founderTextColStyle }}">
-        <p style="{{ kickerLightStyle }}">Grab a cuppa with Suraj</p>
-        <h2 style="{{ h2LightStyle }}">Founder &amp; Creative Director</h2>
-        <p style="{{ founderQuoteStyle }}">"I believe that the organisations who serve society deserve the best tools."</p>
-        <p style="{{ founderBodyStyle }}">At Studio Soren, we partner exclusively with charities, government-led initiatives, and public sector bodies to bridge the gap between complex social needs and high-performance digital solutions. I started my career as an industrial design engineer and gradually moved into human-centered digital design strategy.</p>
-        <p style="{{ founderBodyStyle }}">If you share the same vision of making a difference for society, let's grab a cuppa sometime! ☕️</p>
-        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a free call</a>
-      </div>
-    </div>
-  </section>
+  
 
   <section style="{{ sectionAltStyle }}" data-reveal="1">
     <div style="{{ sectionInnerStyle }}">
@@ -175,7 +161,7 @@
           <p style="{{ testimonialBodyStyle }}">{{ activeTestimonial.body }}</p>
           <div style="{{ testimonialAuthorRowStyle }}">
             <sc-if value="{{ activeTestimonial.hasPhoto }}" hint-placeholder-val="{{ false }}">
-              <img src="{{ activeTestimonial.photo }}" style="{{ testimonialAvatarImgStyle }}" alt="{{ activeTestimonial.name }}"/>
+              <img src="{{ activeTestimonial.photo }}" style="{{ testimonialAvatarImgStyle }}" alt="{{ activeTestimonial.name }}">
             </sc-if>
             <sc-if value="{{ activeTestimonial.noPhoto }}" hint-placeholder-val="{{ true }}">
               <div style="{{ testimonialAvatarStyle }}">{{ activeTestimonial.initial }}</div>
@@ -211,7 +197,7 @@
 
   <sc-if value="{{ showCookieBanner }}" hint-placeholder-val="{{ false }}">
     <div style="{{ cookieBannerStyle }}">
-      <p style="{{ cookieTextStyle }}">We use cookies to improve your experience. See our <a href="cookies-policy.html" style="{{ cookieLinkStyle }}">Cookies policy</a>.</p>
+      <p style="{{ cookieTextStyle }}">We use cookies to improve your experience. See our <a href="./Studio Soren Cookies Policy.dc.html" style="{{ cookieLinkStyle }}">Cookies policy</a>.</p>
       <div style="{{ cookieBtnRowStyle }}">
         <button onClick="{{ declineCookies }}" style="{{ cookieDeclineBtnStyle }}">Decline</button>
         <button onClick="{{ acceptCookies }}" style="{{ cookieAcceptBtnStyle }}">Accept</button>
@@ -424,12 +410,12 @@ class Component extends DCLogic {
   }
 
   services = [
-    { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: 'https://studiosoren.com/services/user-research', img: './uploads/User Research & Data.png' },
-    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/Web & App Design .png.png' },
-    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/AI Integration.png' },
-    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/Software Development.png' },
-    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/Design Strategy.png' },
-    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/Digital Storytelling.png' },
+    { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: 'https://studiosoren.com/services/user-research', img: './uploads/user-research-data.png' },
+    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/web-app-design.png' },
+    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/ai-integration.png' },
+    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/software-development.png' },
+    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/design-strategy-a7a2f2cb.png' },
+    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/digital-storytelling.png' },
   ];
 
   caseStudies = [
@@ -589,9 +575,13 @@ class Component extends DCLogic {
       sectionSubStyle: { fontSize: '17px', color: muted, maxWidth: '600px', margin: '0 auto 40px', textAlign: 'center' },
 
       filmstripOuterStyle: { margin: '0 -24px', overflow: 'hidden', position: 'relative', zIndex: 1 },
-      filmstripStyle: { display: 'flex', gap: '20px', width: 'max-content', padding: '56px 24px 12px', animation: 'soren-ticker 45s linear infinite' },
-      filmstripHoverStyle: { animationPlayState: 'paused' },
-      filmstripCardStyle: { flex: '0 0 auto', width: '420px', textDecoration: 'none', color: text },
+      filmstripStyle: isMobile
+        ? { display: 'flex', flexDirection: 'column', flexWrap: 'wrap', gap: '20px', padding: '56px 24px 12px' }
+        : { display: 'flex', gap: '20px', width: 'max-content', padding: '56px 24px 12px', animation: 'soren-ticker 45s linear infinite' },
+      filmstripHoverStyle: { animationPlayState: isMobile ? 'running' : 'paused' },
+      filmstripCardStyle: isMobile
+        ? { flex: '0 0 auto', width: '100%', textDecoration: 'none', color: text }
+        : { flex: '0 0 auto', width: '420px', textDecoration: 'none', color: text },
       filmstripImgWrapStyle: { position: 'relative', width: '100%', aspectRatio: '2/3', borderRadius: '18px', overflow: 'hidden', border: `1px solid ${border}`, boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -40px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.06)', background: dark ? 'linear-gradient(155deg, rgba(139,108,245,0.35), #17131F 55%, #0A0810)' : 'linear-gradient(155deg, rgba(139,108,245,0.2), #EFEAFB 55%, #E3DCF7)' },
       filmstripImgHoverStyle: { opacity: 0.9 },
       filmstripStatWrapStyle: { position: 'absolute', bottom: '16px', left: '16px', right: '16px', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '4px', background: 'rgba(12,10,18,0.55)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '16px', padding: '14px 16px' },
@@ -604,8 +594,8 @@ class Component extends DCLogic {
       filmstripTitleStyle: { fontSize: '15px', fontWeight: 700 },
       filmstripLinkStyle: { fontSize: '13px', color: muted, fontWeight: 600, whiteSpace: 'nowrap' },
 
-      serviceGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '40px' },
-      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+      serviceGridStyle: { display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '40px' },
+      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column', flex: isMobile ? '1 1 100%' : '1 1 300px', minWidth: isMobile ? '100%' : '280px' },
       serviceImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
       serviceImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
       serviceBodyStyle: { padding: '22px 26px 26px', display: 'flex', flexDirection: 'column', gap: '4px' },
@@ -636,7 +626,8 @@ class Component extends DCLogic {
       founderSectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' },
       founderInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '56px', alignItems: 'center' },
       founderImageColStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center' },
-      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '360px', aspectRatio: '1/1' },
+      founderPhotoMaxWidth: '220px',
+      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '220px', aspectRatio: '1/1' },
       badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
       founderTextColStyle: {},
       founderQuoteStyle: { fontFamily: fontDisplay, fontSize: '24px', lineHeight: 1.4, fontStyle: 'italic', color: '#fff', margin: '0 0 20px' },
@@ -654,7 +645,7 @@ class Component extends DCLogic {
       testimonialRoleStyle: { color: muted, margin: 0, fontSize: '13px' },
       dotsRowStyle: { display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '24px' },
 
-      playbookSectionStyle: { padding: '90px 24px', position: 'relative', opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease', backgroundImage: `linear-gradient(100deg, rgba(12,10,18,0.88), rgba(30,10,45,0.65)), url('./uploads/Wireframe.png')`, backgroundSize: 'cover', backgroundPosition: 'center' },
+      playbookSectionStyle: { padding: '90px 24px', position: 'relative', opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease', backgroundImage: `linear-gradient(100deg, rgba(12,10,18,0.88), rgba(30,10,45,0.65)), url('./uploads/wireframe.png')`, backgroundSize: 'cover', backgroundPosition: 'center' },
       playbookInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '32px', flexWrap: 'wrap' },
       playbookTextColStyle: { textAlign: 'left' },
       playbookKickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: '#C9B8FF', letterSpacing: '0.04em', margin: '0 0 12px', textTransform: 'uppercase', textAlign: 'left' },
@@ -693,7 +684,7 @@ class Component extends DCLogic {
       cookieAcceptBtnStyle: { flex: 1, background: '#8B6CF5', border: 'none', color: '#fff', borderRadius: '999px', padding: '9px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' },
       clientNames: this.clientNames,
       comparisonRows: this.buildComparisonRows(border),
-      caseStudiesTicker: [...this.caseStudies, ...this.caseStudies],
+      caseStudiesTicker: isMobile ? this.caseStudies : [...this.caseStudies, ...this.caseStudies],
       isMobile,
       isNarrow,
       isWide,
