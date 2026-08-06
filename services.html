@@ -23,7 +23,7 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <dc-import name="Nav" active="services" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+  <dc-import name="Nav" active="services" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Services</p>
@@ -85,12 +85,12 @@ class Component extends DCLogic {
   rootRef = React.createRef();
 
   services = [
-    { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: './Studio Soren Service - Research & Data.dc.html', img: './uploads/User Research & Data.png' },
-    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/Web & App Design .png.png' },
-    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/AI Integration.png' },
-    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/Software Development.png' },
-    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/Design Strategy.png' },
-    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/Digital Storytelling.png' },
+    { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: './Studio Soren Service - Research & Data.dc.html', img: './uploads/user-research-data.png' },
+    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/web-app-design.png' },
+    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/ai-integration.png' },
+    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/software-development.png' },
+    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/design-strategy-a7a2f2cb.png' },
+    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/digital-storytelling.png' },
   ];
 
   toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));

@@ -41,10 +41,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:80},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;&quot;,&quot;about&quot;,&quot;case-studies&quot;,&quot;services&quot;,&quot;insights&quot;,&quot;faqs&quot;]}}">
 class Component extends DCLogic {
-  state = { theme: 'dark', navOpen: false };
+  state = { navOpen: false };
 
   toggleTheme = () => {
-    this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
     if (this.props.onThemeChange) this.props.onThemeChange();
   };
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));

@@ -23,7 +23,7 @@
 
 <div style="{{ pageStyle }}" ref="{{ rootRef }}">
 
-  <dc-import name="Nav" active="about" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+  <dc-import name="Nav" active="about" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">About us</p>
@@ -126,7 +126,7 @@ class Component extends DCLogic {
   ];
 
   values = [
-    { title: 'Strategic clarity', body: 'We cut through the noise. When things are clear, you can focus on what truly matters for success.', slotId: 'value-clarity', img: './uploads/Design Strategy.png' },
+    { title: 'Strategic clarity', body: 'We cut through the noise. When things are clear, you can focus on what truly matters for success.', slotId: 'value-clarity', img: './uploads/design-strategy.png' },
     { title: 'Excellence in Craft', body: 'World-class execution. We build high-fidelity products that make the complex feel effortless.', slotId: 'value-craft', img: './uploads/value-craft.webp' },
     { title: 'Growth mindset', body: 'Cultivating a collaborative spirit where our team and our clients evolve through every project.', slotId: 'value-growth', img: './uploads/value-growth.webp' },
     { title: 'The Future is Today', body: 'AI is moving fast and attention spans are shrinking. We future-proof your products to ensure you stay ahead.', slotId: 'value-future', img: 'https://framerusercontent.com/images/By0HXw01D9ZkPIitbZvJLrQyrqs.jpg' },
