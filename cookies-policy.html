@@ -88,7 +88,7 @@ class Component extends DCLogic {
     const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
     const blocks = this.blocks.map((b) => ({ ...b, isH3: b.type === 'h3', isP: b.type === 'p', isList: b.type === 'list' }));
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '16px' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
       heroSectionStyle: { padding: '72px 24px 24px', maxWidth: '720px', margin: '0 auto', textAlign: 'center' },
       eyebrowStyle: { fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
       h1Style: { fontFamily: fontDisplay, fontSize: '40px', lineHeight: 1.15, fontWeight: 700, margin: 0 },

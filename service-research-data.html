@@ -58,9 +58,7 @@
   <section style="{{ inquirySectionStyle }}" data-reveal="1">
     <div style="{{ inquiryInnerStyle }}">
       <div style="{{ inquiryImageColStyle }}">
-        <div style="{{ badgeWrapStyle }}">
-          <image-slot id="founder-suraj" shape="circle" placeholder="Drop Suraj's photo" style="{{ badgeImgStyle }}"></image-slot>
-        </div>
+        <dc-import name="FounderPhoto" max-width="340px" hint-size="340px,340px"></dc-import>
       </div>
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Looking for something more user-centred?</h2>
@@ -148,7 +146,7 @@ class Component extends DCLogic {
     const otherServices = this.services.filter((s) => s.title !== 'Research & Data');
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
       heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'soren-fade .6s ease both' },

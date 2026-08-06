@@ -109,7 +109,7 @@ class Component extends DCLogic {
     });
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh' },
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
       navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
