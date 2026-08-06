@@ -12,7 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
-  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   a { color: #8B6CF5; }
@@ -98,7 +99,7 @@ class Component extends DCLogic {
 
     return {
       pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
-      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
       logoImgStyle: { height: '30px', width: 'auto', filter: 'brightness(0) invert(1)' },

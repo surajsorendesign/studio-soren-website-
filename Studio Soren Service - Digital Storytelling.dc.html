@@ -13,7 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <script src="./image-slot.js"></script>
 <style>
-  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
@@ -147,7 +148,7 @@ class Component extends DCLogic {
       pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
-      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },

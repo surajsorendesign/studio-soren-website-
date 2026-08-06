@@ -28,14 +28,14 @@
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Services</p>
-    <h1 style="{{ h1Style }}">Design Strategy</h1>
-    <p style="{{ heroSubStyle }}">We map the "invisible" journeys that make or break an organisation.</p>
+    <h1 style="{{ h1Style }}">Research &amp; Data</h1>
+    <p style="{{ heroSubStyle }}">Grounding your digital strategy with real-world user needs.</p>
   </header>
 
   <section style="{{ sectionStyle }}" data-reveal="1">
     <div style="{{ sectionInnerStyle }}">
       <div style="{{ deliverableGridStyle }}">
-        <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="4">
+        <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="5">
           <div style="{{ deliverableCardStyle }}">
             <h3 style="{{ deliverableTitleStyle }}">{{ d.title }}</h3>
             <p style="{{ deliverableBodyStyle }}">{{ d.body }}</p>
@@ -62,7 +62,7 @@
         <dc-import name="FounderPhoto" max-width="340px" hint-size="340px,340px"></dc-import>
       </div>
       <div style="{{ inquiryTextColStyle }}">
-        <h2 style="{{ inquiryHeadStyle }}">Looking to align your strategy?</h2>
+        <h2 style="{{ inquiryHeadStyle }}">Looking for something more user-centred?</h2>
         <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a virtual coffee</a>
       </div>
     </div>
@@ -92,10 +92,11 @@ class Component extends DCLogic {
   ];
 
   deliverables = [
-    { title: 'User Journey Map', body: 'A refined user journey, storyboard assets, and UX frameworks to visualise the beneficiary experience, highlighting critical risks and impact opportunities.' },
-    { title: 'Problem Identification', body: 'Evidence-based research to uncover root causes, ensuring your digital solutions address the true, lived challenges of the communities you serve.' },
-    { title: 'North Star Vision', body: "A 6-month strategic partnership to define your organisation's long-term digital future. We align stakeholders around a single, ambitious vision, creating a robust roadmap and impact metrics to guide your service delivery for years to come." },
-    { title: 'Service Blueprint', body: 'Mapping front-end delivery to internal operations. We align staff, tech, and processes to eliminate bottlenecks and deliver seamless social services.' },
+    { title: 'Stakeholder Interviews', body: "We align your project's goals by interviewing key internal voices, ensuring our research strategy supports your broader organisational objectives." },
+    { title: 'User Interviews', body: 'We conduct deep-dive conversations with your target audience to uncover the "why" behind their behaviours and reveal their genuine pain points.' },
+    { title: 'Quantitative Surveys', body: 'We gather insightful data to validate trends and patterns, providing the confidence you need to make evidence-based service decisions.' },
+    { title: 'Unmoderated Testing', body: 'We observe users interacting with your service in their own environment, capturing unbiased feedback and usability insights quickly and efficiently.' },
+    { title: 'Live Usability Testing', body: 'We facilitate real-time sessions to watch how users navigate your concepts, allowing us to dive deeper into friction points as they happen.' },
   ];
 
   toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
@@ -143,32 +144,11 @@ class Component extends DCLogic {
     const fontBody = "'DM Sans', -apple-system, sans-serif";
     const revealStyle = { opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' };
 
-    const otherServices = this.services.filter((s) => s.title !== 'Design Strategy');
+    const otherServices = this.services.filter((s) => s.title !== 'Research & Data');
 
     return {
       pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
-
-      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
-      navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
-      navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
-      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
-      logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
-      navLinksStyle: { display: isMobile ? 'none' : 'flex', gap: '24px' },
-      navLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500 },
-      navLinkActiveStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 700 },
-      navRightStyle: { display: 'flex', alignItems: 'center', gap: '10px', marginLeft: isMobile ? 'auto' : 0 },
-      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
-      themeIcon: dark ? '☀' : '☾',
-      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block' },
-      hamburgerStyle: { display: isMobile ? 'flex' : 'none', width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
-      hamburgerIcon: this.state.navOpen ? '✕' : '☰',
-      mobileMenuStyle: { display: 'flex', flexDirection: 'column', gap: '4px', padding: '14px', borderRadius: '20px', background: dark ? 'rgba(20,16,32,0.9)' : 'rgba(255,255,255,0.95)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
-      mobileNavLinkStyle: { color: text, textDecoration: 'none', fontSize: '15px', fontWeight: 500, padding: '10px 8px', borderRadius: '10px' },
-      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', marginTop: '6px' },
-      mobileMenuOpen,
-      toggleTheme: this.toggleTheme,
-      toggleNav: this.toggleNav,
 
       heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'soren-fade .6s ease both' },
       eyebrowStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
@@ -194,13 +174,13 @@ class Component extends DCLogic {
       inquiryImageColStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center' },
       badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '340px', aspectRatio: '1/1' },
       badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
-      stampWrapStyle: { position: 'absolute', right: '-8%', bottom: '-6%', width: '38%', aspectRatio: '1/1', zIndex: 2 },
       inquiryTextColStyle: {},
       inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '34px', lineHeight: 1.2, fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.01em' },
       primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
 
       deliverables: this.deliverables,
       allServices: this.services,
+      toggleTheme: this.toggleTheme,
       dark,
     };
   }

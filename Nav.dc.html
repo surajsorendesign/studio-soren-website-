@@ -71,7 +71,7 @@ class Component extends DCLogic {
     const styleFor = (key) => (active === key ? activeStyle : linkStyle);
 
     return {
-      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
