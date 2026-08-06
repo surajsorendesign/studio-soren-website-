@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #A78BFA; color: #12101A; }
+  @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}" ref="{{ rootRef }}">
+
+  <dc-import name="Nav" active="about" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <p style="{{ eyebrowStyle }}">About us</p>
+    <h1 style="{{ h1Style }}">Digital transformation design studio</h1>
+    <p style="{{ heroSubStyle }}">Our mission, values and people</p>
+  </header>
+
+
+  <section style="{{ missionSectionStyle }}">
+    <image-slot id="about-mission-photo" src="https://framerusercontent.com/images/oYMcz0cTH4dJAyZ9Ehdg5ozvY.png" shape="rect" placeholder="Drop a portrait photo" style="{{ missionImgStyle }}"></image-slot>
+    <div style="{{ missionOverlayStyle }}"></div>
+    <div style="{{ missionTextWrapStyle }}">
+      <p style="{{ missionKickerStyle }}">We believe that...</p>
+      <h2 style="{{ missionQuoteStyle }}">World-class design &amp; software belongs to people who look to serve society</h2>
+    </div>
+  </section>
+
+  <section style="{{ sectionStyle }}" data-reveal="1">
+    <div style="{{ sectionInnerStyle }}">
+      <p style="{{ kickerStyle }}">Who we are</p>
+      <h2 style="{{ h2Style }}">A carefully curated network of specialists, the architects of innovation who share our values and vision.</h2>
+      <div style="{{ teamGridStyle }}">
+        <sc-for list="{{ team }}" as="m" hint-placeholder-count="8">
+          <a href="{{ m.linkedin }}" style="{{ teamCardStyle }}" style-hover="{{ teamCardHoverStyle }}">
+            <div style="{{ teamImgWrapStyle }}">
+              <img src="{{ m.photo }}" alt="{{ m.name }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+            </div>
+            <p style="{{ teamNameStyle }}">{{ m.name }}</p>
+            <p style="{{ teamRoleStyle }}">{{ m.role }}</p>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ sectionAltStyle }}" data-reveal="1">
+    <div style="{{ sectionInnerStyle }}">
+      <p style="{{ kickerStyle }}">Our values</p>
+      <h2 style="{{ h2Style }}">We partner with corporates, social enterprises, and the public sector to craft clear, caring digital experiences that prioritise people and impact.</h2>
+      <div style="{{ valuesGridStyle }}">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+          <div style="{{ valueCardStyle }}">
+            <div style="{{ valueImgWrapStyle }}">
+              <img src="{{ v.img }}" alt="{{ v.title }}" style="width:100%;height:100%;object-fit:cover;display:block"/>
+            </div>
+            <h3 style="{{ valueTitleStyle }}">{{ v.title }}</h3>
+            <p style="{{ valueBodyStyle }}">{{ v.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ founderSectionStyle }}" data-reveal="1">
+    <div style="{{ founderInnerStyle }}">
+      <div style="{{ founderImageColStyle }}">
+        <dc-import name="FounderPhoto" max-width="360px" hint-size="360px,360px"></dc-import>
+      </div>
+      <div style="{{ founderTextColStyle }}">
+        <p style="{{ kickerLightStyle }}">Hi there! I'm Suraj</p>
+        <h2 style="{{ h2LightStyle }}">Founder &amp; Director of Studio Soren</h2>
+        <p style="{{ founderMetaStyle }}">Featuring a decade of start-up &amp; corporate world experience</p>
+        <p style="{{ founderQuoteStyle }}">"I believe that the organisations doing the most good for society deserve the best tools."</p>
+        <p style="{{ founderBodyStyle }}">At Studio Soren, we partner exclusively with charities, government-led initiatives, and public sector bodies to bridge the gap between complex social needs and high-performance digital solutions.</p>
+        <p style="{{ founderBodyStyle }}">I started my career as an industrial design engineer and gradually moved into human-centered digital design strategy.</p>
+        <p style="{{ founderBodyStyle }}">I love to focus my energy on providing the best digital experiences for those that serve our society.</p>
+        <p style="{{ founderBodyStyle }}">If you share the same vision of making a difference for society, let's grab a cuppa sometime! ☕️</p>
+        <div style="{{ founderCtaRowStyle }}">
+          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a free call</a>
+          <a href="https://www.linkedin.com/in/suraj-soren-6bb85994/" style="{{ secondaryBtnOnDarkStyle }}">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ dark }}" services="{{ footerServices }}" case-studies="{{ footerCaseStudies }}" hint-size="100%,320px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    theme: 'dark',
+    navOpen: false,
+    viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
+  };
+
+  rootRef = React.createRef();
+
+  team = [
+    { name: 'Suraj Soren', role: 'Founder & Creative Director', linkedin: 'https://www.linkedin.com/in/suraj-soren-6bb85994/', slotId: 'team-suraj', photo: './uploads/team-suraj.webp' },
+    { name: 'James Longbottom', role: 'Development Lead', linkedin: 'https://www.linkedin.com/in/james-longbottom-a2320a42/', slotId: 'team-james', photo: './uploads/team-james.webp' },
+    { name: 'Victor Barreto', role: 'Lead Product Designer', linkedin: 'https://www.linkedin.com/in/victorbarretoalves/', slotId: 'team-victor', photo: './uploads/team-victor.webp' },
+    { name: 'Josh Simpson', role: 'Principal Product Designer', linkedin: 'https://www.linkedin.com/in/joshsimpson94/', slotId: 'team-josh', photo: './uploads/team-josh.webp' },
+    { name: 'Umay Hussain', role: 'Content Writer', linkedin: 'https://www.linkedin.com/in/umay-h-b00468263/', slotId: 'team-umay', photo: './uploads/team-umay.webp' },
+    { name: 'Piyush Pant', role: 'Product Designer', linkedin: 'https://www.linkedin.com/in/piyush-pant-71013ba8/', slotId: 'team-piyush', photo: './uploads/team-piyush.webp' },
+    { name: 'Fabio Cunha', role: 'Video & Motion Designer', linkedin: 'https://www.linkedin.com/in/fabiocunhamotion/', slotId: 'team-fabio', photo: './uploads/team-fabio.webp' },
+    { name: 'Adetola Ayomide', role: 'Brand & UX Designer', linkedin: 'https://www.linkedin.com/in/adetola-adetula-0768a0173/', slotId: 'team-adetola', photo: './uploads/team-adetola.webp' },
+  ];
+
+  values = [
+    { title: 'Strategic clarity', body: 'We cut through the noise. When things are clear, you can focus on what truly matters for success.', slotId: 'value-clarity', img: './uploads/design-strategy.png' },
+    { title: 'Excellence in Craft', body: 'World-class execution. We build high-fidelity products that make the complex feel effortless.', slotId: 'value-craft', img: './uploads/value-craft.webp' },
+    { title: 'Growth mindset', body: 'Cultivating a collaborative spirit where our team and our clients evolve through every project.', slotId: 'value-growth', img: './uploads/value-growth.webp' },
+    { title: 'The Future is Today', body: 'AI is moving fast and attention spans are shrinking. We future-proof your products to ensure you stay ahead.', slotId: 'value-future', img: 'https://framerusercontent.com/images/By0HXw01D9ZkPIitbZvJLrQyrqs.jpg' },
+  ];
+
+  toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
+
+  componentDidMount() {
+    this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener('resize', this.updateViewport);
+
+    if (window.IntersectionObserver) {
+      this.revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              this.revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      const scope = this.rootRef.current;
+      if (scope) scope.querySelectorAll('[data-reveal]').forEach((el) => this.revealObserver.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.updateViewport) window.removeEventListener('resize', this.updateViewport);
+    if (this.revealObserver) this.revealObserver.disconnect();
+  }
+
+  footerServices = [
+    { title: 'Research & Data', href: './Studio Soren Service - Research & Data.dc.html' },
+    { title: 'Web & App Design', href: './Studio Soren Service - Product Design.dc.html' },
+    { title: 'AI Integration & Adoption', href: './Studio Soren Service - AI Integration.dc.html' },
+    { title: 'Software Engineering', href: './Studio Soren Service - Software Engineering.dc.html' },
+    { title: 'Design Strategy', href: './Studio Soren Service - Design Strategy.dc.html' },
+    { title: 'Digital Storytelling', href: './Studio Soren Service - Digital Storytelling.dc.html' },
+  ];
+
+  footerCaseStudies = [
+    { title: "BT's digital checkout", href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
+    { title: "Mind's graduate onboarding", href: './Studio Soren Case Study - Mind Onboarding.dc.html' },
+    { title: 'KEYS Community', href: './Studio Soren Case Study - KEYS Community.dc.html' },
+    { title: 'The CareLink App', href: './Studio Soren Case Study - CareLink App.dc.html' },
+  ];
+
+  renderVals() {
+    const dark = this.state.theme === 'dark';
+    const isMobile = this.state.viewportWidth < 860;
+    const mobileMenuOpen = isMobile && this.state.navOpen;
+
+    const accent = '#8B6CF5';
+    const accentSoft = dark ? 'rgba(139,108,245,0.18)' : 'rgba(139,108,245,0.1)';
+    const bg = dark ? '#0C0A12' : '#FAF9FC';
+    const bgAlt = dark ? '#100D18' : '#F1EFF6';
+    const cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF';
+    const border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)';
+    const text = dark ? '#F3F1F9' : '#171325';
+    const muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif";
+    const fontBody = "'DM Sans', -apple-system, sans-serif";
+    const revealStyle = { opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' };
+
+    return {
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      rootRef: this.rootRef,
+
+      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
+      navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
+      navLinksStyle: { display: isMobile ? 'none' : 'flex', gap: '24px' },
+      navLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500 },
+      navLinkActiveStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 700 },
+      navRightStyle: { display: 'flex', alignItems: 'center', gap: '10px', marginLeft: isMobile ? 'auto' : 0 },
+      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      themeIcon: dark ? '☀' : '☾',
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block' },
+      hamburgerStyle: { display: isMobile ? 'flex' : 'none', width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      hamburgerIcon: this.state.navOpen ? '✕' : '☰',
+      mobileMenuStyle: { display: 'flex', flexDirection: 'column', gap: '4px', padding: '14px', borderRadius: '20px', background: dark ? 'rgba(20,16,32,0.9)' : 'rgba(255,255,255,0.95)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      mobileNavLinkStyle: { color: text, textDecoration: 'none', fontSize: '15px', fontWeight: 500, padding: '10px 8px', borderRadius: '10px' },
+      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', marginTop: '6px' },
+      mobileMenuOpen,
+      toggleTheme: this.toggleTheme,
+      toggleNav: this.toggleNav,
+
+      heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '900px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'soren-fade .6s ease both' },
+      eyebrowStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '48px', lineHeight: 1.08, fontWeight: 700, margin: '0 0 16px', letterSpacing: '-0.02em' },
+      heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, margin: 0 },
+      heroImageWrapStyle: { maxWidth: '1120px', margin: '0 auto 90px', padding: '0 24px', aspectRatio: '21/9', borderRadius: '24px', overflow: 'hidden', border: `1px solid ${border}` },
+
+      missionSectionStyle: { position: 'relative', height: '520px', overflow: 'hidden' },
+      missionImgStyle: { position: 'absolute', inset: 0, width: '100%', height: '100%' },
+      missionOverlayStyle: { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(10,8,14,0.85) 0%, rgba(10,8,14,0.55) 42%, rgba(10,8,14,0.05) 68%, transparent 100%)', pointerEvents: 'none' },
+      missionTextWrapStyle: { position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '1120px', margin: '0 auto', padding: '0 24px' },
+      sectionInnerNarrowStyle: { maxWidth: '780px', margin: '0 auto', textAlign: 'center' },
+      kickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: accent, letterSpacing: '0.04em', margin: '0 auto 16px', textTransform: 'uppercase', textAlign: 'center' },
+      missionKickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '15px', color: '#fff', letterSpacing: '0.01em', margin: '0 0 20px', maxWidth: '600px' },
+      missionQuoteStyle: { fontFamily: fontDisplay, fontSize: '44px', lineHeight: 1.15, fontWeight: 800, margin: 0, letterSpacing: '-0.01em', color: '#fff', maxWidth: '620px' },
+
+      sectionStyle: { padding: '90px 24px', background: bg, ...revealStyle },
+      sectionAltStyle: { padding: '90px 24px', background: bgAlt, ...revealStyle },
+      sectionInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      h2Style: { fontFamily: fontDisplay, fontSize: '32px', lineHeight: 1.2, fontWeight: 700, maxWidth: '760px', margin: '0 auto 44px', letterSpacing: '-0.01em', textAlign: 'center' },
+
+      teamGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' },
+      teamCardStyle: { textDecoration: 'none', color: text, display: 'flex', flexDirection: 'column', gap: '4px', transition: 'transform .25s ease' },
+      teamCardHoverStyle: { transform: 'translateY(-4px)' },
+      teamImgWrapStyle: { aspectRatio: '1/1', borderRadius: '16px', overflow: 'hidden', border: `1px solid ${border}`, marginBottom: '12px', background: cardBg },
+      teamNameStyle: { fontSize: '15px', fontWeight: 700, margin: 0 },
+      teamRoleStyle: { fontSize: '13px', color: muted, margin: 0 },
+
+      valuesGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' },
+      valueCardStyle: { display: 'flex', flexDirection: 'column', gap: '4px' },
+      valueImgWrapStyle: { aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', border: `1px solid ${border}`, marginBottom: '16px', background: cardBg },
+      valueTitleStyle: { fontSize: '18px', fontWeight: 700, margin: '0 0 8px' },
+      valueBodyStyle: { fontSize: '14px', color: muted, lineHeight: 1.6, margin: 0 },
+
+      founderSectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', ...revealStyle },
+      founderInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '56px', alignItems: 'center' },
+      founderImageColStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center' },
+      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '360px', aspectRatio: '1/1' },
+      badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
+      founderTextColStyle: {},
+      kickerLightStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: '#C9B8FF', letterSpacing: '0.04em', margin: '0 0 12px', textTransform: 'uppercase' },
+      h2LightStyle: { fontFamily: fontDisplay, fontSize: '32px', lineHeight: 1.2, fontWeight: 700, margin: '0 0 8px', color: '#fff', letterSpacing: '-0.01em' },
+      founderMetaStyle: { fontFamily: fontBody, fontSize: '13px', color: '#8A80A3', margin: '0 0 24px' },
+      founderQuoteStyle: { fontFamily: fontDisplay, fontSize: '22px', lineHeight: 1.4, fontStyle: 'italic', color: '#fff', margin: '0 0 20px' },
+      founderBodyStyle: { fontSize: '15px', lineHeight: 1.7, color: '#C7BEDC', margin: '0 0 16px', maxWidth: '520px' },
+      founderCtaRowStyle: { display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '12px' },
+      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
+      secondaryBtnOnDarkStyle: { background: 'transparent', color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.25)', display: 'inline-block' },
+
+      footerStyle: { background: dark ? '#0C0A12' : '#171225', color: '#C7BEDC', padding: '64px 24px 32px' },
+      footerInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      footerTopStyle: { display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: '32px', paddingBottom: '40px' },
+      footerBrandColStyle: {},
+      footerBrandStyle: { fontFamily: fontDisplay, fontSize: '20px', color: '#fff', margin: '0 0 20px' },
+      footerSocialRowStyle: { display: 'flex', gap: '16px', flexWrap: 'wrap' },
+      footerSocialStyle: { color: '#C7BEDC', textDecoration: 'none', fontSize: '13px' },
+      footerColStyle: { display: 'flex', flexDirection: 'column', gap: '10px' },
+      footerHeadStyle: { fontFamily: fontBody, fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.04em', color: '#8A80A3', margin: '0 0 4px' },
+      footerLinkStyle: { color: '#C7BEDC', textDecoration: 'none', fontSize: '13px' },
+      footerLinkSmallStyle: { color: '#8A80A3', textDecoration: 'none', fontSize: '12px' },
+      footerMetaStyle: { color: '#8A80A3', fontSize: '12px', margin: '4px 0 0' },
+      footerBottomStyle: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', flexWrap: 'wrap', gap: '12px' },
+
+      team: this.team,
+      values: this.values,
+      dark,
+      footerServices: this.footerServices,
+      footerCaseStudies: this.footerCaseStudies,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

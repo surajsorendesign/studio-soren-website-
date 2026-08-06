@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'p', text: 'Clear storytelling isn\u2019t a "nice to have", it\u2019s how organisations connect mission to real human impact.' },
+    { type: 'p', text: 'Recent reporting highlights how small charities across the UK are struggling with funding and survival, with closures leaving volunteers and communities to fill the gaps. In these conditions, being able to communicate your organisation\u2019s purpose in a way that feels empathetic and credible is more important than ever.' },
+    { type: 'p', text: 'Digital storytelling offers a bridge between data, emotional resonance and action. It helps audiences feel the impact of a mission, not just skim the numbers.' },
+    { type: 'h2', text: 'Why Digital Storytelling Matters Now' },
+    { type: 'p', text: 'Digital storytelling is the practice of using digital media — from video and audio to written narrative and interactive visuals — to communicate lived experience in a way that feels human and engaging. It\u2019s more than data presentation; it\u2019s emotional connection grounded in evidence.' },
+    { type: 'h2', text: 'Reason 1: Many charities lack confidence with digital and data' },
+    { type: 'p', text: 'Nearly half of UK charities recognise the importance of digital strategy, yet many still struggle with data use and storytelling. External support is most often needed in analysing data meaningfully and translating it into compelling communication.' },
+    { type: 'quote', text: 'This gap isn\u2019t just technical, it\u2019s narrative.' },
+    { type: 'p', text: 'If organisations can\u2019t translate data into stories that feel real and relevant, audiences may disengage or misunderstand the work being done. That\u2019s why effective storytelling must be grounded in real user needs — shaped by listening first and understanding lived experience before designing the message.' },
+    { type: 'h2', text: 'Reason 2: Data alone doesn\u2019t inspire action' },
+    { type: 'p', text: 'Charity websites and reports are often rich with statistics. But a number becomes powerful only when it is tied to a real person\u2019s experience.' },
+    { type: 'quote', text: 'Data without context can feel abstract. Narrative without evidence can feel unconvincing.' },
+    { type: 'p', text: 'Blending qualitative stories with quantitative evidence is increasingly recognised as best practice across the third sector, especially when building trust with both individual supporters and institutional funders.' },
+    { type: 'h2', text: 'Reason 3: Digital channels can democratise voices' },
+    { type: 'p', text: 'Digital storytelling isn\u2019t only about polished campaigns. It creates space for people closest to an issue — service users, volunteers and beneficiaries — to share lived experience in their own words.' },
+    { type: 'p', text: 'A short video or thoughtfully structured web story can offer layers of insight that a static PDF impact report might not. When supported by accessible and inclusive product design, stories become easier to navigate, understand and engage with.' },
+    { type: 'h2', text: 'Turning a Sector Trend Into Practice' },
+    { type: 'p', text: 'As charities integrate digital more deeply into their strategy, storytelling becomes an organisational capability, not just a marketing function. This creates both opportunity and responsibility:' },
+    { type: 'list', items: ['To communicate with dignity.', 'To bridge data with empathy.', 'To make complex social challenges accessible without oversimplifying them.'] },
+    { type: 'p', text: 'At Studio Soren, our values are that good design should be grounded in real user needs, including the needs of those who experience your services and those who support your work.' },
+    { type: 'p', text: 'When empathy shapes structure, and clarity shapes communication, stories become more than content. They become connection.' },
+    { type: 'p', text: 'If your organisation is navigating digital change and wants to communicate impact with greater confidence, grab a cuppa with Suraj.' },
+  ];
+
+  renderVals() {
+    return {
+      title: 'Digital storytelling for charities: Turning data into understanding',
+      category: 'Digital Storytelling',
+      person: 'umay-hussain',
+      date: '2026-04-08T00:00:00.000Z',
+      minutes: '5',
+      image: 'https://framerusercontent.com/images/Gwy9NxG76Ao5gQgolKMxPTgBeWs.jpg',
+      imageAlt: 'Volunteer holding a donation sign',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>
