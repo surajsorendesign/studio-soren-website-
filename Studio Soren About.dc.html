@@ -101,7 +101,7 @@
         <p style="{{ founderBodyStyle }}">I love to focus my energy on providing the best digital experiences for those that serve our society.</p>
         <p style="{{ founderBodyStyle }}">If you share the same vision of making a difference for society, let's grab a cuppa sometime! ☕️</p>
         <div style="{{ founderCtaRowStyle }}">
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a free call</a>
+          <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
           <a href="https://www.linkedin.com/in/suraj-soren-6bb85994/" style="{{ secondaryBtnOnDarkStyle }}">Connect on LinkedIn</a>
         </div>
       </div>
@@ -109,6 +109,8 @@
   </section>
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ footerServices }}" case-studies="{{ footerCaseStudies }}" hint-size="100%,320px"></dc-import>
+
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
 
 </div>
 
@@ -118,8 +120,12 @@ class Component extends DCLogic {
   state = {
     theme: 'dark',
     navOpen: false,
+    modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
   };
+
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
 
   rootRef = React.createRef();
 
@@ -296,6 +302,9 @@ class Component extends DCLogic {
       dark,
       footerServices: this.footerServices,
       footerCaseStudies: this.footerCaseStudies,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
     };
   }
 }

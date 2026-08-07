@@ -105,15 +105,20 @@
   <section style="{{ inquirySectionStyle }}">
     <div style="{{ inquiryInnerStyle }}">
       <h2 style="{{ inquiryHeadStyle }}">Want an onboarding experience built around wellbeing?</h2>
-      <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnStyle }}">Book a virtual coffee</a>
+      <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}">Discuss a project</button>
     </div>
   </section>
 
   <dc-import name="Footer" dark="{{ true }}" hint-size="100%,320px"></dc-import>
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  state = { modalOpen: false };
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
+
   problem = [
     "Welcome aboard, is a white-label service pattern and digital experience concept developed in collaboration with the mental health charity Mind. Designed specifically for young people transitioning from university into graduate or apprenticeship schemes, it serves as a template for companies to better integrate new recruits.",
     "By applying Mind's mental well-being principles, the service helps facilitate a smoother adjustment into the professional working environment and proactively looking out for their mental wellbeing.",
@@ -170,6 +175,8 @@ class Component extends DCLogic {
       inquiryInnerStyle: { maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' },
       inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: 0, color: '#fff' },
       primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600 },
+      kickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: accent, letterSpacing: '0.04em', margin: '0 auto 12px', textTransform: 'uppercase', textAlign: 'center' },
+      modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
       moreGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' },
       moreCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
       moreCardImgStyle: { width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' },

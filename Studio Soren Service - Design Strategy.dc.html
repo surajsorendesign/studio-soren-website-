@@ -71,12 +71,14 @@
       </div>
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Looking to align your strategy?</h2>
-        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a virtual coffee</a>
+        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
       </div>
     </div>
   </section>
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ allServices }}" hint-size="100%,320px"></dc-import>
+
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
 
 </div>
 </x-dc>
@@ -85,8 +87,12 @@ class Component extends DCLogic {
   state = {
     theme: 'dark',
     navOpen: false,
+    modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
   };
+
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
 
   rootRef = React.createRef();
 
@@ -210,6 +216,9 @@ class Component extends DCLogic {
       deliverables: this.deliverables,
       allServices: this.services,
       dark,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
     };
   }
 }

@@ -71,10 +71,12 @@
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Do our services fit your requirements?</h2>
         <p style="{{ inquirySubStyle }}">Grab a cuppa with Suraj, Founder &amp; Creative Director! ☕️</p>
-        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a virtual coffee</a>
+        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
       </div>
     </div>
   </section>
+
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ services }}" case-studies="{{ caseStudiesForFooter }}" hint-size="100%,320px"></dc-import>
 
@@ -86,8 +88,12 @@ class Component extends DCLogic {
   state = {
     theme: 'dark',
     navOpen: false,
+    modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
   };
+
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
 
   rootRef = React.createRef();
 
@@ -216,6 +222,9 @@ class Component extends DCLogic {
       footerBottomStyle: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', flexWrap: 'wrap', gap: '12px' },
 
       dark,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
       caseStudiesForFooter: [
         { title: "BT's digital checkout", href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
         { title: "Mind's graduate onboarding", href: './Studio Soren Case Study - Mind Onboarding.dc.html' },

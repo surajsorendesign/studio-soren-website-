@@ -36,6 +36,14 @@
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes soren-glow { 0%,100% { opacity: .5; } 50% { opacity: .9; } }
   @keyframes soren-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (max-width: 679px) {
+    .soren-service-grid { grid-template-columns: 1fr !important; }
+    .soren-filmstrip-card { width: 240px !important; }
+  }
+  @media (min-width: 680px) and (max-width: 859px) {
+    .soren-service-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .soren-filmstrip-card { width: 300px !important; }
+  }
 </style>
 </helmet>
 
@@ -51,7 +59,7 @@
         <h1 style="{{ h1Style }}">Digital design and development agency</h1>
         <p style="{{ heroSubStyle }}">We create digital products that turn your mission into your competitive advantage through user insights &amp; strategic design.</p>
         <div style="{{ heroCtaRowStyle }}">
-          <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnStyle }}">Book a free call</a>
+          <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}">Discuss a project</button>
           <a href="./Studio Soren About.dc.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
         </div>
         <p style="{{ workedWithLabelStyle }}">Worked with</p>
@@ -63,9 +71,9 @@
       </div>
     </div>
     <div style="{{ filmstripOuterStyle }}">
-      <div style="{{ filmstripStyle }}" style-hover="{{ filmstripHoverStyle }}">
+      <div class="soren-filmstrip-track" style="{{ filmstripStyle }}" style-hover="{{ filmstripHoverStyle }}">
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
-          <a href="{{ cs.href }}" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
+          <a href="{{ cs.href }}" class="soren-filmstrip-card" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
               <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
               <div style="{{ filmstripStatWrapStyle }}">
@@ -91,7 +99,7 @@
     <div style="{{ sectionInnerStyle }}">
       <p style="{{ kickerStyle }}">Our services</p>
       <h2 style="{{ h2Style }}">We offer a range of strategic services to drive targeted value for our clients and customers</h2>
-      <div style="{{ serviceGridStyle }}">
+      <div class="soren-service-grid" style="{{ serviceGridStyle }}">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
           <a href="{{ s.href }}" style="{{ serviceCardStyle }}">
             <div style="{{ serviceImgWrapStyle }}"><img src="{{ s.img }}" style="{{ serviceImgStyle }}" alt="{{ s.title }}"></div>
@@ -230,6 +238,8 @@
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ services }}" case-studies="{{ caseStudies }}" hint-size="100%,320px"></dc-import>
 
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
+
   <sc-if value="{{ showCookieBanner }}" hint-placeholder-val="{{ false }}">
     <div style="{{ cookieBannerStyle }}">
       <p style="{{ cookieTextStyle }}">We use cookies to improve your experience. See our <a href="./Studio Soren Cookies Policy.dc.html" style="{{ cookieLinkStyle }}">Cookies policy</a>.</p>
@@ -250,8 +260,12 @@ class Component extends DCLogic {
     testimonialIndex: 0,
     navOpen: false,
     navHidden: false,
+    modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
   };
+
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
 
   rootRef = React.createRef();
   lastScrollY = 0;
@@ -735,6 +749,9 @@ class Component extends DCLogic {
       toggleTheme: this.toggleTheme,
       nextTestimonial: this.nextTestimonial,
       prevTestimonial: this.prevTestimonial,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
     };
   }
 }
