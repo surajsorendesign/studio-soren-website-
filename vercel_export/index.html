@@ -8,6 +8,14 @@
 <body>
 <x-dc>
 <helmet>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8FPC24GCR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M8FPC24GCR');
+</script>
+
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -20,13 +28,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
 <script src="./image-slot.js"></script>
 <style>
-  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes soren-glow { 0%,100% { opacity: .5; } 50% { opacity: .9; } }
   @keyframes soren-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (max-width: 679px) {
+    .soren-service-grid { grid-template-columns: 1fr !important; }
+    .soren-filmstrip-card { width: 240px !important; }
+  }
+  @media (min-width: 680px) and (max-width: 859px) {
+    .soren-service-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .soren-filmstrip-card { width: 300px !important; }
+  }
 </style>
 </helmet>
 
@@ -54,9 +71,9 @@
       </div>
     </div>
     <div style="{{ filmstripOuterStyle }}">
-      <div style="{{ filmstripStyle }}" style-hover="{{ filmstripHoverStyle }}">
+      <div class="soren-filmstrip-track" style="{{ filmstripStyle }}" style-hover="{{ filmstripHoverStyle }}">
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
-          <a href="{{ cs.href }}" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
+          <a href="{{ cs.href }}" class="soren-filmstrip-card" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
               <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
               <div style="{{ filmstripStatWrapStyle }}">
@@ -82,7 +99,7 @@
     <div style="{{ sectionInnerStyle }}">
       <p style="{{ kickerStyle }}">Our services</p>
       <h2 style="{{ h2Style }}">We offer a range of strategic services to drive targeted value for our clients and customers</h2>
-      <div style="{{ serviceGridStyle }}">
+      <div class="soren-service-grid" style="{{ serviceGridStyle }}">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
           <a href="{{ s.href }}" style="{{ serviceCardStyle }}">
             <div style="{{ serviceImgWrapStyle }}"><img src="{{ s.img }}" style="{{ serviceImgStyle }}" alt="{{ s.title }}"></div>
@@ -154,6 +171,29 @@
     <div style="{{ sectionInnerStyle }}">
       <p style="{{ kickerStyle }}">Hear from our partners</p>
       <h2 style="{{ h2Style }}">Organisations we have partnered with to create meaningful change</h2>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ mobileTestimonialScrollStyle }}">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <div style="{{ mobileTestimonialCardStyle }}">
+              <p style="{{ testimonialQuoteHeadStyle }}">"{{ t.headline }}"</p>
+              <p style="{{ testimonialBodyStyle }}">{{ t.body }}</p>
+              <div style="{{ testimonialAuthorRowStyle }}">
+                <sc-if value="{{ t.hasPhoto }}" hint-placeholder-val="{{ false }}">
+                  <img src="{{ t.photo }}" style="{{ testimonialAvatarImgStyle }}" alt="{{ t.name }}"/>
+                </sc-if>
+                <sc-if value="{{ t.noPhoto }}" hint-placeholder-val="{{ true }}">
+                  <div style="{{ testimonialAvatarStyle }}">{{ t.initial }}</div>
+                </sc-if>
+                <div>
+                  <p style="{{ testimonialNameStyle }}">{{ t.name }}</p>
+                  <p style="{{ testimonialRoleStyle }}">{{ t.role }}</p>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
       <div style="{{ testimonialWrapStyle }}">
         <button onClick="{{ prevTestimonial }}" style="{{ carouselArrowStyle }}" aria-label="Previous">←</button>
         <div style="{{ testimonialCardStyle }}">
@@ -174,11 +214,14 @@
         </div>
         <button onClick="{{ nextTestimonial }}" style="{{ carouselArrowStyle }}" aria-label="Next">→</button>
       </div>
+      </sc-if>
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
       <div style="{{ dotsRowStyle }}">
         <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
           <span style="{{ t.dotStyle }}"></span>
         </sc-for>
       </div>
+      </sc-if>
     </div>
   </section>
 
@@ -189,7 +232,7 @@
         <h2 style="{{ playbookH2Style }}">The Digital Storytelling Playbook</h2>
         <p style="{{ playbookSubStyle }}">Our actionable framework for turning complex social data into clear, human stories that inspire action — free to download.</p>
       </div>
-      <a href="javascript:void(0)" onclick="ml('show', 'QUkEEl', true)" style="{{ primaryBtnStyle }}">Get the free playbook →</a>
+      <a href="javascript:void(0)" onClick="{{ openPlaybook }}" style="{{ primaryBtnStyle }}">Get the free playbook →</a>
     </div>
   </section>
 
@@ -493,6 +536,11 @@ class Component extends DCLogic {
     this.setState({ cookieChoice: 'declined' });
   };
 
+  openPlaybook = (e) => {
+    if (e) e.preventDefault();
+    if (window.ml) window.ml('show', 'QUkEEl', true);
+  };
+
   renderVals() {
     const dark = this.state.theme === 'dark';
     const vw = this.state.viewportWidth;
@@ -524,7 +572,7 @@ class Component extends DCLogic {
     return {
       pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
 
-      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px', transform: this.state.navHidden ? 'translateY(-140%)' : 'translateY(0)', transition: 'transform .35s ease' },
+      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px', transform: this.state.navHidden ? 'translateY(-140%)' : 'translateY(0)', transition: 'transform .35s ease' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
       logoStyle: { fontFamily: fontDisplay, fontSize: '19px', fontWeight: 700, color: text, textDecoration: 'none', letterSpacing: '-0.01em' },
@@ -559,11 +607,12 @@ class Component extends DCLogic {
       heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, maxWidth: '480px', margin: '0 0 32px' },
       heroCtaRowStyle: { display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '40px', justifyContent: 'center' },
       primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600 },
+      openPlaybook: this.openPlaybook,
       primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
       secondaryBtnStyle: { background: 'transparent', color: text, textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, border: `1px solid ${border}` },
       workedWithLabelStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '12px', color: muted, textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 12px' },
       logoRowStyle: { display: 'flex', gap: '28px', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' },
-      clientLogoStyle: { height: '24px', width: 'auto', display: 'block', filter: dark ? 'none' : 'brightness(0)', opacity: dark ? 0.85 : 0.65 },
+      clientLogoStyle: { height: '40px', width: 'auto', display: 'block', filter: dark ? 'none' : 'brightness(0)', opacity: dark ? 0.85 : 0.65 },
 
       sectionStyle: { padding: '90px 24px', background: bg, opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' },
       sectionAltStyle: { padding: '90px 24px', background: bgAlt, opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' },
@@ -575,13 +624,9 @@ class Component extends DCLogic {
       sectionSubStyle: { fontSize: '17px', color: muted, maxWidth: '600px', margin: '0 auto 40px', textAlign: 'center' },
 
       filmstripOuterStyle: { margin: '0 -24px', overflow: 'hidden', position: 'relative', zIndex: 1 },
-      filmstripStyle: isMobile
-        ? { display: 'flex', flexDirection: 'column', flexWrap: 'wrap', gap: '20px', padding: '56px 24px 12px' }
-        : { display: 'flex', gap: '20px', width: 'max-content', padding: '56px 24px 12px', animation: 'soren-ticker 45s linear infinite' },
-      filmstripHoverStyle: { animationPlayState: isMobile ? 'running' : 'paused' },
-      filmstripCardStyle: isMobile
-        ? { flex: '0 0 auto', width: '100%', textDecoration: 'none', color: text }
-        : { flex: '0 0 auto', width: '420px', textDecoration: 'none', color: text },
+      filmstripStyle: { display: 'flex', gap: isMobile ? '14px' : '20px', width: 'max-content', padding: isMobile ? '40px 16px 12px' : '56px 24px 12px', animation: 'soren-ticker 45s linear infinite' },
+      filmstripHoverStyle: { animationPlayState: 'paused' },
+      filmstripCardStyle: { flex: '0 0 auto', width: isNarrow ? '240px' : isMobile ? '300px' : '420px', textDecoration: 'none', color: text },
       filmstripImgWrapStyle: { position: 'relative', width: '100%', aspectRatio: '2/3', borderRadius: '18px', overflow: 'hidden', border: `1px solid ${border}`, boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -40px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.06)', background: dark ? 'linear-gradient(155deg, rgba(139,108,245,0.35), #17131F 55%, #0A0810)' : 'linear-gradient(155deg, rgba(139,108,245,0.2), #EFEAFB 55%, #E3DCF7)' },
       filmstripImgHoverStyle: { opacity: 0.9 },
       filmstripStatWrapStyle: { position: 'absolute', bottom: '16px', left: '16px', right: '16px', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '4px', background: 'rgba(12,10,18,0.55)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '16px', padding: '14px 16px' },
@@ -594,8 +639,8 @@ class Component extends DCLogic {
       filmstripTitleStyle: { fontSize: '15px', fontWeight: 700 },
       filmstripLinkStyle: { fontSize: '13px', color: muted, fontWeight: 600, whiteSpace: 'nowrap' },
 
-      serviceGridStyle: { display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '40px' },
-      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column', flex: isMobile ? '1 1 100%' : '1 1 300px', minWidth: isMobile ? '100%' : '280px' },
+      serviceGridStyle: { display: 'grid', gridTemplateColumns: isNarrow ? '1fr' : isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: '20px', marginTop: '40px' },
+      serviceCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
       serviceImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
       serviceImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
       serviceBodyStyle: { padding: '22px 26px 26px', display: 'flex', flexDirection: 'column', gap: '4px' },
@@ -634,6 +679,8 @@ class Component extends DCLogic {
       founderBodyStyle: { fontSize: '15px', lineHeight: 1.7, color: '#C7BEDC', margin: '0 0 18px', maxWidth: '520px' },
 
       testimonialWrapStyle: { display: 'flex', alignItems: 'center', gap: '20px', marginTop: '40px' },
+      mobileTestimonialScrollStyle: { display: 'flex', gap: '14px', overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', margin: '40px -24px 0', padding: '0 24px 8px' },
+      mobileTestimonialCardStyle: { flex: '0 0 85%', scrollSnapAlign: 'start', background: cardBg, border: `1px solid ${border}`, borderRadius: '20px', padding: '28px' },
       carouselArrowStyle: { width: '44px', height: '44px', borderRadius: '50%', border: `1px solid ${border}`, background: cardBg, color: text, cursor: 'pointer', fontSize: '16px', flexShrink: 0 },
       testimonialCardStyle: { flex: 1, background: cardBg, border: `1px solid ${border}`, borderRadius: '20px', padding: '40px' },
       testimonialQuoteHeadStyle: { fontFamily: fontDisplay, fontSize: '24px', margin: '0 0 16px' },
@@ -684,7 +731,7 @@ class Component extends DCLogic {
       cookieAcceptBtnStyle: { flex: 1, background: '#8B6CF5', border: 'none', color: '#fff', borderRadius: '999px', padding: '9px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' },
       clientNames: this.clientNames,
       comparisonRows: this.buildComparisonRows(border),
-      caseStudiesTicker: isMobile ? this.caseStudies : [...this.caseStudies, ...this.caseStudies],
+      caseStudiesTicker: [...this.caseStudies, ...this.caseStudies],
       isMobile,
       isNarrow,
       isWide,
