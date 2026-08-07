@@ -8,6 +8,7 @@
 <body>
 <x-dc>
 <helmet>
+<script src="https://t.contentsquare.net/uxa/9766b7092233a.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8FPC24GCR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -75,7 +76,7 @@
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
           <a href="{{ cs.href }}" class="soren-filmstrip-card" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
             <div style="{{ filmstripImgWrapStyle }}">
-              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
+              <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="{{ cs.imgStyle }}">
               <div style="{{ filmstripStatWrapStyle }}">
                 <div style="{{ filmstripTopRowStyle }}">
                   <span style="{{ filmstripTagStyle }}">{{ cs.tag }}</span>
@@ -238,6 +239,8 @@
 
   <dc-import name="Footer" dark="{{ dark }}" services="{{ services }}" case-studies="{{ caseStudies }}" hint-size="100%,320px"></dc-import>
 
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
+
   <sc-if value="{{ showCookieBanner }}" hint-placeholder-val="{{ false }}">
     <div style="{{ cookieBannerStyle }}">
       <p style="{{ cookieTextStyle }}">We use cookies to improve your experience. See our <a href="./Studio Soren Cookies Policy.dc.html" style="{{ cookieLinkStyle }}">Cookies policy</a>.</p>
@@ -258,8 +261,12 @@ class Component extends DCLogic {
     testimonialIndex: 0,
     navOpen: false,
     navHidden: false,
+    modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
   };
+
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
 
   rootRef = React.createRef();
   lastScrollY = 0;
@@ -462,12 +469,12 @@ class Component extends DCLogic {
   ];
 
   caseStudies = [
-    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', logo: 'https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png' },
-    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', logo: 'https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png' },
-    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', logo: 'https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png' },
-    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', logo: 'https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png' },
-    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', logo: 'https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png' },
-    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', logo: 'https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png' },
+    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', logo: 'https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png', pos: 'center top' },
+    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', logo: 'https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png', pos: 'center top' },
+    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', logo: 'https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png', pos: 'center' },
+    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', logo: 'https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png', pos: 'center top' },
+    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', logo: 'https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png', pos: 'center' },
+    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', logo: 'https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png', pos: 'center top' },
   ];
 
   clientNames = [
@@ -731,7 +738,7 @@ class Component extends DCLogic {
       cookieAcceptBtnStyle: { flex: 1, background: '#8B6CF5', border: 'none', color: '#fff', borderRadius: '999px', padding: '9px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' },
       clientNames: this.clientNames,
       comparisonRows: this.buildComparisonRows(border),
-      caseStudiesTicker: [...this.caseStudies, ...this.caseStudies],
+      caseStudiesTicker: [...this.caseStudies, ...this.caseStudies].map((cs) => ({ ...cs, imgStyle: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: cs.pos || 'center', display: 'block' } })),
       isMobile,
       isNarrow,
       isWide,
@@ -743,6 +750,9 @@ class Component extends DCLogic {
       toggleTheme: this.toggleTheme,
       nextTestimonial: this.nextTestimonial,
       prevTestimonial: this.prevTestimonial,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
     };
   }
 }
