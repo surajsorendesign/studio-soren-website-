@@ -37,12 +37,13 @@
         <p style="{{ footerMetaStyle }}">Remote-first · UK-based</p>
       </div>
     </div>
-    <p style="{{ footerHeadStyle }}">Awards &amp; Partners</p>
+    <p style="padding-top: 0px; padding-bottom: 12px">Awards &amp; Partners</p>
     <div style="{{ awardsRowStyle }}">
-      <img src="./uploads/bda-finalist.png" alt="DesignRush Design Awards Finalist" style="{{ awardImgStyle }}">
-      <img src="./uploads/pasted-1785937780547-0.png" alt="Part of NatWest Accelerator Birmingham" style="{{ natwestImgStyle }}">
-      <img src="./uploads/blackbelt-ai-logo-cropped.png" alt="Business partner: Blackbelt AI" style="{{ bbaiImgStyle }}">
-      <img src="./uploads/pasted-1785955929954-0.png" alt="Business partner: Big One Marketing" style="{{ bigOneImgStyle }}">
+      <a href="https://www.designrush.com/best-designs/apps/carelink-app-design"><img src="./uploads/bda-finalist.png" alt="DesignRush Design Awards Finalist" style="{{ awardImgStyle }}"></a>
+      <a href="https://www.natwest.com/business/business-services/entrepreneur-accelerator.html"><img src="./uploads/pasted-1785937780547-0.png" alt="Part of NatWest Accelerator Birmingham" style="{{ natwestImgStyle }}"></a>
+      <a href="https://blackbelt-ai.co.uk/"><img src="./uploads/blackbelt-ai-logo-cropped.png" alt="Business partner: Blackbelt AI" style="{{ bbaiImgStyle }}"></a>
+      <a href="https://bigonemarketing.co.uk/"><img src="./uploads/pasted-1785955929954-0.png" alt="Business partner: Big One Marketing" style="{{ bigOneImgStyle }}"></a>
+      <a href="https://proai.co.uk/"><img src="./uploads/pasted-1786096509862-0.png" alt="Business partner: Pro AI" style="{{ proAiImgStyle }}"></a>
     </div>
     <div style="{{ footerBottomStyle }}">
       <p style="{{ footerMetaStyle }}">2026 © All rights reserved.</p>
@@ -108,6 +109,7 @@ class Component extends DCLogic {
       natwestImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block', borderRadius: '4px' },
       bbaiImgStyle: { height: isNarrow ? '22px' : '28px', width: 'auto', display: 'block' },
       bigOneImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block' },
+      proAiImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block' },
       footerBottomStyle: { display: 'flex', justifyContent: 'space-between', alignItems: isNarrow ? 'flex-start' : 'center', flexDirection: isNarrow ? 'column' : 'row', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', flexWrap: 'wrap', gap: '12px' },
 
       services: this.props.services ?? this.defaultServices,
