@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'h3', text: "In the public and third sectors, the most effective digital services aren't built in isolation — they are grown from the ground up by the communities they serve." },
+    { type: 'p', text: 'In 2019, our founder engaged The Jiu Jitsu Foundation and Birmingham Mind to challenge the "get on with it" culture surrounding mental health. This effort formed a campaign called the #MentalHealthWarriors, dedicated to helping those struggling with mental illness feel heard and supported.' },
+    { type: 'h3', text: 'Translating Effort into Life-Saving Support' },
+    { type: 'p', text: 'When we talk about "impact" in service design, we are often talking about real-world lifelines. The funds raised by the Aston Jiu Jitsu community were dedicated to the Birmingham Mind Crisis Helpline — a service that, at the time, was underfunded.' },
+    { type: 'p', text: 'The statistics behind this service are a sobering reminder of why our work in the third sector matters:' },
+    { type: 'list', items: ['The Cost of Care: The helpline requires approximately £33–£35 per hour to remain active.', 'The Value of Time: Just 20 to 40 minutes on the phone can equate to saving a life.', 'The Scale of the Need: One in four people in the UK suffer from mental health problems, and suicide remains the leading cause of death for men under 35.'] },
+    { type: 'h3', text: 'Research as an Act of Listening' },
+    { type: 'p', text: 'Often, "user research" is framed as a clinical process. However, when tackling sensitive social challenges, research must be an act of quiet service.' },
+    { type: 'p', text: 'By engaging with the community through martial-arts-based courses, bake sales, and mindfulness sessions, the goal was to understand the barriers that prevent people from seeking help.' },
+    { type: 'quote', text: 'Digital signposting only works if it speaks the language of the community. Before we design a single screen, we must first listen to the lived experience of the frontline.' },
+    { type: 'h3', text: 'Service Design Beyond the Interface' },
+    { type: 'p', text: 'Service design is the invisible thread that connects a physical event to a digital resource. For the #MentalHealthWarriors, the "service" was the journey from feeling isolated to finding a pathway to help.' },
+    { type: 'p', text: 'Our role as partners to charities is to ensure that every touchpoint, digital or physical, feels cohesive and respectful. Success is measured by how little friction a person feels when they are at their most vulnerable.' },
+    { type: 'h3', text: 'A Collaborative Legacy' },
+    { type: 'p', text: 'This campaign was about playing a small part in a much larger mission to ensure that no one faces mental illness alone. We were happy to reach our target of fundraising £3,000 for the cause. By working alongside the Jiu Jitsu Foundation and Birmingham Mind, we saw first-hand that design is most powerful when it serves the community\u2019s most essential needs.' },
+    { type: 'p', text: 'We remain incredibly grateful to the donors, runners, and bakers who led this charge. Their work ensures that lifelines like the crisis helpline remain available for those who need them most.' },
+  ];
+
+  renderVals() {
+    return {
+      title: 'Designing for dignity: What community effort taught us about service design',
+      category: 'Design Strategy',
+      person: 'suraj-soren',
+      date: '2026-01-27T00:00:00.000Z',
+      minutes: '2',
+      image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg',
+      imageAlt: 'Man wearing a black parka jacket holding a telephone',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

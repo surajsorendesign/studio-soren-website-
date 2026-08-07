@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<footer style="{{ footerStyle }}">
+  <div style="{{ footerInnerStyle }}">
+    <div style="{{ footerTopStyle }}">
+      <div style="{{ footerBrandColStyle }}">
+        <p style="{{ footerBrandStyle }}">Design for Impact.<br>Shaped by people.</p>
+        <div style="{{ footerSocialRowStyle }}">
+          <a href="https://www.linkedin.com/company/studio-soren/" style="{{ footerSocialStyle }}">LinkedIn</a>
+          <a href="https://www.instagram.com/studio_soren_uk" style="{{ footerSocialStyle }}">Instagram</a>
+          <a href="https://www.tiktok.com/@studio.soren" style="{{ footerSocialStyle }}">TikTok</a>
+        </div>
+      </div>
+      <div style="{{ footerColStyle }}">
+        <p style="{{ footerHeadStyle }}">Services</p>
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <a href="{{ s.href }}" style="{{ footerLinkStyle }}">{{ s.title }}</a>
+        </sc-for>
+      </div>
+      <div style="{{ footerColStyle }}">
+        <p style="{{ footerHeadStyle }}">Case studies</p>
+        <sc-for list="{{ caseStudies }}" as="cs" hint-placeholder-count="4">
+          <a href="{{ cs.href }}" style="{{ footerLinkStyle }}">{{ cs.title }}</a>
+        </sc-for>
+      </div>
+      <div style="{{ footerColStyle }}">
+        <p style="{{ footerHeadStyle }}">Contact us</p>
+        <a href="mailto:hello@studiosoren.com" style="{{ footerLinkStyle }}">hello@studiosoren.com</a>
+        <a href="tel:+447779427031" style="{{ footerLinkStyle }}">+(44) 777 942 7031</a>
+        <p style="{{ footerMetaStyle }}">Remote-first · UK-based</p>
+      </div>
+    </div>
+    <p style="{{ footerHeadStyle }}">Awards &amp; Partners</p>
+    <div style="{{ awardsRowStyle }}">
+      <img src="./uploads/bda-finalist.png" alt="DesignRush Design Awards Finalist" style="{{ awardImgStyle }}">
+      <img src="./uploads/pasted-1785937780547-0.png" alt="Part of NatWest Accelerator Birmingham" style="{{ natwestImgStyle }}">
+      <img src="./uploads/blackbelt-ai-logo-cropped.png" alt="Business partner: Blackbelt AI" style="{{ bbaiImgStyle }}">
+      <img src="./uploads/pasted-1785955929954-0.png" alt="Business partner: Big One Marketing" style="{{ bigOneImgStyle }}">
+    </div>
+    <div style="{{ footerBottomStyle }}">
+      <p style="{{ footerMetaStyle }}">2026 © All rights reserved.</p>
+      <div style="{{ footerSocialRowStyle }}">
+        <a href="./Studio Soren Cookies Policy.dc.html" style="{{ footerLinkSmallStyle }}">Cookies policy</a>
+        <a href="./Studio Soren Privacy Policy.dc.html" style="{{ footerLinkSmallStyle }}">Privacy policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:320},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;services&quot;:{&quot;editor&quot;:null,&quot;default&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{title:string,href:string}&gt;&quot;},&quot;caseStudies&quot;:{&quot;editor&quot;:null,&quot;default&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{title:string,href:string}&gt;&quot;}}">
+class Component extends DCLogic {
+  state = { viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  defaultServices = [
+    { title: 'Research & Data', href: './Studio Soren Service - Research & Data.dc.html' },
+    { title: 'Web & App Design', href: './Studio Soren Service - Product Design.dc.html' },
+    { title: 'AI Integration & Adoption', href: './Studio Soren Service - AI Integration.dc.html' },
+    { title: 'Software Engineering', href: './Studio Soren Service - Software Engineering.dc.html' },
+    { title: 'Design Strategy', href: './Studio Soren Service - Design Strategy.dc.html' },
+    { title: 'Digital Storytelling', href: './Studio Soren Service - Digital Storytelling.dc.html' },
+  ];
+
+  defaultCaseStudies = [
+    { title: "BT's digital checkout", href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
+    { title: "Mind's graduate onboarding", href: './Studio Soren Case Study - Mind Onboarding.dc.html' },
+    { title: 'KEYS Community', href: './Studio Soren Case Study - KEYS Community.dc.html' },
+    { title: 'The CareLink App', href: './Studio Soren Case Study - CareLink App.dc.html' },
+  ];
+
+  renderVals() {
+    const dark = this.props.dark ?? true;
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif";
+    const fontBody = "'DM Sans', -apple-system, sans-serif";
+    const vw = this.state.viewportWidth;
+    const isNarrow = vw < 640;
+    const isMobile = vw < 860;
+
+    return {
+      footerStyle: { background: dark ? '#0C0A12' : '#171225', color: '#C7BEDC', padding: isNarrow ? '48px 20px 28px' : '64px 24px 32px' },
+      footerInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      footerTopStyle: { display: 'grid', gridTemplateColumns: isNarrow ? '1fr' : isMobile ? '1fr 1fr' : '1.4fr 1fr 1fr 1fr', gap: isNarrow ? '28px' : '32px', paddingBottom: isNarrow ? '32px' : '40px' },
+      footerBrandColStyle: {},
+      footerBrandStyle: { fontFamily: fontDisplay, fontSize: '20px', color: '#fff', margin: '0 0 20px' },
+      footerSocialRowStyle: { display: 'flex', gap: '16px', flexWrap: 'wrap' },
+      footerSocialStyle: { color: '#C7BEDC', textDecoration: 'none', fontSize: '13px' },
+      footerColStyle: { display: 'flex', flexDirection: 'column', gap: '10px' },
+      footerHeadStyle: { fontFamily: fontBody, fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.04em', color: '#8A80A3', margin: '0 0 4px' },
+      footerLinkStyle: { color: '#C7BEDC', textDecoration: 'none', fontSize: '13px' },
+      footerLinkSmallStyle: { color: '#8A80A3', textDecoration: 'none', fontSize: '12px' },
+      footerMetaStyle: { color: '#8A80A3', fontSize: '12px', margin: '4px 0 0' },
+      awardsRowStyle: { display: 'flex', alignItems: 'center', gap: isNarrow ? '20px' : '28px', flexWrap: 'wrap', paddingBottom: '32px', opacity: 0.85 },
+      awardImgStyle: { height: isNarrow ? '40px' : '52px', width: 'auto', display: 'block' },
+      natwestImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block', borderRadius: '4px' },
+      bbaiImgStyle: { height: isNarrow ? '22px' : '28px', width: 'auto', display: 'block' },
+      bigOneImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block' },
+      footerBottomStyle: { display: 'flex', justifyContent: 'space-between', alignItems: isNarrow ? 'flex-start' : 'center', flexDirection: isNarrow ? 'column' : 'row', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', flexWrap: 'wrap', gap: '12px' },
+
+      services: this.props.services ?? this.defaultServices,
+      caseStudies: this.props.caseStudies ?? this.defaultCaseStudies,
+    };
+  }
+}
+</script>
+</body>
+</html>

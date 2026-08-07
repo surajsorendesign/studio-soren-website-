@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'p', text: 'At Studio Soren, we believe measuring the success of a design project goes far beyond "looking good." For leadership in public services and non-profits, design success is defined by how effectively a solution solves a specific problem, improves service delivery, and aligns with organisational goals.' },
+    { type: 'h2', text: 'Moving Beyond Aesthetics to Outcomes' },
+    { type: 'p', text: 'In modern product design, success is a metric, not a feeling. When Studio Soren designs a new portal for a local authority or a donation flow for a national charity, we are engineering a measurable result.' },
+    { type: 'p', text: 'To measure this effectively, we employ a mixture of quantitative data (the "what") and qualitative insights (the "why"). If you cannot measure it, you cannot manage it — and you certainly cannot justify the budget for it in the next fiscal year.' },
+    { type: 'h2', text: 'The Studio Soren Framework: A Step-by-Step Guide' },
+    { type: 'h3', text: 'Step 1: The Preparation (Establishing the Baseline)' },
+    { type: 'p', text: 'Before a single pixel is moved, we work with you to define what "better" actually looks like.' },
+    { type: 'list', items: ['Establish Baseline Metrics: What is the current bounce rate? How many "avoidable contacts" does your help desk receive regarding the current interface?', 'Define Key Performance Indicators: We help you choose 3–5 metrics that move the needle — from Gift Aid Declaration Rate to Reduction in Application Errors.', 'Stakeholder Alignment: We ensure leadership and our design lead are in total agreement on these goals, preventing the "subjectivity trap" during later reviews.'] },
+    { type: 'h3', text: 'Step 2: The Review (The Mid-Project Pulse)' },
+    { type: 'p', text: 'Measurement isn\'t just a post-launch activity. During the design phase, we use "proxy metrics" to ensure the project is on the right track.' },
+    { type: 'list', items: ['Usability Testing: We watch real citizens or donors interact with prototypes, measuring the Task Success Rate.', 'Accessibility Auditing: For UK public services, success is often binary — does the design meet the legal requirements?', 'Time on Task: If a user takes five minutes to find a form that should take two, the design requires iteration.'] },
+    { type: 'h3', text: 'Step 3: The Post-Review (Impact Analysis)' },
+    { type: 'p', text: 'Once the project is live, the real measurement begins. We typically recommend an audit 3–6 months post-launch to allow for data stabilisation.' },
+    { type: 'list', items: ['The Delta: We compare your new live KPIs against the baselines established in Step 1.', 'System Usability Scale (SUS): A 10-item questionnaire we use to give you a "global satisfaction" score from 1–100.', 'Organisational ROI: We calculate the hard cost savings — if the new design reduces support calls by 20%, how many staff hours have been saved?'] },
+    { type: 'h2', text: 'Best Practices for Constructive Measurement' },
+    { type: 'list', items: ["Prioritise Actionable Over Vanity Metrics: A million page views mean nothing if no one completes the service.", 'Focus on Outcomes, Not Outputs: Measure how much the "user frustration score" decreased, not how many screens were designed.', 'Ask "How Does This Solve the User\'s Problem?": Force the design team to justify every element based on real user testing data.', 'Check Your Bias: As a CEO or COO, you are rarely the target user — trust the data over personal preference.'] },
+    { type: 'h2', text: 'Why Design Metrics Matter for Mission-Led Organisations' },
+    { type: 'p', text: 'For organisations driven by impact rather than just profit, design success is often tied to trust and inclusion. A professional, intuitive interface signals competence and directly increases donation likelihood; good design ensures those with visual, cognitive, or motor impairments can access your services.' },
+    { type: 'p', text: "If you are looking to start a project with clear, measurable outcomes, Studio Soren's approach to design strategy ensures your digital transformation is backed by evidence, not guesswork." },
+  ];
+
+  renderVals() {
+    return {
+      title: 'How do you measure the success of a design project?',
+      category: 'FAQ · Impact',
+      person: 'suraj-soren',
+      date: '2026-04-05T00:00:00.000Z',
+      minutes: '4',
+      image: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png',
+      imageAlt: 'Measuring design success',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

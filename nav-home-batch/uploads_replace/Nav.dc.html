@@ -22,7 +22,7 @@
       </div>
       <div style="{{ navRightStyle }}">
         <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
-        <button onClick="{{ openModal }}" style="{{ navCtaStyle }}">Discuss a project</button>
+        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ navCtaStyle }}">Book a free call</a>
         <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
       </div>
     </div>
@@ -33,19 +33,15 @@
         <a href="./Studio Soren Services.dc.html" style="{{ mobileNavLinkStyle }}">Services</a>
         <a href="./Studio Soren Insights.dc.html" style="{{ mobileNavLinkStyle }}">Insights</a>
         <a href="./Studio Soren FAQs.dc.html" style="{{ mobileNavLinkStyle }}">FAQs</a>
-        <button onClick="{{ openModal }}" style="{{ mobileNavCtaStyle }}">Discuss a project</button>
+        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ mobileNavCtaStyle }}">Book a free call</a>
       </div>
     </sc-if>
   </div>
 </nav>
-<dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:80},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;&quot;,&quot;about&quot;,&quot;case-studies&quot;,&quot;services&quot;,&quot;insights&quot;,&quot;faqs&quot;]}}">
 class Component extends DCLogic {
-  state = { navOpen: false, modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
-
-  openModal = () => this.setState({ navOpen: false, modalOpen: true });
-  closeModal = () => this.setState({ modalOpen: false });
+  state = { navOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
 
   componentDidMount() {
     this.onResize = () => this.setState({ viewportWidth: window.innerWidth });
@@ -75,7 +71,7 @@ class Component extends DCLogic {
     const styleFor = (key) => (active === key ? activeStyle : linkStyle);
 
     return {
-      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navWrapStyle: { position: 'sticky', top: '16px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
@@ -98,9 +94,6 @@ class Component extends DCLogic {
       mobileMenuOpen: this.state.navOpen,
       toggleTheme: this.toggleTheme,
       toggleNav: this.toggleNav,
-      modalOpen: this.state.modalOpen,
-      openModal: this.openModal,
-      closeModal: this.closeModal,
     };
   }
 }

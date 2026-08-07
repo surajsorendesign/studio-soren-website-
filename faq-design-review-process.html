@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'p', text: 'For a CEO or COO of a charity, a design review is not about "approving a layout." It is about risk management. In the social sector, a "bad" design is a barrier to accessibility for a vulnerable user or a friction point that loses a vital donation.' },
+    { type: 'p', text: "Studio Soren's approach is rooted in Design for Social Impact. We believe that if you aren't running structured reviews, you are essentially flying blind. Our framework is designed to help non-digital native leaders steer the ship without getting lost in technical jargon." },
+    { type: 'h2', text: 'The Studio Soren Step-by-Step Guide' },
+    { type: 'h3', text: 'Step 1: The Preparation (Aligning the North Star)' },
+    { type: 'p', text: 'Success is determined before the meeting starts. We ensure the "value-based" mission is integrated into the technical workflow from day one. If your current digital presence feels disjointed, we often recommend starting with a professional design audit to establish a baseline.' },
+    { type: 'list', items: ['Define the "Strategic Why": We distribute a brief summary of the specific goals — are we increasing commerciality or improving service accessibility?', 'The Representative Room: We limit the invite list to the "Doers" (designers), the "Deciders" (you), and the "Voice of the User."', 'The 24-Hour Pre-Read: We share a video walkthrough of the work 24 hours in advance, so the meeting is for decisions, not just demonstrations.'] },
+    { type: 'h3', text: 'Step 2: The Review (Facilitating the Session)' },
+    { type: 'p', text: 'During the session, the goal is to move from "I like this" to "does this work?" This is the core of future-driven design.' },
+    { type: 'list', items: ['Context Setting: We recap the user persona — for example, "a first-time donor in their 70s" — and the technical constraints.', 'The "Silent" Walkthrough: We allow stakeholders to view the design in silence first. This prevents groupthink and allows for a pure user reaction.', 'The "Problem-First" Filter: We ask that every piece of feedback be phrased as a problem, not a solution. Ineffective feedback: "Make that button bigger." Studio Soren feedback: "I\'m concerned a user with limited digital literacy might miss the primary call-to-action here."'] },
+    { type: 'h3', text: 'Step 3: The Post-Review (Closing the Loop)' },
+    { type: 'p', text: 'The most common failure in public sector projects is "review fatigue." We prevent this by ensuring every session has a clear exit path.' },
+    { type: 'list', items: ['The Decision Log: We document what was agreed, what was rejected, and what needs further research.', 'Impact Mapping: We tie every change back to the original mission. If a change doesn\'t help reach the "North Star," it isn\'t implemented.', 'Stakeholder Transparency: We provide a summary that can be shared with the board, ensuring consistent visibility of the project\'s progress.'] },
+    { type: 'h2', text: 'Best Practices: The Studio Soren Rules of Engagement' },
+    { type: 'list', items: ['Critique the Design, Not the Designer: We use "the interface" as the subject of our sentences, maintaining a culture of kindness and professional safety.', 'The Accessibility First-Principle: We always ask, "how does this work for someone using a screen reader?" and align all work with W3C Accessibility Standards.', 'Focus on the "North Star": If a debate becomes granular, we zoom out — will this specific change help us help more people?', 'Manage the "HIPPO": We encourage the Highest Paid Person to speak last, so frontline experts feel safe sharing honest technical concerns first.'] },
+    { type: 'h2', text: 'Conclusion: Leadership Through Design' },
+    { type: 'p', text: "Running a design review is an act of leadership. By following the Studio Soren framework, you ensure that Design for Social Impact isn't just a tagline, but a measurable outcome." },
+    { type: 'p', text: "Would you like Studio Soren to facilitate your next high-stakes design review or help you define your project's North Star? Contact us today." },
+  ];
+
+  renderVals() {
+    return {
+      title: 'How do you run a design review?',
+      category: 'FAQ · Design',
+      person: 'suraj-soren',
+      date: '2026-04-12T00:00:00.000Z',
+      minutes: '4',
+      image: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png',
+      imageAlt: 'Design review session',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

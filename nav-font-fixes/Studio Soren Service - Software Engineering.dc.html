@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #A78BFA; color: #12101A; }
+  @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}" ref="{{ rootRef }}">
+
+  <dc-import name="Nav" active="services" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <p style="{{ eyebrowStyle }}">Services</p>
+    <h1 style="{{ h1Style }}">Software Engineering</h1>
+    <p style="{{ heroSubStyle }}">Building the products &amp; services with clear and concise requirements.</p>
+  </header>
+
+  <section style="{{ sectionStyle }}" data-reveal="1">
+    <div style="{{ sectionInnerStyle }}">
+      <div style="{{ deliverableGridStyle }}">
+        <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="5">
+          <div style="{{ deliverableCardStyle }}">
+            <h3 style="{{ deliverableTitleStyle }}">{{ d.title }}</h3>
+            <p style="{{ deliverableBodyStyle }}">{{ d.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ sectionAltStyle }}" data-reveal="1">
+    <div style="{{ sectionInnerStyle }}">
+      <p style="{{ kickerStyle }}">View more services</p>
+      <div style="{{ otherServicesRowStyle }}">
+        <sc-for list="{{ otherServices }}" as="s" hint-placeholder-count="5">
+          <a href="{{ s.href }}" style="{{ otherServiceChipStyle }}">{{ s.title }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ inquirySectionStyle }}" data-reveal="1">
+    <div style="{{ inquiryInnerStyle }}">
+      <div style="{{ inquiryImageColStyle }}">
+        <dc-import name="FounderPhoto" max-width="340px" hint-size="340px,340px"></dc-import>
+      </div>
+      <div style="{{ inquiryTextColStyle }}">
+        <h2 style="{{ inquiryHeadStyle }}">Need engineering firepower?</h2>
+        <a href="https://calendly.com/suraj-studiosoren/30min" style="{{ primaryBtnOnDarkStyle }}">Book a virtual coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ dark }}" services="{{ allServices }}" hint-size="100%,320px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    theme: 'dark',
+    navOpen: false,
+    viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
+  };
+
+  rootRef = React.createRef();
+
+  services = [
+    { title: 'Research & Data', href: './Studio Soren Service - Research & Data.dc.html' },
+    { title: 'Web & App Design', href: './Studio Soren Service - Product Design.dc.html' },
+    { title: 'AI Integration & Adoption', href: './Studio Soren Service - AI Integration.dc.html' },
+    { title: 'Software Engineering', href: './Studio Soren Service - Software Engineering.dc.html' },
+    { title: 'Design Strategy', href: './Studio Soren Service - Design Strategy.dc.html' },
+    { title: 'Digital Storytelling', href: './Studio Soren Service - Digital Storytelling.dc.html' },
+  ];
+
+  deliverables = [
+    { title: 'Embedded Engineering Squads', body: 'High-velocity, full-stack teams that integrate into your agile cycles to accelerate product roadmaps and maintain peak delivery momentum.' },
+    { title: 'Technical Architecture & Discovery', body: 'Strategic blueprints and AI-ready systems design to ensure your platform is scalable, secure, and commercially viable before the first sprint.' },
+    { title: 'Managed Frontend Engineering', body: 'Specialist frontend units that treat design systems as code, delivering pixel-perfect, accessible interfaces with a focus on performance and SEO.' },
+    { title: 'Platform Engineering & FinOps', body: 'Managed infrastructure and cloud operations designed to optimise performance, automate security, and provide complete visibility over your cloud spend.' },
+    { title: 'Product Evolution & Maintenance', body: 'A dedicated service for proactive updates, technical debt management, and incremental feature shipping to protect and scale your long-term investment.' },
+  ];
+
+  toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
+
+  componentDidMount() {
+    this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener('resize', this.updateViewport);
+    if (window.IntersectionObserver) {
+      this.revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              this.revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      const scope = this.rootRef.current;
+      if (scope) scope.querySelectorAll('[data-reveal]').forEach((el) => this.revealObserver.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.updateViewport) window.removeEventListener('resize', this.updateViewport);
+    if (this.revealObserver) this.revealObserver.disconnect();
+  }
+
+  renderVals() {
+    const dark = this.state.theme === 'dark';
+    const isMobile = this.state.viewportWidth < 860;
+    const mobileMenuOpen = isMobile && this.state.navOpen;
+
+    const accent = '#8B6CF5';
+    const accentSoft = dark ? 'rgba(139,108,245,0.18)' : 'rgba(139,108,245,0.1)';
+    const bg = dark ? '#0C0A12' : '#FAF9FC';
+    const cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF';
+    const border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)';
+    const text = dark ? '#F3F1F9' : '#171325';
+    const muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif";
+    const fontBody = "'DM Sans', -apple-system, sans-serif";
+    const revealStyle = { opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' };
+
+    const otherServices = this.services.filter((s) => s.title !== 'Software Engineering');
+
+    return {
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      rootRef: this.rootRef,
+
+      navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
+      navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
+      navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
+      navLinksStyle: { display: isMobile ? 'none' : 'flex', gap: '24px' },
+      navLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500 },
+      navLinkActiveStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 700 },
+      navRightStyle: { display: 'flex', alignItems: 'center', gap: '10px', marginLeft: isMobile ? 'auto' : 0 },
+      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      themeIcon: dark ? '☀' : '☾',
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block' },
+      hamburgerStyle: { display: isMobile ? 'flex' : 'none', width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      hamburgerIcon: this.state.navOpen ? '✕' : '☰',
+      mobileMenuStyle: { display: 'flex', flexDirection: 'column', gap: '4px', padding: '14px', borderRadius: '20px', background: dark ? 'rgba(20,16,32,0.9)' : 'rgba(255,255,255,0.95)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      mobileNavLinkStyle: { color: text, textDecoration: 'none', fontSize: '15px', fontWeight: 500, padding: '10px 8px', borderRadius: '10px' },
+      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', marginTop: '6px' },
+      mobileMenuOpen,
+      toggleTheme: this.toggleTheme,
+      toggleNav: this.toggleNav,
+
+      heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'soren-fade .6s ease both' },
+      eyebrowStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', letterSpacing: '0.04em', color: accent, margin: '0 0 16px', textTransform: 'uppercase' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '46px', lineHeight: 1.1, fontWeight: 700, margin: '0 0 16px', letterSpacing: '-0.02em' },
+      heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, margin: 0 },
+
+      sectionStyle: { padding: '40px 24px 60px', background: bg, ...revealStyle },
+      sectionAltStyle: { padding: '20px 24px 90px', background: bg, ...revealStyle },
+      sectionInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+
+      deliverableGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' },
+      deliverableCardStyle: { background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', padding: '28px' },
+      deliverableTitleStyle: { fontSize: '18px', fontWeight: 700, margin: '0 0 10px' },
+      deliverableBodyStyle: { fontSize: '14px', color: muted, lineHeight: 1.65, margin: 0 },
+
+      kickerStyle: { fontFamily: fontBody, fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.04em', color: muted, margin: '0 0 20px' },
+      otherServicesRowStyle: { display: 'flex', gap: '12px', flexWrap: 'wrap' },
+      otherServiceChipStyle: { color: text, textDecoration: 'none', fontSize: '14px', fontWeight: 600, padding: '10px 18px', borderRadius: '999px', border: `1px solid ${border}`, background: cardBg },
+      otherServices,
+
+      inquirySectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', ...revealStyle },
+      inquiryInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.6fr 1.4fr', gap: '56px', alignItems: 'center' },
+      inquiryImageColStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center' },
+      badgeWrapStyle: { position: 'relative', width: '100%', maxWidth: '340px', aspectRatio: '1/1' },
+      badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
+      stampWrapStyle: { position: 'absolute', right: '-8%', bottom: '-6%', width: '38%', aspectRatio: '1/1', zIndex: 2 },
+      inquiryTextColStyle: {},
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '34px', lineHeight: 1.2, fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.01em' },
+      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
+
+      deliverables: this.deliverables,
+      allServices: this.services,
+      dark,
+    };
+  }
+}
+</script>
+</body>
+</html>

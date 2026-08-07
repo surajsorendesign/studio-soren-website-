@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'h3', text: 'In the social impact sector, we often find ourselves caught between two conflicting worlds.' },
+    { type: 'p', text: "On one side lies the 'Corporate Trap': a sea of spreadsheets, cold Key Performance Indicators (KPIs), and 'deliverables' that satisfy auditors but fail to capture the soul of the mission. On the other is the 'Story Gap': moving, heartfelt testimonials that remind us why we do what we do, but often feel too anecdotal or fragmented to scale." },
+    { type: 'p', text: "At Studio Soren, we believe that if you cannot show your donors what their support feels like, you aren't telling the whole story." },
+    { type: 'h3', text: 'The Problem: When Data Loses Its Heart' },
+    { type: 'p', text: 'Hard data is essential for accountability, but numbers are rarely the reason a donor remains committed for a decade. When we reduce human progress to a mere percentage on a slide, we risk stripping away the dignity and the nuance of the communities being served.' },
+    { type: 'p', text: 'Conversely, relying solely on isolated stories can make impact feel uncoordinated. Without a cohesive framework, these moments of magic stay locked in siloes rather than driving a broader movement.' },
+    { type: 'h3', text: 'The Solution: Design Strategy for Social Good' },
+    { type: 'p', text: "We don't believe you have to choose between 'smart' and 'heart'. By applying a rigorous design strategy, we build digital solutions that bridge this divide, creating purposeful systems that:" },
+    { type: 'list', items: ["Humanise the Data: Transforming '1,000 meals served' into a visual narrative that illustrates the community resilience behind those figures.", 'Scale the Stories: Utilising digital tools to categorise and share testimonials in a way that provides measurable insights without losing the emotional core.', 'Shape the Experience: Ensuring the people behind the cause — the stakeholders and the beneficiaries — are the ones defining how success is visualised.'] },
+    { type: 'h3', text: 'Shaped by People' },
+    { type: 'p', text: 'Our guiding principle is simple: Design for Social Impact. Shaped by People. When we develop a digital solution — be it an impact dashboard, a fundraising platform, or a community hub — we start with the human element. We ask: what does success look like to those on the ground? How do we make a donor feel the weight of their contribution?' },
+    { type: 'p', text: "By using technology to simplify the reporting process, we allow your team to spend less time on administration and more time on the 'doing'. It is about moving beyond the spreadsheet and into the lived experience." },
+    { type: 'h3', text: 'Ready to show your impact?' },
+    { type: 'p', text: "If your organisation is stuck in the 'Corporate Trap' or struggling with the 'Story Gap', let's collaborate. We help you find that vital middle ground where design meets purpose." },
+  ];
+
+  renderVals() {
+    return {
+      title: 'Can you measure a feeling? Bridging the gap between data and human impact',
+      category: 'Research & Data',
+      person: 'suraj-soren',
+      date: '2026-02-19T00:00:00.000Z',
+      minutes: '2',
+      image: 'https://framerusercontent.com/images/mINupToTqi7gUkNu4LPYglq42YI.jpg',
+      imageAlt: 'Vector graphic representing data and human impact',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

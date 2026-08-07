@@ -1,0 +1,241 @@
+[
+ {
+  "slug": "a-first-ever-digital-checkout-flow-for-bt-business-broadband-renewal-products",
+  "title": "BT's digital checkout",
+  "brand": "rgb(85, 20, 180)",
+  "sector": "Commercial",
+  "logo": "https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png",
+  "logoAlt": "BT Business logo white",
+  "hero": "https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png",
+  "heroAlt": "Render mockup of BT Business Renewal and start of the new digital serve checkout",
+  "h1": "Designing BT Business’s first self-serve checkout",
+  "problem": [
+   "The BT Business Digital Checkout is helping transform how customers renew and purchase broadband services, reducing friction and improving transparency.",
+   "The user journey designed enables more customers to self-serve, while aligning with complex business, regulatory, and technical requirements across BT’s stack.",
+   "The new checkout is now live in beta and supporting the wider One Business platform goals of consistency and conversion uplift."
+  ],
+  "insightHeader": "Customers had to manually complete a \"Get in touch\" form in order to renew their business broadband",
+  "devImg": "https://framerusercontent.com/images/CFzCRo0FMjSJrMdaRrhQDKQiiVQ.png",
+  "insight": [
+   "This created friction for digitally-savvy customers, limited online conversion opportunities, and increased operational overhead.",
+   "The challenge: design a fully self-serve buying flow that would enable customers to:",
+   "Select a product",
+   "Configure options",
+   "Complete checkout online",
+   "Receive order confirmation — without offline intervention.",
+   "The solution had to be intuitive, legally compliant, and scalable for additional products in the future."
+  ],
+  "solutionHeader": "Designing and delivering a flexible, scalable checkout flow tailored to real user journeys and BT’s business requirements",
+  "solution": [
+   "To ensure technical accuracy, we collaborated with platform architects to scope a new basket pricing API. This synchronised checkout pricing with earlier landing page offers, solving a critical customer trust issue."
+  ],
+  "keyFeatures": [
+   "Renewals & OTP: Customers select packages and verify identity via a streamlined OTP process.",
+   "Smart Logic: Pre-filled details ensure speed, while sensitive changes are routed to \"My Account\" for security. Delivery steps are skipped automatically if no hardware is required.",
+   "Compliant Payment: Collaborated with legal/finance teams to launch a compliant, Direct Debit-first payment step.",
+   "Unified Post-Purchase: A \"Thank You\" page aligned with BT’s Omnichannel patterns for a consistent cross-device experience."
+  ],
+  "impactTitle1": "Increased conversion",
+  "stat1": "3.5x",
+  "cardStat": "Increased conversion",
+  "impactTitle2": "Total revenue generated in 2024/25 FY",
+  "stat2": "£3.3m"
+ },
+ {
+  "slug": "welcome-aboard",
+  "title": "Mind's graduate onboarding",
+  "brand": "rgb(21, 0, 199)",
+  "sector": "Charity",
+  "logo": "https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png",
+  "logoAlt": "Mind logo white",
+  "hero": "https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png",
+  "heroAlt": "",
+  "h1": "Supporting graduates in their early career transition",
+  "problem": [
+   "Welcome aboard, is a white-label service pattern and digital experience concept developed in collaboration with the mental health charity Mind. Designed specifically for young people transitioning from university into graduate or apprenticeship schemes, it serves as a template for companies to better integrate new recruits.",
+   "By applying Mind's mental well-being principles, the service helps facilitate a smoother adjustment into the professional working environment and proactively looking out for their mental wellbeing."
+  ],
+  "insightHeader": "Uncovering the student to professional overwhelming transition period",
+  "devImg": "https://framerusercontent.com/images/qD59K0sH9MaEc0xlcHbP15K9k1Y.png",
+  "insight": [
+   "The development of Welcome Aboard was informed by research presented at the Mind community centre in Newcastle, which highlighted how the overwhelming shift into professional life often triggers a \"downward spiral\" of anxiety and poor sleep hygiene.",
+   "The service specifically targets the emotional communication gap often found in men, providing a mentorship gateway that encourages individuals to off-load burdens rather than suppressing them.",
+   "By training managers to become volunteer mentors, the programme ensures that the support provided is grounded in professional mental health techniques that help graduates gain perspective and navigate the nerves of a new career."
+  ],
+  "solutionHeader": "Welcome aboard provides a supportive, multi-device onboarding experience",
+  "solution": [
+   "Welcome Aboard. is a generation-specific, white-label digital solution developed with Mind to support the \"Youth Inc.\" transition from university to work. Recognising that this generation is mobile-first, the concept centres on a native app that integrates onboarding across a single platform to reduce the stress of fragmented corporate systems.",
+   "By downloading the app before their start date, recruits can meet their mentor early, settle nerves, and begin their professional journey with a human-centred foundation."
+  ],
+  "keyFeatures": [
+   "Features daily mood check-ins, a personalised to-do list, and direct mentor chat to simplify the transition and facilitate early connection.",
+   "Structured support involving Mind-trained mentors allows for earlier detection of issues and provides essential emotional \"off-loading\".",
+   "A customisable company portal serving as a single source of truth for all essential professional information.",
+   "Tools like \"Conversation Starters\" build immediate social bonds, creating a lifecycle where mentees eventually train to become mentors themselves."
+  ],
+  "impactTitle1": "Mentor-led onboarding schemes like Welcome aboard can help increase",
+  "stat1": "82%",
+  "cardStat": "Increased retention",
+  "impactTitle2": "Employees who feel \"welcomed and valued\" (the core mission of Welcome Aboard) are more likely to have",
+  "stat2": "2.6x engagement in workplace"
+ },
+ {
+  "slug": "community-branded-launch-campaign",
+  "title": "KEYS Community",
+  "brand": "rgb(255, 193, 2)",
+  "sector": "Commercial",
+  "logo": "https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png",
+  "logoAlt": "KEYS logo white",
+  "hero": "https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png",
+  "heroAlt": "",
+  "h1": "Community branded launch campaign",
+  "problem": [
+   "After a successful Phase 1 launch, KEYS enlisted Studio Soren to become their dedicated design team, with a core focus on visual content design. We were a pivotal partner in crafting a new brand look and feel, ensuring it truly resonated with their mission. The retainer ask was a significant undertaking: to create a high volume of visual content. Specifically, three posts a week, including two individual impact posts and one feature-based carousel with a minimum of five creatives. This was a big task, as the content needed to be adaptable across a wide range of channels, including LinkedIn, Instagram, TikTok, and even their website blogs."
+  ],
+  "insightHeader": "KEYS' design language needed to evolve beyond their app interface",
+  "devImg": "https://framerusercontent.com/images/rBToXXo3GZ2HzWnM3XHR4xtu2w.png",
+  "insight": [
+   "After a successful collaboration designing KEYS' app preview screens. We need to help them with their visual language across social media platforms such as Linkedin, Instagram and Tik Tok."
+  ],
+  "solutionHeader": "Delivering high impact content via weekly design sprints",
+  "solution": [
+   "At Studio Soren, our ability to deliver high-quality, impactful content is a direct result of our highly collaborative and agile environment. Our designers are incredibly talented and fast, allowing us to produce compelling, storytelling visuals that are always close to the latest design trends. We work closely with our content designers to ensure every creative is not just visually appealing but also communicates new features and brand stories with clarity and purpose."
+  ],
+  "keyFeatures": [
+   "1 x 5 Slide Carousel",
+   "2 x Single posts",
+   "New concepts for App preview screens",
+   "Brand Strategy",
+   "AI Integration workshops and coaching"
+  ],
+  "impactTitle1": "Increase in LinkedIn followers ",
+  "stat1": "200%",
+  "cardStat": "Increase in LinkedIn followers ",
+  "impactTitle2": "Increased conversion on social media",
+  "stat2": "3.3x"
+ },
+ {
+  "slug": "a-seamless-digital-upgrade-experience-for-vulnerable-telecare-users",
+  "title": "The CareLink App",
+  "brand": "rgb(255, 0, 212)",
+  "sector": "Commercial",
+  "logo": "https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png",
+  "logoAlt": "BT Group Logo white",
+  "hero": "https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png",
+  "heroAlt": "Onboarding render of the CareLink App",
+  "h1": "A seamless digital migration for the vulnerable",
+  "problem": [
+   "In 2025, the UK’s digital transition threatened to disconnect vulnerable telecare users. Studio Soren’s founder led a team at BT Group to design a North Star vision for the renewal migration experience, creating a blueprint to protect elderly and disabled customers.",
+   "By uncovering safety gaps through research, they established a human-centered strategy and a fail-safe system, ensuring national infrastructure shifts never compromised life-saving emergency connectivity."
+  ],
+  "insightHeader": "In the UK up to 2M vulnerable people were at risk of losing emergency phone line connection",
+  "devImg": "https://framerusercontent.com/images/4FIIVCh5XyWClfveksgQbWYJSo.png",
+  "insight": [
+   "The digital upgrade introduced significant risks for vulnerable customers, including the elderly and disabled, who rely on analog lines for critical telecare services like pendant alarms and lifeline monitors. Recognising the potential impact on their safety, I focused on designing solutions to ensure uninterrupted connections during the UK-wide transition.",
+   "To understand the full scope, we spoke directly to telecare users and engaged with insurance companies like Aviva and AIG to learn what steps they were taking for the migration. To our surprise, many were doing very little or had little knowledge about the risks. This realisation gave me a deep sense of responsibility to ensure these customers wouldn’t lose access to life-saving services, as the threat of losing connectivity could have life-threatening consequences."
+  ],
+  "solutionHeader": "Enhanced agent support & prioritised care",
+  "solution": [
+   "The concept for CareLink was to transforming the agent desktop by introducing the ability to tag and categorise vulnerable customers, enabling BT agents to deliver more personalised support. This development is streamlining workflows and laying the foundation for a smoother transition to digital landlines, ultimately enhancing future services for both residential and business customers.",
+   "Tim Carter, BT Design Lead"
+  ],
+  "keyFeatures": [
+   "A user-friendly in-app experience was designed to support vulnerable broadband customers through a critical digital line upgrade. The solution includes:",
+   "Home Screen Alert - A prominent widget informs users about the migration and its implications.",
+   "Onboarding Explainer - A clear guide walks users through the upgrade process.",
+   "Device Checker - API-powered checks ensure device compatibility.",
+   "Engineer Booking - Non-compatible devices trigger an option to schedule an engineer visit.",
+   "Confirmation - Engineer appointments are confirmed, with follow-up steps like recycling old devices introduced.",
+   "This streamlined approach ensures a seamless and supportive user experience."
+  ],
+  "impactTitle1": "Emergency line users positively impacted",
+  "stat1": "1.8M",
+  "cardStat": "Vulnerable customers impacted",
+  "impactTitle2": "Lead carers and vulnerable decision makers being made aware",
+  "stat2": "1.2k per week"
+ },
+ {
+  "slug": "pioneering-a-multi-sensory-digital-showroom-for-ee-s-new-marketplace",
+  "title": "EE Retail Kiosk Experience",
+  "brand": "rgb(0, 155, 165)",
+  "sector": "Commercial",
+  "logo": "https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png",
+  "logoAlt": "",
+  "hero": "https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png",
+  "heroAlt": "EE Kiosk Design Concept in in a flagship retail store",
+  "h1": "Pioneering a Multi-Sensory Digital Showroom for EE's new Marketplace",
+  "problem": [
+   "Studio Soren collaborated with a dynamic team of Service Designers, Product Managers, Developers, and the EE Retail Design and Marketing teams to tackle the challenge of securing funding for a groundbreaking retail self-service concept.",
+   "This initiative was a prime opportunity to use strategic design to redefine the in-store experience, aligning seamlessly with EE's goal of 'winning in new markets.'"
+  ],
+  "insightHeader": "Introducing a Multi-Sensory Experience",
+  "devImg": "https://framerusercontent.com/images/73yR8TOby54bZAOWRfERxsOgk.png",
+  "insight": [
+   "The mission was to introduce an exciting, multi-sensory experience for customers exploring EE's expanding world of consumer electronics.",
+   "Our user-centred design approach aimed for efficiency, discoverability, and immersive showcasing.",
+   "The target persona, the \"soft purchaser,\" symbolised the high-footfall customer eager to embrace the latest in consumer electronics. The core challenge was to design a concept that would redefine the in-store experience and demonstrate its value to stakeholders."
+  ],
+  "solutionHeader": "Building a multi-sensory prototype using Figma x Protopie",
+  "solution": [
+   "Our prototyping phase focused on \"Real-Tech\" validation. By linking Figma and ProtoPie to physical LED lighting and sound systems, we moved beyond simple screens to create a truly multi-sensory environment.",
+   "Figma to ProtoPie: We utilized Figma for high-fidelity UI design, then moved into ProtoPie to handle complex logic, sensor integration, and hardware communication.",
+   "Multi-Sensory Triggers: We integrated ProtoPie’s voice transcription to simulate Siri-style control, allowing users to adjust in-store lighting and sound through natural language.",
+   "Physical Feedback Loops: The prototype didn't just show a change on screen; it triggered actual LED shifts and sound nesting to signal successful interactions."
+  ],
+  "keyFeatures": [
+   "We validated the \"phygital\" experience using Figma and ProtoPie, linking digital UIs to physical LED lighting and sound systems. Testing followed a two-tier approach: an internal alpha with 5 participants, followed by live beta testing with 10 customers at our Oxford Street flagship to stress-test the \"Magic Wall\" against real-world noise and lighting.",
+   "Voice-Activated Environments: Used ProtoPie’s transcription to trigger physical responses (light/temp/audio).",
+   "The \"Magic Wall\" Handover: QR-triggered data transfer from public kiosk to private mobile checkout.",
+   "Hardware Syncing: Real-time communication between ProtoPie and external APIs for physical feedback.",
+   "After this 6-month deep dive, our primary result was the recommendation not to pursue the concept. Testing revealed that environmental factors and high scaling costs outweighed the CX benefits. By identifying these barriers through high-fidelity prototyping rather than a full-scale rollout, we saved the business significant capital and technical debt, allowing funds and engineering resources to be redirected toward higher-priority, proven initiatives."
+  ],
+  "impactTitle1": "Investment saved",
+  "stat1": "£2.3M",
+  "cardStat": "Investment saved",
+  "impactTitle2": "Customers found the experience beneficial",
+  "stat2": "50%"
+ },
+ {
+  "slug": "the-digital-connection-hub",
+  "title": "Kindred",
+  "brand": "rgb(34, 172, 198)",
+  "sector": "Non-profit",
+  "logo": "https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png",
+  "logoAlt": "Wellburn logo white",
+  "hero": "https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png",
+  "heroAlt": "",
+  "h1": "Reducing Loneliness for the Ageing Population",
+  "problem": [
+   "Studio Soren undertook a pro-bono initiative to address the Agile Ageing brief based on insight from Age UK in 2016, a challenge focused on improving the quality of life and \"mental agility\" for the \"third age\".",
+   "We focused our conceptual work on the North East of the UK, conducting deep ethnographic research at care facilities in Gateshead and Gosforth. The goal was to combat the \"Indoor Isolation\" crisis by finding new ways to maintain autonomy and motivation in an ageing population."
+  ],
+  "insightHeader": "In 2016 we identified 1M residents will live with dementia due to loneliness by 2025",
+  "devImg": "https://framerusercontent.com/images/VDmZOx78fuD6DuViMFqUnyfiA.png",
+  "insight": [
+   "Our investigation revealed the highly restrictive nature of care environments, where rooms are often limited to a national minimum of 100 square feet, creating a safe but confined world for the resident.",
+   "While communal spaces exist, residents who lack mobility, such as those using zimmer frames or those who lack regular family visits are at high risk of total isolation. These residents are often rarely interacting with others and remain heavily \"swayed by the weather\" regarding any outdoor movement.",
+   "Our ethnographic research, which included interviewing a 102-year-old resident and various care staff, showed that 1/3 of people in care homes already live with dementia and spend 10 hours or more sitting each day. These insights presented a clear opportunity to integrate digital interactivity and nudge theory into daily routines.",
+   "By using connectivity to combat loneliness, we identified that 73% of seniors enjoy taking photos and 50% are already familiar with digital concepts like \"selfies\". This data shaped our transition to a digital-first approach, using constant connectivity and interactive prompts as the primary tools to maintain mental agility and social bonds."
+  ],
+  "solutionHeader": "Kindred, a digital home hub to help care home residents stay connected & active",
+  "solution": [
+   "By evolving our original photographic scavenger hunt into a permanent digital hub, we provide a vital link between vulnerable residents and the outside world to maintain cognitive health.",
+   "The platform is designed to remove the technical barriers of traditional social media, focusing instead on high-impact \"memory triggers\" that combat the sedentary risks of indoor isolation."
+  ],
+  "keyFeatures": [
+   "Social Syncing & Memory Triggers",
+   "Families can instantly push photos and videos to a resident's hub, creating the visual stimulation proven to improve mental agility.",
+   "Integrated Care Calendar:",
+   "The device syncs with family schedules, allowing residents to see upcoming visits and request time with loved ones, directly addressing the \"loneliness gap\".",
+   "Digital Scavenger Hunts:",
+   "Building on our initial geocaching model, gamified \"day trip\" suggestions encourage residents to stay active by completing photography tasks in their local community.",
+   "Simplified Interface",
+   "A dedicated, accessible design built for users with limited technical experience or declining motor skills, featuring elements like \"thumb markers\" for easier interaction."
+  ],
+  "impactTitle1": "Long term project goal is to help residents maintain the cognitive baseline",
+  "stat1": "20%",
+  "cardStat": "longer cognitive baseline",
+  "impactTitle2": "Clinical studies on digital reminiscence show that structured evening interventions like Kindred can reduce agitation",
+  "stat2": "30% decrease"
+ }
+]
