@@ -3,28 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
-<nav style="{{ navWrapStyle }}">
+<div style="{{ navSpacerStyle }}"></div>
+<nav ref="{{ navRef }}" style="{{ navWrapStyle }}">
   <div style="{{ navStackStyle }}">
+    <div style="{{ navShadowWrapStyle }}">
     <div style="{{ navInnerStyle }}">
       <a href="./index.html" style="{{ logoLinkStyle }}">
         <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
       </a>
       <div style="{{ navLinksStyle }}">
-        <a href="./about.html" style="{{ aboutStyle }}">About</a>
-        <a href="./case-studies.html" style="{{ caseStudiesStyle }}">Case studies</a>
-        <a href="./services.html" style="{{ servicesStyle }}">Services</a>
-        <a href="./insights.html" style="{{ insightsStyle }}">Insights</a>
-        <a href="./faqs.html" style="{{ faqsStyle }}">FAQs</a>
+        <a href="./about.html" style="{{ aboutStyle }}" style-hover="color: #8B6CF5;">About</a>
+        <a href="./case-studies.html" style="{{ caseStudiesStyle }}" style-hover="color: #8B6CF5;">Case studies</a>
+        <a href="./services.html" style="{{ servicesStyle }}" style-hover="color: #8B6CF5;">Services</a>
+        <a href="./insights.html" style="{{ insightsStyle }}" style-hover="color: #8B6CF5;">Insights</a>
+        <a href="./faqs.html" style="{{ faqsStyle }}" style-hover="color: #8B6CF5;">FAQs</a>
       </div>
       <div style="{{ navRightStyle }}">
-        <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" aria-label="Toggle theme">{{ themeIcon }}</button>
-        <button onClick="{{ openModal }}" style="{{ navCtaStyle }}" style-hover="{{ navCtaHoverStyle }}">Discuss a project</button>
+        <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" style-hover="background: rgba(139,108,245,0.15); border-color: #8B6CF5; color: #8B6CF5;" aria-label="Toggle theme">{{ themeIcon }}</button>
+        <button onClick="{{ openModal }}" style="{{ navCtaStyle }}" style-hover="background: #7A5AE8; transform: scale(1.02); box-shadow: 0 6px 16px rgba(139,108,245,0.35);">Discuss a project</button>
         <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
       </div>
+    </div>
     </div>
     <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="{{ mobileMenuStyle }}">
@@ -42,17 +46,34 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:80},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;&quot;,&quot;about&quot;,&quot;case-studies&quot;,&quot;services&quot;,&quot;insights&quot;,&quot;faqs&quot;]}}">
 class Component extends DCLogic {
-  state = { navOpen: false, modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  state = { navOpen: false, modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200, pinned: false, navHeight: 0 };
 
   openModal = () => this.setState({ navOpen: false, modalOpen: true });
   closeModal = () => this.setState({ modalOpen: false });
 
+  navRef = React.createRef();
+
   componentDidMount() {
-    this.onResize = () => this.setState({ viewportWidth: window.innerWidth });
+    this.onResize = () => {
+      this.setState({ viewportWidth: window.innerWidth });
+      this.measureNav();
+    };
     window.addEventListener('resize', this.onResize);
+    this.measureNav();
+    this.onScroll = () => {
+      const shouldPin = window.scrollY > 8;
+      if (shouldPin !== this.state.pinned) this.setState({ pinned: shouldPin });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
   }
+  measureNav = () => {
+    const el = this.navRef.current;
+    if (el) this.setState({ navHeight: el.offsetHeight });
+  };
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
   }
 
   toggleTheme = () => {
@@ -75,9 +96,13 @@ class Component extends DCLogic {
     const styleFor = (key) => (active === key ? activeStyle : linkStyle);
 
     return {
-      navWrapStyle: { position: 'sticky', top: isMobile ? '12px' : '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: isMobile ? '0 12px' : '0 16px' },
+      navWrapStyle: this.state.pinned
+        ? { position: 'fixed', top: isMobile ? '12px' : '24px', left: 0, right: 0, zIndex: 50, display: 'flex', justifyContent: 'center', padding: isMobile ? '0 12px' : '0 16px' }
+        : { position: 'relative', top: isMobile ? '12px' : '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: isMobile ? '0 12px' : '0 16px' },
+      navSpacerStyle: { height: this.state.pinned ? this.state.navHeight + (isMobile ? 12 : 24) : 0 },
       navStackStyle: { width: '100%', maxWidth: '1120px', position: 'relative' },
-      navInnerStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      navShadowWrapStyle: { borderRadius: '999px', boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      navInnerStyle: { boxSizing: 'border-box', display: 'flex', alignItems: 'center', minHeight: isMobile ? '52px' : '58px', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
       logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
       navLinksStyle: { display: isMobile ? 'none' : 'flex', gap: '24px', flexWrap: 'wrap' },
@@ -87,15 +112,15 @@ class Component extends DCLogic {
       insightsStyle: styleFor('insights'),
       faqsStyle: styleFor('faqs'),
       navRightStyle: { display: 'flex', alignItems: 'center', gap: '10px', marginLeft: isMobile ? 'auto' : 0 },
-      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background .15s ease, border-color .15s ease, color .15s ease' },
       themeIcon: dark ? '☀' : '☾',
-      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block', transition: 'background .2s ease, transform .2s ease' },
-      navCtaHoverStyle: { background: '#7A5AE8', transform: 'translateY(-1px)' },
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block', cursor: 'pointer', transition: 'background .2s ease, transform .2s ease, box-shadow .2s ease' },
+      navCtaHoverStyle: { background: '#7A5AE8', transform: 'scale(1.05)', boxShadow: '0 10px 28px rgba(139,108,245,0.55)' },
       hamburgerStyle: { display: isMobile ? 'flex' : 'none', width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
       hamburgerIcon: this.state.navOpen ? '✕' : '☰',
       mobileMenuStyle: { position: 'absolute', top: 'calc(100% + 8px)', left: 0, right: 0, display: 'flex', flexDirection: 'column', gap: '2px', padding: '10px', borderRadius: '18px', background: dark ? 'rgba(20,16,32,0.96)' : 'rgba(255,255,255,0.98)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 16px 40px rgba(0,0,0,0.45)' : '0 16px 40px rgba(20,15,35,0.14)', maxHeight: 'calc(100vh - 100px)', overflowY: 'auto', zIndex: 60 },
       mobileNavLinkStyle: { color: text, textDecoration: 'none', fontSize: '15px', fontWeight: 500, padding: '11px 10px', borderRadius: '10px' },
-      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 20px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', width: '100%', boxSizing: 'border-box', margin: '6px 0 0' },
+      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 20px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', width: '100%', boxSizing: 'border-box', margin: '6px 0 0', cursor: 'pointer' },
       mobileMenuOpen: this.state.navOpen,
       toggleTheme: this.toggleTheme,
       toggleNav: this.toggleNav,

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -32,11 +33,19 @@
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  @media (prefers-color-scheme: light) { html, body { background: #FAF9FC; } }
+  html[data-theme="dark"], html[data-theme="dark"] body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes soren-glow { 0%,100% { opacity: .5; } 50% { opacity: .9; } }
-  @keyframes soren-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (max-width: 679px) {
     .soren-service-grid { grid-template-columns: 1fr !important; }
     .soren-filmstrip-card { width: 240px !important; }
@@ -60,8 +69,8 @@
         <h1 style="{{ h1Style }}">Digital design and development agency</h1>
         <p style="{{ heroSubStyle }}">We create digital products that turn your mission into your competitive advantage through user insights &amp; strategic design.</p>
         <div style="{{ heroCtaRowStyle }}">
-          <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}">Discuss a project</button>
-          <a href="./about.html" style="{{ secondaryBtnStyle }}">Learn about us</a>
+          <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Discuss a project</button>
+          <a href="./about.html" style="{{ secondaryBtnStyle }}" style-hover="background: rgba(139,108,245,0.12); border-color: #8B6CF5; color: #8B6CF5;">Learn about us</a>
         </div>
         <p style="{{ workedWithLabelStyle }}">Worked with</p>
         <div style="{{ logoRowStyle }}">
@@ -72,9 +81,9 @@
       </div>
     </div>
     <div style="{{ filmstripOuterStyle }}">
-      <div class="soren-filmstrip-track" style="{{ filmstripStyle }}" style-hover="{{ filmstripHoverStyle }}">
+      <div class="soren-filmstrip-track" ref="{{ filmstripRef }}" onMouseEnter="{{ onFilmstripEnter }}" onMouseLeave="{{ onFilmstripLeave }}" style="{{ filmstripStyle }}">
         <sc-for list="{{ caseStudiesTicker }}" as="cs" hint-placeholder-count="12">
-          <a href="{{ cs.href }}" class="soren-filmstrip-card" style="{{ filmstripCardStyle }}" style-hover="{{ filmstripImgHoverStyle }}">
+          <a href="{{ cs.href }}" class="soren-filmstrip-card" style="{{ filmstripCardStyle }}" style-hover="opacity: 0.9;">
             <div style="{{ filmstripImgWrapStyle }}">
               <img src="{{ cs.hero }}" alt="{{ cs.title }}" style="{{ cs.imgStyle }}">
               <div style="{{ filmstripStatWrapStyle }}">
@@ -257,7 +266,7 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;navLogo&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;image&quot;, &quot;options&quot;: [&quot;image&quot;, &quot;text&quot;], &quot;tsType&quot;: &quot;'image' | 'text'&quot;, &quot;section&quot;: &quot;Branding&quot;}}">
 class Component extends DCLogic {
   state = {
-    theme: 'dark',
+    theme: (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark',
     testimonialIndex: 0,
     navOpen: false,
     navHidden: false,
@@ -290,7 +299,7 @@ class Component extends DCLogic {
     this.tryMountHeroCanvas();
     this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
     window.addEventListener('resize', this.updateViewport);
-    this.lastScrollY = window.scrollY;
+        this.lastScrollY = window.scrollY;
     this.scrollTicking = false;
     this.handleScroll = () => {
       if (this.scrollTicking) return;
@@ -323,7 +332,33 @@ class Component extends DCLogic {
       const scope = this.rootRef.current;
       if (scope) scope.querySelectorAll('[data-reveal]').forEach((el) => this.revealObserver.observe(el));
     }
+
+    this.filmstripVelocity = 0;
+    this.filmstripOffset = 0;
+    const stepFilmstrip = (ts) => {
+      const track = this.filmstripRef.current;
+      if (track) {
+        if (!this.filmstripHalf) this.filmstripHalf = track.scrollWidth / 2;
+        const last = this.filmstripLastTs ?? ts;
+        const dt = Math.min((ts - last) / 1000, 0.05);
+        this.filmstripLastTs = ts;
+        const baseSpeed = this.filmstripHalf / 45;
+        const target = this.filmstripHovered ? 0 : baseSpeed;
+        const ease = 1 - Math.exp(-dt * 2.2);
+        this.filmstripVelocity += (target - this.filmstripVelocity) * ease;
+        this.filmstripOffset += this.filmstripVelocity * dt;
+        if (this.filmstripHalf && this.filmstripOffset >= this.filmstripHalf) this.filmstripOffset -= this.filmstripHalf;
+        track.style.transform = `translateX(${-this.filmstripOffset}px)`;
+      }
+      this.filmstripRaf = requestAnimationFrame(stepFilmstrip);
+    };
+    this.filmstripRaf = requestAnimationFrame(stepFilmstrip);
   }
+
+  filmstripRef = React.createRef();
+  filmstripHovered = false;
+  onFilmstripEnter = () => { this.filmstripHovered = true; };
+  onFilmstripLeave = () => { this.filmstripHovered = false; };
 
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
 
@@ -347,6 +382,7 @@ class Component extends DCLogic {
     if (this.updateViewport) window.removeEventListener('resize', this.updateViewport);
     if (this.handleScroll) window.removeEventListener('scroll', this.handleScroll);
     if (this.revealObserver) this.revealObserver.disconnect();
+    if (this.filmstripRaf) cancelAnimationFrame(this.filmstripRaf);
   }
 
   buildHeroDots() {
@@ -461,20 +497,20 @@ class Component extends DCLogic {
 
   services = [
     { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: 'https://studiosoren.com/services/user-research', img: './uploads/user-research-data.png' },
-    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './service-product-design.html', img: './uploads/web-app-design.png' },
-    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './service-ai-integration.html', img: './uploads/ai-integration.png' },
-    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './service-software-engineering.html', img: './uploads/software-development.png' },
-    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './service-design-strategy.html', img: './uploads/design-strategy-a7a2f2cb.png' },
-    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './service-digital-storytelling.html', img: './uploads/digital-storytelling.png' },
+    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/web-app-design.png' },
+    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/ai-integration.png' },
+    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/software-development.png' },
+    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/design-strategy-a7a2f2cb.png' },
+    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/digital-storytelling.png' },
   ];
 
   caseStudies = [
-    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './case-study-bt.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', logo: 'https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png', pos: 'center top' },
-    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './case-study-mind.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', logo: 'https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png', pos: 'center top' },
-    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './case-study-keys.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', logo: 'https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png', pos: 'center' },
-    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './case-study-carelink.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', logo: 'https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png', pos: 'center top' },
-    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './case-study-ee.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', logo: 'https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png', pos: 'center' },
-    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './case-study-kindred.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', logo: 'https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png', pos: 'center top' },
+    { tag: 'Commercial', title: "BT's digital checkout", metric: '3.5x', metricLabel: 'Increased conversion', href: './Studio Soren Case Study - BT Digital Checkout.dc.html', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', logo: 'https://framerusercontent.com/images/On03RaXpcJGZZXnBX9SlltOPq74.png', pos: 'center top' },
+    { tag: 'Charity', title: "Mind's graduate onboarding", metric: '82%', metricLabel: 'Increased retention', href: './Studio Soren Case Study - Mind Onboarding.dc.html', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', logo: 'https://framerusercontent.com/images/K15aziLfO5kiIJ6WONerUVADL4.png', pos: 'center top' },
+    { tag: 'Commercial', title: 'KEYS Community', metric: '200%', metricLabel: 'Increase in LinkedIn followers', href: './Studio Soren Case Study - KEYS Community.dc.html', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', logo: 'https://framerusercontent.com/images/DjzyKUa8Xkr9oQYKajHbRcZDTOI.png', pos: 'center' },
+    { tag: 'Commercial', title: 'The CareLink App', metric: '1.8M', metricLabel: 'Vulnerable customers impacted', href: './Studio Soren Case Study - CareLink App.dc.html', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', logo: 'https://framerusercontent.com/images/qgmWbBvqV1O3fkzqTtYY7a0NRrY.png', pos: 'center top' },
+    { tag: 'Commercial', title: 'EE Retail Kiosk Experience', metric: '£2.3M', metricLabel: 'Investment saved', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', logo: 'https://framerusercontent.com/images/LORvV0u9mW3YlzyOVN7j7XEsoM.png', pos: 'center' },
+    { tag: 'Non-profit', title: 'Kindred', metric: '20%', metricLabel: 'longer cognitive baseline', href: './Studio Soren Case Study - Kindred.dc.html', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', logo: 'https://framerusercontent.com/images/ZER9wKKgx5gHL8sEqkQBLCiBd4.png', pos: 'center top' },
   ];
 
   clientNames = [
@@ -530,7 +566,7 @@ class Component extends DCLogic {
     { headline: 'A conscientious, top-tier partner!', body: 'He helped me overcome entrepreneurial paralysis with a patient, meticulous approach. His active listening and thorough analysis have given me newfound confidence. A conscientious, top-tier partner!', name: 'Thomas Simmonds', role: 'Founder @ The Recovery Room', initial: 'T', photo: 'https://framerusercontent.com/images/qmWS7JNCKGZCnL6zJ8JuOYLKjQ.png' },
   ];
 
-  toggleTheme = () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleTheme = () => { this.setState((s) => { const next = s.theme === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
   nextTestimonial = () => this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length }));
   prevTestimonial = () => this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + this.testimonialsData.length) % this.testimonialsData.length }));
 
@@ -577,7 +613,7 @@ class Component extends DCLogic {
     const activeTestimonialData = testimonials[this.state.testimonialIndex];
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
 
       navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px', transform: this.state.navHidden ? 'translateY(-140%)' : 'translateY(0)', transition: 'transform .35s ease' },
       navStackStyle: { width: '100%', maxWidth: '1120px', display: 'flex', flexDirection: 'column', gap: '10px' },
@@ -613,10 +649,11 @@ class Component extends DCLogic {
       h1Style: { fontFamily: fontDisplay, fontSize: '52px', lineHeight: 1.05, fontWeight: 700, margin: '0 0 20px', letterSpacing: '-0.02em' },
       heroSubStyle: { fontSize: '18px', lineHeight: 1.6, color: muted, maxWidth: '480px', margin: '0 0 32px' },
       heroCtaRowStyle: { display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '40px', justifyContent: 'center' },
-      primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600 },
+      primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
       openPlaybook: this.openPlaybook,
       primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
-      secondaryBtnStyle: { background: 'transparent', color: text, textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, border: `1px solid ${border}` },
+      secondaryBtnStyle: { background: 'transparent', color: text, textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'background .15s ease, border-color .15s ease, color .15s ease', border: `1px solid ${border}` },
       workedWithLabelStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '12px', color: muted, textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 12px' },
       logoRowStyle: { display: 'flex', gap: '28px', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' },
       clientLogoStyle: { height: '40px', width: 'auto', display: 'block', filter: dark ? 'none' : 'brightness(0)', opacity: dark ? 0.85 : 0.65 },
@@ -631,7 +668,7 @@ class Component extends DCLogic {
       sectionSubStyle: { fontSize: '17px', color: muted, maxWidth: '600px', margin: '0 auto 40px', textAlign: 'center' },
 
       filmstripOuterStyle: { margin: '0 -24px', overflow: 'hidden', position: 'relative', zIndex: 1 },
-      filmstripStyle: { display: 'flex', gap: isMobile ? '14px' : '20px', width: 'max-content', padding: isMobile ? '40px 16px 12px' : '56px 24px 12px', animation: 'soren-ticker 45s linear infinite' },
+      filmstripStyle: { display: 'flex', gap: isMobile ? '14px' : '20px', width: 'max-content', padding: isMobile ? '40px 16px 12px' : '56px 24px 12px', willChange: 'transform' },
       filmstripHoverStyle: { animationPlayState: 'paused' },
       filmstripCardStyle: { flex: '0 0 auto', width: isNarrow ? '240px' : isMobile ? '300px' : '420px', textDecoration: 'none', color: text },
       filmstripImgWrapStyle: { position: 'relative', width: '100%', aspectRatio: '2/3', borderRadius: '18px', overflow: 'hidden', border: `1px solid ${border}`, boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -40px 50px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.06)', background: dark ? 'linear-gradient(155deg, rgba(139,108,245,0.35), #17131F 55%, #0A0810)' : 'linear-gradient(155deg, rgba(139,108,245,0.2), #EFEAFB 55%, #E3DCF7)' },
@@ -745,6 +782,9 @@ class Component extends DCLogic {
       mobileMenuOpen,
       toggleNav: this.toggleNav,
       rootRef: this.rootRef,
+      filmstripRef: this.filmstripRef,
+      onFilmstripEnter: this.onFilmstripEnter,
+      onFilmstripLeave: this.onFilmstripLeave,
       testimonials,
       activeTestimonial: activeTestimonialData,
       toggleTheme: this.toggleTheme,

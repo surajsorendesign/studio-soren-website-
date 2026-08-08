@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -25,6 +26,15 @@
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  @media (prefers-color-scheme: light) { html, body { background: #FAF9FC; } }
+  html[data-theme="dark"], html[data-theme="dark"] body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -72,7 +82,7 @@
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Do our services fit your requirements?</h2>
         <p style="{{ inquirySubStyle }}">Grab a cuppa with Suraj, Founder &amp; Creative Director! ☕️</p>
-        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
+        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Discuss a project</button>
       </div>
     </div>
   </section>
@@ -87,7 +97,7 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = {
-    theme: 'dark',
+    theme: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light',
     navOpen: false,
     modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
@@ -100,19 +110,24 @@ class Component extends DCLogic {
 
   services = [
     { title: 'Research & Data', pill: '01', desc: "Grounding your digital strategy with real-world user needs.", points: ['Identify key pain-points', 'Save time & long-term costs', 'Evidence based decision-making'], href: './service-research-data.html', img: './uploads/user-research-data.png' },
-    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './service-product-design.html', img: './uploads/web-app-design.png' },
-    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './service-ai-integration.html', img: './uploads/ai-integration.png' },
-    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './service-software-engineering.html', img: './uploads/software-development.png' },
-    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './service-design-strategy.html', img: './uploads/design-strategy-a7a2f2cb.png' },
-    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './service-digital-storytelling.html', img: './uploads/digital-storytelling.png' },
+    { title: 'Web & App Design', pill: '02', desc: 'We turn outdated, legacy processes into user-friendly digital tools and services.', points: ['User Experience & Interface', 'Concept Prototyping', 'User feedback & testing'], href: './Studio Soren Service - Product Design.dc.html', img: './uploads/web-app-design.png' },
+    { title: 'AI Integration & Adoption', pill: '03', desc: 'Helping your organisation adopt and navigate AI responsibly.', points: ['Educational workshops', 'Custom agentic systems', 'Optimised AI workflows'], href: './Studio Soren Service - AI Integration.dc.html', img: './uploads/ai-integration.png' },
+    { title: 'Software Engineering', pill: '04', desc: 'Building the products & services with clear and concise requirements.', points: ['Full stack software capabilities', 'Agile development cycles', 'Quality assurance testing'], href: './Studio Soren Service - Software Engineering.dc.html', img: './uploads/software-development.png' },
+    { title: 'Design Strategy', pill: '05', desc: 'We map the "invisible" journeys that make or break an organisation.', points: ['User Journey Mapping', 'Problem Identification', 'Operational Blueprints'], href: './Studio Soren Service - Design Strategy.dc.html', img: './uploads/design-strategy-a7a2f2cb.png' },
+    { title: 'Digital Storytelling', pill: '06', desc: 'We turn complex social data into clear, human stories that inspire action.', points: ['Translate data to empathy', 'Dignity first design', 'Purpose-led branding'], href: './Studio Soren Service - Digital Storytelling.dc.html', img: './uploads/digital-storytelling.png' },
   ];
 
-  toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleTheme = () => { this.themeOverride = true; this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); };
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
 
   componentDidMount() {
     this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
     window.addEventListener('resize', this.updateViewport);
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      this.themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+      this.handleThemeMediaChange = (e) => { if (!this.themeOverride) this.setState({ theme: e.matches ? 'dark' : 'light' }); };
+      this.themeMedia.addEventListener('change', this.handleThemeMediaChange);
+    }
     if (window.IntersectionObserver) {
       this.revealObserver = new IntersectionObserver(
         (entries) => {
@@ -154,7 +169,7 @@ class Component extends DCLogic {
     const revealStyle = { opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease' };
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
       navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
@@ -206,7 +221,8 @@ class Component extends DCLogic {
       inquiryTextColStyle: {},
       inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '34px', lineHeight: 1.2, fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.01em' },
       inquirySubStyle: { fontSize: '16px', color: '#C7BEDC', margin: '0 0 24px' },
-      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
+      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block', cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnOnDarkHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
 
       footerStyle: { background: dark ? '#0C0A12' : '#171225', color: '#C7BEDC', padding: '64px 24px 32px' },
       footerInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
@@ -227,9 +243,9 @@ class Component extends DCLogic {
       openModal: this.openModal,
       closeModal: this.closeModal,
       caseStudiesForFooter: [
-        { title: "BT's digital checkout", href: './case-study-bt.html' },
-        { title: "Mind's graduate onboarding", href: './case-study-mind.html' },
-        { title: 'KEYS Community', href: './case-study-keys.html' },
+        { title: "BT's digital checkout", href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
+        { title: "Mind's graduate onboarding", href: './Studio Soren Case Study - Mind Onboarding.dc.html' },
+        { title: 'KEYS Community', href: './Studio Soren Case Study - KEYS Community.dc.html' },
       ],
       services: this.services,
     };

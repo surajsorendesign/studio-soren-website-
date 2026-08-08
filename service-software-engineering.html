@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -25,6 +26,15 @@
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  @media (prefers-color-scheme: light) { html, body { background: #FAF9FC; } }
+  html[data-theme="dark"], html[data-theme="dark"] body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -72,7 +82,7 @@
       </div>
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Need engineering firepower?</h2>
-        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
+        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Discuss a project</button>
       </div>
     </div>
   </section>
@@ -86,7 +96,7 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = {
-    theme: 'dark',
+    theme: (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark',
     navOpen: false,
     modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
@@ -99,11 +109,11 @@ class Component extends DCLogic {
 
   services = [
     { title: 'Research & Data', href: './service-research-data.html' },
-    { title: 'Web & App Design', href: './service-product-design.html' },
-    { title: 'AI Integration & Adoption', href: './service-ai-integration.html' },
-    { title: 'Software Engineering', href: './service-software-engineering.html' },
-    { title: 'Design Strategy', href: './service-design-strategy.html' },
-    { title: 'Digital Storytelling', href: './service-digital-storytelling.html' },
+    { title: 'Web & App Design', href: './Studio Soren Service - Product Design.dc.html' },
+    { title: 'AI Integration & Adoption', href: './Studio Soren Service - AI Integration.dc.html' },
+    { title: 'Software Engineering', href: './Studio Soren Service - Software Engineering.dc.html' },
+    { title: 'Design Strategy', href: './Studio Soren Service - Design Strategy.dc.html' },
+    { title: 'Digital Storytelling', href: './Studio Soren Service - Digital Storytelling.dc.html' },
   ];
 
   deliverables = [
@@ -114,13 +124,13 @@ class Component extends DCLogic {
     { title: 'Product Evolution & Maintenance', body: 'A dedicated service for proactive updates, technical debt management, and incremental feature shipping to protect and scale your long-term investment.' },
   ];
 
-  toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleTheme = () => { this.setState((s) => { const next = s.theme === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
 
   componentDidMount() {
     this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
     window.addEventListener('resize', this.updateViewport);
-    if (window.IntersectionObserver) {
+        if (window.IntersectionObserver) {
       this.revealObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -162,7 +172,7 @@ class Component extends DCLogic {
     const otherServices = this.services.filter((s) => s.title !== 'Software Engineering');
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
       navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
@@ -213,7 +223,8 @@ class Component extends DCLogic {
       stampWrapStyle: { position: 'absolute', right: '-8%', bottom: '-6%', width: '38%', aspectRatio: '1/1', zIndex: 2 },
       inquiryTextColStyle: {},
       inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '34px', lineHeight: 1.2, fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.01em' },
-      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
+      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block', cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnOnDarkHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
 
       deliverables: this.deliverables,
       allServices: this.services,

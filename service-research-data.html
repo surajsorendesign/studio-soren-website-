@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,6 +18,15 @@
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  @media (prefers-color-scheme: light) { html, body { background: #FAF9FC; } }
+  html[data-theme="dark"], html[data-theme="dark"] body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   ::selection { background: #A78BFA; color: #12101A; }
   @keyframes soren-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -64,7 +74,7 @@
       </div>
       <div style="{{ inquiryTextColStyle }}">
         <h2 style="{{ inquiryHeadStyle }}">Looking for something more user-centred?</h2>
-        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}">Discuss a project</button>
+        <button onClick="{{ openModal }}" style="{{ primaryBtnOnDarkStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Discuss a project</button>
       </div>
     </div>
   </section>
@@ -78,7 +88,7 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = {
-    theme: 'dark',
+    theme: (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark',
     navOpen: false,
     modalOpen: false,
     viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
@@ -106,7 +116,7 @@ class Component extends DCLogic {
     { title: 'Live Usability Testing', body: 'We facilitate real-time sessions to watch how users navigate your concepts, allowing us to dive deeper into friction points as they happen.' },
   ];
 
-  toggleTheme = () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' }));
+  toggleTheme = () => { this.setState((s) => { const next = s.theme === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
   toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen }));
 
   componentDidMount() {
@@ -154,7 +164,7 @@ class Component extends DCLogic {
     const otherServices = this.services.filter((s) => s.title !== 'Research & Data');
 
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', overflowX: 'hidden', paddingTop: '24px' },
       rootRef: this.rootRef,
 
       heroSectionStyle: { padding: '72px 24px 40px', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'soren-fade .6s ease both' },
@@ -183,7 +193,8 @@ class Component extends DCLogic {
       badgeImgStyle: { width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.4))' },
       inquiryTextColStyle: {},
       inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '34px', lineHeight: 1.2, fontWeight: 700, color: '#fff', margin: '0 0 16px', letterSpacing: '-0.01em' },
-      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block' },
+      primaryBtnOnDarkStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, display: 'inline-block', cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnOnDarkHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
 
       deliverables: this.deliverables,
       allServices: this.services,

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -24,6 +25,13 @@
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
   * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
   a { color: #8B6CF5; }
   a:hover { color: #A78BFA; }
@@ -31,7 +39,7 @@
 </helmet>
 
 <div style="{{ pageStyle }}">
-  <dc-import name="Nav" active="case-studies" dark="{{ true }}" hint-size="100%,64px"></dc-import>
+  <dc-import name="Nav" active="case-studies" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
 
   <header style="{{ heroSectionStyle }}">
     <p style="{{ eyebrowStyle }}">Case studies</p>
@@ -55,11 +63,13 @@
     </div>
   </section>
 
-  <dc-import name="Footer" dark="{{ true }}" hint-size="100%,320px"></dc-import>
+  <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  theme0 = (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark';
+  toggleTheme = () => { this.setState((s) => { const next = (s.theme || this.theme0) === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
   state = { viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
 
   componentDidMount() {
@@ -71,21 +81,24 @@ class Component extends DCLogic {
   }
 
   caseStudies = [
-    { slug: 'bt', title: "BT's digital checkout", sector: 'Commercial', cardStat: 'Increased conversion', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', href: './case-study-bt.html' },
-    { slug: 'mind', title: "Mind's graduate onboarding", sector: 'Charity', cardStat: 'Increased retention', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', href: './case-study-mind.html' },
-    { slug: 'keys', title: 'KEYS Community', sector: 'Commercial', cardStat: 'Increase in LinkedIn followers', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', href: './case-study-keys.html' },
-    { slug: 'carelink', title: 'The CareLink App', sector: 'Commercial', cardStat: 'Vulnerable customers impacted', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', href: './case-study-carelink.html' },
-    { slug: 'ee', title: 'EE Retail Kiosk Experience', sector: 'Commercial', cardStat: 'Investment saved', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', href: './case-study-ee.html' },
-    { slug: 'kindred', title: 'Kindred', sector: 'Non-profit', cardStat: 'Longer cognitive baseline', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', href: './case-study-kindred.html' },
+    { slug: 'bt', title: "BT's digital checkout", sector: 'Commercial', cardStat: 'Increased conversion', hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
+    { slug: 'mind', title: "Mind's graduate onboarding", sector: 'Charity', cardStat: 'Increased retention', hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', href: './Studio Soren Case Study - Mind Onboarding.dc.html' },
+    { slug: 'keys', title: 'KEYS Community', sector: 'Commercial', cardStat: 'Increase in LinkedIn followers', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', href: './Studio Soren Case Study - KEYS Community.dc.html' },
+    { slug: 'carelink', title: 'The CareLink App', sector: 'Commercial', cardStat: 'Vulnerable customers impacted', hero: 'https://framerusercontent.com/images/QwpLpXr9YPXzM2tlteONSmAUhRA.png', href: './Studio Soren Case Study - CareLink App.dc.html' },
+    { slug: 'ee', title: 'EE Retail Kiosk Experience', sector: 'Commercial', cardStat: 'Investment saved', hero: 'https://framerusercontent.com/images/5fgUxbHqDJOl5fSZkUOQRqbl3Y.png', href: './Studio Soren Case Study - EE Retail Kiosk.dc.html' },
+    { slug: 'kindred', title: 'Kindred', sector: 'Non-profit', cardStat: 'Longer cognitive baseline', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', href: './Studio Soren Case Study - Kindred.dc.html' },
   ];
 
   renderVals() {
     const isMobile = this.state.viewportWidth < 860;
     const isNarrow = this.state.viewportWidth < 680;
-    const accent = '#8B6CF5', bg = '#0C0A12', cardBg = 'rgba(255,255,255,0.04)', border = 'rgba(255,255,255,0.1)', text = '#F3F1F9', muted = '#A69FBE';
+    const dark = (this.state.theme || this.theme0) !== 'light';
+    const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
     const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
     return {
-      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
+      dark,
+      toggleTheme: this.toggleTheme,
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
       navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
