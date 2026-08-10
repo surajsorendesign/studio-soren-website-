@@ -119,7 +119,7 @@
   </section>
 
   <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
-  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" hint-size="100%,100%"></dc-import>
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" dark="{{ dark }}" hint-size="100%,100%"></dc-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
@@ -205,8 +205,8 @@ class Component extends DCLogic {
       moreCardTagStyle: { fontWeight: 700, fontSize: '11px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', padding: '18px 20px 0' },
       moreCardTitleStyle: { fontSize: '16px', fontWeight: 700, padding: '6px 20px 20px' },
       moreCaseStudies: [
-        { tag: 'Non-profit', title: 'Kindred', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', href: './Studio Soren Case Study - Kindred.dc.html' },
-        { tag: 'Commercial', title: "BT's digital checkout", hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', href: './Studio Soren Case Study - BT Digital Checkout.dc.html' },
+        { tag: 'Non-profit', title: 'Kindred', hero: 'https://framerusercontent.com/images/od365oMvoBfcynUpwSBTyoXnHks.png', href: './case-study-kindred.html' },
+        { tag: 'Commercial', title: "BT's digital checkout", hero: 'https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png', href: './case-study-bt.html' },
       ],
       modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
       problem: this.problem, insight: this.insight, solution: this.solution, keyFeatures: this.keyFeatures,
