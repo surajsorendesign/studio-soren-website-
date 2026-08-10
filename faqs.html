@@ -121,8 +121,6 @@ class Component extends DCLogic {
     const filtered = (active === 'All' ? this.faqs : this.faqs.filter((f) => f.topic === active)).map((f) => {
       const open = this.state.openSlug === f.slug;
       return {
-      dark,
-      toggleTheme: this.toggleTheme,
         ...f,
         open,
         chevron: open ? '\u2303' : '\u2304',
@@ -132,6 +130,8 @@ class Component extends DCLogic {
     });
 
     return {
+      dark,
+      toggleTheme: this.toggleTheme,
       pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
       navWrapStyle: { position: 'sticky', top: '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: '0 16px' },
       navInnerStyle: { display: 'flex', alignItems: 'center', gap: '28px', width: '100%', maxWidth: '1120px', padding: '12px 20px', borderRadius: '999px', background: 'rgba(20,16,32,0.65)', backdropFilter: 'blur(18px)', border: `1px solid ${border}` },
