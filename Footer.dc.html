@@ -40,11 +40,11 @@
     </div>
     <p style="padding-top: 0px; padding-bottom: 12px">Awards &amp; Partners</p>
     <div style="{{ awardsRowStyle }}">
-      <a href="https://www.designrush.com/best-designs/apps/carelink-app-design"><img src="./uploads/bda-finalist.png" alt="DesignRush Design Awards Finalist" style="{{ awardImgStyle }}"></a>
-      <a href="https://www.natwest.com/business/business-services/entrepreneur-accelerator.html"><img src="./uploads/pasted-1785937780547-0.png" alt="Part of NatWest Accelerator Birmingham" style="{{ natwestImgStyle }}"></a>
-      <a href="https://blackbelt-ai.co.uk/"><img src="./uploads/blackbelt-ai-logo-cropped.png" alt="Business partner: Blackbelt AI" style="{{ bbaiImgStyle }}"></a>
-      <a href="https://bigonemarketing.co.uk/"><img src="./uploads/pasted-1785955929954-0.png" alt="Business partner: Big One Marketing" style="{{ bigOneImgStyle }}"></a>
-      <a href="https://proai.co.uk/"><img src="./uploads/pasted-1786096509862-0.png" alt="Business partner: Pro AI" style="{{ proAiImgStyle }}"></a>
+      <a href="https://www.designrush.com/best-designs/apps/carelink-app-design"><img src="{{ awardSrc }}" alt="DesignRush Design Awards Finalist" style="{{ awardImgStyle }}"></a>
+      <a href="https://www.natwest.com/business/business-services/entrepreneur-accelerator.html"><img src="{{ natwestSrc }}" alt="Part of NatWest Accelerator Birmingham" style="{{ natwestImgStyle }}"></a>
+      <a href="https://blackbelt-ai.co.uk/"><img src="{{ bbaiSrc }}" alt="Business partner: Blackbelt AI" style="{{ bbaiImgStyle }}"></a>
+      <a href="https://bigonemarketing.co.uk/"><img src="{{ bigOneSrc }}" alt="Business partner: Big One Marketing" style="{{ bigOneImgStyle }}"></a>
+      <a href="https://proai.co.uk/"><img src="{{ proAiSrc }}" alt="Business partner: Pro AI" style="{{ proAiImgStyle }}"></a>
     </div>
     <div style="{{ footerBottomStyle }}">
       <p style="{{ footerMetaStyle }}">2026 © All rights reserved.</p>
@@ -115,6 +115,11 @@ class Component extends DCLogic {
       footerLinkSmallHoverStyle: { color: text },
       footerMetaStyle: { color: muted, fontSize: '12px', margin: '4px 0 0' },
       awardsRowStyle: { display: 'flex', alignItems: 'center', gap: isNarrow ? '20px' : '28px', flexWrap: 'wrap', paddingBottom: '32px', opacity: 0.85, filter: dark ? 'none' : 'brightness(0.75)' },
+      awardSrc: (window.__resources && window.__resources.bdaFinalist) || './uploads/bda-finalist.png',
+      natwestSrc: (window.__resources && window.__resources.natwest) || './uploads/pasted-1785937780547-0.png',
+      bbaiSrc: (window.__resources && window.__resources.bbai) || './uploads/blackbelt-ai-logo-cropped.png',
+      bigOneSrc: (window.__resources && window.__resources.bigOne) || './uploads/pasted-1785955929954-0.png',
+      proAiSrc: (window.__resources && window.__resources.proAi) || './uploads/pasted-1786096509862-0.png',
       awardImgStyle: { height: isNarrow ? '40px' : '52px', width: 'auto', display: 'block' },
       natwestImgStyle: { height: isNarrow ? '26px' : '32px', width: 'auto', display: 'block', borderRadius: '4px' },
       bbaiImgStyle: { height: isNarrow ? '22px' : '28px', width: 'auto', display: 'block' },

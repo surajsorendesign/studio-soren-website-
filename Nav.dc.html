@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
 <script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="./uploads/studio-soren-logo.svg" data-resource-id="navLogo" />
 </head>
 <body>
 <x-dc>
@@ -14,7 +15,7 @@
     <div style="{{ navShadowWrapStyle }}">
     <div style="{{ navInnerStyle }}">
       <a href="./index.html" style="{{ logoLinkStyle }}">
-        <img src="./uploads/studio-soren-logo.svg" style="{{ logoImgStyle }}" alt="Studio Soren"/>
+        <img src="{{ logoSrc }}" style="{{ logoImgStyle }}" alt="Studio Soren"/>
       </a>
       <div style="{{ navLinksStyle }}">
         <a href="./about.html" style="{{ aboutStyle }}" style-hover="color: #8B6CF5;">About</a>
@@ -104,6 +105,7 @@ class Component extends DCLogic {
       navShadowWrapStyle: { borderRadius: '999px', boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
       navInnerStyle: { boxSizing: 'border-box', display: 'flex', alignItems: 'center', minHeight: isMobile ? '52px' : '58px', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', border: `1px solid ${border}` },
       logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoSrc: (window.__resources && window.__resources.navLogo) || './uploads/studio-soren-logo.svg',
       logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
       navLinksStyle: { display: isMobile ? 'none' : 'flex', gap: '24px', flexWrap: 'wrap' },
       aboutStyle: styleFor('about'),
