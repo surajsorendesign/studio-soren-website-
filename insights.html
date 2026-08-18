@@ -56,7 +56,7 @@
 
   <section style="{{ sectionStyle }}">
     <div style="{{ sectionInnerStyle }}">
-      <div style="justify-content: center; padding-top: 24px; padding-bottom: 24px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; column-gap: 12px; row-gap: 12px; padding-top: 24px; padding-bottom: 24px">
         <sc-for list="{{ categories }}" as="c" hint-placeholder-count="7">
           <button onClick="{{ c.onClick }}" style="{{ c.chipStyle }}">{{ c.label }}</button>
         </sc-for>
@@ -65,6 +65,9 @@
       <div style="{{ gridStyle }}">
         <sc-for list="{{ filteredArticles }}" as="a" hint-placeholder-count="6">
           <a href="{{ a.href }}" style="{{ cardStyle }}">
+            <div style="{{ cardImgWrapStyle }}">
+              <img src="{{ a.image }}" alt="{{ a.imageAlt }}" style="{{ cardImgStyle }}" loading="lazy"/>
+            </div>
             <div style="{{ cardBodyStyle }}">
               <p style="{{ cardMetaStyle }}">{{ a.category }}</p>
               <h3 style="{{ cardTitleStyle }}">{{ a.title }}</h3>
@@ -110,8 +113,7 @@ class Component extends DCLogic {
     const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
     const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
     const active = this.state.activeCategory;
-    const withMeta = (a) => ({ ...a, href: './insight-' + a.slug + '.html' });
-    const filtered = (active === 'All' ? this.articles : this.articles.filter((a) => a.category === active)).map(withMeta);
+    const filtered = active === 'All' ? this.articles : this.articles.filter((a) => a.category === active);
 
     const categories = this.categoryList.map((c) => ({
       label: c,

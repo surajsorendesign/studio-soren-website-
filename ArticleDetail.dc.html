@@ -74,7 +74,28 @@
 
   <section style="{{ backRowSectionStyle }}">
     <div style="{{ narrowStyle }}">
-      <a href="./Studio Soren Insights.dc.html" style="{{ backLinkStyle }}">← Back to all insights</a>
+      <a href="./insights.html" style="{{ backLinkStyle }}">← Back to all insights</a>
+    </div>
+  </section>
+
+  <section style="{{ relatedSectionStyle }}">
+    <div style="{{ relatedInnerStyle }}">
+      <p style="{{ relatedEyebrowStyle }}">Keep reading</p>
+      <h2 style="{{ relatedHeadStyle }}">Related insights</h2>
+      <div style="{{ relatedGridStyle }}">
+        <sc-for list="{{ relatedArticles }}" as="r" hint-placeholder-count="3">
+          <a href="{{ r.href }}" style="{{ relatedCardStyle }}" style-hover="transform: translateY(-4px);">
+            <div style="{{ relatedImgWrapStyle }}">
+              <img src="{{ r.image }}" alt="{{ r.imageAlt }}" style="{{ relatedImgStyle }}" loading="lazy"/>
+            </div>
+            <div style="{{ relatedBodyStyle }}">
+              <p style="{{ relatedMetaStyle }}">{{ r.category }}</p>
+              <h3 style="{{ relatedTitleStyle }}">{{ r.title }}</h3>
+              <span style="{{ relatedLinkStyle }}">Read more →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -97,6 +118,21 @@ class Component extends DCLogic {
   openModal = () => this.setState({ modalOpen: true });
   closeModal = () => this.setState({ modalOpen: false });
 
+  allArticles = [
+    { title: 'The Future Is Already Here: Thoughtful AI for Real Organisations', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/aizBPUAS6VgXTqKG7k3av818.png', imageAlt: 'AI collage', href: './insight-thoughtful-ai.html' },
+    { title: 'Why a Growth Mindset Matters in Digital Transformation', category: 'Research & Data', image: 'https://framerusercontent.com/images/nydBhrlzA7hkiUE0vdxj75LaR6U.png', imageAlt: 'Growth collage', href: './insight-growth-mindset.html' },
+    { title: 'The Hidden Costs of Poor Strategic Planning', category: 'Design Strategy', image: 'https://framerusercontent.com/images/jwEDOr7LEotaIK4V6X9Ge6SCA.png', imageAlt: 'Strategy chess piece', href: './insight-hidden-costs.html' },
+    { title: "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond", category: 'Software Engineering', image: 'https://framerusercontent.com/images/a9TvCn7m5uPEVVepzABGMZ4KenI.png', imageAlt: 'MVP illustration', href: './insight-product-market-fit.html' },
+    { title: 'Design strategy for enterprises: Driving growth through operational excellence', category: 'Design Strategy', image: 'https://framerusercontent.com/images/kEys52OiND88VpkYlxsEaXdNJw.jpg', imageAlt: '', href: './insight-enterprise-design-strategy.html' },
+    { title: 'Why accessibility standards matter in public sector design', category: 'Web & App Design', image: 'https://framerusercontent.com/images/KuJSfSLquCNaw3PhVRO5uzY4BWU.png', imageAlt: 'GDS illustration', href: './insight-accessibility-standards.html' },
+    { title: 'The speed of intent: Why agentic AI is the ultimate impact multiplier', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/r4goOSNOFtgVTZmO7JDNOdjIAzU.jpg', imageAlt: '', href: './insight-agentic-ai.html' },
+    { title: 'Digital storytelling for charities: Turning data into understanding', category: 'Digital Storytelling', image: 'https://framerusercontent.com/images/Gwy9NxG76Ao5gQgolKMxPTgBeWs.jpg', imageAlt: '', href: './insight-digital-storytelling-charities.html' },
+    { title: 'Can you measure a feeling? Bridging the gap between data and human impact', category: 'Research & Data', image: 'https://framerusercontent.com/images/mINupToTqi7gUkNu4LPYglq42YI.jpg', imageAlt: '', href: './insight-measure-a-feeling.html' },
+    { title: 'Listening before launching: Why co-design matters in the third sector', category: 'Design Strategy', image: 'https://framerusercontent.com/images/zxFhSDDzk7pv0oepgdBJIFQOz70.jpg', imageAlt: 'Group therapy meeting', href: './insight-listening-before-launching.html' },
+    { title: 'Designing for dignity: What community effort taught us about service design', category: 'Design Strategy', image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg', imageAlt: '', href: './insight-community-effort.html' },
+    { title: 'More than a number: Navigating the digital maze of disability support', category: 'Research & Data', image: 'https://framerusercontent.com/images/mpiShXg0GTCLAe12IPgRl1xY.jpg', imageAlt: '', href: './insight-more-than-a-number.html' },
+  ];
+
   renderVals() {
     const dark = (this.state.theme || this.theme0) !== 'light';
     const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
@@ -112,6 +148,11 @@ class Component extends DCLogic {
       isP: b.type === 'p',
       isList: b.type === 'list',
     }));
+
+    const norm = (s) => (s || '').trim().toLowerCase();
+    const others = this.allArticles.filter((a) => norm(a.title) !== norm(p.title));
+    const sameCat = others.filter((a) => a.category === p.category);
+    const relatedArticles = [...sameCat, ...others.filter((a) => a.category !== p.category)].slice(0, 3);
 
     return {
       dark,
@@ -133,9 +174,22 @@ class Component extends DCLogic {
       listItemStyle: { fontSize: '16px', lineHeight: 1.8, color: muted, marginBottom: '8px' },
       backRowSectionStyle: { padding: '0 24px 56px' },
       backLinkStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 600 },
-      inquirySectionStyle: { padding: '90px 24px', background: '#171225', color: '#fff', textAlign: 'center' },
+      relatedArticles,
+      relatedSectionStyle: { padding: '0 24px 90px', background: bg },
+      relatedInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      relatedEyebrowStyle: { fontSize: '12px', color: muted, margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600, fontFamily: fontBody },
+      relatedHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: '0 0 32px', color: text },
+      relatedGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' },
+      relatedCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.2s ease' },
+      relatedImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
+      relatedImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+      relatedBodyStyle: { padding: '20px 22px 24px', display: 'flex', flexDirection: 'column', gap: '8px' },
+      relatedMetaStyle: { fontSize: '12px', color: muted, margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em', fontWeight: 600, fontFamily: fontBody },
+      relatedTitleStyle: { fontFamily: fontDisplay, fontSize: '18px', fontWeight: 700, margin: 0, lineHeight: 1.35, color: text, textWrap: 'pretty' },
+      relatedLinkStyle: { fontSize: '13px', fontWeight: 600, color: accent, marginTop: '4px', fontFamily: fontBody },
+      inquirySectionStyle: { padding: '90px 24px', background: dark ? '#171225' : '#F1EEFB', color: text, textAlign: 'center' },
       inquiryInnerStyle: { maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' },
-      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: 0, color: '#fff' },
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: 0, color: text },
       primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
       primaryBtnHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
       modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
