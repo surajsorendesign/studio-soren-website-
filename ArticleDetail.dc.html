@@ -19,6 +19,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'64'%20height%3D'64'%20viewBox%3D'0%200%2064%2064'%3E%3Cg%20transform%3D'translate(32%2032)%20scale(1.32)%20translate(-32%20-32)'%3E%3Cpath%20d%3D'M49.8416%2014.0938C49.8416%2019.0296%2045.8402%2023.031%2040.9042%2023.031H20.7962V27.5017L49.8416%2027.4995L49.8422%2034.202C49.8425%2037.9041%2046.8413%2040.9055%2043.1391%2040.9055H43.1332C43.133%2045.8411%2039.1317%2049.8422%2034.1958%2049.8422H14.0943C14.0943%2044.9066%2018.0957%2040.9055%2023.0315%2040.9055H43.1332V36.4364H14.0943L14.0938%2029.7345C14.0934%2026.0326%2017.0942%2023.0313%2020.7962%2023.031C20.7969%2018.0961%2024.7977%2014.0956%2029.7329%2014.0953L49.8416%2014.0938Z'%20fill%3D'%2356246B'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -51,7 +52,7 @@
       <span style="{{ dotStyle }}">•</span>
       <span>{{ props.minutes }} minute read</span>
     </div>
-    <img src="{{ props.image }}" style="{{ heroImgStyle }}" alt="{{ props.imageAlt }}"/>
+    <img src="{{ props.image }}" style="{{ heroImgStyle }}" alt="{{ props.imageAlt }}" decoding="async" fetchpriority="high" />
   </header>
 
   <article style="{{ articleSectionStyle }}">
@@ -74,7 +75,11 @@
 
   <section style="{{ backRowSectionStyle }}">
     <div style="{{ narrowStyle }}">
+<<<<<<< Updated upstream
       <a href="./insights.html" style="{{ backLinkStyle }}">← Back to all insights</a>
+=======
+      <a href="/insights" style="{{ backLinkStyle }}">← Back to all insights</a>
+>>>>>>> Stashed changes
     </div>
   </section>
 
@@ -119,6 +124,7 @@ class Component extends DCLogic {
   closeModal = () => this.setState({ modalOpen: false });
 
   allArticles = [
+<<<<<<< Updated upstream
     { title: 'The Future Is Already Here: Thoughtful AI for Real Organisations', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/aizBPUAS6VgXTqKG7k3av818.png', imageAlt: 'AI collage', href: './insight-thoughtful-ai.html' },
     { title: 'Why a Growth Mindset Matters in Digital Transformation', category: 'Research & Data', image: 'https://framerusercontent.com/images/nydBhrlzA7hkiUE0vdxj75LaR6U.png', imageAlt: 'Growth collage', href: './insight-growth-mindset.html' },
     { title: 'The Hidden Costs of Poor Strategic Planning', category: 'Design Strategy', image: 'https://framerusercontent.com/images/jwEDOr7LEotaIK4V6X9Ge6SCA.png', imageAlt: 'Strategy chess piece', href: './insight-hidden-costs.html' },
@@ -131,6 +137,20 @@ class Component extends DCLogic {
     { title: 'Listening before launching: Why co-design matters in the third sector', category: 'Design Strategy', image: 'https://framerusercontent.com/images/zxFhSDDzk7pv0oepgdBJIFQOz70.jpg', imageAlt: 'Group therapy meeting', href: './insight-listening-before-launching.html' },
     { title: 'Designing for dignity: What community effort taught us about service design', category: 'Design Strategy', image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg', imageAlt: '', href: './insight-community-effort.html' },
     { title: 'More than a number: Navigating the digital maze of disability support', category: 'Research & Data', image: 'https://framerusercontent.com/images/mpiShXg0GTCLAe12IPgRl1xY.jpg', imageAlt: '', href: './insight-more-than-a-number.html' },
+=======
+    { title: 'The Future Is Already Here: Thoughtful AI for Real Organisations', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/aizBPUAS6VgXTqKG7k3av818.png', imageAlt: 'AI collage', href: '/insight-thoughtful-ai' },
+    { title: 'Why a Growth Mindset Matters in Digital Transformation', category: 'Research & Data', image: 'https://framerusercontent.com/images/nydBhrlzA7hkiUE0vdxj75LaR6U.png', imageAlt: 'Growth collage', href: '/insight-growth-mindset' },
+    { title: 'The Hidden Costs of Poor Strategic Planning', category: 'Design Strategy', image: 'https://framerusercontent.com/images/jwEDOr7LEotaIK4V6X9Ge6SCA.png', imageAlt: 'Strategy chess piece', href: '/insight-hidden-costs' },
+    { title: "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond", category: 'Software Engineering', image: 'https://framerusercontent.com/images/a9TvCn7m5uPEVVepzABGMZ4KenI.png', imageAlt: 'MVP illustration', href: '/insight-product-market-fit' },
+    { title: 'Design strategy for enterprises: Driving growth through operational excellence', category: 'Design Strategy', image: 'https://framerusercontent.com/images/kEys52OiND88VpkYlxsEaXdNJw.jpg', imageAlt: '', href: '/insight-enterprise-design-strategy' },
+    { title: 'Why accessibility standards matter in public sector design', category: 'Web & App Design', image: 'https://framerusercontent.com/images/KuJSfSLquCNaw3PhVRO5uzY4BWU.png', imageAlt: 'GDS illustration', href: '/insight-accessibility-standards' },
+    { title: 'The speed of intent: Why agentic AI is the ultimate impact multiplier', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/r4goOSNOFtgVTZmO7JDNOdjIAzU.jpg', imageAlt: '', href: '/insight-agentic-ai' },
+    { title: 'Digital storytelling for charities: Turning data into understanding', category: 'Digital Storytelling', image: 'https://framerusercontent.com/images/Gwy9NxG76Ao5gQgolKMxPTgBeWs.jpg', imageAlt: '', href: '/insight-digital-storytelling-charities' },
+    { title: 'Can you measure a feeling? Bridging the gap between data and human impact', category: 'Research & Data', image: 'https://framerusercontent.com/images/mINupToTqi7gUkNu4LPYglq42YI.jpg', imageAlt: '', href: '/insight-measure-a-feeling' },
+    { title: 'Listening before launching: Why co-design matters in the third sector', category: 'Design Strategy', image: 'https://framerusercontent.com/images/zxFhSDDzk7pv0oepgdBJIFQOz70.jpg', imageAlt: 'Group therapy meeting', href: '/insight-listening-before-launching' },
+    { title: 'Designing for dignity: What community effort taught us about service design', category: 'Design Strategy', image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg', imageAlt: '', href: '/insight-community-effort' },
+    { title: 'More than a number: Navigating the digital maze of disability support', category: 'Research & Data', image: 'https://framerusercontent.com/images/mpiShXg0GTCLAe12IPgRl1xY.jpg', imageAlt: '', href: '/insight-more-than-a-number' },
+>>>>>>> Stashed changes
   ];
 
   renderVals() {
