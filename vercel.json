@@ -1,6 +1,268 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/insights/thoughtful-ai-for-real-organisations",
+      "destination": "/insight-thoughtful-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insight/thoughtful-ai-for-real-organisations",
+      "destination": "/insight-thoughtful-ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/thoughtful-ai-for-real-organisations",
+      "destination": "/insight-thoughtful-ai",
+      "permanent": true
+    },
+    {
+      "source": "/articles/thoughtful-ai-for-real-organisations",
+      "destination": "/insight-thoughtful-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insights/why-a-growth-mindset-matters-in-digital-transformation",
+      "destination": "/insight-growth-mindset",
+      "permanent": true
+    },
+    {
+      "source": "/insight/why-a-growth-mindset-matters-in-digital-transformation",
+      "destination": "/insight-growth-mindset",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-a-growth-mindset-matters-in-digital-transformation",
+      "destination": "/insight-growth-mindset",
+      "permanent": true
+    },
+    {
+      "source": "/articles/why-a-growth-mindset-matters-in-digital-transformation",
+      "destination": "/insight-growth-mindset",
+      "permanent": true
+    },
+    {
+      "source": "/insights/the-hidden-costs-of-poor-strategic-planning",
+      "destination": "/insight-hidden-costs",
+      "permanent": true
+    },
+    {
+      "source": "/insight/the-hidden-costs-of-poor-strategic-planning",
+      "destination": "/insight-hidden-costs",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-hidden-costs-of-poor-strategic-planning",
+      "destination": "/insight-hidden-costs",
+      "permanent": true
+    },
+    {
+      "source": "/articles/the-hidden-costs-of-poor-strategic-planning",
+      "destination": "/insight-hidden-costs",
+      "permanent": true
+    },
+    {
+      "source": "/insights/the-path-to-product-market-fit",
+      "destination": "/insight-product-market-fit",
+      "permanent": true
+    },
+    {
+      "source": "/insight/the-path-to-product-market-fit",
+      "destination": "/insight-product-market-fit",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-path-to-product-market-fit",
+      "destination": "/insight-product-market-fit",
+      "permanent": true
+    },
+    {
+      "source": "/articles/the-path-to-product-market-fit",
+      "destination": "/insight-product-market-fit",
+      "permanent": true
+    },
+    {
+      "source": "/insights/design-strategy-for-enterprises",
+      "destination": "/insight-enterprise-design-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/insight/design-strategy-for-enterprises",
+      "destination": "/insight-enterprise-design-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/blog/design-strategy-for-enterprises",
+      "destination": "/insight-enterprise-design-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/articles/design-strategy-for-enterprises",
+      "destination": "/insight-enterprise-design-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/insights/why-accessibility-standards-matter",
+      "destination": "/insight-accessibility-standards",
+      "permanent": true
+    },
+    {
+      "source": "/insight/why-accessibility-standards-matter",
+      "destination": "/insight-accessibility-standards",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-accessibility-standards-matter",
+      "destination": "/insight-accessibility-standards",
+      "permanent": true
+    },
+    {
+      "source": "/articles/why-accessibility-standards-matter",
+      "destination": "/insight-accessibility-standards",
+      "permanent": true
+    },
+    {
+      "source": "/insights/why-agentic-ai-is-the-ultimate-impact-multiplier",
+      "destination": "/insight-agentic-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insight/why-agentic-ai-is-the-ultimate-impact-multiplier",
+      "destination": "/insight-agentic-ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-agentic-ai-is-the-ultimate-impact-multiplier",
+      "destination": "/insight-agentic-ai",
+      "permanent": true
+    },
+    {
+      "source": "/articles/why-agentic-ai-is-the-ultimate-impact-multiplier",
+      "destination": "/insight-agentic-ai",
+      "permanent": true
+    },
+    {
+      "source": "/insights/digital-storytelling-for-charities",
+      "destination": "/insight-digital-storytelling-charities",
+      "permanent": true
+    },
+    {
+      "source": "/insight/digital-storytelling-for-charities",
+      "destination": "/insight-digital-storytelling-charities",
+      "permanent": true
+    },
+    {
+      "source": "/blog/digital-storytelling-for-charities",
+      "destination": "/insight-digital-storytelling-charities",
+      "permanent": true
+    },
+    {
+      "source": "/articles/digital-storytelling-for-charities",
+      "destination": "/insight-digital-storytelling-charities",
+      "permanent": true
+    },
+    {
+      "source": "/insights/can-you-measure-a-feeling",
+      "destination": "/insight-measure-a-feeling",
+      "permanent": true
+    },
+    {
+      "source": "/insight/can-you-measure-a-feeling",
+      "destination": "/insight-measure-a-feeling",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-measure-a-feeling",
+      "destination": "/insight-measure-a-feeling",
+      "permanent": true
+    },
+    {
+      "source": "/articles/can-you-measure-a-feeling",
+      "destination": "/insight-measure-a-feeling",
+      "permanent": true
+    },
+    {
+      "source": "/insights/listening-before-launching",
+      "destination": "/insight-listening-before-launching",
+      "permanent": true
+    },
+    {
+      "source": "/insight/listening-before-launching",
+      "destination": "/insight-listening-before-launching",
+      "permanent": true
+    },
+    {
+      "source": "/blog/listening-before-launching",
+      "destination": "/insight-listening-before-launching",
+      "permanent": true
+    },
+    {
+      "source": "/articles/listening-before-launching",
+      "destination": "/insight-listening-before-launching",
+      "permanent": true
+    },
+    {
+      "source": "/insights/community-effort-and-service-design",
+      "destination": "/insight-community-effort",
+      "permanent": true
+    },
+    {
+      "source": "/insight/community-effort-and-service-design",
+      "destination": "/insight-community-effort",
+      "permanent": true
+    },
+    {
+      "source": "/blog/community-effort-and-service-design",
+      "destination": "/insight-community-effort",
+      "permanent": true
+    },
+    {
+      "source": "/articles/community-effort-and-service-design",
+      "destination": "/insight-community-effort",
+      "permanent": true
+    },
+    {
+      "source": "/insights/more-than-a-number",
+      "destination": "/insight-more-than-a-number",
+      "permanent": true
+    },
+    {
+      "source": "/insight/more-than-a-number",
+      "destination": "/insight-more-than-a-number",
+      "permanent": true
+    },
+    {
+      "source": "/blog/more-than-a-number",
+      "destination": "/insight-more-than-a-number",
+      "permanent": true
+    },
+    {
+      "source": "/articles/more-than-a-number",
+      "destination": "/insight-more-than-a-number",
+      "permanent": true
+    },
+    {
+      "source": "/insight/:slug*",
+      "destination": "/insights",
+      "permanent": false
+    },
+    {
+      "source": "/blog/:slug*",
+      "destination": "/insights",
+      "permanent": false
+    },
+    {
+      "source": "/articles/:slug*",
+      "destination": "/insights",
+      "permanent": false
+    },
+    {
+      "source": "/insights/:slug*",
+      "destination": "/insights",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
