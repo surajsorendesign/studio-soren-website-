@@ -243,22 +243,22 @@
       "permanent": true
     },
     {
-      "source": "/insight/:slug*",
+      "source": "/insight/:slug+",
       "destination": "/insights",
       "permanent": false
     },
     {
-      "source": "/blog/:slug*",
+      "source": "/blog/:slug+",
       "destination": "/insights",
       "permanent": false
     },
     {
-      "source": "/articles/:slug*",
+      "source": "/articles/:slug+",
       "destination": "/insights",
       "permanent": false
     },
     {
-      "source": "/insights/:slug*",
+      "source": "/insights/:slug+",
       "destination": "/insights",
       "permanent": false
     }
