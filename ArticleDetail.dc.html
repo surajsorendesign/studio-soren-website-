@@ -46,7 +46,11 @@
     <span style="{{ tagStyle }}">{{ props.category }}</span>
     <h1 style="{{ h1Style }}">{{ props.title }}</h1>
     <div style="{{ metaRowStyle }}">
-      <span>{{ props.personLabel }}</span>
+      <a href="{{ props.authorUrl }}" target="_blank" rel="noopener author" style="{{ authorLinkStyle }}" style-hover="opacity: 0.72;">
+        <img src="{{ props.authorPhoto }}" alt="{{ props.personLabel }}" width="40" height="40" style="{{ authorAvatarStyle }}" loading="lazy" />
+        <span style="{{ authorNameStyle }}">{{ props.personLabel }}</span>
+        <span style="{{ authorRoleStyle }}">{{ props.authorRole }}</span>
+      </a>
       <span style="{{ dotStyle }}">•</span>
       <span>{{ props.dateLabel }}</span>
       <span style="{{ dotStyle }}">•</span>
@@ -139,6 +143,10 @@ class Component extends DCLogic {
     const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
     const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
     const personNames = { 'umay-hussain': 'Umay Hussain', 'suraj-soren': 'Suraj Soren' };
+    const authors = {
+      'suraj-soren': { name: 'Suraj Soren', role: 'Founder', photo: './uploads/team-suraj.webp', url: 'https://www.linkedin.com/in/suraj-soren-6bb85994/' },
+      'umay-hussain': { name: 'Umay Hussain', role: 'Content Writer', photo: './uploads/team-umay.webp', url: 'https://www.linkedin.com/in/umay-h-b00468263/' },
+    };
     const p = this.props || {};
     const dateLabel = p.date ? new Date(p.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
     const blocks = (p.blocks || []).map((b) => ({
@@ -164,6 +172,10 @@ class Component extends DCLogic {
       h1Style: { fontFamily: fontDisplay, fontSize: '40px', lineHeight: 1.15, fontWeight: 700, margin: '0 0 20px' },
       metaRowStyle: { display: 'flex', alignItems: 'center', gap: '10px', color: muted, fontSize: '14px', marginBottom: '32px' },
       dotStyle: { color: muted },
+      authorLinkStyle: { display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'inherit', transition: 'opacity .2s ease' },
+      authorAvatarStyle: { width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: `1px solid ${border}`, display: 'block' },
+      authorNameStyle: { color: text, fontWeight: 600, fontSize: '14px' },
+      authorRoleStyle: { color: muted, fontSize: '14px' },
       heroImgStyle: { width: '100%', maxWidth: '1120px', borderRadius: '20px', display: 'block' },
       articleSectionStyle: { padding: '56px 24px 24px' },
       narrowStyle: { maxWidth: '720px', margin: '0 auto' },
@@ -194,7 +206,7 @@ class Component extends DCLogic {
       primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
       primaryBtnHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
       modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
-      props: { ...p, blocks, personLabel: personNames[p.person] || p.person, dateLabel },
+      props: { ...p, blocks, personLabel: (authors[p.person] || {}).name || personNames[p.person] || p.person, authorRole: (authors[p.person] || {}).role || '', authorPhoto: (authors[p.person] || {}).photo || './uploads/team-suraj.webp', authorUrl: (authors[p.person] || {}).url || 'https://www.linkedin.com/company/studio-soren/', dateLabel },
     };
   }
 }
