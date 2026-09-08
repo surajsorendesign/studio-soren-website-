@@ -234,10 +234,29 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
     <div style="{{ sectionInnerStyle }}">
       <p style="{{ kickerStyle }}">Hear from our partners</p>
       <h2 style="{{ h2Style }}">Organisations we have partnered with to create meaningful change</h2>
+      <div style="display:flex; justify-content:center; margin-top:24px">
+        <a href="https://maps.app.goo.gl/cGmEouUQj3dDNuH5A" target="_blank" rel="noopener" style="{{ googleBadgeStyle }}" style-hover="{{ googleBadgeHoverStyle }}">
+          <svg width="26" height="26" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0">
+            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path>
+            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path>
+            <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.99 21.99 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"></path>
+            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
+          </svg>
+          <div style="display:flex; flex-direction:column; gap:2px; text-align:left">
+            <span style="{{ googleBadgeTitleStyle }}">Google Reviews</span>
+            <span style="display:flex; align-items:center; gap:6px">
+              <span style="{{ googleRatingNumStyle }}">5.0</span>
+              <span style="display:flex; gap:1px; color:#FBBC04; font-size:13px; letterSpacing:1px">★★★★★</span>
+            </span>
+          </div>
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
         <div style="{{ mobileTestimonialScrollStyle }}">
           <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
             <div style="{{ mobileTestimonialCardStyle }}">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px">
+                <span style="display:flex; gap:2px; color:#FBBC04; font-size:14px; letterSpacing:1px">★★★★★</span>
+                <span style="{{ cardGoogleTagStyle }}">Google</span>
+              </div>
               <p style="{{ testimonialQuoteHeadStyle }}">"{{ t.headline }}"</p>
               <p style="{{ testimonialBodyStyle }}">{{ t.body }}</p>
               <div style="{{ testimonialAuthorRowStyle }}">
@@ -260,6 +279,10 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
       <div style="{{ testimonialWrapStyle }}">
         <button onClick="{{ prevTestimonial }}" style="{{ carouselArrowStyle }}" aria-label="Previous">←</button>
         <div style="{{ testimonialCardStyle }}">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+            <span style="display:flex; gap:2px; color:#FBBC04; font-size:16px; letterSpacing:1px">★★★★★</span>
+            <span style="{{ cardGoogleTagStyle }}">Google review</span>
+          </div>
           <p style="{{ testimonialQuoteHeadStyle }}">"{{ activeTestimonial.headline }}"</p>
           <p style="{{ testimonialBodyStyle }}">{{ activeTestimonial.body }}</p>
           <div style="{{ testimonialAuthorRowStyle }}">
@@ -285,6 +308,9 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
         </sc-for>
       </div>
       </sc-if>
+      <div style="display:flex; justify-content:center; margin-top:26px">
+        <a href="https://maps.app.goo.gl/cGmEouUQj3dDNuH5A" target="_blank" rel="noopener" style="{{ allReviewsLinkStyle }}">Read all reviews on Google →</a>
+      </div>
     </div>
   </section>
 
@@ -605,18 +631,18 @@ class Component extends DCLogic {
   }
 
   testimonialsData = [
-    { headline: 'Practical Strategic Guidance', body: 'Suraj provides an incredible mentoring experience. His guidance is practical, insightful, and perfectly tailored to my specific career stage. I highly recommend his coaching for any designer!', name: 'Victor Barreto', role: 'Senior Designer @ Superside', initial: 'V', photo: '' },
+    { headline: 'Human-Centered Design Excellence', body: "With Suraj, you get more than just design. His ability to solve problems by putting the customer at the centre of the experience is second to none. He is a great person to work with and I couldn't recommend him more highly!", name: 'Matt Hymers', role: 'Connected Fanatics', initial: 'M', photo: 'https://framerusercontent.com/images/9gNmoh2qFnpPyJJ5PRjsPteuTDQ.jpeg' },
     { headline: 'Highly recommend!', body: "Their guidance is vital; don't be fooled, AI agents require expert setup. Thanks to Suraj, James, and Raj, we now have a robust system to elevate our services. Highly recommend!", name: 'Nick Regnier', role: 'Managing Director @ Cledor Limited', initial: 'N', photo: 'https://framerusercontent.com/images/gipztlzm0URiKoWFOSVHTPe0ds.png' },
-    { headline: 'Creative & Timely Problem Solving', body: 'Working with Studio Soren was a great experience. Their creativity and problem-solving skills are top-notch and truly impressive. I especially appreciated that all deliverables were completed on time. Highly recommended!', name: 'Adetola Adetula', role: 'KEYS Community', initial: 'A', photo: '' },
-    { headline: 'A rare ability to quickly understand complexity', body: 'As a PM at BT, I worked with Suraj on future vision. He translates complex business and customer needs into high-end, thoughtful design. Strategic and collaborative, I recommend Suraj and his design consultancy for impactful work.', name: 'Anisha L', role: 'Lloyds Banking Group', initial: 'A', photo: 'https://framerusercontent.com/images/TR4iNTtoFhPF0l7Ai4MRI8NpTE.png' },
     { headline: 'They really helped me think about my customer journey', body: 'I received a great brand design and coaching service from Studio Soren. They really helped me think about my customer journey and how to position my services. I thoroughly recommend them.', name: 'Dr Russell Sutherland', role: 'Director @ Variantt', initial: 'R', photo: 'https://framerusercontent.com/images/mZWvVZuRDrlPsrsy0T7luo0R7A.webp' },
+    { headline: "The Studio's design leadership delivers real results", body: "Studio Soren's team mobilisation helped our digital channels and boosted engagement. Suraj's leadership delivers real results. I highly recommend them for any non-profit organisation!", name: 'Eric Law', role: 'Chair @ The Jiu Jitsu Foundation', initial: 'E', photo: 'https://framerusercontent.com/images/nYGDjSKi6xHpvN1LuZJUbOsGU.jpg' },
+    { headline: 'A rare ability to quickly understand complexity', body: 'As a PM at BT, I worked with Suraj on future vision. He translates complex business and customer needs into high-end, thoughtful design. Strategic and collaborative, I recommend Suraj and his design consultancy for impactful work.', name: 'Anisha L', role: 'Lloyds Banking Group', initial: 'A', photo: 'https://framerusercontent.com/images/TR4iNTtoFhPF0l7Ai4MRI8NpTE.png' },
+    { headline: 'A conscientious, top-tier partner!', body: 'He helped me overcome entrepreneurial paralysis with a patient, meticulous approach. His active listening and thorough analysis have given me newfound confidence. A conscientious, top-tier partner!', name: 'Thomas Simmonds', role: 'Founder @ The Recovery Room', initial: 'T', photo: 'https://framerusercontent.com/images/qmWS7JNCKGZCnL6zJ8JuOYLKjQ.png' },
     { headline: 'Expert Mentorship & Flawless Craft', body: "I've used Studio Soren for multiple ventures and will again. Their craftsmanship is next-level, and their dedication to coaching for the best business outcome is surreal. I recommend their services 100 times over!", name: 'Callum Dixon', role: 'Art Director', initial: 'C', photo: '' },
     { headline: 'Strategic Design & Product Excellence', body: 'Studio Soren combines sharp product thinking with elite design. They are user-centered, fastidious, and deliver practical solutions that actually ship. For strategic insight and creative discipline, I highly recommend them!', name: 'Tom Hirst', role: 'Front-end Developer', initial: 'T', photo: '' },
-    { headline: 'Human-Centered Design Excellence', body: "With Suraj, you get more than just design. His ability to solve problems by putting the customer at the centre of the experience is second to none. He is a great person to work with and I couldn't recommend him more highly!", name: 'Matt Hymers', role: 'Connected Fanatics', initial: 'M', photo: 'https://framerusercontent.com/images/9gNmoh2qFnpPyJJ5PRjsPteuTDQ.jpeg' },
     { headline: "I've worked with Suraj for years; he's incredible.", body: 'His storyboarding and unique problem-solving go above and beyond. He inspires teams and builds communities that enhance every project. A truly legendary creative partner!', name: 'Anna Coughlan', role: 'Meta', initial: 'A', photo: '' },
+    { headline: 'Practical Strategic Guidance', body: 'Suraj provides an incredible mentoring experience. His guidance is practical, insightful, and perfectly tailored to my specific career stage. I highly recommend his coaching for any designer!', name: 'Victor Barreto', role: 'Senior Designer @ Superside', initial: 'V', photo: '' },
+    { headline: 'Creative & Timely Problem Solving', body: 'Working with Studio Soren was a great experience. Their creativity and problem-solving skills are top-notch and truly impressive. I especially appreciated that all deliverables were completed on time. Highly recommended!', name: 'Adetola Adetula', role: 'KEYS Community', initial: 'A', photo: '' },
     { headline: 'Learning with Suraj was hugely insightful', body: '', name: 'Jesutofunmi Oluwatosin', role: 'KEYS Community', initial: 'J', photo: '' },
-    { headline: "The Studio's design leadership delivers real results", body: "Studio Soren's team mobilisation helped our digital channels and boosted engagement. Suraj's leadership delivers real results. I highly recommend them for any non-profit organisation!", name: 'Eric Law', role: 'Chair @ The Jiu Jitsu Foundation', initial: 'E', photo: 'https://framerusercontent.com/images/nYGDjSKi6xHpvN1LuZJUbOsGU.jpg' },
-    { headline: 'A conscientious, top-tier partner!', body: 'He helped me overcome entrepreneurial paralysis with a patient, meticulous approach. His active listening and thorough analysis have given me newfound confidence. A conscientious, top-tier partner!', name: 'Thomas Simmonds', role: 'Founder @ The Recovery Room', initial: 'T', photo: 'https://framerusercontent.com/images/qmWS7JNCKGZCnL6zJ8JuOYLKjQ.png' },
   ];
 
   toggleTheme = () => { this.setState((s) => { const next = s.theme === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
@@ -792,6 +818,13 @@ class Component extends DCLogic {
       testimonialNameStyle: { fontWeight: 700, margin: 0, fontSize: '14px' },
       testimonialRoleStyle: { color: muted, margin: 0, fontSize: '13px' },
       dotsRowStyle: { display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '24px' },
+      googleBadgeStyle: { display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', borderRadius: '999px', background: cardBg, border: `1px solid ${border}`, textDecoration: 'none', color: text, boxShadow: dark ? '0 6px 22px rgba(0,0,0,0.3)' : '0 6px 22px rgba(20,15,35,0.07)', transition: 'transform .2s ease' },
+      googleBadgeHoverStyle: { transform: 'translateY(-2px)' },
+      googleBadgeTitleStyle: { fontSize: '12px', fontWeight: 600, letterSpacing: '0.03em', textTransform: 'uppercase', color: muted },
+      googleRatingNumStyle: { fontFamily: fontDisplay, fontSize: '16px', fontWeight: 700, color: text, lineHeight: 1 },
+      googleBadgeVerifiedStyle: { fontSize: '11px', fontWeight: 600, color: accent, background: accentSoft, padding: '4px 9px', borderRadius: '999px', whiteSpace: 'nowrap' },
+      cardGoogleTagStyle: { fontSize: '11px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', color: muted },
+      allReviewsLinkStyle: { fontSize: '14px', fontWeight: 600, color: accent, textDecoration: 'none' },
 
       playbookSectionStyle: { padding: '90px 24px', position: 'relative', opacity: 0, transform: 'translateY(28px)', transition: 'opacity .8s ease, transform .8s ease', backgroundImage: `linear-gradient(100deg, rgba(12,10,18,0.88), rgba(30,10,45,0.65)), url('./uploads/wireframe.png')`, backgroundSize: 'cover', backgroundPosition: 'center' },
       playbookInnerStyle: { maxWidth: '1120px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '32px', flexWrap: 'wrap' },
