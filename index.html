@@ -249,7 +249,10 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
               <span style="display:flex; gap:1px; color:#FBBC04; font-size:13px; letterSpacing:1px">★★★★★</span>
             </span>
           </div>
-      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <span style="{{ googleBadgeVerifiedStyle }}">Verified</span>
+        </a>
+      </div>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
         <div style="{{ mobileTestimonialScrollStyle }}">
           <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
             <div style="{{ mobileTestimonialCardStyle }}">
