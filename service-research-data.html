@@ -2,6 +2,8 @@
 <html>
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,9 +111,6 @@ document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==
       <div style="{{ subServiceGridStyle }}">
         <sc-for list="{{ subServices }}" as="s" hint-placeholder-count="3">
           <a href="{{ s.href }}" style="{{ subServiceCardStyle }}" style-hover="border-color: #8B6CF5;">
-            <div style="{{ subServiceImgWrapStyle }}">
-              <image-slot id="{{ s.slotId }}" shape="rounded" radius="0" placeholder="{{ s.slotHint }}" style="{{ subServiceImgSlotStyle }}"></image-slot>
-            </div>
             <h3 style="{{ subServiceTitleStyle }}">{{ s.title }}</h3>
             <p style="{{ subServiceTaglineStyle }}">{{ s.tagline }}</p>
             <span style="{{ subServiceLinkStyle }}">Learn more →</span>
