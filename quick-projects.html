@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Projects | Studio Soren</title>
+  <meta name="description" content="A focused brand, website or video project — thoughtfully made and ready to launch, without the long runway.">
+  <link rel="canonical" href="https://studiosoren.com/quick-projects">
+  <meta property="og:title" content="Quick Projects | Studio Soren">
+  <meta property="og:description" content="A focused brand, website or video project — thoughtfully made and ready to launch, without the long runway.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 700; font-display: swap; }
+    :root { --ink:#171325; --muted:#625c73; --purple:#8b6cf5; --purple-dark:#5d3ccc; --lilac:#ede9ff; --paper:#faf9fc; --line:rgba(23,19,37,.12); --dark:#0c0a12; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+    .nav { padding:24px 0 0; position:relative; z-index:2; }
+    .nav-inner { min-height:58px; padding:10px 14px 10px 20px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.76); backdrop-filter:blur(18px); display:flex; align-items:center; gap:26px; box-shadow:0 8px 32px rgba(30,22,53,.08); }
+    .logo { display:flex; margin-right:auto; }
+    .logo img { width:auto; height:30px; }
+    .nav-links { display:flex; gap:22px; font-size:14px; color:var(--muted); }
+    .nav-links a { text-decoration:none; }
+    .nav-links a:hover { color:var(--purple); }
+    .nav-button,.button { border:0; display:inline-flex; justify-content:center; align-items:center; text-decoration:none; border-radius:999px; background:var(--purple); color:#fff; font-weight:700; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+    .nav-button { padding:10px 17px; font-size:14px; white-space:nowrap; }
+    .button { padding:14px 22px; font-size:15px; }
+    .nav-button:hover,.button:hover { background:var(--purple-dark); transform:translateY(-2px); box-shadow:0 10px 24px rgba(91,60,204,.25); }
+    .hero { position:relative; overflow:hidden; padding:98px 0 88px; }
+    .hero:before { content:""; position:absolute; height:610px; width:610px; border-radius:50%; background:radial-gradient(circle,rgba(174,152,255,.45),rgba(174,152,255,0) 68%); right:-200px; top:-155px; pointer-events:none; }
+    .eyebrow { position:relative; display:inline-flex; gap:8px; align-items:center; margin:0 0 18px; color:var(--purple-dark); font-size:12px; text-transform:uppercase; letter-spacing:.13em; font-weight:800; }
+    .eyebrow:before { content:""; display:block; height:8px; width:8px; border-radius:50%; background:var(--purple); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { position:relative; max-width:880px; font-family:'Filson Soft','Fraunces',serif; font-size:clamp(48px,7vw,84px); letter-spacing:-.065em; line-height:.98; margin-bottom:25px; }
+    .hero-copy { position:relative; max-width:575px; color:var(--muted); font-size:19px; line-height:1.55; margin-bottom:34px; }
+    .hero-note { position:relative; display:flex; align-items:center; gap:12px; color:var(--muted); font-size:14px; }
+    .hero-note strong { color:var(--ink); }
+    .hero-note span { height:1px; width:48px; background:var(--purple); }
+    .intro { background:var(--dark); color:#fff; padding:68px 0; }
+    .intro-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:80px; align-items:center; }
+    .intro h2 { font-family:'Filson Soft','Fraunces',serif; font-size:clamp(34px,4vw,52px); line-height:1.02; letter-spacing:-.05em; margin-bottom:0; }
+    .intro p { color:#c7bedc; font-size:17px; line-height:1.58; margin-bottom:0; }
+    .packages { padding:100px 0 96px; }
+    .section-label { color:var(--purple-dark); font-size:12px; text-transform:uppercase; letter-spacing:.13em; font-weight:800; margin-bottom:14px; }
+    .section-title { max-width:650px; font-family:'Filson Soft','Fraunces',serif; font-size:clamp(38px,5vw,58px); line-height:1; letter-spacing:-.055em; margin-bottom:48px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { position:relative; min-height:570px; overflow:hidden; border:1px solid var(--line); border-radius:24px; background:#fff; padding:29px; display:flex; flex-direction:column; }
+    .card:hover { border-color:rgba(139,108,245,.5); box-shadow:0 20px 50px rgba(56,38,111,.1); }
+    .number { font-size:12px; font-weight:800; color:var(--purple-dark); letter-spacing:.1em; }
+    .icon { margin:36px 0 32px; width:90px; height:90px; position:relative; }
+    .creative { position:relative; overflow:hidden; height:165px; margin:24px -29px 27px; background:#281646; }
+    .creative:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(25,10,53,.12),transparent 65%); pointer-events:none; }
+    .creative svg { display:block; width:100%; height:100%; }
+    .icon:before,.icon:after { content:""; position:absolute; }
+    .brand .icon:before { inset:8px; border:11px solid var(--purple); border-radius:50% 50% 12px 50%; transform:rotate(-28deg); }
+    .brand .icon:after { height:18px; width:18px; border-radius:50%; background:#f0c853; right:5px; bottom:3px; }
+    .web .icon:before { inset:5px 0 12px; border:9px solid var(--purple); border-radius:13px; }
+    .web .icon:after { height:24px; width:48px; left:20px; top:31px; border-top:7px solid #f0c853; border-bottom:7px solid #d5ccff; }
+    .video .icon:before { width:0; height:0; border-top:34px solid transparent; border-bottom:34px solid transparent; border-left:58px solid var(--purple); left:20px; top:9px; }
+    .video .icon:after { width:18px; height:18px; background:#f0c853; border-radius:50%; top:5px; left:4px; }
+    .card h3 { font-family:'Filson Soft','Fraunces',serif; font-size:31px; letter-spacing:-.045em; line-height:1; margin-bottom:13px; }
+    .package-meta { display:flex; gap:10px; flex-wrap:wrap; margin:-1px 0 18px; }
+    .package-meta span { padding:7px 10px; border-radius:999px; background:var(--lilac); color:var(--purple-dark); font-size:12px; font-weight:800; }
+    .card p { color:var(--muted); line-height:1.5; font-size:15px; margin-bottom:22px; }
+    .list { list-style:none; padding:0; margin:0 0 27px; display:grid; gap:10px; color:#3d374c; font-size:14px; }
+    .list li { display:flex; gap:10px; align-items:flex-start; }
+    .list li:before { content:'✓'; color:var(--purple-dark); font-weight:800; }
+    .card .button { margin-top:auto; background:var(--lilac); color:var(--purple-dark); box-shadow:none; }
+    .card .button:hover { background:var(--purple); color:#fff; }
+    .bundle { border-radius:28px; background:linear-gradient(125deg,#5e3ac9 0%,#8b6cf5 52%,#b19aff 100%); padding:3px; }
+    .bundle-inner { position:relative; overflow:hidden; border-radius:25px; padding:50px; background:#18112c; color:#fff; }
+    .bundle-art { position:absolute; right:6%; bottom:-20px; width:42%; height:90%; opacity:.35; border:2px solid #b39cff; border-radius:48% 48% 16px 16px; transform:rotate(8deg); }
+    .bundle-art:before,.bundle-art:after { content:""; position:absolute; border:2px solid #ef68ce; border-radius:50%; }
+    .bundle-art:before { width:52%; height:52%; left:24%; top:16%; box-shadow:0 0 36px rgba(239,104,206,.8); }
+    .bundle-art:after { width:36%; height:18%; left:31%; bottom:12%; border-radius:50% 50% 12px 12px; }
+    .bundle-inner:before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#18112c 22%,rgba(24,17,44,.91) 48%,rgba(24,17,44,.42) 100%); }
+    .bundle-inner:after { content:'+'; font-family:'Fraunces',serif; position:absolute; z-index:1; right:18px; bottom:-85px; font-size:310px; line-height:1; color:rgba(180,157,255,.14); }
+    .bundle-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.2fr .8fr; gap:50px; align-items:end; }
+    .bundle-tag { display:inline-block; background:#f0c853; color:#282033; padding:7px 11px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.04em; margin-bottom:21px; }
+    .bundle h2 { font-family:'Filson Soft','Fraunces',serif; font-size:clamp(39px,5vw,62px); letter-spacing:-.055em; line-height:.98; margin-bottom:18px; }
+    .bundle p { max-width:590px; color:#d8d0ed; font-size:17px; line-height:1.55; margin-bottom:0; }
+    .bundle-items { padding:0; margin:0; list-style:none; display:grid; gap:12px; }
+    .bundle-items li { padding:13px 15px; border:1px solid rgba(255,255,255,.16); border-radius:10px; background:rgba(255,255,255,.06); font-weight:600; }
+    .bundle-cta { position:relative; z-index:1; margin-top:34px; }
+    .bundle-cta .button { background:#fff; color:var(--purple-dark); }
+    .bundle-cta .button:hover { background:#f0c853; }
+    .process { padding:96px 0; }
+    .process-grid { display:grid; grid-template-columns:1fr 2.1fr; gap:80px; }
+    .process h2 { font-family:'Filson Soft','Fraunces',serif; font-size:clamp(36px,4vw,52px); line-height:1; letter-spacing:-.05em; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .step { border-top:2px solid var(--purple); padding-top:18px; }
+    .step b { display:block; color:var(--purple-dark); font-size:12px; letter-spacing:.1em; margin-bottom:22px; }
+    .step h3 { font-family:'Filson Soft','Fraunces',serif; font-size:23px; letter-spacing:-.04em; margin-bottom:9px; }
+    .step p { color:var(--muted); font-size:14px; line-height:1.5; margin:0; }
+    .closing { padding:78px 0; text-align:center; background:var(--lilac); }
+    .closing h2 { font-family:'Filson Soft','Fraunces',serif; font-size:clamp(40px,5vw,62px); line-height:1; letter-spacing:-.055em; max-width:720px; margin:0 auto 20px; }
+    .closing p { max-width:500px; color:var(--muted); line-height:1.5; margin:0 auto 28px; }
+    .other-service { margin-top:20px; display:inline-block; color:var(--purple-dark); font-size:14px; font-weight:700; }
+    footer { padding:45px 0; color:#aaa2bc; background:var(--dark); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+    .footer-inner a { color:#fff; text-decoration:none; }
+    .modal { position:fixed; inset:0; display:none; place-items:center; z-index:10; padding:20px; background:rgba(12,10,18,.7); backdrop-filter:blur(8px); }
+    .modal.is-open { display:grid; }
+    .modal-card { position:relative; width:min(100%,560px); border-radius:24px; padding:42px; background:#fff; box-shadow:0 28px 80px rgba(0,0,0,.32); }
+    .modal-close { position:absolute; top:16px; right:16px; display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line); border-radius:50%; background:#fff; color:var(--ink); cursor:pointer; font-size:20px; }
+    .modal-kicker { color:var(--purple-dark); font-size:12px; letter-spacing:.12em; font-weight:800; margin-bottom:14px; }
+    .modal h2 { font-family:'Filson Soft','Fraunces',serif; font-size:42px; line-height:1; letter-spacing:-.055em; margin-bottom:14px; }
+    .modal p { color:var(--muted); line-height:1.55; margin-bottom:24px; }
+    .modal-choice { display:block; width:100%; padding:13px 15px; margin-bottom:10px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); text-align:left; cursor:pointer; font:600 14px 'DM Sans',sans-serif; }
+    .modal-choice:hover,.modal-choice.selected { border-color:var(--purple); background:var(--lilac); color:var(--purple-dark); }
+    .modal-email { width:100%; margin-top:14px; }
+    @media (max-width:850px) { .nav-links{display:none}.intro-grid,.bundle-grid,.process-grid{grid-template-columns:1fr;gap:32px}.cards{grid-template-columns:1fr}.card{min-height:0}.creative{height:205px}.bundle-art{width:70%;opacity:.2}.steps{grid-template-columns:1fr}.hero{padding:76px 0 70px}.packages,.process{padding:72px 0}.bundle-inner{padding:32px}.footer-inner{align-items:flex-start;flex-direction:column} }
+    @media (max-width:520px) { .wrap{padding:0 18px}.nav{padding-top:14px}.nav-inner{padding-left:16px}.nav-button{padding:9px 13px;font-size:13px}.logo img{height:25px}.hero{padding-top:65px}.hero-copy{font-size:17px}.intro{padding:52px 0}.card{padding:24px}.bundle-inner{padding:26px}.hero-note span{width:24px} }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="wrap"><div class="nav-inner">
+    <a class="logo" href="/"><img src="./uploads/studio-soren-logo.svg" alt="Studio Soren"></a>
+    <div class="nav-links"><a href="/about">About</a><a href="/case-studies">Case studies</a><a href="/services">Services</a><a href="/insights">Insights</a></div>
+    <button class="nav-button js-open-modal" type="button">Let's talk</button>
+  </div></div></nav>
+  <main>
+    <section class="hero"><div class="wrap">
+      <p class="eyebrow">Quick turnaround projects</p>
+      <h1>Great first impressions,<br>made to move.</h1>
+      <p class="hero-copy">Focused creative packages for the moment you’re ready to be seen. Start with your brand, your first website or your first film — or bring them all together.</p>
+      <p class="hero-note"><span></span><strong>Clear scope.</strong> Purposeful craft. No long runway.</p>
+    </div></section>
+    <section class="intro"><div class="wrap intro-grid"><h2>Small enough to move quickly. Big enough to make a difference.</h2><p>These are carefully shaped projects for founders, new ideas and teams at the beginning of something meaningful. We get to the heart of what you need, make it beautifully, and leave you with something ready to use.</p></div></section>
+    <section class="packages" id="packages"><div class="wrap">
+      <p class="section-label">Choose your starting point</p><h2 class="section-title">One good thing, made properly.</h2>
+      <div class="cards">
+        <article class="card brand"><span class="number">01 / BRAND</span><div class="creative" role="img" aria-label="Flat illustration of a new brand being assembled"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="300" fill="#ff9ecb"/><circle cx="514" cy="58" r="42" fill="#f4cf42"/><path d="M0 244c81-67 172-35 238 56H0z" fill="#ff7660"/><rect x="78" y="48" width="310" height="198" rx="25" fill="#fffdf7"/><rect x="78" y="48" width="310" height="43" rx="25" fill="#1558cb"/><circle cx="111" cy="70" r="8" fill="#f4cf42"/><circle cx="136" cy="70" r="8" fill="#ff9ecb"/><path d="M119 140c27-31 69-23 83 4 16 32-23 60-49 76-29-14-70-43-52-76 13-26 44-33 69-4" fill="none" stroke="#1558cb" stroke-width="17" stroke-linecap="round"/><path d="M216 176l55-58 39 39-56 59z" fill="#15b969"/><path d="M327 104l49 24-50 24z" fill="#ff7660"/><path d="M429 221l83-118" stroke="#1558cb" stroke-width="18" stroke-linecap="round"/><path d="M501 91l30 28-35 15z" fill="#fffdf7"/></svg></div><h3>Design your brand</h3><div class="package-meta"><span>1 week</span><span>From £599</span></div><p>A distinctive foundation for a business people remember.</p><ul class="list"><li>Logo suite and brand mark</li><li>Colour, type and visual direction</li><li>Brand guidelines to keep things consistent</li></ul><button class="button js-open-modal" type="button" data-project="Design your brand">Ask about your brand</button></article>
+        <article class="card web"><span class="number">02 / WEB</span><div class="creative" role="img" aria-label="Flat illustration of a first website page"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="300" fill="#165bd2"/><path d="M405 0h195v300H477z" fill="#15b969"/><circle cx="512" cy="66" r="43" fill="#f4cf42"/><rect x="55" y="42" width="368" height="209" rx="24" fill="#fffdf7"/><rect x="55" y="42" width="368" height="44" rx="24" fill="#17223d"/><circle cx="89" cy="64" r="8" fill="#ff9ecb"/><circle cx="113" cy="64" r="8" fill="#f4cf42"/><rect x="87" y="111" width="126" height="103" rx="14" fill="#ff9ecb"/><path d="M239 120h129M239 149h92" stroke="#17223d" stroke-width="13" stroke-linecap="round"/><rect x="239" y="180" width="99" height="26" rx="13" fill="#15b969"/><path d="M450 227l74-114" stroke="#ff7660" stroke-width="18" stroke-linecap="round"/><path d="M516 96l31 28-35 17z" fill="#fffdf7"/></svg></div><h3>First website</h3><div class="package-meta"><span>2 weeks</span><span>From £899</span></div><p>A confident digital home built to explain, connect and convert.</p><ul class="list"><li>Focused page structure and copy direction</li><li>Responsive design and build</li><li>Ready to launch on the web</li></ul><button class="button js-open-modal" type="button" data-project="First website">Ask about your website</button></article>
+        <article class="card video"><span class="number">03 / FILM</span><div class="creative" role="img" aria-label="Flat illustration of a video storyboard"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="300" fill="#f4cf42"/><path d="M0 0h180v300H0z" fill="#ff7660"/><circle cx="92" cy="75" r="42" fill="#ff9ecb"/><g transform="rotate(-6 310 150)"><rect x="153" y="50" width="315" height="207" rx="22" fill="#17223d"/><rect x="172" y="73" width="277" height="161" rx="12" fill="#fffdf7"/><path d="M172 126h277M264 73v161M356 73v161" stroke="#17223d" stroke-width="6"/><path d="M205 93l34 16-34 17z" fill="#ff7660"/><circle cx="309" cy="101" r="23" fill="#15b969"/><path d="M389 91c18-19 44-11 44 11 0 18-21 33-33 40-15-8-36-24-31-40 5-18 25-21 39-10" fill="#ff9ecb"/><rect x="204" y="160" width="41" height="45" rx="10" fill="#165bd2"/><path d="M286 185l49-28v56z" fill="#15b969"/><rect x="380" y="162" width="48" height="44" rx="22" fill="#f4cf42"/></g><path d="M463 261l70-119" stroke="#165bd2" stroke-width="17" stroke-linecap="round"/><path d="M525 126l33 28-38 16z" fill="#fffdf7"/></svg></div><h3>First video</h3><div class="package-meta"><span>3 weeks</span><span>From £1,499</span></div><p>A short, compelling story that gives your idea a human pulse.</p><ul class="list"><li>Creative direction and storyboard</li><li>Filming and editing</li><li>Formats for your key channels</li></ul><button class="button js-open-modal" type="button" data-project="First video">Ask about your video</button></article>
+      </div>
+    </div></section>
+    <section class="wrap"><div class="bundle"><div class="bundle-inner"><div class="bundle-art" aria-hidden="true"></div><div class="bundle-grid"><div><span class="bundle-tag">THE LAUNCH BUNDLE · SAVE £300</span><h2>Your first chapter, all in one place.</h2><p>From £2,697 — saving £300 when you bring your identity, website and launch film together as one joined-up story.</p></div><ul class="bundle-items"><li>Design your brand · 1 week</li><li>First website · 2 weeks</li><li>First video · 3 weeks</li></ul></div><div class="bundle-cta"><button class="button js-open-modal" type="button" data-project="The Launch Bundle">Build my launch bundle →</button></div></div></div></section>
+    <section class="process"><div class="wrap process-grid"><h2>How we’ll make it happen.</h2><div class="steps"><div class="step"><b>01 / ALIGN</b><h3>Get clear</h3><p>A focused conversation about your idea, audience and what needs to happen next.</p></div><div class="step"><b>02 / CREATE</b><h3>Make the thing</h3><p>We turn the direction into considered creative work, with clear moments to shape it together.</p></div><div class="step"><b>03 / LAUNCH</b><h3>Put it to work</h3><p>Leave with polished, practical assets that are ready for their first real-world moment.</p></div></div></div></section>
+    <section class="closing"><div class="wrap"><h2>Ready for your first big move?</h2><p>Tell us what you’re building. We’ll help you find the right starting point.</p><button class="button js-open-modal" type="button" data-project="A quick project">Start a quick project →</button><a class="other-service js-open-modal" href="#" data-project="A different service">Need something different? Let’s talk about other services →</a></div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© 2026 Studio Soren. Design for impact. Shaped by people.</span><a href="mailto:hello@studiosoren.com">hello@studiosoren.com</a></div></footer>
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-card"><button class="modal-close" type="button" aria-label="Close">×</button><p class="modal-kicker">LET’S TALK</p><h2 id="modal-title">Discuss a project</h2><p id="modal-copy">Choose a starting point and we’ll take it from there.</p><button class="modal-choice" type="button" data-choice="Design your brand">Design your brand</button><button class="modal-choice" type="button" data-choice="First website">First website</button><button class="modal-choice" type="button" data-choice="First video">First video</button><button class="modal-choice" type="button" data-choice="The Launch Bundle">The Launch Bundle</button><button class="modal-choice" type="button" data-choice="A different service">Something different</button><a id="modal-email" class="button modal-email" href="mailto:hello@studiosoren.com?subject=Project%20enquiry">Continue to enquiry →</a></div>
+  </div>
+  <script>
+    (function () {
+      var modal = document.getElementById('project-modal');
+      var email = document.getElementById('modal-email');
+      var copy = document.getElementById('modal-copy');
+      var selected = '';
+      function choose(value) {
+        selected = value;
+        copy.textContent = value ? 'You’re interested in ' + value + '. Tell us a little about your idea and we’ll be in touch.' : 'Choose a starting point and we’ll take it from there.';
+        email.href = 'mailto:hello@studiosoren.com?subject=' + encodeURIComponent((value || 'Project') + ' enquiry');
+        document.querySelectorAll('.modal-choice').forEach(function (button) { button.classList.toggle('selected', button.dataset.choice === value); });
+      }
+      function open(value) { choose(value || ''); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+      function close() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+      document.querySelectorAll('.js-open-modal').forEach(function (button) { button.addEventListener('click', function (event) { event.preventDefault(); open(button.dataset.project); }); });
+      document.querySelectorAll('.modal-choice').forEach(function (button) { button.addEventListener('click', function () { choose(button.dataset.choice); }); });
+      modal.querySelector('.modal-close').addEventListener('click', close);
+      modal.addEventListener('click', function (event) { if (event.target === modal) close(); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape') close(); });
+    }());
+  </script>
+</body>
+</html>

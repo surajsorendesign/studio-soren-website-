@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="./uploads/studio-soren-logo.svg" data-resource-id="navLogo" />
+<meta name="ext-resource-dependency" content="./uploads/bda-finalist.png" data-resource-id="bdaFinalist" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1785937780547-0.png" data-resource-id="natwest" />
+<meta name="ext-resource-dependency" content="./uploads/blackbelt-ai-logo-cropped.png" data-resource-id="bbai" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1785955929954-0.png" data-resource-id="bigOne" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1786096509862-0.png" data-resource-id="proAi" />
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#171225"/><text x="30" y="110" font-size="60" fill="#8B6CF5" font-family="sans-serif">SS</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="https://t.contentsquare.net/uxa/9766b7092233a.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8FPC24GCR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M8FPC24GCR');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
+  * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <dc-import name="Nav" active="case-studies" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <div style="{{ heroGridStyle }}">
+      <div>
+        <span style="{{ tagStyle }}">Commercial</span>
+        <h1 style="{{ h1Style }}">Designing BT Business's first self-serve checkout</h1>
+      </div>
+      <div style="{{ heroDescColStyle }}">
+        <sc-for list="{{ problem }}" as="p" hint-placeholder-count="3"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+      </div>
+    </div>
+    <img src="https://framerusercontent.com/images/DoUEU9ODoRe40yWRYcbewVSUgI.png" style="{{ heroImgStyle }}" alt="BT Business checkout" decoding="async" fetchpriority="high" />
+  </header>
+
+  <section style="{{ sectionAltStyle }}">
+    <div style="{{ insightGridStyle }}">
+      <div style="{{ insightImgWrapStyle }}"><img src="https://framerusercontent.com/images/CFzCRo0FMjSJrMdaRrhQDKQiiVQ.png" style="{{ insightImgStyle }}" alt="Insight" loading="lazy" decoding="async" /></div>
+      <div>
+        <p style="{{ kickerLeftStyle }}">Insight</p>
+        <h2 style="{{ h2LeftStyle }}">Customers had to manually complete a "Get in touch" form in order to renew their business broadband</h2>
+        <sc-for list="{{ insight }}" as="p" hint-placeholder-count="6"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ sectionAltStyle }}">
+    <div style="{{ wideStyle }}">
+      <div style="{{ splitHeadStyle }}">
+        <div>
+          <p style="{{ kickerLeftStyle }}">Developing a strategic API driven platform</p>
+          <h2 style="{{ h2LeftStyle }}">Building alignment across design &amp; engineering</h2>
+        </div>
+        <div>
+          <sc-for list="{{ serviceDesign }}" as="p" hint-placeholder-count="3"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+        </div>
+      </div>
+      <div style="{{ dotPanelStyle }}"><img src="https://framerusercontent.com/images/ehBEL9u9tk23UvekBSaVpsyHTFY.png" style="{{ dotPanelImgStyle }}" alt="Service design diagram" loading="lazy" decoding="async" /></div>
+    </div>
+  </section>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ wideStyle }}">
+      <h2 style="{{ h2Style }}">Designing and delivering a flexible, scalable checkout flow tailored to real user journeys and BT's business requirements</h2>
+      <div style="{{ resultTopGridStyle }}">
+        <img src="https://framerusercontent.com/images/ujHnBkPVYhWSwNkNxZAXtl6tUUo.png" style="{{ resultImgStyle }}" alt="Solution" loading="lazy" decoding="async" />
+        <div style="{{ statsColStyle }}">
+          <div style="{{ statCardStyle }}"><p style="{{ statLabelStyle }}">Increased conversion</p><p style="{{ statNumStyle }}">3.5x</p></div>
+          <div style="{{ statCardStyle }}"><p style="{{ statLabelStyle }}">Total revenue generated in 2024/25 FY</p><p style="{{ statNumStyle }}">£3.3m</p></div>
+        </div>
+      </div>
+      <div style="{{ splitHeadStyle }}">
+        <div>
+          <sc-for list="{{ solution }}" as="p" hint-placeholder-count="1"><p style="{{ paraStyle }}">{{ p }}</p></sc-for>
+        </div>
+        <div>
+          <p style="{{ kickerLeftStyle }}">Key Features</p>
+          <div style="{{ featureGridStyle }}">
+            <sc-for list="{{ keyFeatures }}" as="f" hint-placeholder-count="4">
+              <div style="{{ featureCardStyle }}">
+                <div style="{{ featureIconWrapStyle }}"><i class="ph {{ f.icon }}"></i></div>
+                <div>
+                  <sc-if value="{{ f.title }}" hint-placeholder-val="{{ true }}"><p style="{{ featureTitleStyle }}">{{ f.title }}</p></sc-if>
+                  <p style="{{ featureParaStyle }}">{{ f.text }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ wideStyle }}">
+      <p style="{{ kickerStyle }}">More case studies</p>
+      <div style="{{ moreGridStyle }}">
+        <sc-for list="{{ moreCaseStudies }}" as="cs" hint-placeholder-count="2">
+          <a href="{{ cs.href }}" style="{{ moreCardStyle }}">
+            <img src="{{ cs.hero }}" style="{{ moreCardImgStyle }}" alt="{{ cs.title }}" loading="lazy" decoding="async" />
+            <span style="{{ moreCardTagStyle }}">{{ cs.tag }}</span>
+            <span style="{{ moreCardTitleStyle }}">{{ cs.title }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ inquirySectionStyle }}">
+    <div style="{{ inquiryInnerStyle }}">
+      <h2 style="{{ inquiryHeadStyle }}">Want a self-serve flow like this for your product?</h2>
+      <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Let's talk</button>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" dark="{{ dark }}" hint-size="100%,100%"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  theme0 = (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark';
+  toggleTheme = () => { this.setState((s) => { const next = (s.theme || this.theme0) === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
+  state = { modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
+  componentDidMount() { this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth }); window.addEventListener('resize', this.updateViewport); }
+  componentWillUnmount() { if (this.updateViewport) window.removeEventListener('resize', this.updateViewport); }
+
+  problem = [
+    "The BT Business Digital Checkout is helping transform how customers renew and purchase broadband services, reducing friction and improving transparency.",
+    "The user journey designed enables more customers to self-serve, while aligning with complex business, regulatory, and technical requirements across BT's stack.",
+    "The new checkout is now live in beta and supporting the wider One Business platform goals of consistency and conversion uplift.",
+  ];
+  insight = [
+    "This created friction for digitally-savvy customers, limited online conversion opportunities, and increased operational overhead.",
+    "The challenge: design a fully self-serve buying flow that would enable customers to:",
+    "Select a product",
+    "Configure options",
+    "Complete checkout online",
+    "Receive order confirmation, without offline intervention.",
+    "The solution had to be intuitive, legally compliant, and scalable for additional products in the future.",
+  ];
+  solution = [
+    "To ensure technical accuracy, we collaborated with platform architects to scope a new basket pricing API. This synchronised checkout pricing with earlier landing page offers, solving a critical customer trust issue.",
+  ];
+  serviceDesign = [
+    "The existing BT Business sales flow relied on Pega-based recommendations and pricing, but the new checkout experience needed to run on the emerging Velocity platform used across BT Group's One Business programme.",
+    "We engaged in common capability discussions to ensure price accuracy and consistency between the Pega-driven landing pages and the Velocity checkout basket. A new pricing API was developed to surface consistent basket totals across both experiences, eliminating pricing mismatches and ensuring customer trust at checkout.",
+    "This collaborative approach enabled the design to stay consistent while supporting a more future-proofed technical architecture.",
+  ];
+  keyFeatures = [
+    { icon: 'ph-credit-card', title: 'Renewals & OTP', text: 'Customers select packages and verify identity via a streamlined OTP process.' },
+    { icon: 'ph-brain', title: 'Smart Logic', text: 'Pre-filled details ensure speed, while sensitive changes are routed to "My Account" for security.' },
+    { icon: 'ph-check-circle', title: 'Compliant Payment', text: 'Collaborated with legal/finance teams to launch a compliant, Direct Debit-first payment step.' },
+    { icon: 'ph-file-text', title: 'Unified Post-Purchase', text: 'A "Thank You" page aligned with BT\'s Omnichannel patterns for a consistent cross-device experience.' },
+  ];
+
+  renderVals() {
+    const dark = (this.state.theme || this.theme0) !== 'light';
+    const isMobile = this.state.viewportWidth < 760;
+    const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    return {
+      dark,
+      toggleTheme: this.toggleTheme,
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
+      heroSectionStyle: { padding: isMobile ? '40px 20px 0' : '72px 24px 0', maxWidth: '1160px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: isMobile ? '28px' : '40px' },
+      heroGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? '24px' : '48px', alignItems: 'start' },
+      heroDescColStyle: { paddingTop: '10px' },
+      tagStyle: { fontWeight: 700, fontSize: '12px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px', display: 'block' },
+      h1Style: { fontFamily: fontDisplay, fontSize: isMobile ? '30px' : '40px', lineHeight: 1.15, fontWeight: 700, margin: 0, textAlign: 'left' },
+      heroImgStyle: { width: '100%', borderRadius: '20px', display: 'block' },
+      sectionStyle: { padding: isMobile ? '40px 20px' : '64px 24px' },
+      sectionAltStyle: { padding: isMobile ? '40px 20px' : '64px 24px', background: cardBg },
+      narrowStyle: { maxWidth: '720px', margin: '0 auto' },
+      wideStyle: { maxWidth: '1040px', margin: '0 auto' },
+      h2Style: { fontFamily: fontDisplay, fontSize: isMobile ? '24px' : '28px', lineHeight: 1.3, fontWeight: 700, margin: isMobile ? '0 0 20px' : '0 0 28px', textAlign: 'center' },
+      h2LeftStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '24px' : '28px', lineHeight: 1.3, fontWeight: 700, margin: 0, textAlign: 'left' },
+      kickerLeftStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: accent, letterSpacing: '0.04em', margin: '0 0 12px', textTransform: 'uppercase', textAlign: 'left' },
+      insightGridStyle: { maxWidth: '1040px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1.1fr', gap: isMobile ? '24px' : '48px', alignItems: 'center' },
+      splitHeadStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '24px' : '48px', alignItems: 'start' },
+      resultTopGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? '24px' : '48px', alignItems: 'center', margin: isMobile ? '24px 0 32px' : '32px 0 48px' },
+      resultImgStyle: { width: '100%', borderRadius: '16px', display: 'block', order: isMobile ? 2 : 0 },
+      statsColStyle: { display: 'flex', flexDirection: 'column', gap: '28px' },
+      insightImgWrapStyle: { borderRadius: '16px', overflow: 'hidden', order: isMobile ? 2 : 0 },
+      insightImgStyle: { width: '100%', aspectRatio: '4/5', objectFit: 'cover', borderRadius: '16px', display: 'block' },
+      solutionImgStyle: { width: '100%', borderRadius: '16px', display: 'block', margin: '32px 0' },
+      dotPanelStyle: { marginTop: '32px', borderRadius: '24px', background: '#F4F2F9', border: `1px solid ${border}`, padding: isMobile ? '20px' : '40px', backgroundImage: 'radial-gradient(rgba(20,15,35,0.14) 1.5px, transparent 1.5px)', backgroundSize: '22px 22px' },
+      dotPanelImgStyle: { width: '100%', display: 'block', borderRadius: '12px' },
+      serviceDesign: this.serviceDesign,
+      paraStyle: { fontSize: '16px', lineHeight: 1.75, color: muted, margin: '0 0 16px' },
+      featureGridStyle: { display: 'grid', gridTemplateColumns: '1fr', gap: '14px', marginTop: '16px' },
+      featureCardStyle: { background: cardBg, border: `1px solid ${border}`, borderRadius: '14px', padding: '22px', display: 'flex', gap: '14px', alignItems: 'flex-start' },
+      featureIconWrapStyle: { fontSize: '22px', lineHeight: 1, flexShrink: 0, color: accent },
+      featureTitleStyle: { fontSize: '15px', fontWeight: 700, margin: '0 0 4px' },
+      featureParaStyle: { fontSize: '14px', lineHeight: 1.6, color: muted, margin: 0 },
+      statCardStyle: { textAlign: 'left', padding: '20px 0 0', borderTop: `1px solid ${border}` },
+      statNumStyle: { fontFamily: fontDisplay, fontSize: '38px', fontWeight: 700, color: accent, margin: '6px 0 0' },
+      statLabelStyle: { fontSize: '14px', color: muted, margin: 0, lineHeight: 1.5 },
+      inquirySectionStyle: { padding: isMobile ? '56px 20px' : '90px 24px', background: '#171225', color: '#fff', textAlign: 'center' },
+      inquiryInnerStyle: { maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' },
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '24px' : '30px', fontWeight: 700, margin: 0, color: '#fff' },
+      primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
+      kickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: accent, letterSpacing: '0.04em', margin: '0 auto 12px', textTransform: 'uppercase', textAlign: 'center' },
+      moreGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)', gap: '20px' },
+      moreCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+      moreCardImgStyle: { width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' },
+      moreCardTagStyle: { fontWeight: 700, fontSize: '11px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', padding: '18px 20px 0' },
+      moreCardTitleStyle: { fontSize: '16px', fontWeight: 700, padding: '6px 20px 20px' },
+      moreCaseStudies: [
+        { tag: 'Charity', title: "Mind's graduate onboarding", hero: 'https://framerusercontent.com/images/KMpil3YTapxJcllz8veRCoa8Fs.png', href: './case-study-mind.html' },
+        { tag: 'Commercial', title: 'KEYS Community', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', href: './case-study-keys.html' },
+      ],
+      modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
+      problem: this.problem, insight: this.insight, solution: this.solution, keyFeatures: this.keyFeatures,
+    };
+  }
+}
+</script>
+</body>
+</html>

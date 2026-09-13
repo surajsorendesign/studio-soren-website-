@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ArticleDetail" title="{{ title }}" category="{{ category }}" person="{{ person }}" date="{{ date }}" minutes="{{ minutes }}" image="{{ image }}" image-alt="{{ imageAlt }}" video="{{ video }}" dc-props="{{ extraProps }}" hint-size="100%,2000px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  blocks = [
+    { type: 'lead', text: "A great brand video isn't the one that looks the most polished, it's the one that feels right in the first three seconds." },
+    { type: 'p', text: 'Most businesses treat video as a checklist: get a script, get some footage, add a logo sting at the end. But the videos that actually move people, the ones that get rewatched, shared, and remembered, are built on something most teams skip entirely: emotion design.' },
+    { type: 'p', text: 'Emotion design is the discipline of using pacing, colour, typography and sound deliberately, so that how a story feels lines up with what it is saying. It is the difference between a video that informs and one that lands.' },
+    { type: 'h2', text: 'It starts with tone of voice' },
+    { type: 'p', text: 'Before a single frame gets cut, we ask a simple question: if this brand were a person in the room, how would they talk? Confident but warm? Sharp and no-nonsense? That answer decides everything downstream, the pace of the edit, the weight of the typography, even how long a headline sits on screen before it cuts away.' },
+    { type: 'p', text: "Get the tone of voice wrong, and even a beautifully shot video feels off. Viewers can't always say why, they just sense the mismatch and scroll on." },
+    { type: 'h2', text: 'We put this to the test on our own launch video' },
+    { type: 'p', text: "When we built Studio Soren's own launch video, we didn't just write a script and hand it to an editor. We went back through the headline reveals frame by frame, testing how long a line of copy needed to sit before the next one landed, and whether the accent colour on a single word helped it feel intentional or just decorative. Small edits, like tightening a three-line headline reveal or adjusting a tagline to sound less like a mission statement and more like how we'd actually describe ourselves, added up to a video that finally sounded like us, not just looked like us." },
+    { type: 'quote', text: "That's the part most teams miss: tone of voice isn't a copywriting exercise that happens separately from the edit. It's baked into the timing." },
+    { type: 'h2', text: 'Why this matters for your brand' },
+    { type: 'p', text: 'If your video, your website copy and your social captions all sound like different companies, your audience feels the friction even if they can’t name it. Consistent tone of voice, carried all the way through from script to sound design, is what makes a story feel trustworthy at a glance.' },
+    { type: 'plink', text: 'This is exactly the gap our ', linkText: 'Digital Storytelling', href: './service-digital-storytelling.html', after: ' service is built to close: making sure your message stays “liquid”, as sharp on a LinkedIn carousel as it is in a 60-second launch video, without losing the voice that makes it unmistakably yours.' },
+    { type: 'plink', text: 'Want your next video to feel as considered as it looks? ', linkText: 'Get in touch', href: './about.html', after: ' and let’s talk tone.' },
+  ];
+
+  renderVals() {
+    return {
+      title: 'Why Emotion Design Is the Secret Ingredient in Digital Storytelling',
+      category: 'Digital Storytelling',
+      person: 'suraj-soren',
+      date: '2026-09-13T00:00:00.000Z',
+      minutes: '4',
+      image: './uploads/thumbnail-blog.png',
+      imageAlt: "Studio Soren's teapot and teacup mascot illustration on a purple gradient background",
+      video: 'swSxaw32kEY',
+      extraProps: { blocks: this.blocks },
+    };
+  }
+}
+</script>
+</body>
+</html>

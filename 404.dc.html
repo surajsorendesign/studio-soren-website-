@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="./uploads/studio-soren-logo.svg" data-resource-id="navLogo" />
+<meta name="ext-resource-dependency" content="./uploads/bda-finalist.png" data-resource-id="bdaFinalist" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1785937780547-0.png" data-resource-id="natwest" />
+<meta name="ext-resource-dependency" content="./uploads/blackbelt-ai-logo-cropped.png" data-resource-id="bbai" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1785955929954-0.png" data-resource-id="bigOne" />
+<meta name="ext-resource-dependency" content="./uploads/pasted-1786096509862-0.png" data-resource-id="proAi" />
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#171225"/><text x="30" y="110" font-size="60" fill="#8B6CF5" font-family="sans-serif">SS</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; }
+  html, body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+</helmet>
+<div style="{{ pageStyle }}">
+  <dc-import name="Nav" active="" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
+  <main style="{{ mainStyle }}">
+    <p style="{{ codeStyle }}">404</p>
+    <h1 style="{{ h1Style }}">This page doesn't exist</h1>
+    <p style="{{ paraStyle }}">The page you're looking for may have moved or been removed. Let's get you back on track.</p>
+    <a href="./index.html" style="{{ btnStyle }}" style-hover="background: #7A5AE8; transform: scale(1.03); box-shadow: 0 10px 32px rgba(139,108,245,0.45);">Back to homepage</a>
+  </main>
+  <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  theme0 = (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark';
+  toggleTheme = () => { this.setState((s) => { const next = (s.theme || this.theme0) === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
+
+  renderVals() {
+    const dark = (this.state.theme || this.theme0) !== 'light';
+    const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    return {
+      dark, toggleTheme: this.toggleTheme,
+      pageStyle: { background: bg, color: text, fontFamily: fontBody, minHeight: '100vh' },
+      mainStyle: { maxWidth: '560px', margin: '0 auto', padding: '100px 24px 140px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' },
+      codeStyle: { fontFamily: fontDisplay, fontSize: '96px', fontWeight: 700, color: accent, margin: 0, lineHeight: 1 },
+      h1Style: { fontFamily: fontDisplay, fontSize: '32px', fontWeight: 700, margin: 0 },
+      paraStyle: { fontSize: '16px', lineHeight: 1.6, color: muted, margin: '0 0 12px' },
+      btnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 28px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, transition: 'transform .2s ease, box-shadow .2s ease, background .2s ease' },
+    };
+  }
+}
+</script>
+</body>
+</html>

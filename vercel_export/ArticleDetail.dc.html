@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="https://t.contentsquare.net/uxa/9766b7092233a.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8FPC24GCR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M8FPC24GCR');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'64'%20height%3D'64'%20viewBox%3D'0%200%2064%2064'%3E%3Cg%20transform%3D'translate(32%2032)%20scale(1.32)%20translate(-32%20-32)'%3E%3Cpath%20d%3D'M49.8416%2014.0938C49.8416%2019.0296%2045.8402%2023.031%2040.9042%2023.031H20.7962V27.5017L49.8416%2027.4995L49.8422%2034.202C49.8425%2037.9041%2046.8413%2040.9055%2043.1391%2040.9055H43.1332C43.133%2045.8411%2039.1317%2049.8422%2034.1958%2049.8422H14.0943C14.0943%2044.9066%2018.0957%2040.9055%2023.0315%2040.9055H43.1332V36.4364H14.0943L14.0938%2029.7345C14.0934%2026.0326%2017.0942%2023.0313%2020.7962%2023.031C20.7969%2018.0961%2024.7977%2014.0956%2029.7329%2014.0953L49.8416%2014.0938Z'%20fill%3D'%2356246B'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: italic; font-display: swap; }
+  * { box-sizing: border-box; }
+  /* anti-flash */
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <dc-import name="Nav" active="insights" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <span style="{{ tagStyle }}">{{ props.category }}</span>
+    <h1 style="{{ h1Style }}">{{ props.title }}</h1>
+    <div style="{{ metaRowStyle }}">
+      <a href="{{ props.authorUrl }}" target="_blank" rel="noopener author" style="{{ authorLinkStyle }}" style-hover="opacity: 0.72;">
+        <img src="{{ props.authorPhoto }}" alt="{{ props.personLabel }}" width="40" height="40" style="{{ authorAvatarStyle }}" loading="lazy" />
+        <span style="{{ authorNameStyle }}">{{ props.personLabel }}</span>
+        <span style="{{ authorRoleStyle }}">{{ props.authorRole }}</span>
+      </a>
+      <span style="{{ dotStyle }}">•</span>
+      <span>{{ props.dateLabel }}</span>
+      <span style="{{ dotStyle }}">•</span>
+      <span>{{ props.minutes }} minute read</span>
+    </div>
+    <img src="{{ props.image }}" style="{{ heroImgStyle }}" alt="{{ props.imageAlt }}" decoding="async" fetchpriority="high" />
+  </header>
+
+  <article style="{{ articleSectionStyle }}">
+    <div style="{{ narrowStyle }}">
+      <sc-for list="{{ props.blocks }}" as="b" hint-placeholder-count="12">
+        <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ false }}"><h2 style="{{ h2Style }}">{{ b.text }}</h2></sc-if>
+        <sc-if value="{{ b.isH3 }}" hint-placeholder-val="{{ false }}"><h3 style="{{ h3Style }}">{{ b.text }}</h3></sc-if>
+        <sc-if value="{{ b.isQuote }}" hint-placeholder-val="{{ false }}"><blockquote style="{{ quoteStyle }}">{{ b.text }}</blockquote></sc-if>
+        <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ false }}"><p style="{{ paraStyle }}">{{ b.text }}</p></sc-if>
+        <sc-if value="{{ b.isList }}" hint-placeholder-val="{{ false }}">
+          <ul style="{{ listStyle }}">
+            <sc-for list="{{ b.items }}" as="li" hint-placeholder-count="3">
+              <li style="{{ listItemStyle }}">{{ li }}</li>
+            </sc-for>
+          </ul>
+        </sc-if>
+      </sc-for>
+    </div>
+  </article>
+
+  <section style="{{ backRowSectionStyle }}">
+    <div style="{{ narrowStyle }}">
+      <a href="/insights" style="{{ backLinkStyle }}">← Back to all insights</a>
+    </div>
+  </section>
+
+  <section style="{{ relatedSectionStyle }}">
+    <div style="{{ relatedInnerStyle }}">
+      <p style="{{ relatedEyebrowStyle }}">Keep reading</p>
+      <h2 style="{{ relatedHeadStyle }}">Related insights</h2>
+      <div style="{{ relatedGridStyle }}">
+        <sc-for list="{{ relatedArticles }}" as="r" hint-placeholder-count="3">
+          <a href="{{ r.href }}" style="{{ relatedCardStyle }}" style-hover="transform: translateY(-4px);">
+            <div style="{{ relatedImgWrapStyle }}">
+              <img src="{{ r.image }}" alt="{{ r.imageAlt }}" style="{{ relatedImgStyle }}" loading="lazy"/>
+            </div>
+            <div style="{{ relatedBodyStyle }}">
+              <p style="{{ relatedMetaStyle }}">{{ r.category }}</p>
+              <h3 style="{{ relatedTitleStyle }}">{{ r.title }}</h3>
+              <span style="{{ relatedLinkStyle }}">Read more →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ inquirySectionStyle }}">
+    <div style="{{ inquiryInnerStyle }}">
+      <h2 style="{{ inquiryHeadStyle }}">Want to talk through what this means for your organisation?</h2>
+      <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Discuss a project</button>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" dark="{{ dark }}" hint-size="100%,100%"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1200},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Article title&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;category&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Design Strategy&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;meta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;person&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;suraj-soren&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;minutes&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;image&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;imageAlt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;blocks&quot;:{&quot;editor&quot;:null,&quot;default&quot;:[],&quot;tsType&quot;:&quot;Array&lt;{type:string,text?:string,items?:string[]}&gt;&quot;}}">
+class Component extends DCLogic {
+  theme0 = (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark';
+  toggleTheme = () => { this.setState((s) => { const next = (s.theme || this.theme0) === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
+  state = { modalOpen: false };
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
+
+  allArticles = [
+    { title: 'The Future Is Already Here: Thoughtful AI for Real Organisations', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/aizBPUAS6VgXTqKG7k3av818.png', imageAlt: 'AI collage', href: '/insight-thoughtful-ai' },
+    { title: 'Why a Growth Mindset Matters in Digital Transformation', category: 'Research & Data', image: 'https://framerusercontent.com/images/nydBhrlzA7hkiUE0vdxj75LaR6U.png', imageAlt: 'Growth collage', href: '/insight-growth-mindset' },
+    { title: 'The Hidden Costs of Poor Strategic Planning', category: 'Design Strategy', image: 'https://framerusercontent.com/images/jwEDOr7LEotaIK4V6X9Ge6SCA.png', imageAlt: 'Strategy chess piece', href: '/insight-hidden-costs' },
+    { title: "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond", category: 'Software Engineering', image: 'https://framerusercontent.com/images/a9TvCn7m5uPEVVepzABGMZ4KenI.png', imageAlt: 'MVP illustration', href: '/insight-product-market-fit' },
+    { title: 'Design strategy for enterprises: Driving growth through operational excellence', category: 'Design Strategy', image: 'https://framerusercontent.com/images/kEys52OiND88VpkYlxsEaXdNJw.jpg', imageAlt: '', href: '/insight-enterprise-design-strategy' },
+    { title: 'Why accessibility standards matter in public sector design', category: 'Web & App Design', image: 'https://framerusercontent.com/images/KuJSfSLquCNaw3PhVRO5uzY4BWU.png', imageAlt: 'GDS illustration', href: '/insight-accessibility-standards' },
+    { title: 'The speed of intent: Why agentic AI is the ultimate impact multiplier', category: 'AI Integration & Adoption', image: 'https://framerusercontent.com/images/r4goOSNOFtgVTZmO7JDNOdjIAzU.jpg', imageAlt: '', href: '/insight-agentic-ai' },
+    { title: 'Digital storytelling for charities: Turning data into understanding', category: 'Digital Storytelling', image: 'https://framerusercontent.com/images/Gwy9NxG76Ao5gQgolKMxPTgBeWs.jpg', imageAlt: '', href: '/insight-digital-storytelling-charities' },
+    { title: 'Can you measure a feeling? Bridging the gap between data and human impact', category: 'Research & Data', image: 'https://framerusercontent.com/images/mINupToTqi7gUkNu4LPYglq42YI.jpg', imageAlt: '', href: '/insight-measure-a-feeling' },
+    { title: 'Listening before launching: Why co-design matters in the third sector', category: 'Design Strategy', image: 'https://framerusercontent.com/images/zxFhSDDzk7pv0oepgdBJIFQOz70.jpg', imageAlt: 'Group therapy meeting', href: '/insight-listening-before-launching' },
+    { title: 'Designing for dignity: What community effort taught us about service design', category: 'Design Strategy', image: 'https://framerusercontent.com/images/Eo9UfnIwoggSQj0xpCghXuddw.jpg', imageAlt: '', href: '/insight-community-effort' },
+    { title: 'More than a number: Navigating the digital maze of disability support', category: 'Research & Data', image: 'https://framerusercontent.com/images/mpiShXg0GTCLAe12IPgRl1xY.jpg', imageAlt: '', href: '/insight-more-than-a-number' },
+  ];
+
+  renderVals() {
+    const dark = (this.state.theme || this.theme0) !== 'light';
+    const accent = '#8B6CF5', bg = dark ? '#0C0A12' : '#FAF9FC', cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)', text = dark ? '#F3F1F9' : '#171325', muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif", fontBody = "'DM Sans', -apple-system, sans-serif";
+    const personNames = { 'umay-hussain': 'Umay Hussain', 'suraj-soren': 'Suraj Soren' };
+    const authors = {
+      'suraj-soren': { name: 'Suraj Soren', role: 'Founder', photo: './uploads/team-suraj.webp', url: 'https://www.linkedin.com/in/suraj-soren-6bb85994/' },
+      'umay-hussain': { name: 'Umay Hussain', role: 'Content Writer', photo: './uploads/team-umay.webp', url: 'https://www.linkedin.com/in/umay-h-b00468263/' },
+    };
+    const p = this.props || {};
+    const dateLabel = p.date ? new Date(p.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    const blocks = (p.blocks || []).map((b) => ({
+      ...b,
+      isH2: b.type === 'h2',
+      isH3: b.type === 'h3' || b.type === 'h4',
+      isQuote: b.type === 'quote',
+      isP: b.type === 'p',
+      isList: b.type === 'list',
+    }));
+
+    const norm = (s) => (s || '').trim().toLowerCase();
+    const others = this.allArticles.filter((a) => norm(a.title) !== norm(p.title));
+    const sameCat = others.filter((a) => a.category === p.category);
+    const relatedArticles = [...sameCat, ...others.filter((a) => a.category !== p.category)].slice(0, 3);
+
+    return {
+      dark,
+      toggleTheme: this.toggleTheme,
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px' },
+      heroSectionStyle: { padding: '72px 24px 0', maxWidth: '820px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' },
+      tagStyle: { fontWeight: 700, fontSize: '12px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' },
+      h1Style: { fontFamily: fontDisplay, fontSize: '40px', lineHeight: 1.15, fontWeight: 700, margin: '0 0 20px' },
+      metaRowStyle: { display: 'flex', alignItems: 'center', gap: '10px', color: muted, fontSize: '14px', marginBottom: '32px' },
+      dotStyle: { color: muted },
+      authorLinkStyle: { display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'inherit', transition: 'opacity .2s ease' },
+      authorAvatarStyle: { width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: `1px solid ${border}`, display: 'block' },
+      authorNameStyle: { color: text, fontWeight: 600, fontSize: '14px' },
+      authorRoleStyle: { color: muted, fontSize: '14px' },
+      heroImgStyle: { width: '100%', maxWidth: '1120px', borderRadius: '20px', display: 'block' },
+      articleSectionStyle: { padding: '56px 24px 24px' },
+      narrowStyle: { maxWidth: '720px', margin: '0 auto' },
+      h2Style: { fontFamily: fontDisplay, fontSize: '26px', lineHeight: 1.3, fontWeight: 700, margin: '40px 0 16px' },
+      h3Style: { fontFamily: fontDisplay, fontSize: '21px', lineHeight: 1.35, fontWeight: 700, margin: '32px 0 14px' },
+      paraStyle: { fontSize: '16px', lineHeight: 1.8, color: muted, margin: '0 0 18px' },
+      quoteStyle: { fontFamily: fontDisplay, fontSize: '19px', lineHeight: 1.5, color: text, borderLeft: `3px solid ${accent}`, margin: '24px 0', padding: '4px 0 4px 20px' },
+      listStyle: { margin: '0 0 18px', padding: '0 0 0 20px' },
+      listItemStyle: { fontSize: '16px', lineHeight: 1.8, color: muted, marginBottom: '8px' },
+      backRowSectionStyle: { padding: '0 24px 56px' },
+      backLinkStyle: { color: accent, textDecoration: 'none', fontSize: '14px', fontWeight: 600 },
+      relatedArticles,
+      relatedSectionStyle: { padding: '0 24px 90px', background: bg },
+      relatedInnerStyle: { maxWidth: '1120px', margin: '0 auto' },
+      relatedEyebrowStyle: { fontSize: '12px', color: muted, margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600, fontFamily: fontBody },
+      relatedHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: '0 0 32px', color: text },
+      relatedGridStyle: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' },
+      relatedCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.2s ease' },
+      relatedImgWrapStyle: { aspectRatio: '16/10', overflow: 'hidden' },
+      relatedImgStyle: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+      relatedBodyStyle: { padding: '20px 22px 24px', display: 'flex', flexDirection: 'column', gap: '8px' },
+      relatedMetaStyle: { fontSize: '12px', color: muted, margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em', fontWeight: 600, fontFamily: fontBody },
+      relatedTitleStyle: { fontFamily: fontDisplay, fontSize: '18px', fontWeight: 700, margin: 0, lineHeight: 1.35, color: text, textWrap: 'pretty' },
+      relatedLinkStyle: { fontSize: '13px', fontWeight: 600, color: accent, marginTop: '4px', fontFamily: fontBody },
+      inquirySectionStyle: { padding: '90px 24px', background: dark ? '#171225' : '#F1EEFB', color: text, textAlign: 'center' },
+      inquiryInnerStyle: { maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' },
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: '30px', fontWeight: 700, margin: 0, color: text },
+      primaryBtnStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      primaryBtnHoverStyle: { transform: 'scale(1.05)', boxShadow: '0 10px 32px rgba(139,108,245,0.55)' },
+      modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
+      props: { ...p, blocks, personLabel: (authors[p.person] || {}).name || personNames[p.person] || p.person, authorRole: (authors[p.person] || {}).role || '', authorPhoto: (authors[p.person] || {}).photo || './uploads/team-suraj.webp', authorUrl: (authors[p.person] || {}).url || 'https://www.linkedin.com/company/studio-soren/', dateLabel },
+    };
+  }
+}
+</script>
+</body>
+</html>

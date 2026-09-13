@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
+<script src="./support.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'64'%20height%3D'64'%20viewBox%3D'0%200%2064%2064'%3E%3Cg%20transform%3D'translate(32%2032)%20scale(1.32)%20translate(-32%20-32)'%3E%3Cpath%20d%3D'M49.8416%2014.0938C49.8416%2019.0296%2045.8402%2023.031%2040.9042%2023.031H20.7962V27.5017L49.8416%2027.4995L49.8422%2034.202C49.8425%2037.9041%2046.8413%2040.9055%2043.1391%2040.9055H43.1332C43.133%2045.8411%2039.1317%2049.8422%2034.1958%2049.8422H14.0943C14.0943%2044.9066%2018.0957%2040.9055%2023.0315%2040.9055H43.1332V36.4364H14.0943L14.0938%2029.7345C14.0934%2026.0326%2017.0942%2023.0313%2020.7962%2023.031C20.7969%2018.0961%2024.7977%2014.0956%2029.7329%2014.0953L49.8416%2014.0938Z'%20fill%3D'%2356246B'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<meta name="ext-resource-dependency" content="./uploads/studio-soren-logo.svg" data-resource-id="navLogo" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@keyframes soren-mega-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="{{ navSpacerStyle }}"></div>
+<nav ref="{{ navRef }}" style="{{ navWrapStyle }}">
+  <div style="{{ navStackStyle }}">
+    <div style="{{ navShadowWrapStyle }}">
+    <div style="{{ navInnerStyle }}">
+      <a href="{{ homeHref }}" style="{{ logoLinkStyle }}">
+        <img src="{{ logoSrc }}" style="{{ logoImgStyle }}" alt="Studio Soren" decoding="async" fetchpriority="high" />
+      </a>
+      <div style="{{ navLinksStyle }}">
+        <a href="{{ aboutHref }}" style="{{ aboutStyle }}" style-hover="color: #8B6CF5;">About</a>
+        <sc-for list="{{ menus }}" as="menu" hint-placeholder-count="4">
+          <div style="{{ menuWrapStyle }}" onMouseEnter="{{ menu.onEnter }}" onMouseLeave="{{ menu.onLeave }}" onFocus="{{ menu.onEnter }}">
+            <a href="{{ menu.href }}" style="{{ menu.linkStyle }}" style-hover="color: #8B6CF5;" aria-haspopup="true" aria-expanded="{{ menu.expanded }}">
+              {{ menu.label }}<span style="{{ menu.caretStyle }}">▾</span>
+            </a>
+            <sc-if value="{{ menu.open }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ menu.shellStyle }}">
+                <div style="{{ menu.panelStyle }}">
+                  <div style="{{ dropdownHeadStyle }}">
+                    <span style="{{ dropdownEyebrowStyle }}">{{ menu.eyebrow }}</span>
+                    <a href="{{ menu.href }}" style="{{ dropdownAllStyle }}" style-hover="color: #8B6CF5;">{{ menu.allLabel }}</a>
+                  </div>
+                  <div style="{{ menu.gridStyle }}">
+                    <sc-for list="{{ menu.items }}" as="item" hint-placeholder-count="6">
+                      <a href="{{ item.href }}" style="{{ dropdownItemStyle }}" style-hover="background: rgba(139,108,245,0.12);">
+                        <span style="{{ dropdownItemLabelStyle }}">{{ item.label }}</span>
+                        <span style="{{ dropdownItemDescStyle }}">{{ item.desc }}</span>
+                      </a>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="{{ navRightStyle }}">
+        <button onClick="{{ toggleTheme }}" style="{{ themeToggleStyle }}" style-hover="background: rgba(139,108,245,0.15); border-color: #8B6CF5; color: #8B6CF5;" aria-label="Toggle theme">{{ themeIcon }}</button>
+        <button onClick="{{ openModal }}" style="{{ navCtaStyle }}" style-hover="background: #7A5AE8; transform: scale(1.02); box-shadow: 0 6px 16px rgba(139,108,245,0.35);">Discuss a project</button>
+        <button onClick="{{ toggleNav }}" style="{{ hamburgerStyle }}" aria-label="Menu">{{ hamburgerIcon }}</button>
+      </div>
+    </div>
+    </div>
+    <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="{{ mobileMenuStyle }}">
+        <a href="{{ aboutHref }}" style="{{ mobileNavLinkStyle }}">About</a>
+        <sc-for list="{{ menus }}" as="menu" hint-placeholder-count="4">
+          <div style="{{ mobileGroupStyle }}">
+            <div style="{{ mobileGroupRowStyle }}">
+              <a href="{{ menu.href }}" style="{{ mobileNavLinkStyle }}">{{ menu.label }}</a>
+              <button onClick="{{ menu.onToggleMobile }}" style="{{ mobileGroupToggleStyle }}" aria-label="{{ menu.mobileToggleLabel }}" aria-expanded="{{ menu.expanded }}">{{ menu.mobileToggleIcon }}</button>
+            </div>
+            <sc-if value="{{ menu.mobileOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ mobileSubListStyle }}">
+                <sc-for list="{{ menu.items }}" as="item" hint-placeholder-count="4">
+                  <a href="{{ item.href }}" style="{{ mobileSubLinkStyle }}">{{ item.label }}</a>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <button onClick="{{ openModal }}" style="{{ mobileNavCtaStyle }}">Discuss a project</button>
+      </div>
+    </sc-if>
+  </div>
+</nav>
+<dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" dark="{{ dark }}" hint-size="100%,100%"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:80},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;&quot;,&quot;about&quot;,&quot;case-studies&quot;,&quot;services&quot;,&quot;insights&quot;,&quot;faqs&quot;]}}">
+class Component extends DCLogic {
+  state = { navOpen: false, modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200, pinned: false, navHeight: 0, openMenu: null, mobileGroup: null };
+
+  openModal = () => this.setState({ navOpen: false, modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
+
+  navRef = React.createRef();
+
+  componentDidMount() {
+    this.onResize = () => {
+      this.setState({ viewportWidth: window.innerWidth });
+      this.measureNav();
+    };
+    window.addEventListener('resize', this.onResize);
+    this.measureNav();
+    this.onScroll = () => {
+      const shouldPin = window.scrollY > 8;
+      if (shouldPin !== this.state.pinned) this.setState({ pinned: shouldPin });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.onKey = (e) => { if (e.key === 'Escape') this.setState({ openMenu: null }); };
+    window.addEventListener('keydown', this.onKey);
+  }
+  measureNav = () => {
+    const el = this.navRef.current;
+    if (el) this.setState({ navHeight: el.offsetHeight });
+  };
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('keydown', this.onKey);
+    clearTimeout(this.closeTimer);
+  }
+
+  openMenuNow = (key) => { clearTimeout(this.closeTimer); this.setState({ openMenu: key }); };
+  closeMenuSoon = () => {
+    clearTimeout(this.closeTimer);
+    this.closeTimer = setTimeout(() => this.setState({ openMenu: null }), 140);
+  };
+  toggleMobileGroup = (key) => this.setState((s) => ({ mobileGroup: s.mobileGroup === key ? null : key }));
+
+  toggleTheme = () => {
+    if (this.props.onThemeChange) this.props.onThemeChange();
+  };
+  toggleNav = () => this.setState((s) => ({ navOpen: !s.navOpen, mobileGroup: null }));
+
+  // Crawlable paths: clean URLs on the deployed site, .html files in the local/standalone build.
+  paths() {
+    const path = typeof location !== 'undefined' ? decodeURIComponent(location.pathname) : '/';
+    const isDcSource = /\.dc\.html($|[?#])/.test(path);
+    const clean = !/\.html($|[?#])/.test(path);
+    // dc source = the editable component files at the project root; file = standalone/vercel export; clean = deployed site
+    const p = (cleanPath, file, dc) => (isDcSource ? './' + encodeURI(dc + '.dc.html') : clean ? cleanPath : './' + file + '.html');
+    return {
+      home: p('/', 'index', 'Studio Soren Home'),
+      about: p('/about', 'about', 'Studio Soren About'),
+      services: p('/services', 'services', 'Studio Soren Services'),
+      caseStudies: p('/case-studies', 'case-studies', 'Studio Soren Case Studies'),
+      insights: p('/insights', 'insights', 'Studio Soren Insights'),
+      faqs: p('/faqs', 'faqs', 'Studio Soren FAQs'),
+      serviceItems: [
+        ['Brand Kickstart', p('/service-brand-kickstart', 'service-brand-kickstart', 'Studio Soren Service - Brand Kickstart'), 'Get a brand off the ground'],
+        ['UX & UI Quality Upgrade', p('/service-ux-ui-upgrade', 'service-ux-ui-upgrade', 'Studio Soren Service - UX and UI Upgrade'), 'Raise the quality bar'],
+        ['Scaling Your Design Team', p('/service-design-team-scaling', 'service-design-team-scaling', 'Studio Soren Service - Design Team Scaling'), 'Capacity and capability'],
+        ['Product Design & Delivery', p('/service-product-design', 'service-product-design', 'Studio Soren Service - Product Design'), 'Design and ship the product'],
+        ['Digital Storytelling', p('/service-digital-storytelling', 'service-digital-storytelling', 'Studio Soren Service - Digital Storytelling'), 'Video, motion and campaigns'],
+        ['AI & Automation', p('/service-ai-integration', 'service-ai-integration', 'Studio Soren Service - AI Integration'), 'Take work off your team'],
+        ['Software Engineering', p('/service-software-engineering', 'service-software-engineering', 'Studio Soren Service - Software Engineering'), 'Build it properly'],
+        ['Design Strategy', p('/service-design-strategy', 'service-design-strategy', 'Studio Soren Service - Design Strategy'), 'Decide what to design'],
+        ['Research & Data', p('/service-research-data', 'service-research-data', 'Studio Soren Service - Research & Data'), 'Evidence for decisions'],
+      ],
+      caseItems: [
+        ['BT', p('/case-study-bt', 'case-study-bt', 'Studio Soren Case Study - BT Digital Checkout'), 'Digital checkout'],
+        ['CareLink', p('/case-study-carelink', 'case-study-carelink', 'Studio Soren Case Study - CareLink App'), 'Care coordination app'],
+        ['EE', p('/case-study-ee', 'case-study-ee', 'Studio Soren Case Study - EE Retail Kiosk'), 'Retail kiosk'],
+        ['KEYS', p('/case-study-keys', 'case-study-keys', 'Studio Soren Case Study - KEYS Community'), 'Community platform'],
+        ['Kindred', p('/case-study-kindred', 'case-study-kindred', 'Studio Soren Case Study - Kindred'), 'Brand & product'],
+        ['Mind', p('/case-study-mind', 'case-study-mind', 'Studio Soren Case Study - Mind Onboarding'), 'Onboarding redesign'],
+      ],
+      insightItems: [
+        ['The path to product-market fit', p('/insight-product-market-fit', 'insight-the-path-to-product-market-fit', 'Studio Soren Article - Product Market Fit'), 'Strategy'],
+        ['Thoughtful AI for real organisations', p('/insight-thoughtful-ai', 'insight-thoughtful-ai-for-real-organisations', 'Studio Soren Article - Thoughtful AI'), 'AI'],
+        ['Can you measure a feeling?', p('/insight-measure-a-feeling', 'insight-can-you-measure-a-feeling', 'Studio Soren Article - Measure a Feeling'), 'Research'],
+        ['Design strategy for enterprises', p('/insight-enterprise-design-strategy', 'insight-design-strategy-for-enterprises', 'Studio Soren Article - Enterprise Design Strategy'), 'Enterprise'],
+        ['Why accessibility standards matter', p('/insight-accessibility-standards', 'insight-why-accessibility-standards-matter', 'Studio Soren Article - Accessibility Standards'), 'Accessibility'],
+        ['Agentic AI: the impact multiplier', p('/insight-agentic-ai', 'insight-why-agentic-ai-is-the-ultimate-impact-multiplier', 'Studio Soren Article - Agentic AI'), 'AI'],
+      ],
+      faqItems: [
+        ['What does transformation cost?', p('/faq-digital-transformation-cost', 'faq-digital-transformation-cost', 'Studio Soren FAQ - Digital Transformation Cost'), 'Budgets & scope'],
+        ['How does design review work?', p('/faq-design-review-process', 'faq-design-review-process', 'Studio Soren FAQ - Design Review Process'), 'Process'],
+        ['Product design vs UX', p('/faq-product-design-vs-ux', 'faq-product-design-vs-ux', 'Studio Soren FAQ - Product Design vs UX'), 'Definitions'],
+        ['Measuring design success', p('/faq-measuring-design-success', 'faq-measuring-design-success', 'Studio Soren FAQ - Measuring Design Success'), 'Outcomes'],
+        ['Enterprise support', p('/faq-enterprise-support', 'faq-enterprise-support', 'Studio Soren FAQ - Enterprise Support'), 'Engagement'],
+        ['Non-profit fundraising design', p('/faq-non-profit-fundraising', 'faq-non-profit-fundraising', 'Studio Soren FAQ - Non-Profit Fundraising Design'), 'Charity sector'],
+      ],
+    };
+  }
+
+  renderVals() {
+    const dark = this.props.dark ?? true;
+    const active = this.props.active ?? '';
+    const isMobile = this.state.viewportWidth < 860;
+    const accent = '#8B6CF5';
+    const border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)';
+    const text = dark ? '#F3F1F9' : '#171325';
+    const muted = dark ? '#A69FBE' : '#635C77';
+
+    const linkStyle = { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' };
+    const activeStyle = { ...linkStyle, color: accent, fontWeight: 700 };
+    const styleFor = (key) => (active === key ? activeStyle : linkStyle);
+
+    const u = this.paths();
+    const panelBase = { boxSizing: 'border-box', padding: '16px', borderRadius: '20px', background: dark ? 'rgba(20,16,32,0.97)' : 'rgba(255,255,255,0.98)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 24px 56px rgba(0,0,0,0.5)' : '0 24px 56px rgba(20,15,35,0.16)', animation: 'soren-mega-in .18s ease both' };
+
+    const mk = (key, label, href, eyebrow, allLabel, items, opts = {}) => ({
+      key, label, href, eyebrow, allLabel,
+      items: items.map(([l, h, d]) => ({ label: l, href: h, desc: d })),
+      shellStyle: opts.align === 'right'
+        ? { position: 'absolute', top: '100%', right: 0, paddingTop: '18px', zIndex: 70, maxWidth: 'calc(100vw - 32px)' }
+        : { position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: '18px', zIndex: 70, maxWidth: 'calc(100vw - 32px)' },
+      panelStyle: { ...panelBase, width: opts.width || '560px', maxWidth: '100%' },
+      gridStyle: { display: 'grid', gridTemplateColumns: `repeat(${opts.columns || 2}, minmax(0, 1fr))`, gap: '2px' },
+      open: !isMobile && this.state.openMenu === key,
+      mobileOpen: this.state.mobileGroup === key,
+      expanded: (!isMobile && this.state.openMenu === key) || this.state.mobileGroup === key ? 'true' : 'false',
+      mobileToggleIcon: this.state.mobileGroup === key ? '−' : '+',
+      mobileToggleLabel: 'Show ' + label + ' links',
+      linkStyle: { ...styleFor(key), color: (!isMobile && this.state.openMenu === key) ? accent : styleFor(key).color },
+      caretStyle: { fontSize: '9px', lineHeight: 1, opacity: 0.7, transform: (!isMobile && this.state.openMenu === key) ? 'rotate(180deg)' : 'none', transition: 'transform .18s ease' },
+      onEnter: () => this.openMenuNow(key),
+      onLeave: this.closeMenuSoon,
+      onToggleMobile: () => this.toggleMobileGroup(key),
+    });
+
+    const menus = [
+      mk('services', 'Services', u.services, 'What we do', 'All services →', u.serviceItems, { columns: 3, width: '720px' }),
+      mk('case-studies', 'Case studies', u.caseStudies, 'Selected work', 'All case studies →', u.caseItems, { columns: 3, width: '620px' }),
+      mk('insights', 'Insights', u.insights, 'Thinking', 'All insights →', u.insightItems, { columns: 2, width: '580px' }),
+      mk('faqs', 'FAQs', u.faqs, 'Common questions', 'All FAQs →', u.faqItems, { columns: 2, width: '520px', align: 'right' }),
+    ];
+
+    return {
+      navWrapStyle: this.state.pinned
+        ? { position: 'fixed', top: isMobile ? '12px' : '24px', left: 0, right: 0, zIndex: 50, display: 'flex', justifyContent: 'center', padding: isMobile ? '0 12px' : '0 16px' }
+        : { position: 'relative', top: isMobile ? '12px' : '24px', zIndex: 50, display: 'flex', justifyContent: 'center', padding: isMobile ? '0 12px' : '0 16px' },
+      navSpacerStyle: { height: this.state.pinned ? this.state.navHeight + (isMobile ? 12 : 24) : 0 },
+      navStackStyle: { width: '100%', maxWidth: '1120px', position: 'relative' },
+      navShadowWrapStyle: { borderRadius: '999px', boxShadow: dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 32px rgba(20,15,35,0.08)' },
+      navInnerStyle: { boxSizing: 'border-box', display: 'flex', alignItems: 'center', minHeight: isMobile ? '52px' : '58px', gap: isMobile ? '12px' : '28px', width: '100%', padding: isMobile ? '10px 14px 10px 16px' : '12px 20px', borderRadius: '999px', background: dark ? 'rgba(20,16,32,0.65)' : 'rgba(255,255,255,0.72)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', border: `1px solid ${border}` },
+      logoLinkStyle: { display: 'flex', alignItems: 'center', marginRight: 'auto', textDecoration: 'none' },
+      logoSrc: (window.__resources && window.__resources.navLogo) || './uploads/studio-soren-logo.svg',
+      logoImgStyle: { height: '30px', width: 'auto', display: 'block', filter: dark ? 'brightness(0) invert(1)' : 'none' },
+      navLinksStyle: { display: isMobile ? 'none' : 'flex', alignItems: 'center', gap: '24px' },
+      homeHref: u.home,
+      aboutHref: u.about,
+      aboutStyle: styleFor('about'),
+      menus,
+      menuWrapStyle: { position: 'relative', display: 'flex', alignItems: 'center' },
+      dropdownHeadStyle: { display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', padding: '2px 10px 10px', marginBottom: '6px', borderBottom: `1px solid ${border}` },
+      dropdownEyebrowStyle: { color: muted, fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' },
+      dropdownItemStyle: { display: 'flex', flexDirection: 'column', gap: '3px', textDecoration: 'none', padding: '10px 11px', borderRadius: '12px', transition: 'background .15s ease' },
+      dropdownItemLabelStyle: { color: text, fontSize: '14px', fontWeight: 600, lineHeight: 1.3 },
+      dropdownItemDescStyle: { color: muted, fontSize: '12px', fontWeight: 500, lineHeight: 1.3 },
+      dropdownAllStyle: { color: accent, textDecoration: 'none', fontSize: '12px', fontWeight: 700, whiteSpace: 'nowrap' },
+      navRightStyle: { display: 'flex', alignItems: 'center', gap: '10px', marginLeft: isMobile ? 'auto' : 0 },
+      themeToggleStyle: { width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background .15s ease, border-color .15s ease, color .15s ease' },
+      themeIcon: dark ? '☀' : '☾',
+      navCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '10px 18px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap', display: isMobile ? 'none' : 'inline-block', cursor: 'pointer', transition: 'background .2s ease, transform .2s ease, box-shadow .2s ease' },
+      hamburgerStyle: { display: isMobile ? 'flex' : 'none', width: '36px', height: '36px', borderRadius: '50%', border: `1px solid ${border}`, background: 'transparent', color: text, cursor: 'pointer', fontSize: '15px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+      hamburgerIcon: this.state.navOpen ? '✕' : '☰',
+      mobileMenuStyle: { position: 'absolute', top: 'calc(100% + 8px)', left: 0, right: 0, display: 'flex', flexDirection: 'column', gap: '2px', padding: '10px', borderRadius: '18px', background: dark ? 'rgba(20,16,32,0.96)' : 'rgba(255,255,255,0.98)', backdropFilter: 'blur(18px)', border: `1px solid ${border}`, boxShadow: dark ? '0 16px 40px rgba(0,0,0,0.45)' : '0 16px 40px rgba(20,15,35,0.14)', maxHeight: 'calc(100vh - 100px)', overflowY: 'auto', zIndex: 60 },
+      mobileNavLinkStyle: { color: text, textDecoration: 'none', fontSize: '15px', fontWeight: 500, padding: '11px 10px', borderRadius: '10px' },
+      mobileGroupStyle: { display: 'flex', flexDirection: 'column' },
+      mobileGroupRowStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' },
+      mobileGroupToggleStyle: { width: '34px', height: '34px', flexShrink: 0, borderRadius: '10px', border: `1px solid ${border}`, background: 'transparent', color: muted, fontSize: '18px', lineHeight: 1, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' },
+      mobileSubListStyle: { display: 'flex', flexDirection: 'column', gap: '2px', padding: '2px 0 8px 12px', margin: '0 0 4px 10px', borderLeft: `1px solid ${border}` },
+      mobileSubLinkStyle: { color: muted, textDecoration: 'none', fontSize: '14px', fontWeight: 500, padding: '9px 10px', borderRadius: '10px' },
+      mobileNavCtaStyle: { background: accent, color: '#fff', textDecoration: 'none', padding: '12px 20px', borderRadius: '999px', fontSize: '14px', fontWeight: 600, textAlign: 'center', width: '100%', boxSizing: 'border-box', margin: '6px 0 0', cursor: 'pointer' },
+      mobileMenuOpen: this.state.navOpen,
+      toggleTheme: this.toggleTheme,
+      toggleNav: this.toggleNav,
+      modalOpen: this.state.modalOpen,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
+      dark,
+    };
+  }
+}
+</script>
+</body>
+</html>

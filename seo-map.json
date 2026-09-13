@@ -1,0 +1,203 @@
+{
+  "index.html": {
+    "url": "/",
+    "title": "Studio Soren | Digital Design & Development Agency for Enterprise & Non-Profits",
+    "desc": "A UK digital design and development studio helping enterprise, public sector and charity leaders turn complex services into products people actually use."
+  },
+  "about.html": {
+    "url": "/about",
+    "title": "About Studio Soren | Digital Transformation Design Studio",
+    "desc": "Meet the team behind Studio Soren, a digital transformation design studio working with enterprise, public sector and purpose-led organisations across the UK."
+  },
+  "services.html": {
+    "url": "/services",
+    "title": "Digital Transformation Services | Studio Soren",
+    "desc": "Design strategy, product design, research, engineering, AI integration and digital storytelling, services built for organisations modernising complex services."
+  },
+  "case-studies.html": {
+    "url": "/case-studies",
+    "title": "Case Studies | Enterprise, Public Sector & Charity Design Work",
+    "desc": "Real work, real impact, see how Studio Soren has designed and shipped digital products for BT, EE, Mind, Kindred and purpose-led organisations."
+  },
+  "insights.html": {
+    "url": "/insights",
+    "title": "Insights | Design Strategy for Enterprise & Purpose-Led Leaders",
+    "desc": "Practical thinking on digital transformation, design strategy, accessibility and AI adoption, written for leaders in enterprise, public sector and non-profits."
+  },
+  "privacy-policy.html": {
+    "url": "/privacy-policy",
+    "title": "Privacy Policy | Studio Soren",
+    "desc": "How Studio Soren collects, uses and protects personal data, and the rights you have over your information."
+  },
+  "cookies-policy.html": {
+    "url": "/cookies-policy",
+    "title": "Cookies Policy | Studio Soren",
+    "desc": "How Studio Soren uses cookies and similar technologies, and how you can control them."
+  },
+  "404.html": {
+    "url": "/404",
+    "title": "Page not found | Studio Soren",
+    "desc": "This page doesn’t exist. Head back to Studio Soren to explore our services, case studies and insights."
+  },
+  "service-product-design.html": {
+    "url": "/services/web-app-design",
+    "title": "Web & App Design Services | Studio Soren",
+    "desc": "Web and app design that turns complex journeys into clear, accessible products, from discovery and prototyping to design systems and handoff."
+  },
+  "service-design-strategy.html": {
+    "url": "/services/design-strategy",
+    "title": "Design Strategy Consultancy | Studio Soren",
+    "desc": "Design strategy that connects boardroom ambition to front-line delivery, roadmaps, service blueprints and operating models leaders can act on."
+  },
+  "service-research-data.html": {
+    "url": "/services/research-data",
+    "title": "UX Research & Data Services | Studio Soren",
+    "desc": "User research and data services that show what people actually need, mixed-method research, usability testing and measurement frameworks."
+  },
+  "service-ai-integration.html": {
+    "url": "/services/ai-integration",
+    "title": "AI Integration & Adoption Services | Studio Soren",
+    "desc": "Practical AI integration and adoption, from opportunity mapping to agentic workflows, designed around your people, data and risk boundaries."
+  },
+  "service-software-engineering.html": {
+    "url": "/services/software-engineering",
+    "title": "Software Engineering & Product Build | Studio Soren",
+    "desc": "Software engineering that ships. MVPs, platform builds and modernisation delivered by a team that designs and codes in the same room."
+  },
+  "service-digital-storytelling.html": {
+    "url": "/services/digital-storytelling",
+    "title": "Digital Storytelling for Charities & Purpose-Led Brands | Studio Soren",
+    "desc": "Digital storytelling that turns impact data into understanding, narrative, content design and campaigns that move donors, funders and partners."
+  },
+  "case-study-bt.html": {
+    "url": "/case-studies/bt-business-checkout",
+    "title": "BT Business Self-Serve Checkout | Studio Soren Case Study",
+    "desc": "How we designed BT Business’s first self-serve checkout, reducing sales friction for a complex enterprise product catalogue."
+  },
+  "case-study-ee.html": {
+    "url": "/case-studies/ee-retail-kiosk",
+    "title": "EE Multi-Sensory Digital Showroom | Studio Soren Case Study",
+    "desc": "Pioneering a multi-sensory digital showroom for EE’s new marketplace, retail experience design that bridges physical and digital."
+  },
+  "case-study-carelink.html": {
+    "url": "/case-studies/carelink",
+    "title": "CareLink: A Seamless Digital Migration for Vulnerable Users | Case Study",
+    "desc": "How we migrated a care service to a new digital platform without leaving vulnerable users behind, accessible, inclusive service design in practice."
+  },
+  "case-study-mind.html": {
+    "url": "/case-studies/mind-onboarding",
+    "title": "Mind: Supporting Graduates Through Early Career Transition | Case Study",
+    "desc": "An onboarding experience designed with Mind to support graduates through the mental-health pressures of early career transition."
+  },
+  "case-study-kindred.html": {
+    "url": "/case-studies/kindred",
+    "title": "Kindred: Reducing Loneliness for the Ageing Population | Case Study",
+    "desc": "Designing a product to reduce loneliness among older adults, research-led, accessible design for an under-served audience."
+  },
+  "case-study-keys.html": {
+    "url": "/case-studies/keys",
+    "title": "KEYS: Community Branded Launch Campaign | Studio Soren Case Study",
+    "desc": "A community-led brand and launch campaign for KEYS, storytelling, identity and digital assets that gave a local mission national reach."
+  },
+  "faq-design-review-process.html": {
+    "url": "/faqs/design-review-process",
+    "title": "How do you run a design review? | Studio Soren",
+    "desc": "For a CEO or COO of a charity, a design review is not about \"approving a layout.\" It is about risk management. In the social sector, a \"bad\" design is a…"
+  },
+  "faq-digital-transformation-cost.html": {
+    "url": "/faqs/digital-transformation-cost",
+    "title": "How much does a typical digital transformation project cost? | Studio Soren",
+    "desc": "In the world of purpose-led design, a \"ballpark figure\" is often a disservice. At Studio Soren, we believe that if we haven't rolled up our sleeves to…"
+  },
+  "faq-enterprise-support.html": {
+    "url": "/faqs/enterprise-support",
+    "title": "How does Studio Soren support enterprise-level projects? | Studio Soren",
+    "desc": "Large-scale corporate initiatives are unique challenges. They require more than just technical skill; they require strategic alignment, cultural integration,…"
+  },
+  "faq-measuring-design-success.html": {
+    "url": "/faqs/measuring-design-success",
+    "title": "How do you measure the success of a design project? | Studio Soren",
+    "desc": "At Studio Soren, we believe measuring the success of a design project goes far beyond \"looking good.\" For leadership in public services and non-profits,…"
+  },
+  "faq-non-profit-fundraising.html": {
+    "url": "/faqs/non-profit-fundraising",
+    "title": "How can design help increase non-profit fundraising and commerciality? | Studio Soren",
+    "desc": "Strategic design increases non-profit fundraising and commerciality by building institutional trust, reducing transaction friction, and creating a…"
+  },
+  "faq-product-design-vs-ux.html": {
+    "url": "/faqs/product-design-vs-ux",
+    "title": "What is the difference between Product Design and traditional UX/UI design? | Studio Soren",
+    "desc": "When companies decide to build a new app or overhaul an existing platform, the first instinct is usually to look for a \"UI/UX designer\". It makes sense on…"
+  },
+  "insight-accessibility-standards.html": {
+    "url": "/insights/accessibility-standards",
+    "title": "Why accessibility standards matter in public sector design | Studio Soren",
+    "desc": "Public services must work for everyone, regardless of ability, context, or circumstance. This is not only a legal requirement, under the Public Sector…"
+  },
+  "insight-agentic-ai.html": {
+    "url": "/insights/agentic-ai",
+    "title": "The speed of intent: Why agentic AI is the ultimate impact multiplier | Studio Soren",
+    "desc": "At Studio Soren, we talk to a lot of leaders who feel like they are running a race where the finish line keeps moving. If you’ve been using AI to simply \"do…"
+  },
+  "insight-community-effort.html": {
+    "url": "/insights/community-effort",
+    "title": "Designing for dignity: What community effort taught us about service design | Studio Soren",
+    "desc": "In 2019, our founder engaged The Jiu Jitsu Foundation and Birmingham Mind to challenge the \"get on with it\" culture surrounding mental health. This effort…"
+  },
+  "insight-digital-storytelling-charities.html": {
+    "url": "/insights/digital-storytelling-charities",
+    "title": "Digital storytelling for charities: Turning data into understanding | Studio Soren",
+    "desc": "Clear storytelling isn’t a \"nice to have\", it’s how organisations connect mission to real human impact."
+  },
+  "insight-enterprise-design-strategy.html": {
+    "url": "/insights/enterprise-design-strategy",
+    "title": "Design strategy for enterprises: Driving growth through operational excellence | Studio Soren",
+    "desc": "In the modern enterprise, the gap between a visionary boardroom strategy and front-line execution is where most initiatives fail."
+  },
+  "insight-growth-mindset.html": {
+    "url": "/insights/growth-mindset",
+    "title": "Why a Growth Mindset Matters in Digital Transformation | Studio Soren",
+    "desc": "But in practice, the success of digital transformation rarely depends on technology alone. More often, it depends on people, how teams communicate, how…"
+  },
+  "insight-hidden-costs.html": {
+    "url": "/insights/hidden-costs",
+    "title": "The Hidden Costs of Poor Strategic Planning | Studio Soren",
+    "desc": "In many organisations, software development starts with good intentions. A team wants to improve a service, streamline operations or create a better…"
+  },
+  "insight-listening-before-launching.html": {
+    "url": "/insights/listening-before-launching",
+    "title": "Listening before launching: Why co-design matters in the third sector | Studio Soren",
+    "desc": "In the third sector, good intentions are never in short supply. What’s harder to achieve is clarity, especially when the systems we design are meant to…"
+  },
+  "insight-measure-a-feeling.html": {
+    "url": "/insights/measure-a-feeling",
+    "title": "Can you measure a feeling? Bridging the gap between data and human impact | Studio Soren",
+    "desc": "On one side lies the 'Corporate Trap': a sea of spreadsheets, cold Key Performance Indicators (KPIs), and 'deliverables' that satisfy auditors but fail to…"
+  },
+  "insight-more-than-a-number.html": {
+    "url": "/insights/more-than-a-number",
+    "title": "More than a number: Navigating the digital maze of disability support | Studio Soren",
+    "desc": "For many of us, \"digital transformation\" sounds like a success story, faster apps, sleeker websites, and everything at our fingertips. But for someone…"
+  },
+  "insight-product-market-fit.html": {
+    "url": "/insights/product-market-fit",
+    "title": "The path to product-market fit: A founder's guide to MVPs, scaling, and beyond | Studio Soren",
+    "desc": "Building a high-growth digital product is rarely about having the \"perfect\" idea; it is about having the most disciplined execution. At Studio Soren, we’ve…"
+  },
+  "insight-thoughtful-ai.html": {
+    "url": "/insights/thoughtful-ai",
+    "title": "The Future Is Already Here: Thoughtful AI for Real Organisations | Studio Soren",
+    "desc": "Every week brings a new tool, a new headline, or a new promise about how AI will transform the way we work. Businesses are being told they need to move…"
+  },
+  "faqs.html": {
+    "url": "/faqs",
+    "title": "FAQs | Working with Studio Soren",
+    "desc": "Straight answers on project cost, timelines, measuring design success, enterprise support and how design drives non-profit fundraising."
+  },
+  "insight-emotion-design": {
+    "url": "/insight-emotion-design",
+    "title": "Why Emotion Design Is the Secret Ingredient in Digital Storytelling | Studio Soren",
+    "desc": "Why emotion design, pacing, colour, typography and tone of voice, is the missing ingredient in digital storytelling, and what we learned reworking our own launch video.",
+    "keywords": "digital storytelling, emotion design, brand tone of voice, video design, Studio Soren"
+  }
+}
