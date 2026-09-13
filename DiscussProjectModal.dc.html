@@ -9,6 +9,7 @@
 <body>
 <x-dc>
 <helmet>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'64'%20height%3D'64'%20viewBox%3D'0%200%2064%2064'%3E%3Cg%20transform%3D'translate(32%2032)%20scale(1.32)%20translate(-32%20-32)'%3E%3Cpath%20d%3D'M49.8416%2014.0938C49.8416%2019.0296%2045.8402%2023.031%2040.9042%2023.031H20.7962V27.5017L49.8416%2027.4995L49.8422%2034.202C49.8425%2037.9041%2046.8413%2040.9055%2043.1391%2040.9055H43.1332C43.133%2045.8411%2039.1317%2049.8422%2034.1958%2049.8422H14.0943C14.0943%2044.9066%2018.0957%2040.9055%2023.0315%2040.9055H43.1332V36.4364H14.0943L14.0938%2029.7345C14.0934%2026.0326%2017.0942%2023.0313%2020.7962%2023.031C20.7969%2018.0961%2024.7977%2014.0956%2029.7329%2014.0953L49.8416%2014.0938Z'%20fill%3D'%2356246B'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -32,7 +33,7 @@
 
     <sc-if value="{{ isSelect }}" hint-placeholder-val="{{ true }}">
       <div style="{{ headStyle }}">
-        <h2 style="{{ titleStyle }}">Let's talk</h2>
+        <h2 style="{{ titleStyle }}">Discuss a project</h2>
         <p style="{{ subStyle }}">Select how you'd like to initiate our partnership.</p>
       </div>
       <div style="{{ pathGridStyle }}">
@@ -52,7 +53,7 @@
     <sc-if value="{{ isBrief }}" hint-placeholder-val="{{ false }}">
       <div style="{{ headStyle }}">
         <h2 style="{{ titleStyle }}">Send a project brief</h2>
-        <p style="{{ subStyle }}">Tell us about your project, we'll reply within 24 hours.</p>
+        <p style="{{ subStyle }}">Tell us about your project — we'll reply within 24 hours.</p>
       </div>
       <div style="{{ formStyle }}">
         <div style="{{ fieldStyle }}">
@@ -118,7 +119,7 @@
         <p style="{{ subStyle }}">Pick a 30-minute slot that works for you.</p>
       </div>
       <sc-if value="{{ calendarBanner }}" hint-placeholder-val="{{ false }}">
-        <p style="{{ bannerStyle }}">Calendar engine offline, please send us a direct brief below.</p>
+        <p style="{{ bannerStyle }}">Calendar engine offline — please send us a direct brief below.</p>
       </sc-if>
       <sc-if value="{{ calendarLoading }}" hint-placeholder-val="{{ false }}">
         <div style="{{ loadingWrapStyle }}">
@@ -162,7 +163,7 @@
 class Component extends DCLogic {
   FREE_DOMAINS = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','aol.com','live.com','protonmail.com','mail.com','yandex.com'];
   SERVICE_LABELS = ['Research & Data','Web & App Design','AI Integration & Adoption','Software Engineering','Design Strategy','Digital Storytelling'];
-  BUDGET_LABELS = ['<£30k','£30k£75k','£75k+','Undisclosed'];
+  BUDGET_LABELS = ['<£30k','£30k–£75k','£75k+','Undisclosed'];
   TIME_SLOTS = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','2:00 PM','2:30 PM','3:00 PM'];
 
   state = {
@@ -297,23 +298,23 @@ class Component extends DCLogic {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: this.WEB3FORMS_KEY,
-          subject: `New project brief, ${b.name}${b.org ? ' (' + b.org + ')' : ''}`,
+          subject: `New project brief — ${b.name}${b.org ? ' (' + b.org + ')' : ''}`,
           to: 'hello@studiosoren.com',
           from_name: b.name,
           email: b.email,
           cc: b.email,
-          Organization: b.org || '',
-          'Service focus': b.services.join(', ') || '',
-          'Estimated budget': b.budget || '',
+          Organization: b.org || '—',
+          'Service focus': b.services.join(', ') || '—',
+          'Estimated budget': b.budget || '—',
           Attachment: b.fileName || 'none',
-          'Brief context': b.context || '',
+          'Brief context': b.context || '—',
         }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.message || 'Send failed');
       this.setState({ submitting: false, step: 'brief-success' });
     } catch (e) {
-      this.setState({ submitting: false, submitError: "Couldn't send, check your connection and try again." });
+      this.setState({ submitting: false, submitError: "Couldn't send — check your connection and try again." });
     }
   };
 
