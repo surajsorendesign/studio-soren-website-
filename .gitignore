@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Duplicate copies Finder / iCloud makes ("services 2.html", "sitemap 3.xml").
+# Only for code and config files; images in uploads/ can legitimately have numbers.
+* [0-9].html
+* [0-9].js
+* [0-9].json
+* [0-9].xml
+* [0-9].txt
+* [0-9].md
+
+# Vercel CLI
+.vercel
