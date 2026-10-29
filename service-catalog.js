@@ -289,6 +289,8 @@
     caseStudies: { slug: 'case-studies', file: 'case-studies', dc: 'Studio Soren Case Studies' },
     insights: { slug: 'insights', file: 'insights', dc: 'Studio Soren Insights' },
     faqs: { slug: 'faqs', file: 'faqs', dc: 'Studio Soren FAQs' },
+    csOptaro: { slug: 'case-study-optaro', file: 'case-study-optaro', dc: 'Studio Soren Case Study - Optaro' },
+    csBrightbridge: { slug: 'case-study-brightbridge', file: 'case-study-brightbridge', dc: 'Studio Soren Case Study - BrightBridge Connect' },
     csBt: { slug: 'case-study-bt', file: 'case-study-bt', dc: 'Studio Soren Case Study - BT Digital Checkout' },
     csMind: { slug: 'case-study-mind', file: 'case-study-mind', dc: 'Studio Soren Case Study - Mind Onboarding' },
     csKeys: { slug: 'case-study-keys', file: 'case-study-keys', dc: 'Studio Soren Case Study - KEYS Community' },

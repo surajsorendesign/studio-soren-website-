@@ -308,6 +308,8 @@ class Component extends DCLogic {
 
       footerServices: cat ? cat.categories.map((c) => ({ title: c.title, href: resolve(c) })) : [],
       footerCaseStudies: cat ? [
+        { title: 'Optaro', href: cat.page('csOptaro') },
+        { title: 'BrightBridge Connect', href: cat.page('csBrightbridge') },
         { title: "BT's digital checkout", href: cat.page('csBt') },
         { title: "Mind's graduate onboarding", href: cat.page('csMind') },
         { title: 'KEYS Community', href: cat.page('csKeys') },

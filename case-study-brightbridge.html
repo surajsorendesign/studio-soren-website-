@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>BrightBridge Connect: Getting a Design System Ready for AI-Assisted Development | Studio Soren Case Study</title>
+<meta name="description" content="In three weeks Studio Soren took BrightBridge Connect's design system from 45 to 93/100 AI readiness: a live-site audit, governance pack and a tested Claude Code workflow.">
+<meta name="keywords" content="AI-ready design system, design system audit, Claude Code design system, Figma MCP workflow, design system governance, AI-assisted development case study">
+<link rel="canonical" href="https://studiosoren.com/case-study-brightbridge">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Soren">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Soren">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://studiosoren.com/case-study-brightbridge">
+<meta property="og:title" content="BrightBridge Connect: Getting a Design System Ready for AI-Assisted Development | Studio Soren Case Study">
+<meta property="og:description" content="In three weeks Studio Soren took BrightBridge Connect's design system from 45 to 93/100 AI readiness: a live-site audit, governance pack and a tested Claude Code workflow.">
+<meta property="og:image" content="https://studiosoren.com/assets/og/case-study-brightbridge.png">
+<meta property="og:image:secure_url" content="https://studiosoren.com/assets/og/case-study-brightbridge.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Case study: BrightBridge Connect AI-ready design system — Studio Soren">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BrightBridge Connect: Getting a Design System Ready for AI-Assisted Development | Studio Soren Case Study">
+<meta name="twitter:description" content="In three weeks Studio Soren took BrightBridge Connect's design system from 45 to 93/100 AI readiness: a live-site audit, governance pack and a tested Claude Code workflow.">
+<meta name="twitter:image" content="https://studiosoren.com/assets/og/case-study-brightbridge.png">
+<meta name="twitter:image:alt" content="Case study: BrightBridge Connect AI-ready design system — Studio Soren">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"BrightBridge Connect AI-ready design system","url":"https://studiosoren.com/case-study-brightbridge","about":"In three weeks Studio Soren took BrightBridge Connect's design system from 45 to 93/100 AI readiness: a live-site audit, governance pack and a tested Claude Code workflow.","creator":{"@id":"https://studiosoren.com/#org"},"genre":"Case study"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studiosoren.com/"},{"@type":"ListItem","position":2,"name":"Case studies","item":"https://studiosoren.com/case-studies"},{"@type":"ListItem","position":3,"name":"BrightBridge Connect","item":"https://studiosoren.com/case-study-brightbridge"}]}</script>
+<!-- seo:end -->
+<script>/* link resolver: production serves clean URLs (Vercel cleanUrls); this maps legacy/blog-style paths to the right page and falls back to .html files off-host. */
+(function(){var S=["about","services","case-studies","insights","privacy-policy","cookies-policy","404","service-product-design","service-design-strategy","service-research-data","service-ai-integration","service-software-engineering","service-digital-storytelling","case-study-bt","case-study-ee","case-study-carelink","case-study-mind","case-study-kindred","case-study-keys","case-study-optaro","case-study-brightbridge","faq-design-review-process","faq-digital-transformation-cost","faq-enterprise-support","faq-measuring-design-success","faq-non-profit-fundraising","faq-product-design-vs-ux","insight-accessibility-standards","insight-agentic-ai","insight-community-effort","insight-digital-storytelling-charities","insight-enterprise-design-strategy","insight-growth-mindset","insight-hidden-costs","insight-listening-before-launching","insight-measure-a-feeling","insight-more-than-a-number","insight-product-market-fit","insight-thoughtful-ai","insight-emotion-design","faqs","service-brand-kickstart","service-visual-identity-system","service-brand-guidelines-toolkit","service-naming-messaging","service-pitch-deck-design","service-launch-social-kit","service-ux-ui-upgrade","service-ux-ui-audit","service-interface-redesign","service-design-system-build","service-accessibility-uplift","service-usability-testing","service-conversion-optimisation","service-design-team-scaling","service-embedded-design-partner","service-design-ops","service-hiring-team-structure","service-mentoring-upskilling","service-design-leadership-on-demand","service-tooling-handoff-setup","service-discovery-sprints","service-web-app-design","service-prototyping-testing","service-video-motion-design","service-campaign-content-design","service-data-storytelling","service-illustration-brand-assets","service-photography-direction","service-ai-workflow-acceleration","service-custom-agentic-systems","service-ai-enablement-workshops","service-rapid-mvp-build","service-full-stack-build","service-qa-release-readiness","service-journey-mapping","service-operational-blueprints","service-design-maturity-assessment","service-user-research-programmes","service-insight-synthesis","service-measurement-frameworks"];var A={"why-emotion-design-is-the-secret-ingredient-in-digital-storytelling":"insight-emotion-design","thoughtful-ai-for-real-organisations":"insight-thoughtful-ai","why-a-growth-mindset-matters-in-digital-transformation":"insight-growth-mindset","the-hidden-costs-of-poor-strategic-planning":"insight-hidden-costs","the-path-to-product-market-fit":"insight-product-market-fit","design-strategy-for-enterprises":"insight-enterprise-design-strategy","why-accessibility-standards-matter":"insight-accessibility-standards","why-agentic-ai-is-the-ultimate-impact-multiplier":"insight-agentic-ai","digital-storytelling-for-charities":"insight-digital-storytelling-charities","can-you-measure-a-feeling":"insight-measure-a-feeling","listening-before-launching":"insight-listening-before-launching","community-effort-and-service-design":"insight-community-effort","more-than-a-number":"insight-more-than-a-number"};
+var LOCAL=!(location.hostname==='studiosoren.com'||location.hostname==='www.studiosoren.com');
+function canon(p){p=String(p||'').split(/[?#]/)[0].replace(/^\/+/,'').replace(/\/+$/,'').replace(/\.html$/,'');if(p==='')return '';if(S.indexOf(p)>-1)return p;if(A[p])return A[p];var m=p.match(/^(?:insights|insight|blog|articles|article|post|posts)\/(.+)$/);if(m){var s=m[1];if(A[s])return A[s];if(S.indexOf(s)>-1)return s;if(S.indexOf('insight-'+s)>-1)return 'insight-'+s;}return null;}
+function url(t,rest){return (LOCAL?(t===''?'index':t)+'.html':'/'+t)+(rest||'');}
+window.__sorenResolve=canon;window.__sorenUrl=url;
+document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest&&e.target.closest('a[href]');if(!a||a.target==='_blank')return;var h=a.getAttribute('href');if(!h||h[0]!=='/')return;var path=h.slice(1).split(/[?#]/)[0];var rest=h.slice(1+path.length);var t=canon(path);if(t===null)return;if(!LOCAL&&('/'+t)===('/'+path.replace(/\.html$/,'')))return;e.preventDefault();location.href=url(t,rest);},true);})();</script>
+<script>(function(){try{var t=localStorage.getItem('soren-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script>
+<script src="./support.js"></script>
+<script src="./skeleton.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#111"/><text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="30" fill="#fff">B</text></svg></template>
+<x-dc>
+<helmet>
+<script src="https://t.contentsquare.net/uxa/9766b7092233a.js" defer=""></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M8FPC24GCR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M8FPC24GCR');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700;800&amp;family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  @font-face { font-family: 'Filson Soft'; src: url('./uploads/FilsonSoft-Bold.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Clash Grotesk'; src: url('./uploads/bbc/ClashGrotesk-Variable.ttf') format('truetype'); font-weight: 200 700; font-style: normal; font-display: swap; }
+  * { box-sizing: border-box; }
+  html.sc-dc-streaming .sc-placeholder::before,
+  html.sc-dc-streaming .sc-interp.sc-missing::before { animation: none !important; background: none !important; }
+  .sc-placeholder[title="Nav"], .sc-placeholder[title="Footer"] { background: transparent !important; border: none !important; }
+  html, body { background: #0C0A12; }
+  html[data-theme="light"], html[data-theme="light"] body { background: #FAF9FC; }
+  @keyframes soren-page-in { from { opacity: 0; } to { opacity: 1; } }
+  body { margin: 0; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  a { color: #8B6CF5; }
+  a:hover { color: #A78BFA; }
+  section[id] { scroll-margin-top: 110px; }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="./service-catalog.js"></script>
+</helmet>
+
+<div style="{{ pageStyle }}">
+  <dc-import name="Nav" active="case-studies" dark="{{ dark }}" on-theme-change="{{ toggleTheme }}" hint-size="100%,64px"></dc-import>
+
+  <header style="{{ heroSectionStyle }}">
+    <div style="{{ heroGridStyle }}">
+      <div>
+        <span style="{{ tagStyle }}">Design Systems · AI Integration · Coaching</span>
+        <h1 style="{{ h1Style }}">BrightBridge Connect: Getting a Design System Ready for AI-Assisted Development</h1>
+      </div>
+      <div style="{{ heroDescColStyle }}">
+        <p style="{{ paraStyle }}">BrightBridge Connect wanted their design system to work with Claude Code, not against it. In three weeks Studio Soren reviewed the system against the live website, defined what was stopping AI from building on it consistently, and restructured it so AI-assisted work stays true to the brand.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 28px; margin-top: 8px;">
+          <div><p style="{{ metaLabelStyle }}">Client</p><p style="{{ metaValueStyle }}">BrightBridge Connect</p></div>
+          <div><p style="{{ metaLabelStyle }}">Year</p><p style="{{ metaValueStyle }}">2026</p></div>
+          <div><p style="{{ metaLabelStyle }}">Duration</p><p style="{{ metaValueStyle }}">3 weeks</p></div>
+          <div><p style="{{ metaLabelStyle }}">Scope</p><div style="display: flex; flex-wrap: wrap; gap: 6px;"><sc-for list="{{ scopeTags }}" as="st" hint-placeholder-count="3"><a href="{{ st.href }}" style="{{ scopeTagStyle }}" style-hover="border-color: #8B6CF5; color: #8B6CF5;">{{ st.label }}<i class="ph ph-arrow-up-right" style="font-size: 11px;"></i></a></sc-for></div></div>
+        </div>
+        <a href="{{ siteUrl }}" target="_blank" rel="noopener" style="{{ siteLinkStyle }}" style-hover="opacity: .82;">Visit brightbridgeconnect.co.uk <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <div style="{{ heroSlotWrapStyle }}">
+      <div style="{{ heroBbcStyle }}">
+        <span style="{{ heroArchBgStyle }}"></span>
+        <div style="{{ heroBbcLeftStyle }}">
+          <div style="{{ heroLockupStyle }}">
+            <img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ heroLogoStyle }}">
+            <span style="{{ heroTimesStyle }}">×</span>
+            <span style="{{ heroClaudeStyle }}"><img src="./uploads/Claude_AI_symbol.svg.webp" alt="" style="{{ heroClaudeMarkStyle }}">Claude</span>
+          </div>
+          <p style="{{ heroBbcHeadStyle }}">AI-ready by design</p>
+        </div>
+        <div style="{{ heroVisStyle }}">
+          <div style="{{ heroVisArchStyle }}">
+            <div style="{{ scanCardStyle }}" role="img" aria-label="Raw design values resolving into named design tokens">
+              <span style="{{ scanGlowStyle }}"></span>
+              <span style="{{ scanLineStyle }}"></span>
+              <sc-for list="{{ scanDots }}" as="d" hint-placeholder-count="12"><span style="{{ d.style }}"></span></sc-for>
+              <div style="{{ scanTopStyle }}"><span style="{{ scanRingStyle }}"></span>AI readiness 93/100</div>
+              <div style="{{ scanRowsStyle }}">
+                <sc-for list="{{ scanRows }}" as="r" hint-placeholder-count="5">
+                  <div style="{{ scanRowStyle }}">
+                    <span style="{{ r.rawStyle }}">{{ r.raw }}</span>
+                    <span style="{{ scanTokenStyle }}"><span style="{{ scanTokenTextStyle }}">{{ r.token }}</span><span style="{{ scanCheckStyle }}"><i class="ph-bold ph-check"></i></span></span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <p style="{{ scanCapStyle }}">Raw values in, tokens out</p>
+          </div>
+        </div>
+        <div style="{{ heroBarStyle }}"><span style="white-space: nowrap;"><strong style="font-weight: 600;">93/100</strong> AI readiness, up from 45</span><span style="{{ heroBarUrlStyle }}">brightbridgeconnect.co.uk</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div style="{{ chapterCanvasStyle }}">
+    <div style="{{ chapterShellStyle }}">
+      <sc-if value="{{ showSideNav }}" hint-placeholder-val="{{ true }}">
+      <nav style="{{ chapterNavStyle }}">
+        <p style="{{ chapterNavLabelStyle }}">Chapters</p>
+        <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="7">
+          <p style="{{ c.groupStyle }}">{{ c.group }}</p>
+          <a href="{{ c.href }}" style="{{ c.linkStyle }}" style-hover="color: #8B6CF5;"><span style="{{ c.numStyle }}">{{ c.num }}</span>{{ c.title }}<span style="{{ c.weekStyle }}">{{ c.week }}</span></a>
+        </sc-for>
+      </nav>
+      </sc-if>
+
+      <div style="{{ chapterColStyle }}">
+
+        <section id="brief" data-screen-label="00 Brief" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">00</span> Brief</p>
+          <h2 style="{{ h2Style }}">A working design system, not yet written for AI</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; margin-top: 4px;">
+            <div style="{{ briefCardStyle }}">
+              <div style="{{ briefHeadStyle }}"><span style="{{ briefIconStyle }}"><i class="ph ph-browser"></i></span><span style="{{ briefStepStyle }}">01 · Source of truth</span></div>
+              <p style="{{ briefTextStyle }}">The BrightBridge website was the visual reference to protect. Everything in the system had to answer to it.</p>
+              <div style="{{ briefChipRowStyle }}"><span style="{{ briefChipStyle }}">BBC website</span><span style="{{ briefChipStyle }}">Visual direction</span></div>
+            </div>
+            <div style="{{ briefCardStyle }}">
+              <div style="{{ briefHeadStyle }}"><span style="{{ briefIconStyle }}"><i class="ph ph-terminal-window"></i></span><span style="{{ briefStepStyle }}">02 · The goal</span></div>
+              <p style="{{ briefTextStyle }}">A design system Claude Code can read, follow and reproduce, so AI-assisted builds stay consistent and compliant.</p>
+              <div style="{{ briefChipRowStyle }}"><span style="{{ briefChipStyle }}">Claude Code</span><span style="{{ briefChipStyle }}">Figma MCP</span></div>
+            </div>
+            <div style="{{ briefCardStyle }}">
+              <div style="{{ briefHeadStyle }}"><span style="{{ briefIconStyle }}"><i class="ph ph-path"></i></span><span style="{{ briefStepStyle }}">03 · The sequence</span></div>
+              <p style="{{ briefTextStyle }}">Three stages over three weeks, with the team coached at every step so the workflow outlives the engagement.</p>
+              <div style="{{ briefChipRowStyle }}"><span style="{{ briefChipStyle }}">Review</span><i class="ph ph-arrow-right" style="{{ briefArrowStyle }}"></i><span style="{{ briefChipStyle }}">Define</span><i class="ph ph-arrow-right" style="{{ briefArrowStyle }}"></i><span style="{{ briefChipStyle }}">Recommend</span></div>
+            </div>
+          </div>
+
+          <div style="{{ boardStyle }}" data-reveal="1">
+            <div style="{{ tlHeadStyle }}">
+              <p style="{{ sheetEyebrowStyle }}">Project plan</p>
+              <p style="{{ sheetTitleStyle }}">Three weeks, three stages</p>
+            </div>
+            <div style="{{ tlGridStyle }}" data-reveal="stagger">
+              <sc-for list="{{ weeks }}" as="wk" hint-placeholder-count="3">
+                <a href="{{ wk.href }}" style="{{ tlCardStyle }}" style-hover="border-color: #8B6CF5;">
+                  <div style="{{ tlTopStyle }}">
+                    <span style="{{ tlWeekStyle }}">{{ wk.week }}</span>
+                    <i class="{{ wk.icon }}" style="{{ tlIconStyle }}"></i>
+                  </div>
+                  <p style="{{ tlStageStyle }}">{{ wk.stage }}</p>
+                  <p style="{{ tlTextStyle }}">{{ wk.text }}</p>
+                  <span style="{{ tlBarStyle }}"><span style="{{ wk.fillStyle }}"></span></span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <section id="impact" data-screen-label="01 Results" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">01</span> Results</p>
+          <h2 style="{{ h2Style }}">From 45 to 93 in three weeks</h2>
+          <div id="bbc-score" style="{{ bbcBoardStyle }}">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><p style="{{ bbcTitleStyle }}">AI readiness, measured weekly</p><img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ bbcLogoStyle }}"></div>
+            <div style="{{ bbcTabsStyle }}"><sc-for list="{{ scoreTabs }}" as="t" hint-placeholder-count="3"><button type="button" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button></sc-for></div>
+            <div style="{{ scoreGridStyle }}">
+              <sc-for list="{{ scores }}" as="sc" hint-placeholder-count="2">
+                <div style="{{ scoreCardStyle }}">
+                  <p style="{{ scoreLabelStyle }}">{{ sc.label }}</p>
+                  <div style="{{ scoreNumRowStyle }}"><span style="{{ scoreNumStyle }}">{{ sc.num }}</span><span style="{{ scoreOutStyle }}">/100</span><span style="{{ sc.deltaStyle }}">{{ sc.delta }}</span></div>
+                  <span style="{{ scoreTrackStyle }}"><span style="{{ sc.fillStyle }}"></span></span>
+                  <p style="{{ scoreNoteStyle }}">{{ sc.note }}</p>
+                </div>
+              </sc-for>
+            </div>
+            <div style="{{ bbcFootStyle }}"><span>Week 1 baseline: general design-to-dev accuracy 60/100 · WCAG colour contrast, 8 of 9 pairs pass AA</span></div>
+          </div>
+          <p style="{{ captionStyle }}">Directional scores from an AI-assisted read, re-checked each week. A guide to focus, not a certified benchmark.</p>
+          <div style="{{ gapWrapStyle }}">
+            <div style="{{ gapHeadStyle }}"><i class="ph-fill ph-info" style="{{ gapIconStyle }}"></i><p style="{{ gapTitleStyle }}">The road to 100</p></div>
+            <p style="{{ gapLeadStyle }}">The final points are natural next steps for the BrightBridge team, and we’ve documented each one so it’s simple to pick up.</p>
+            <div style="{{ gapGridStyle }}">
+              <sc-for list="{{ gaps }}" as="g" hint-placeholder-count="3">
+                <div style="{{ gapCardStyle }}">
+                  <span style="{{ g.tagStyle }}">{{ g.tag }}</span>
+                  <p style="{{ gapCardTitleStyle }}">{{ g.title }}</p>
+                  <p style="{{ gapCardTextStyle }}">{{ g.text }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="{{ reviewGridStyle }}">
+          <figure style="{{ quoteSideStyle }}">
+            <div style="{{ quoteStarsStyle }}" aria-label="5 out of 5 stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote style="{{ quoteTextStyle }}">“They didn’t limit themselves to just completing the project. They shared genuinely useful recommendations and tips that we could take forward beyond the scope of the work.”</blockquote>
+            <figcaption style="{{ quoteFootStyle }}">
+              <div style="{{ quoteWhoStyle }}">
+                <p style="{{ quoteNameStyle }}">Dorcas Adeboye</p>
+                <p style="{{ quoteRoleStyle }}">Technical Project Manager, BrightBridge Connect</p>
+              </div>
+              <a href="{{ reviewUrl }}" target="_blank" rel="noopener" style="{{ quoteLinkStyle }}" style-hover="opacity: .82;"><i class="ph-bold ph-google-logo"></i> Read on Google <i class="ph ph-arrow-up-right"></i></a>
+            </figcaption>
+          </figure>
+          <figure style="{{ quoteSideStyle }}">
+            <div style="{{ quoteStarsStyle }}" aria-label="5 out of 5 stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote style="{{ quoteTextStyle }}">“Have you ever seen Messi on the pitch? That’s exactly how calm and composed Suraj was throughout the entire experience. His teaching was detailed, patient, and always focused on explaining things down to the core.”</blockquote>
+            <figcaption style="{{ quoteFootStyle }}">
+              <div style="{{ quoteWhoStyle }}">
+                <p style="{{ quoteNameStyle }}">Ridwan Gbolahan</p>
+                <p style="{{ quoteRoleStyle }}">BrightBridge Connect</p>
+              </div>
+              <a href="{{ reviewUrl }}" target="_blank" rel="noopener" style="{{ quoteLinkStyle }}" style-hover="opacity: .82;"><i class="ph-bold ph-google-logo"></i> Read on Google <i class="ph ph-arrow-up-right"></i></a>
+            </figcaption>
+          </figure>
+          </div>
+        </section>
+
+        <section id="review" data-screen-label="02 Review" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">02</span> Week 1 · Review</p>
+          <h2 style="{{ h2Style }}">Start with what is live</h2>
+          <div style="{{ twoColTextStyle }}">
+            <p style="{{ paraStyle }}">The website is what customers actually see, so it set the standard. We reviewed BrightBridge’s foundations and components against it, piece by piece, to find where the Figma library and the live site had drifted apart.</p>
+            <p style="{{ paraStyle }}">Alongside the audit we interviewed the designers and developers who use the system day to day, to understand how they work, where they get stuck and how AI already fits into their week.</p>
+          </div>
+          <div style="{{ sourceRowStyle }}" data-reveal="stagger">
+            <sc-for list="{{ sources }}" as="s" hint-placeholder-count="3">
+              <div style="{{ sourceCardStyle }}">
+                <i class="{{ s.icon }}" style="{{ sourceIconStyle }}"></i>
+                <p style="{{ sourceLabelStyle }}">{{ s.label }}</p>
+                <p style="{{ sourceTextStyle }}">{{ s.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <div style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">Design-to-dev handover, as is</p>
+            <p style="{{ mockLeadStyle }}">How a design becomes a live page today.</p>
+          </div>
+          <div style="{{ bbcBoardStyle }}" data-reveal="1">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ bbcLogoStyle }}"><span style="{{ bbcLabelStyle }}">Validated with the tech lead</span></div>
+            <div style="{{ hoWrapStyle }}">
+              <sc-if value="{{ hoDiagram }}" hint-placeholder-val="{{ true }}">
+                <div style="{{ dgCanvasStyle }}" data-reveal="1">
+                  <svg viewBox="0 0 1000 440" preserveAspectRatio="none" style="{{ dgSvgStyle }}" aria-hidden="true">
+                    <g fill="none" stroke="#9C93D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M240 80 H378" vector-effect="non-scaling-stroke"></path>
+                      <path d="M140 102 V186" vector-effect="non-scaling-stroke"></path>
+                      <path d="M420 122 V210" vector-effect="non-scaling-stroke"></path>
+                      <path d="M490 280 H560 M560 120 V340 M560 120 H600 M560 230 H600 M560 340 H600" vector-effect="non-scaling-stroke"></path>
+                      <path d="M760 120 H800 M760 230 H800 M760 340 H800 M800 120 V340 M800 280 H830" vector-effect="non-scaling-stroke"></path>
+                    </g>
+                    <g fill="none" stroke="#9C93D6" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round">
+                      <path d="M140 254 V326 M70 310 H210 M70 310 V326 M210 310 V326" vector-effect="non-scaling-stroke"></path>
+                      <path d="M880 132 V230" vector-effect="non-scaling-stroke"></path>
+                    </g>
+                  </svg>
+                  <span style="{{ dgMk1Style }}"></span><span style="{{ dgMk2Style }}"></span><span style="{{ dgMk3Style }}"></span><span style="{{ dgMk4Style }}"></span><span style="{{ dgMk5Style }}"></span><span style="{{ dgMk6Style }}"></span>
+                  <div style="{{ dgPillStyle }}"><i class="ph ph-figma-logo"></i>Design in Figma<i class="ph-fill ph-play-circle" style="font-size: 1.15em;"></i></div>
+                  <div style="{{ dgHexWrapStyle }}"><div style="{{ dgHexStyle }}"><i class="ph ph-plugs-connected"></i></div><span style="{{ dgHexLabelStyle }}">Figma MCP</span></div>
+                  <sc-for list="{{ dgMinis }}" as="m" hint-placeholder-count="3"><div style="{{ m.style }}"><span style="{{ dgMiniTileStyle }}"><i class="{{ m.icon }}"></i></span><span style="{{ dgMiniLabelStyle }}">{{ m.label }}</span></div></sc-for>
+                  <div style="{{ dgHandoverStyle }}"><i class="ph ph-arrows-left-right" style="{{ dgTileIconStyle }}"></i><span style="{{ dgFlagStyle }}"><i class="ph-fill ph-warning"></i>No spec</span><span style="{{ dgTileLabelStyle }}">Handover</span></div>
+                  <div style="{{ dgBuildStyle }}"><i class="ph ph-code" style="{{ dgBuildIconStyle }}"></i><span style="{{ dgBuildSubStyle }}">Next.js · Claude loop</span><span style="{{ dgFlagStyle }}"><i class="ph-fill ph-warning"></i>Manual overrides</span><span style="{{ dgTileLabelStyle }}">Build</span></div>
+                  <sc-for list="{{ dgCards }}" as="c" hint-placeholder-count="3"><div style="{{ c.style }}"><span style="{{ dgCardTitleStyle }}"><i class="{{ c.icon }}" style="color: #5544BB;"></i>{{ c.title }}</span><span style="{{ dgBarStyle }}"></span><span style="{{ dgBarShortStyle }}"></span></div></sc-for>
+                  <div style="{{ dgChipStyle }}"><span style="{{ dgChipCheckStyle }}"><i class="ph-bold ph-check"></i></span>Human-reviewed PR</div>
+                  <div style="{{ dgLiveStyle }}"><i class="ph ph-globe-simple" style="{{ dgLiveIconStyle }}"></i><span style="{{ dgTileLabelStyle }}">Live site</span></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ hoStack }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ hoRowStyle }}" data-reveal="stagger">
+                  <sc-for list="{{ handover }}" as="h" hint-placeholder-count="5">
+                    <div style="{{ sbPanelStyle }}">
+                      <div style="{{ sbTopStyle }}"><span style="{{ sbShotStyle }}">{{ h.shot }}</span><span style="{{ h.flagStyle }}"><i class="ph-fill ph-warning"></i>Friction</span></div>
+                      <div style="{{ sbFrameStyle }}"><i class="{{ h.icon }}" style="{{ sbIconStyle }}"></i><span style="{{ h.arrowStyle }}"><i class="ph-bold ph-arrow-right"></i></span></div>
+                      <p style="{{ sbTitleStyle }}">{{ h.title }}</p>
+                      <p style="{{ sbTextStyle }}">{{ h.text }}</p>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+            <div style="{{ hoGapStyle }}"><i class="ph-fill ph-warning-circle" style="font-size: 20px; color: #FFB4B6; flex-shrink: 0;"></i><span>No design review before handover, and inconsistent variables that confuse AI.</span></div>
+          </div>
+          <p style="{{ captionStyle }}">How a design becomes a live page today, validated with the tech lead.</p>
+
+          <div style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">Week 1 output</p>
+            <p style="{{ mockLeadStyle }}">Every foundation and component, checked against the website.</p>
+          </div>
+          <div style="{{ bbcBoardStyle }}" data-reveal="1">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ bbcLogoStyle }}"><span style="{{ bbcLabelStyle }}">Week 1 deliverables</span></div>
+            <div style="{{ bbcTabsStyle }}"><sc-for list="{{ auditTabs }}" as="t" hint-placeholder-count="2"><button type="button" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button></sc-for></div>
+            <sc-if value="{{ auditIsFound }}" hint-placeholder-val="{{ true }}">
+              <div style="{{ auPanelStyle }}">
+                <div style="{{ auColStyle }}">
+                  <p style="{{ auKickerStyle }}">Brand purple · as documented</p>
+                  <div style="{{ auSwRowStyle }}">
+                    <sc-for list="{{ auPurples }}" as="sw" hint-placeholder-count="6"><div style="{{ auSwCellStyle }}"><span style="{{ sw.style }}"></span><span style="{{ auSwLabelStyle }}">{{ sw.name }}</span></div></sc-for>
+                  </div>
+                  <p style="{{ auKickerStyle }}">Neutrals · as documented</p>
+                  <div style="{{ auSwRowStyle }}">
+                    <sc-for list="{{ auGreys }}" as="sw" hint-placeholder-count="8"><div style="{{ auSwCellStyle }}"><span style="{{ sw.style }}"></span><span style="{{ auSwLabelStyle }}">{{ sw.name }}</span></div></sc-for>
+                  </div>
+                  <div style="{{ auDupStyle }}">
+                    <div style="{{ auDupPairStyle }}"><span style="{{ auDupAStyle }}"></span><span style="{{ auDupBStyle }}"></span></div>
+                    <div><p style="{{ auDupTitleStyle }}">One pixel value apart</p><p style="{{ auDupTextStyle }}">#EBEBEB documented, #EAEAEA used on cards and borders. Two greys doing one job.</p></div>
+                  </div>
+                </div>
+                <div style="{{ auColStyle }}">
+                  <p style="{{ auKickerStyle }}">Findings</p>
+                  <sc-for list="{{ auFindings }}" as="f" hint-placeholder-count="6">
+                    <div style="{{ auRowStyle }}">
+                      <div style="{{ auRowBodyStyle }}"><p style="{{ auRowTitleStyle }}">{{ f.title }}</p><p style="{{ auRowTextStyle }}">{{ f.text }}</p></div>
+                      <span style="{{ f.pillStyle }}">{{ f.status }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ auditIsMatrix }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ mxPanelStyle }}">
+                <span style="{{ mxAxisYStyle }}">Impact ↑</span>
+                <div style="{{ mxGridStyle }}">
+                  <sc-for list="{{ mxQuads }}" as="q" hint-placeholder-count="4">
+                    <div style="{{ q.style }}">
+                      <p style="{{ mxQuadTitleStyle }}">{{ q.title }}</p>
+                      <p style="{{ mxQuadSubStyle }}">{{ q.sub }}</p>
+                      <div style="{{ mxNotesStyle }}">
+                        <sc-for list="{{ q.notes }}" as="n" hint-placeholder-count="2"><p style="{{ n.style }}">{{ n.text }}</p></sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="{{ mxFootStyle }}"><span style="{{ mxLegendStyle }}"><span style="{{ mxDotWebStyle }}"></span>Website and components</span><span style="{{ mxLegendStyle }}"><span style="{{ mxDotProcStyle }}"></span>Process and handover</span><span style="{{ mxAxisXStyle }}">Effort →</span></div>
+              </div>
+            </sc-if>
+            <div style="{{ bbcFootStyle }}"><span>{{ auditNote }}</span></div>
+          </div>
+          <p style="{{ captionStyle }}">Review: foundations and components mapped against the BBC website, then sorted by what is worth doing first.</p>
+        </section>
+
+        <section id="define" data-screen-label="03 Define" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">03</span> Week 2 · Define</p>
+          <h2 style="{{ h2Style }}">What a person sees, and what the model reads</h2>
+          <p style="{{ leadShortStyle }}">Claude reads names, values and structure. Where those are vague, it guesses.</p>
+          <div style="{{ bbcBoardStyle }}" data-reveal="1">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><p style="{{ bbcTitleStyle }}">Issues, by priority</p><span style="{{ bbcLabelStyle }}">Ranked by cost to AI output</span></div>
+            <div style="{{ prListStyle }}" data-reveal="stagger">
+              <sc-for list="{{ issues }}" as="is" hint-placeholder-count="5">
+                <div style="{{ prRowStyle }}">
+                  <span style="{{ prRankStyle }}">{{ is.num }}</span>
+                  <span style="{{ prIconStyle }}"><i class="{{ is.icon }}"></i></span>
+                  <span style="{{ prTitleStyle }}">{{ is.title }}</span>
+                  <span style="{{ prMeterStyle }}"><sc-for list="{{ is.bars }}" as="b" hint-placeholder-count="5"><span style="{{ b.style }}"></span></sc-for></span>
+                  <span style="{{ is.sevStyle }}">{{ is.sev }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="{{ bbcFootStyle }}"><span>Impact on AI output quality</span><span style="{{ prLegendStyle }}"><span style="{{ prLegendHighStyle }}"></span>High<span style="{{ prLegendMedStyle }}"></span>Medium</span></div>
+          </div>
+
+          <div style="{{ boardStyle }}" data-reveal="1">
+            <div style="{{ codeWindowStyle }}">
+              <div style="{{ codeChromeStyle }}">
+                <div style="{{ baLightsStyle }}">
+                  <span style="{{ baLightRedStyle }}"></span>
+                  <span style="{{ baLightAmberStyle }}"></span>
+                  <span style="{{ baLightGreenStyle }}"></span>
+                </div>
+                <div style="{{ segStyle }}">
+                  <button onClick="{{ showBefore }}" style="{{ segBeforeStyle }}">Before</button>
+                  <button onClick="{{ showAfter }}" style="{{ segAfterStyle }}">After</button>
+                </div>
+              </div>
+              <div style="{{ codeSplitStyle }}">
+                <div style="{{ codePaneStyle }}">
+                  <p style="{{ codePaneLabelStyle }}"><i class="ph ph-figma-logo"></i> Figma, as the model sees it</p>
+                  <sc-for list="{{ treeLines }}" as="l" hint-placeholder-count="6">
+                    <p style="{{ l.style }}">{{ l.text }}</p>
+                  </sc-for>
+                </div>
+                <div style="{{ codePaneStyle }}">
+                  <p style="{{ codePaneLabelStyle }}"><i class="ph ph-terminal-window"></i> What Claude Code writes</p>
+                  <sc-for list="{{ codeLines }}" as="l" hint-placeholder-count="6">
+                    <p style="{{ l.style }}">{{ l.text }}</p>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="{{ codeFootStyle }}">
+                <i class="{{ codeVerdictIcon }}" style="{{ codeVerdictIconStyle }}"></i>
+                <span>{{ codeVerdict }}</span>
+              </div>
+            </div>
+          </div>
+          <p style="{{ captionStyle }}">Illustrative: the primary button, before and after the clean-up.</p>
+
+          <div style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">Week 2 · Design token update</p>
+            <p style="{{ mockLeadStyle }}">Three tiers, so the model always knows which value to use.</p>
+          </div>
+          <div style="{{ tokenStatRowStyle }}">
+            <sc-for list="{{ tokenStats }}" as="ts" hint-placeholder-count="4">
+              <div style="{{ tokenStatStyle }}"><p style="{{ tokenStatNumStyle }}">{{ ts.num }}</p><p style="{{ tokenStatLabelStyle }}">{{ ts.label }}</p></div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section id="recommend" data-screen-label="04 Recommend" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">04</span> Week 3 · Recommend</p>
+          <h2 style="{{ h2Style }}">Written for Claude Code, tested against the real thing</h2>
+          <div style="{{ twoColTextStyle }}">
+            <p style="{{ paraStyle }}">We restructured the system around how Claude Code works: tokens it can resolve by name, components whose properties map straight to code, and a governance pack it reads before it builds anything. The team wrote twelve of those files; we checked each one against the live Figma file, corrected what had drifted, and added a thirteenth for accessibility.</p>
+            <p style="{{ paraStyle }}">Then we put it to the test. Claude rebuilt selected parts of the website. Where the output drifted, we refined the system. Prompts were tuned in the final phase.</p>
+          </div>
+
+          <div style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">The governance pack</p>
+            <p style="{{ mockLeadStyle }}">Thirteen files Claude reads before it builds. Open one.</p>
+          </div>
+          <div style="{{ boardStyle }}" data-reveal="1">
+            <div style="{{ docWindowStyle }}">
+              <div style="{{ codeChromeStyle }}">
+                <div style="{{ baLightsStyle }}">
+                  <span style="{{ baLightRedStyle }}"></span>
+                  <span style="{{ baLightAmberStyle }}"></span>
+                  <span style="{{ baLightGreenStyle }}"></span>
+                </div>
+                <span style="{{ docPathStyle }}">brightbridge-design-system / {{ docActive.name }}</span>
+              </div>
+              <div style="{{ docSplitStyle }}">
+                <div style="{{ docListStyle }}">
+                  <sc-for list="{{ docs }}" as="d" hint-placeholder-count="13">
+                    <button type="button" onClick="{{ d.select }}" style="{{ d.style }}"><i class="{{ d.icon }}" style="{{ d.iconStyle }}"></i>{{ d.name }}</button>
+                  </sc-for>
+                </div>
+                <div style="{{ docBodyStyle }}">
+                  <p style="{{ docH1Style }}"># {{ docActive.title }}</p>
+                  <p style="{{ docPurposeStyle }}">{{ docActive.purpose }}</p>
+                  <sc-for list="{{ docActive.lines }}" as="ln" hint-placeholder-count="5">
+                    <p style="{{ ln.style }}">{{ ln.text }}</p>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="{{ captionStyle }}">Excerpts from the BrightBridge governance pack.</p>
+
+
+          
+          <div id="funnel" style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">Proof of concept</p>
+            <p style="{{ mockLeadStyle }}">A new sales funnel page, from Figma frame to clickable HTML.</p>
+          </div>
+          <div style="{{ twoColTextStyle }}">
+            <p style="{{ paraStyle }}">For BrightBridge’s new page for supported living providers, we ran the recommended workflow end to end. Claude read the Figma frames through MCP, used the governance pack as shared context, and turned the design into an interactive HTML artefact.</p>
+            <p style="{{ paraStyle }}">Stakeholders reviewed a prototype they could click through on desktop, tablet and mobile, with every FAQ state working, instead of a static mockup. Comments were resolved in Claude Code, and anything structural went back to the Figma canvas.</p>
+          </div>
+          <div style="{{ funnelStepsStyle }}" data-reveal="stagger">
+            <sc-for list="{{ funnelSteps }}" as="f" hint-placeholder-count="4">
+              <div style="{{ funnelStepStyle }}">
+                <div style="{{ funnelStepTopStyle }}"><span style="{{ funnelNumStyle }}">{{ f.num }}</span><i class="{{ f.icon }}" style="{{ funnelIconStyle }}"></i></div>
+                <p style="{{ funnelStepTitleStyle }}">{{ f.title }}</p>
+                <p style="{{ funnelStepTextStyle }}">{{ f.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <div style="{{ bbcBoardStyle }}" data-reveal="1">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ bbcLogoStyle }}"><span style="{{ bbcLabelStyle }}">Supported living providers · HTML artefact</span></div>
+            <div style="{{ bbcTabsStyle }}"><sc-for list="{{ deviceTabs }}" as="t" hint-placeholder-count="3"><button type="button" onClick="{{ t.select }}" style="{{ t.style }}"><i class="{{ t.icon }}"></i>{{ t.label }}</button></sc-for></div>
+            <div style="{{ deviceStageStyle }}"><div style="{{ deviceFrameStyle }}"><div style="{{ deviceImgStyle }}" role="img" aria-label="{{ deviceAlt }}"></div></div></div>
+            <div style="{{ bbcFootStyle }}"><span>{{ deviceNote }}</span><span style="{{ bbcScrollHintStyle }}">Scroll inside <i class="ph ph-arrow-down"></i></span></div>
+          </div>
+
+          <div style="{{ mockHeadStyle }}">
+            <p style="{{ smallKickerStyle }}">Week 3 · What got fixed</p>
+            <p style="{{ mockLeadStyle }}">Fixes applied directly in the file, not just recommended.</p>
+          </div>
+          <div style="{{ fixGridStyle }}" data-reveal="stagger">
+            <sc-for list="{{ fixes }}" as="x" hint-placeholder-count="6">
+              <div style="{{ fixCardStyle }}">
+                <p style="{{ fixAreaStyle }}">{{ x.area }}</p>
+                <p style="{{ fixNumStyle }}">{{ x.num }}</p>
+                <p style="{{ fixTextStyle }}">{{ x.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <div style="{{ bbcBoardStyle }}" data-reveal="1">
+            <span style="{{ bbcArchStyle }}"></span>
+            <div style="{{ bbcHeadStyle }}"><img src="./uploads/bbc/logo-lockup-white.svg" alt="BrightBridge Connect" style="{{ bbcLogoStyle }}"><span style="{{ bbcLabelStyle }}">Week 3 deliverables</span></div>
+            <div style="{{ bbcTabsStyle }}"><sc-for list="{{ v3.tabs }}" as="t" hint-placeholder-count="2"><button type="button" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button></sc-for></div>
+            <sc-if value="{{ w3IsReady }}" hint-placeholder-val="{{ true }}">
+              <div style="{{ w3PanelStyle }}">
+                <sc-for list="{{ w3Bars }}" as="b" hint-placeholder-count="4">
+                  <div style="{{ w3BarRowStyle }}">
+                    <p style="{{ w3BarLabelStyle }}">{{ b.label }}</p>
+                    <div style="{{ w3TrackStyle }}"><span style="{{ b.beforeStyle }}"></span><span style="{{ b.afterStyle }}"></span></div>
+                    <p style="{{ w3BarNumStyle }}">{{ b.from }} → <strong>{{ b.to }}</strong></p>
+                  </div>
+                </sc-for>
+                <div style="{{ w3LegendStyle }}"><span style="{{ w3LegItemStyle }}"><span style="{{ w3LegBeforeStyle }}"></span>Week 1</span><span style="{{ w3LegItemStyle }}"><span style="{{ w3LegAfterStyle }}"></span>Week 3</span></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ w3IsFlow }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ w3FlowStyle }}">
+                <sc-for list="{{ w3Flow }}" as="f" hint-placeholder-count="3">
+                  <div style="{{ w3StepStyle }}">
+                    <span style="{{ w3StepNumStyle }}">{{ f.num }}</span>
+                    <i class="{{ f.icon }}" style="{{ w3StepIconStyle }}"></i>
+                    <p style="{{ w3StepTitleStyle }}">{{ f.title }}</p>
+                    <p style="{{ w3StepTextStyle }}">{{ f.text }}</p>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <div style="{{ bbcFootStyle }}"><span>{{ v3.note }}</span></div>
+          </div>
+        </section>
+
+        <section id="role" data-screen-label="05 Our Role" style="{{ chapterSectionStyle }}">
+          <p style="{{ chapterKickerStyle }}"><span style="{{ chapterNumBigStyle }}">05</span> Our Role</p>
+          <h2 style="{{ h2Style }}">Audit, system and coaching, in one engagement</h2>
+          <div style="{{ roleGridStyle }}">
+            <sc-for list="{{ roles }}" as="r" hint-placeholder-count="8">
+              <a href="{{ r.href }}" style="{{ roleRowStyle }}" style-hover="border-color: #8B6CF5;">
+                <i class="{{ r.icon }}" style="{{ roleIconStyle }}"></i>
+                <p style="{{ roleTextStyle }}">{{ r.text }}</p>
+                <i class="ph ph-arrow-up-right" style="{{ roleArrowStyle }}"></i>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <section style="{{ sectionStyle }}">
+    <div style="{{ wideStyle }}">
+      <p style="{{ kickerStyle }}">More case studies</p>
+      <div style="{{ moreGridStyle }}">
+        <sc-for list="{{ moreCaseStudies }}" as="cs" hint-placeholder-count="2">
+          <a href="{{ cs.href }}" style="{{ moreCardStyle }}">
+            <div style="{{ cs.imgStyle }}" role="img" aria-label="{{ cs.title }}"></div>
+            <span style="{{ moreCardTagStyle }}">{{ cs.tag }}</span>
+            <span style="{{ moreCardTitleStyle }}">{{ cs.title }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="{{ inquirySectionStyle }}">
+    <div style="{{ inquiryInnerStyle }}">
+      <div style="{{ ctaPhotoColStyle }}">
+        <div style="{{ ctaPhotoWrapStyle }}">
+          <img src="./uploads/founder-suraj.webp" alt="Suraj Soren, Founder and Creative Director" loading="lazy" style="{{ ctaPhotoStyle }}">
+          <span style="{{ ctaStatusStyle }}"><span style="{{ ctaDotStyle }}"></span>Taking new projects</span>
+        </div>
+        <div style="{{ ctaNameBlockStyle }}">
+          <p style="{{ ctaNameStyle }}">Suraj Soren</p>
+          <p style="{{ ctaRoleStyle }}">Founder &amp; Creative Director</p>
+        </div>
+      </div>
+      <div style="{{ ctaTextColStyle }}">
+        <p style="{{ ctaKickerStyle }}">Hi, I'm Suraj</p>
+        <h2 style="{{ inquiryHeadStyle }}">Is your design system ready for AI?</h2>
+        <p style="{{ ctaSubStyle }}">BrightBridge had a solid system that AI couldn’t yet follow. If your team is moving to AI-assisted development, book a free 30 minute call with me. We’ll look at where your system stands and what we’d fix first.</p>
+        <div style="{{ ctaPerkRowStyle }}">
+          <span style="{{ ctaPerkStyle }}"><i class="ph ph-clock" style="{{ ctaPerkIconStyle }}"></i>Free 30 minute call</span>
+          <span style="{{ ctaPerkStyle }}"><i class="ph ph-chats-circle" style="{{ ctaPerkIconStyle }}"></i>Speak directly with the founder</span>
+          <span style="{{ ctaPerkStyle }}"><i class="ph ph-coffee" style="{{ ctaPerkIconStyle }}"></i>No pitch deck needed</span>
+        </div>
+        <div style="{{ ctaBtnRowStyle }}">
+          <button onClick="{{ openModal }}" style="{{ primaryBtnStyle }}" style-hover="transform: scale(1.05); box-shadow: 0 10px 32px rgba(139,108,245,0.55);">Book a call with Suraj</button>
+          <a href="https://www.linkedin.com/in/suraj-soren-6bb85994/" target="_blank" rel="noopener" style="{{ ctaSecondaryStyle }}" style-hover="opacity: .8;"><i class="ph ph-linkedin-logo"></i>Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" dark="{{ dark }}" hint-size="100%,320px"></dc-import>
+  <sc-if value="{{ showBubble }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ bubbleWrapStyle }}">
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <nav style="{{ bubbleMenuStyle }}" aria-label="Chapters">
+          <p style="{{ bubbleMenuLabelStyle }}">Chapters</p>
+          <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="7">
+            <p style="{{ c.menuGroupStyle }}">{{ c.group }}</p>
+            <a href="{{ c.href }}" onClick="{{ closeMenu }}" style="{{ c.menuLinkStyle }}"><span style="{{ c.numStyle }}">{{ c.num }}</span>{{ c.title }}<span style="{{ c.weekStyle }}">{{ c.week }}</span></a>
+          </sc-for>
+        </nav>
+      </sc-if>
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Chapters menu" style="{{ bubbleBtnStyle }}">
+        <span style="{{ bubbleNumStyle }}">{{ activeNum }}</span>
+        <span>{{ activeTitle }}</span>
+        <i class="{{ bubbleIcon }}" style="font-size: 14px;"></i>
+      </button>
+    </div>
+  </sc-if>
+  <dc-import name="DiscussProjectModal" open="{{ modalOpen }}" on-close="{{ closeModal }}" dark="{{ dark }}" hint-size="100%,100%"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.brightbridgeconnect.co.uk&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+const DOCS = [ { "name": "CLAUDE.md", "icon": "ph-fill ph-star-four", "title": "Claude Project Instructions", "purpose": "Operating rules for AI-assisted design-to-development work using Figma MCP and Claude Code.", "lines": [ [ "h", "## Instruction priority" ], [ "", "1. Security and privacy requirements" ], [ "", "2. Accepted product requirements and plan" ], [ "", "3. Existing repository conventions" ], [ "", "4. Design system and approved component rules" ], [ "", "5. Figma design intent" ], [ "h", "## Mandatory design-system rules" ], [ "", "- Use semantic design tokens for all styling decisions." ], [ "", "- Never use primitive colour variables directly." ], [ "", "- Reuse an approved component before creating a new one." ] ] }, { "name": "TOKENS.md", "icon": "ph ph-file-text", "title": "Design Token Reference", "purpose": "Rewritten after review to match the names that actually exist in the live Figma file.", "lines": [ [ "h", "## Semantic colour pattern" ], [ "c", "color/concept/property-variant-state" ], [ "c", "color/action/bg-primary-default" ], [ "c", "color/border/focus-default" ], [ "h", "## Known inconsistency" ], [ "", "Feedback tokens reorder the segment. Verify the exact string, never derive it." ], [ "h", "## Consumption rules" ], [ "", "- Never invent a token name. Verify it against the source." ] ] }, { "name": "DESIGN_SYSTEM.md", "icon": "ph ph-file-text", "title": "Design System Rules", "purpose": "How designers, developers and AI agents use the design system consistently.", "lines": [ [ "h", "## Core principles" ], [ "", "- Semantic tokens first" ], [ "", "- Existing components first" ], [ "", "- Accessibility by default" ], [ "", "- Consistency over one-off styling" ], [ "", "- Explicit intent over colour-based naming" ], [ "h", "## Token architecture" ], [ "", "1. Primitives contain raw values and are foundations only." ], [ "", "2. Semantic tokens are the primary consumption layer." ] ] }, { "name": "COMPONENT_LIBRARY.md", "icon": "ph ph-file-text", "title": "Component Library Guidance", "purpose": "Help AI agents identify, reuse and implement approved components without creating duplicate patterns.", "lines": [ [ "h", "## Selection process" ], [ "", "1. Identify the user need and interaction." ], [ "", "2. Search the approved component library." ], [ "", "3. Select the closest approved component and variant." ], [ "", "4. Confirm states, content, responsive behaviour and accessibility." ] ] }, { "name": "UI_PRINCIPLES.md", "icon": "ph ph-file-text", "title": "UI and UX Principles", "purpose": "The judgement calls behind the interface, written as rules.", "lines": [ [ "h", "## 1. Accessibility first" ], [ "", "A design and engineering requirement, not a final audit." ], [ "h", "## 2. Semantic intent first" ], [ "", "Do not encode intent through raw colours, arbitrary values or appearance alone." ], [ "h", "## 3. Consistency over novelty" ], [ "", "Reuse reduces cognitive load and improves AI implementation accuracy." ] ] }, { "name": "IMPLEMENTATION_GUIDE.md", "icon": "ph ph-file-text", "title": "AI-Assisted Implementation Guide", "purpose": "From Figma MCP inspection to a reviewed build.", "lines": [ [ "h", "## 1. Figma MCP inspection" ], [ "", "- Identify the authoritative page, frame, component and breakpoint." ], [ "", "- Note incomplete, duplicate or exploratory designs." ], [ "h", "## 2. Claude Code plan mode" ], [ "", "Scope, Figma references, components to reuse, token mapping and responsive behaviour, before any code changes." ] ] }, { "name": "RESPONSIVE_RULES.md", "icon": "ph ph-file-text", "title": "Responsive Design Rules", "purpose": "Keep content, behaviour and component use consistent across viewport sizes.", "lines": [ [ "h", "## Authoritative inputs" ], [ "", "- Use the repository breakpoint configuration when it exists." ], [ "", "- Do not invent project breakpoints from generic conventions." ], [ "", "- If Figma and the repository conflict, record it in the plan." ] ] }, { "name": "ACCESSIBILITY_GUIDE.md", "icon": "ph-fill ph-plus-circle", "title": "Accessibility Implementation Guide", "purpose": "The thirteenth file, added in this review to close the one clear gap in the pack.", "lines": [ [ "h", "## Purpose" ], [ "", "Translates the parts of WCAG 2.1 this design system touches most into rules an agent can follow without guessing." ], [ "h", "## Scope" ], [ "", "Any UI built from this design system, at minimum to WCAG 2.1 Level AA." ] ] }, { "name": "QA_CHECKLIST.md", "icon": "ph ph-check-square", "title": "Quality Assurance Checklist", "purpose": "Used during self-review, automated review and human testing.", "lines": [ [ "h", "## Design-system compliance" ], [ "", "- [ ] Approved components are reused." ], [ "", "- [ ] Semantic or approved component tokens are used." ], [ "", "- [ ] No avoidable hardcoded values remain." ] ] }, { "name": "DESIGN_REVIEW_CHECKLIST.md", "icon": "ph ph-check-square", "title": "Design Review Checklist", "purpose": "A design quality gate before handover, and a final visual gate before release.", "lines": [ [ "h", "## Design-system use" ], [ "", "- [ ] Semantic variables are applied." ], [ "", "- [ ] Approved components and variants are used." ], [ "", "- [ ] Components are not detached without rationale." ] ] }, { "name": "CODE_REVIEW_GUIDE.md", "icon": "ph ph-file-text", "title": "AI Code Review Guide", "purpose": "Make Claude and Codex reviews evidence-based, repeatable and useful to human reviewers.", "lines": [ [ "h", "## Finding format" ], [ "", "Title, severity, evidence, impact, recommended fix and verification approach." ], [ "", "Do not report style preferences as defects." ] ] }, { "name": "SECURITY_GUIDE.md", "icon": "ph ph-shield-check", "title": "Security and Privacy Review Guide", "purpose": "Baseline guardrails for AI-assisted implementation and final review.", "lines": [ [ "h", "## Secrets and configuration" ], [ "", "- Never commit credentials, tokens or private keys." ], [ "h", "## Input and output handling" ], [ "", "- Treat external and user-provided data as untrusted." ] ] }, { "name": "BUG_BOARD_GUIDE.md", "icon": "ph ph-file-text", "title": "Bug Board Review Guide", "purpose": "Keep AI-generated findings traceable through review, fixing and verification.", "lines": [ [ "h", "## Required fields" ], [ "", "Title, source (Claude, Codex, automated or human), severity, reproduction steps, expected and actual result, owner and status." ] ] }  ];
+
+const BBC_MARK_BG = 'url("data:image/svg+xml,%3Csvg%20width%3D%22414%22%20height%3D%22338%22%20viewBox%3D%220%200%20414%20338%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M104.551%20335.681L-7.7323%20336.546C-17.8164%20336.624%20-24.0254%20325.67%20-18.9436%20316.783L131.67%2053.5765C134.077%2049.3706%20138.539%2046.763%20143.311%2046.7788L252.071%2047.1399C262.17%2047.174%20268.258%2058.234%20263.045%2067.0674L104.551%20335.681ZM32.7515%20457.367C9.15464%20497.359%2036.7752%20547.383%2082.5%20547.478L276.91%20547.891C298.183%20547.935%20318.064%20536.482%20329.043%20517.876L405.455%20388.373C416.658%20369.386%20416.839%20345.925%20405.918%20327.174L355.337%20240.341C332.605%20201.31%20276.331%20201.9%20253.009%20241.417L201.695%20328.384C199.291%20332.454%20194.954%20334.969%20190.298%20335.005L158.3%20335.257L302.728%2090.4817C326.308%2050.5179%20298.746%200.512683%20253.055%200.361395L144.295%200.000320429C122.708%20-0.0709654%20102.569%2011.6859%2091.6799%2030.7131L-58.9465%20293.912C-81.9581%20334.122%20-53.8468%20383.663%20-8.21966%20383.314L76.8259%20382.67L32.7515%20457.367ZM130.566%20382.259L189.816%20381.793C210.885%20381.631%20230.504%20370.222%20241.377%20351.799L292.692%20264.831C297.848%20256.1%20310.277%20255.969%20315.301%20264.595L365.882%20351.428C368.296%20355.573%20368.249%20360.762%20365.773%20364.958L289.36%20494.462C286.935%20498.573%20282.547%20501.11%20277.847%20501.103L83.4291%20500.703C73.3223%20500.682%2067.2182%20489.621%2072.4338%20480.781L130.566%20382.259Z%22%20fill%3D%22%23FFFFFF%22%20fill-opacity%3D%220.08%22%2F%3E%3C%2Fsvg%3E")';
+
+class Component extends DCLogic {
+  theme0 = (typeof localStorage !== 'undefined' && localStorage.getItem('soren-theme') === 'light') ? 'light' : 'dark';
+  toggleTheme = () => { this.setState((s) => { const next = (s.theme || this.theme0) === 'dark' ? 'light' : 'dark'; if (typeof localStorage !== 'undefined') localStorage.setItem('soren-theme', next); return { theme: next }; }); };
+  state = { modalOpen: false, viewportWidth: typeof window !== 'undefined' ? window.innerWidth : 1200, active: 'brief', baView: 'before', docIdx: 0, pieceIdx: 0, countP: 0, v1: 0, v2: 0, v3: 0, device: 0, scoreWeek: 1 };
+  showBefore = () => this.setState({ baView: 'before' });
+  showAfter = () => this.setState({ baView: 'after' });
+  openModal = () => this.setState({ modalOpen: true });
+  closeModal = () => this.setState({ modalOpen: false });
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+
+  chapterMeta = [
+    { num: '00', title: 'Brief', id: 'brief' },
+    { num: '01', title: 'Results', id: 'impact' },
+    { num: '02', title: 'Review', id: 'review', week: 'Wk 1', group: 'Design process' },
+    { num: '03', title: 'Define', id: 'define', week: 'Wk 2' },
+    { num: '04', title: 'Recommend', id: 'recommend', week: 'Wk 3' },
+    { num: '05', title: 'Our Role', id: 'role' },
+  ];
+
+  componentDidMount() {
+    this.updateViewport = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener('resize', this.updateViewport);
+    this.onScrollBubble = () => { const past = (window.scrollY || (document.scrollingElement && document.scrollingElement.scrollTop) || 0) > 500; if (past !== this.state.pastHero) this.setState({ pastHero: past, menuOpen: past ? this.state.menuOpen : false }); };
+    document.addEventListener('scroll', this.onScrollBubble, { capture: true, passive: true });
+    this.onScrollBubble();
+    this.themeObs = new MutationObserver(() => { const t = document.documentElement.getAttribute('data-theme'); if (t && t !== (this.state.theme || this.theme0)) this.setState({ theme: t }); });
+    this.themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    this.io = new IntersectionObserver((entries) => { entries.forEach((e) => { if (e.isIntersecting) this.setState({ active: e.target.id }); }); }, { rootMargin: '-15% 0px -70% 0px' });
+    this.chapterMeta.forEach((c) => { const el = document.getElementById(c.id); if (el) this.io.observe(el); });
+    this.checkImpact = () => { if (this.countStarted) return; const el = document.getElementById('impact'); if (!el) return; const r = el.getBoundingClientRect(); if (r.top < (window.innerHeight || 800) * 0.85 && r.bottom > 0) this.startCount(); };
+    document.addEventListener('scroll', this.checkImpact, { passive: true, capture: true });
+    this.checkImpact();
+    this.rvReduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    const rvKids = (el) => el.getAttribute('data-reveal') === 'stagger' ? Array.from(el.children) : [el];
+    if (!this.rvReduce && window.IntersectionObserver) {
+      this.rvIO = new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        this.rvIO.unobserve(e.target);
+        rvKids(e.target).forEach((k, i) => {
+          if (k.animate) k.animate([{ opacity: 0, transform: 'translateY(14px) scale(0.96)' }, { opacity: 1, transform: 'none' }], { duration: 550, delay: Math.min(i, 6) * 70, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards' });
+          k.style.opacity = '';
+        });
+      }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }
+    this.setupReveals = () => {
+      if (!this.rvIO) return;
+      document.querySelectorAll('[data-reveal]:not([data-rv])').forEach((el) => { el.setAttribute('data-rv', '1'); rvKids(el).forEach((k) => { k.style.opacity = '0'; }); this.rvIO.observe(el); });
+    };
+    this.setupReveals();
+    this.checkScore = () => {
+      if (this.scoreStarted) return;
+      const el = document.getElementById('bbc-score'); if (!el) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < (window.innerHeight || 800) * 0.8 && r.bottom > 0) {
+        this.scoreStarted = true;
+        this.scoreT1 = setTimeout(() => this.setState({ scoreWeek: 2 }), 900);
+        this.scoreT2 = setTimeout(() => this.setState({ scoreWeek: 3 }), 2000);
+      }
+    };
+    document.addEventListener('scroll', this.checkScore, { passive: true, capture: true });
+    this.checkScore();
+  }
+  componentDidUpdate() { if (this.setupReveals) this.setupReveals(); if (this.checkImpact) this.checkImpact(); if (this.checkScore) this.checkScore(); }
+  startCount() {
+    this.countStarted = true;
+    const t0 = performance.now() + 300;
+    const tick = (t) => { const p = Math.max(0, Math.min(1, (t - t0) / 2200)); this.setState({ countP: p }); if (p < 1) this.countRaf = requestAnimationFrame(tick); };
+    this.countRaf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateViewport);
+    document.removeEventListener('scroll', this.onScrollBubble, { capture: true });
+    document.removeEventListener('scroll', this.checkImpact, { capture: true });
+    if (this.io) this.io.disconnect();
+    if (this.rvIO) this.rvIO.disconnect();
+    if (this.themeObs) this.themeObs.disconnect();
+    if (this.countRaf) cancelAnimationFrame(this.countRaf);
+    document.removeEventListener('scroll', this.checkScore, { capture: true });
+    clearTimeout(this.scoreT1); clearTimeout(this.scoreT2);
+  }
+
+  bbcVals({ isMobile, cLine, cText, cMuted, cFaint, cAccent, cSurface, geist, mono, fontDisplay }) {
+    const clash = "'Clash Grotesk', 'Geist', sans-serif";
+    const P = '#5544BB', INK = '#05001D', LAV = '#EDEAFB';
+    const tab = (on) => ({ display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: clash, fontSize: '14px', fontWeight: 500, minHeight: '40px', padding: '9px 16px', borderRadius: '999px', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0, backgroundColor: on ? '#FFFFFF' : 'rgba(255,255,255,0.14)', color: on ? INK : '#FFFFFF', transition: 'background-color .2s ease' });
+    const mkViewer = (key, list) => {
+      const i = this.state[key] || 0, a = list[i];
+      return { alt: a.label, note: a.note, tabs: list.map((d, j) => ({ label: d.label, select: () => this.setState({ [key]: j }), style: tab(j === i) })), imgStyle: { display: 'block', width: '100%', aspectRatio: a.ratio, backgroundImage: `url("./uploads/bbc/${a.file}")`, backgroundSize: '100% auto', backgroundRepeat: 'no-repeat', backgroundColor: '#FFFFFF' } };
+    };
+    const DEV = [
+      { label: 'Desktop', icon: 'ph ph-desktop', file: 'funnel-desktop.jpg', ratio: '1600 / 10702', w: '100%', note: 'Desktop: hero, opportunity snapshot, property suite, services, testimonial, how it works and FAQ.' },
+      { label: 'Tablet', icon: 'ph ph-device-tablet', file: 'funnel-tablet.jpg', ratio: '1200 / 14696', w: isMobile ? '100%' : '72%', note: 'Tablet: the same content and actions, reflowed to the responsive rules.' },
+      { label: 'Mobile', icon: 'ph ph-device-mobile', file: 'funnel-mobile.jpg', ratio: '750 / 24130', w: isMobile ? '78%' : '340px', note: 'Mobile: content and action parity with desktop, checked against RESPONSIVE_RULES.md.' },
+    ];
+    const di = this.state.device || 0, dA = DEV[di];
+    const sw = this.state.scoreWeek || 1;
+    const SC = [
+      { label: 'AI design workflow readiness', vals: [45, 74, 93], notes: ['Low to moderate. A real component library, but duplicates and competing naming.', 'Moderate to good. Token migration underway.', 'Good. Token migration and naming fully resolved.'] },
+      { label: 'Design system documentation', vals: [55, 71, 90], notes: ['Moderate. Typos, mislabelled swatches and empty component pages.', 'Moderate to good. Component library gaps closing.', 'Good. Colour duplicates resolved, radius and typography reconciled.'] },
+    ];
+    return {
+      v1: mkViewer('v1', [
+        { label: 'Foundations audit', file: 'w1-foundations-audit.jpg', ratio: '1400 / 2702', note: 'Colour, typography, spacing and radius, checked across Figma variables, foundation pages and the website.' },
+        { label: 'Priority matrix', file: 'w1-priority-matrix.jpg', ratio: '1400 / 2963', note: '20 findings sorted by impact and effort, including the tech lead’s own top pick.' },
+        { label: 'Readiness scorecard', file: 'scorecard-before.jpg', ratio: '1800 / 724', note: 'The starting scores: a directional baseline for where to focus.' },
+      ]),
+      v2: mkViewer('v2', [{ label: 'Token update & scorecard', file: 'scorecard-after.jpg', ratio: '1400 / 3523', note: 'Three-tier token architecture, real bound variables and revised scores.' }]),
+      v3: mkViewer('v3', [
+        { label: 'Readiness update', file: 'w3-readiness.jpg', ratio: '1240 / 1539', note: 'Score deltas, exactly what was fixed to earn them, and what remains.' },
+        { label: 'AI workflow', file: 'workflow-web.jpg', ratio: '1240 / 1078', note: 'The tested web design workflow: Figma canvas, then prototype, then iteration.' },
+      ]),
+      deviceTabs: DEV.map((d, j) => ({ label: d.label, icon: d.icon, select: () => this.setState({ device: j }), style: tab(j === di) })),
+      deviceAlt: 'Sales funnel page, ' + dA.label.toLowerCase(), deviceNote: dA.note,
+      deviceStageStyle: { position: 'relative', display: 'flex', justifyContent: 'center' },
+      deviceFrameStyle: { width: dA.w, maxWidth: '100%', height: isMobile ? '480px' : '640px', overflowY: 'auto', overflowX: 'hidden', borderRadius: di === 2 ? '34px' : '14px', border: di === 2 ? `10px solid ${INK}` : 'none', background: '#FFFFFF', boxShadow: '0 30px 70px rgba(5,0,29,0.4)', scrollbarWidth: 'thin', transition: 'width .35s ease' },
+      deviceImgStyle: { display: 'block', width: '100%', aspectRatio: dA.ratio, backgroundImage: `url("./uploads/bbc/${dA.file}")`, backgroundSize: '100% auto', backgroundRepeat: 'no-repeat', backgroundColor: '#FFFFFF' },
+      funnelSteps: [
+        ['01', 'Figma frames', 'Desktop, tablet and mobile, read through Figma MCP.', 'ph ph-figma-logo'],
+        ['02', 'Governance pack', 'The 13 .md files loaded as shared context.', 'ph ph-files'],
+        ['03', 'HTML artefact', 'A clickable prototype, not a static mockup.', 'ph ph-browser'],
+        ['04', 'Comment and iterate', 'Small fixes in Claude Code. Anything structural goes back to Figma.', 'ph ph-chat-circle-dots'],
+      ].map(([num, title, text, icon]) => ({ num, title, text, icon })),
+      funnelStepsStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(4, minmax(0, 1fr))', gap: '10px' },
+      funnelStepStyle: { display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px', borderRadius: '14px', border: `1px solid ${cLine}`, background: cSurface, minWidth: 0 },
+      funnelStepTopStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
+      funnelNumStyle: { fontFamily: mono, fontSize: '11px', color: cFaint },
+      funnelIconStyle: { fontSize: '20px', color: cAccent },
+      funnelStepTitleStyle: { fontFamily: geist, fontSize: '15px', fontWeight: 600, color: cText, margin: 0 },
+      funnelStepTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.5, color: cMuted, margin: 0, textWrap: 'pretty' },
+      scoreTabs: ['Week 1', 'Week 2', 'Week 3'].map((label, j) => ({ label, select: () => { clearTimeout(this.scoreT1); clearTimeout(this.scoreT2); this.scoreStarted = true; this.setState({ scoreWeek: j + 1 }); }, style: tab(sw === j + 1) })),
+      scores: SC.map((x) => {
+        const num = x.vals[sw - 1], d = num - x.vals[0];
+        return { label: x.label, num: String(num), note: x.notes[sw - 1], delta: d > 0 ? `▲ +${d} pts` : 'Baseline',
+          deltaStyle: { marginLeft: 'auto', fontFamily: geist, fontSize: '12px', fontWeight: 600, color: d > 0 ? '#137A44' : '#5F5A6B', background: d > 0 ? '#DDF5E7' : '#EFEDF5', borderRadius: '999px', padding: '4px 10px', whiteSpace: 'nowrap' },
+          fillStyle: { display: 'block', height: '100%', width: num + '%', borderRadius: '999px', background: num >= 90 ? '#1FA35C' : num >= 70 ? P : '#B08A1E', transition: 'width .8s cubic-bezier(.22,.61,.36,1), background .4s ease' } };
+      }),
+      scoreGridStyle: { position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: '14px' },
+      scoreCardStyle: { display: 'flex', flexDirection: 'column', gap: '12px', padding: isMobile ? '18px' : '24px', borderRadius: '18px', background: '#FFFFFF', color: INK },
+      scoreLabelStyle: { fontFamily: geist, fontSize: '12px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#4A4560', margin: 0 },
+      scoreNumRowStyle: { display: 'flex', alignItems: 'baseline', gap: '4px' },
+      scoreNumStyle: { fontFamily: clash, fontSize: isMobile ? '48px' : '64px', fontWeight: 600, lineHeight: 1, color: INK, fontVariantNumeric: 'tabular-nums' },
+      scoreOutStyle: { fontFamily: clash, fontSize: '20px', fontWeight: 500, color: '#4A4560' },
+      scoreTrackStyle: { display: 'block', height: '8px', borderRadius: '999px', background: LAV, overflow: 'hidden' },
+      scoreNoteStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.5, color: '#4A4560', margin: 0, textWrap: 'pretty', minHeight: '42px' },
+      fixes: [
+        ['Typography', '49 bindings, 0 errors', '32 tokens rebound across 15 text styles. 3 missing tokens added.'],
+        ['Avatar', '187 / 206 sets', 'Naming bug fixed. 418 fallback fills rebound to live semantic colours.'],
+        ['Badge', '8 fills rebound', 'Hardcoded and legacy fills moved onto live semantic colour tokens.'],
+        ['Button', '191 / 192 renamed', 'Variant naming normalised. A “Bold” size value corrected to “Large”.'],
+        ['Radius', '12 → 8 steps mapped', 'Legacy scale mapped explicitly against the active 8-token collection.'],
+        ['Page cleanup', '5 names fixed', 'Stray-space page names corrected, including a “Desing” typo.'],
+      ].map(([area, num, text]) => ({ area, num, text })),
+      fixGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))', gap: '10px' },
+      fixCardStyle: { display: 'flex', flexDirection: 'column', gap: '6px', padding: isMobile ? '14px' : '18px', borderRadius: '14px', border: `1px solid ${cLine}`, background: cSurface, minWidth: 0 },
+      fixAreaStyle: { fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: cFaint, margin: 0 },
+      fixNumStyle: { fontFamily: clash, fontSize: isMobile ? '18px' : '22px', fontWeight: 600, color: cAccent, margin: 0, lineHeight: 1.2 },
+      fixTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.5, color: cMuted, margin: 0, textWrap: 'pretty' },
+      tokenStats: [['3', 'Tiers'], ['213', 'Variables'], ['7', 'Collections'], ['3', 'Mode families']].map(([num, label]) => ({ num, label })),
+      tokenStatRowStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(4, minmax(0, 1fr))', gap: isMobile ? '16px' : '24px' },
+      tokenStatStyle: { borderTop: `1px solid ${cLine}`, paddingTop: '14px' },
+      tokenStatNumStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '36px' : '48px', fontWeight: 700, color: cAccent, margin: '0 0 4px', lineHeight: 1 },
+      tokenStatLabelStyle: { fontFamily: geist, fontSize: '14px', color: cMuted, margin: 0 },
+      tiers: [
+        { tier: 'Tier 1 · Primitive', name: 'color/purple-900', text: 'Raw value', c: '#3B2D96' },
+        { tier: 'Tier 2 · Semantic', name: 'color/action/bg-primary-default', text: 'What components use', c: P },
+        { tier: 'Tier 3 · Component', name: 'button/radius', text: 'S 8 · M 12 · L 16', c: null },
+      ].map((t) => ({ ...t, swatchStyle: t.c ? { width: '14px', height: '14px', borderRadius: '4px', background: t.c, flexShrink: 0 } : { width: '14px', height: '14px', borderRadius: '6px 6px 2px 2px', border: `2px solid ${cAccent}`, flexShrink: 0 } })),
+      tierRowStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))', gap: '10px' },
+      tierCardStyle: { display: 'flex', flexDirection: 'column', gap: '10px', padding: '18px', borderRadius: '14px', border: `1px solid ${cLine}`, background: cSurface, minWidth: 0 },
+      tierLabelStyle: { fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: cAccent, margin: 0 },
+      tierNameStyle: { display: 'flex', alignItems: 'center', gap: '8px', fontFamily: mono, fontSize: '13px', color: cText, margin: 0, overflowWrap: 'anywhere' },
+      tierTextStyle: { fontFamily: geist, fontSize: '13.5px', lineHeight: 1.5, color: cMuted, margin: 0, textWrap: 'pretty' },
+      bbcBoardStyle: { position: 'relative', overflow: 'hidden', borderRadius: '24px', background: P, padding: isMobile ? '18px' : '32px', display: 'flex', flexDirection: 'column', gap: isMobile ? '14px' : '18px' },
+      bbcArchStyle: { position: 'absolute', left: 0, bottom: 0, width: isMobile ? '260px' : '414px', aspectRatio: '414 / 338', backgroundImage: BBC_MARK_BG, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', pointerEvents: 'none' },
+      bbcHeadStyle: { position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' },
+      bbcLogoStyle: { height: isMobile ? '26px' : '32px', width: 'auto', display: 'block' },
+      bbcLabelStyle: { fontFamily: clash, fontSize: '13px', fontWeight: 500, color: '#FFFFFF', background: 'rgba(255,255,255,0.14)', borderRadius: '999px', padding: '6px 12px', whiteSpace: 'nowrap' },
+      bbcTitleStyle: { fontFamily: clash, fontSize: isMobile ? '24px' : '32px', fontWeight: 600, color: '#FFFFFF', margin: 0, lineHeight: 1.1 },
+      bbcTabsStyle: { position: 'relative', display: 'flex', gap: '8px', overflowX: 'auto', scrollbarWidth: 'none' },
+      bbcDocFrameStyle: { position: 'relative', height: isMobile ? '460px' : '620px', overflowY: 'auto', overflowX: 'hidden', borderRadius: '14px', background: '#FFFFFF', boxShadow: '0 30px 70px rgba(5,0,29,0.35)', scrollbarWidth: 'thin' },
+      bbcFootStyle: { position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', fontFamily: geist, fontSize: '13px', color: '#FFFFFF', lineHeight: 1.5 },
+      bbcScrollHintStyle: { display: isMobile ? 'none' : 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' },
+      ...(() => {
+        const at = this.state.auditTab || 0;
+        const W = '#FFE58A', O = '#FFC9A8';
+        const pill = (c, bg) => ({ fontFamily: geist, fontSize: '11px', fontWeight: 600, color: c, background: bg, borderRadius: '999px', padding: '4px 10px', whiteSpace: 'nowrap', flexShrink: 0 });
+        const st = { Duplicate: pill('#9A3412', '#FFEDD5'), Naming: pill('#5544BB', '#EDEAFB'), Mismatch: pill('#B42318', '#FEE4E2'), Adheres: pill('#137A44', '#DDF5E7') };
+        const sw = (name, c) => ({ name, style: { display: 'block', width: '100%', aspectRatio: '1 / 1', borderRadius: '8px', background: c, border: '1px solid rgba(5,0,29,0.08)' } });
+        const note = (text, c, rot) => ({ text, style: { margin: 0, background: c, color: '#2A2238', fontFamily: geist, fontSize: isMobile ? '12px' : '13px', lineHeight: 1.4, padding: '10px 12px', borderRadius: '3px 3px 10px 3px', boxShadow: '0 8px 16px -8px rgba(5,0,29,0.35)', transform: `rotate(${rot}deg)`, textWrap: 'pretty' } });
+        const quad = (bg) => ({ display: 'flex', flexDirection: 'column', gap: '4px', padding: isMobile ? '12px' : '16px', background: bg, minWidth: 0 });
+        return {
+          auditTabs: ['Foundations audit', 'Priority matrix'].map((label, j) => ({ label, select: () => this.setState({ auditTab: j }), style: tab(at === j) })),
+          auditIsFound: at === 0, auditIsMatrix: at === 1,
+          auditNote: at === 0 ? 'Colour, type, spacing and radius, checked across Figma variables, foundation pages and the live site.' : 'Every finding sorted by impact and effort, so the AI rules got the fixes that mattered first.',
+          auPanelStyle: { position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: isMobile ? '20px' : '28px', background: '#FFFFFF', borderRadius: '16px', padding: isMobile ? '18px' : '28px', color: INK, boxShadow: '0 30px 70px rgba(5,0,29,0.3)' },
+          auColStyle: { display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0 },
+          auKickerStyle: { fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6680', margin: 0 },
+          auSwRowStyle: { display: 'grid', gridTemplateColumns: 'repeat(8, minmax(0, 1fr))', gap: '6px' },
+          auSwCellStyle: { display: 'flex', flexDirection: 'column', gap: '4px', minWidth: 0 },
+          auSwLabelStyle: { fontFamily: geist, fontSize: '9.5px', color: '#6B6680', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' },
+          auPurples: [['50', '#F6F5FD'], ['100', '#EFEDFB'], ['200', '#E6E2F5'], ['700', '#8A7CD8'], ['800', '#6E5FCB'], ['900', '#5544BB']].map(([n, c]) => sw(n, c)),
+          auGreys: [['50', '#F7F7F7'], ['100', '#F2F2F2'], ['200', '#EBEBEB'], ['300', '#D1D1D1'], ['400', '#A3A3A3'], ['500', '#7B7B7B'], ['700', '#333333'], ['900', '#1C1C1C']].map(([n, c]) => sw(n, c)),
+          auDupStyle: { display: 'flex', alignItems: 'center', gap: '14px', marginTop: '6px', padding: '14px', borderRadius: '12px', background: '#FFF6E5', border: '1px solid #F5D9A6' },
+          auDupPairStyle: { display: 'flex', flexShrink: 0 },
+          auDupAStyle: { width: '36px', height: '36px', borderRadius: '50%', background: '#EBEBEB', border: '2px solid #FFFFFF' },
+          auDupBStyle: { width: '36px', height: '36px', borderRadius: '50%', background: '#EAEAEA', border: '2px solid #FFFFFF', marginLeft: '-12px', boxShadow: '0 0 0 2px #F5A524' },
+          auDupTitleStyle: { fontFamily: clash, fontSize: '16px', fontWeight: 600, color: INK, margin: 0 },
+          auDupTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.45, color: '#4A4560', margin: '2px 0 0', textWrap: 'pretty' },
+          auFindings: [
+            ['Button radius', '16px in the master, 8px override, about 10px live.', 'Mismatch'],
+            ['Near-duplicate greys', 'Gray 200 and the raw card border, one value apart.', 'Duplicate'],
+            ['Identical accents', 'Orange 100 and Orange 200 share the same hex.', 'Duplicate'],
+            ['Three naming styles', '“Purple800”, “Purple 800” and “purple/200” in one palette.', 'Naming'],
+            ['Two spacing scales', '8px is both “SP-4” and “Extra small”.', 'Naming'],
+            ['Type ramp', 'Clash Grotesk headings and body styles match the site.', 'Adheres'],
+          ].map(([title, text, status]) => ({ title, text, status, pillStyle: st[status] })),
+          auRowStyle: { display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 0', borderTop: '1px solid #EEEBF5' },
+          auRowBodyStyle: { minWidth: 0, flex: '1 1 auto' },
+          auRowTitleStyle: { fontFamily: geist, fontSize: '14px', fontWeight: 600, color: INK, margin: 0 },
+          auRowTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.45, color: '#4A4560', margin: '2px 0 0', textWrap: 'pretty' },
+          mxPanelStyle: { position: 'relative', display: 'flex', flexDirection: 'column', gap: '10px', background: '#FFFFFF', borderRadius: '16px', padding: isMobile ? '14px' : '24px 24px 18px 44px', color: INK, boxShadow: '0 30px 70px rgba(5,0,29,0.3)' },
+          mxAxisYStyle: { display: isMobile ? 'none' : 'block', position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%) rotate(-90deg)', transformOrigin: 'center', fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6680', whiteSpace: 'nowrap' },
+          mxGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: '2px', borderRadius: '12px', overflow: 'hidden', background: '#EEEBF5' },
+          mxQuads: [
+            ['Major projects', 'High impact, high effort', '#F1EEFD', [note('Consolidate the duplicate Accordion and FAQ components', W, -1.2), note('Redesign handover toward an AI-assisted workflow', O, 1)]],
+            ['Quick wins', 'High impact, low effort', '#E6F7EC', [note('Pick one button radius value', W, 1.1), note('Consolidate three shadow-naming systems', W, -0.8), note('Add a design peer-review gate before handover', O, 0.9)]],
+            ['Thankless tasks', 'Low impact, high effort', '#FDF0EC', [note('Give the design system one documented home', O, -1), note('Track client-directed design deviations', O, 0.8)]],
+            ['Fill-ins', 'Low impact, low effort', '#F6F6F8', [note('Standardise radius naming across components', W, 1.2), note('Fix off-brand colours on Tabs and Pagination', W, -0.9)]],
+          ].map(([title, sub, bg, notes]) => ({ title, sub, notes, style: quad(bg) })),
+          mxQuadTitleStyle: { fontFamily: clash, fontSize: '16px', fontWeight: 600, color: INK, margin: 0 },
+          mxQuadSubStyle: { fontFamily: geist, fontSize: '12px', color: '#6B6680', margin: '0 0 6px' },
+          mxNotesStyle: { display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px', alignItems: 'start' },
+          mxFootStyle: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px', fontFamily: geist, fontSize: '12px', color: '#4A4560' },
+          mxLegendStyle: { display: 'inline-flex', alignItems: 'center', gap: '6px' },
+          mxDotWebStyle: { width: '12px', height: '12px', borderRadius: '3px', background: W },
+          mxDotProcStyle: { width: '12px', height: '12px', borderRadius: '3px', background: O },
+          mxAxisXStyle: { marginLeft: 'auto', fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6680' },
+          reviewGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: '16px', marginTop: isMobile ? '28px' : '40px', alignItems: 'stretch' },
+          quoteSideStyle: { margin: 0, padding: isMobile ? '24px 20px' : '32px', border: `1px solid ${cLine}`, borderRadius: '24px', background: cSurface, display: 'flex', flexDirection: 'column', gap: '20px', justifyContent: 'space-between' },
+        };
+      })(),
+      ...(() => {
+        const vw = this.state.viewportWidth || 1200;
+        const cq = (n) => (n / 10) + 'cqw';
+        const fz = (px, min) => `max(${min}px, ${px / 10}cqw)`;
+        const at = (x, y, extra) => ({ position: 'absolute', left: (x / 10) + '%', top: (y / 4.4) + '%', transform: 'translate(-50%, -50%)', ...extra });
+        const tile = { background: '#FFFFFF', border: '1px solid #E4E0F5', borderRadius: cq(16), boxShadow: '0 10px 24px -10px rgba(5,0,29,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' };
+        const mk = (x, y, shape) => at(x, y, { width: cq(12), height: cq(12), background: shape === 'tri' ? 'transparent' : '#EDEAFB', border: shape === 'tri' ? 'none' : '2px solid ' + P, borderRadius: shape === 'circle' ? '50%' : '2px', ...(shape === 'diamond' ? { transform: 'translate(-50%, -50%) rotate(45deg)' } : {}), ...(shape === 'tri' ? { width: 0, height: 0, borderLeft: `${cq(7)} solid transparent`, borderRight: `${cq(7)} solid transparent`, borderTop: `${cq(11)} solid ${P}` } : {}), zIndex: 1 });
+        const lbl = { position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)', fontFamily: clash, fontSize: fz(16, 12), fontWeight: 600, color: INK, whiteSpace: 'nowrap' };
+        return {
+          hoDiagram: vw >= 1100, hoStack: vw < 1100,
+          hoWrapStyle: { position: 'relative' },
+          dgCanvasStyle: { position: 'relative', width: '100%', aspectRatio: '1000 / 440', containerType: 'inline-size', borderRadius: '16px', backgroundColor: '#F7F6FC', backgroundImage: 'radial-gradient(rgba(85,68,187,0.14) 1px, transparent 1px)', backgroundSize: '18px 18px', boxShadow: '0 30px 70px rgba(5,0,29,0.3)', overflow: 'hidden' },
+          dgSvgStyle: { position: 'absolute', inset: 0, width: '100%', height: '100%' },
+          dgMk1Style: mk(300, 80, 'circle'), dgMk2Style: mk(140, 146, 'square'), dgMk3Style: mk(420, 168, 'tri'), dgMk4Style: mk(525, 280, 'square'), dgMk5Style: mk(800, 180, 'diamond'), dgMk6Style: mk(815, 280, 'circle'),
+          dgPillStyle: at(140, 80, { display: 'inline-flex', alignItems: 'center', gap: cq(8), whiteSpace: 'nowrap', background: P, color: '#FFFFFF', fontFamily: clash, fontSize: fz(16, 12), fontWeight: 500, borderRadius: '999px', padding: `${cq(11)} ${cq(16)}`, boxShadow: '0 10px 22px -8px rgba(85,68,187,0.6)', zIndex: 2 }),
+          dgHexWrapStyle: at(140, 220, { display: 'flex', alignItems: 'center', zIndex: 2 }),
+          dgHexStyle: { width: cq(68), height: cq(74), clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)', background: 'linear-gradient(160deg, #EDEAFB, #C9C1F0)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: P, fontSize: fz(28, 18) },
+          dgHexLabelStyle: { position: 'absolute', left: 'calc(100% + 10px)', fontFamily: geist, fontSize: fz(13, 11), fontWeight: 600, color: '#4A4560', whiteSpace: 'nowrap' },
+          dgMinis: [[70, 'ph ph-path', 'Journeys'], [140, 'ph ph-squares-four', 'Sections'], [210, 'ph ph-file-dashed', 'No docs']].map(([x, icon, label]) => ({ icon, label, style: at(x, 356, { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', zIndex: 2 }) })),
+          dgMiniTileStyle: { ...tile, width: cq(46), height: cq(46), borderRadius: cq(10), color: P, fontSize: fz(20, 14) },
+          dgMiniLabelStyle: { fontFamily: geist, fontSize: fz(11.5, 10), color: '#4A4560', whiteSpace: 'nowrap' },
+          dgHandoverStyle: at(420, 80, { ...tile, width: cq(88), height: cq(84), zIndex: 2 }),
+          dgTileIconStyle: { fontSize: fz(36, 22), color: P },
+          dgTileLabelStyle: lbl,
+          dgFlagStyle: { position: 'absolute', top: cq(-11), right: cq(-14), display: 'inline-flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap', fontFamily: geist, fontSize: fz(11, 10), fontWeight: 600, color: '#7A4B00', background: '#FFE8A3', borderRadius: '999px', padding: '3px 8px', boxShadow: '0 4px 10px rgba(5,0,29,0.12)' },
+          dgBuildStyle: at(420, 282, { ...tile, width: cq(160), height: cq(140), padding: `0 ${cq(10)}`, boxSizing: 'border-box', flexDirection: 'column', gap: cq(8), zIndex: 2 }),
+          dgBuildIconStyle: { fontSize: fz(54, 30), color: P },
+          dgBuildSubStyle: { fontFamily: mono, fontSize: cq(10.5), color: '#6B6680', textAlign: 'center', lineHeight: 1.3, maxWidth: '100%' },
+          dgCards: [[120, 'ph ph-robot', 'Automated checks'], [230, 'ph ph-user-focus', 'Product review'], [340, 'ph ph-eye', 'Design review']].map(([y, icon, title]) => ({ icon, title, style: at(680, y, { width: cq(160), height: cq(76), background: '#FFFFFF', borderRadius: cq(10), borderLeft: `${cq(5)} solid ${P}`, boxShadow: '0 10px 24px -10px rgba(5,0,29,0.25)', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: cq(7), padding: `0 ${cq(14)}`, boxSizing: 'border-box', zIndex: 2 }) })),
+          dgCardTitleStyle: { display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: geist, fontSize: fz(12.5, 10.5), fontWeight: 600, color: INK, whiteSpace: 'nowrap' },
+          dgBarStyle: { display: 'block', height: cq(7), width: '78%', borderRadius: '4px', background: '#ECEAF3' },
+          dgBarShortStyle: { display: 'block', height: cq(7), width: '48%', borderRadius: '4px', background: '#ECEAF3' },
+          dgChipStyle: at(880, 112, { display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap', background: '#FFFFFF', border: '1px solid #E4E0F5', borderRadius: cq(8), padding: `${cq(7)} ${cq(11)}`, fontFamily: geist, fontSize: fz(12, 10.5), fontWeight: 600, color: INK, boxShadow: '0 8px 18px -8px rgba(5,0,29,0.25)', zIndex: 2 }),
+          dgChipCheckStyle: { width: '16px', height: '16px', borderRadius: '4px', background: '#1FA35C', color: '#FFFFFF', fontSize: '10px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' },
+          dgLiveStyle: at(880, 280, { width: cq(100), height: cq(100), borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #FFFFFF, #CFC8F5)', border: `2px solid ${P}`, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 14px 30px -10px rgba(85,68,187,0.55)', zIndex: 2 }),
+          dgLiveIconStyle: { fontSize: fz(40, 24), color: P },
+        };
+      })(),
+      ...(() => {
+        const i3 = this.state.v3 || 0;
+        const tr = { position: 'absolute', left: 0, top: 0, bottom: 0, borderRadius: '999px' };
+        return {
+          w3IsReady: i3 === 0, w3IsFlow: i3 === 1,
+          w3PanelStyle: { position: 'relative', display: 'flex', flexDirection: 'column', gap: '16px', background: '#FFFFFF', borderRadius: '16px', padding: isMobile ? '18px' : '28px', color: INK, boxShadow: '0 30px 70px rgba(5,0,29,0.3)' },
+          w3Bars: [['AI workflow readiness', 45, 93], ['Design system documentation', 55, 90]].map(([label, from, to]) => ({ label, from, to,
+            beforeStyle: { ...tr, width: from + '%', background: '#CFC8F5', zIndex: 2 }, afterStyle: { ...tr, width: to + '%', background: P } })),
+          w3BarRowStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr) auto' : '200px minmax(0, 1fr) 90px', alignItems: 'center', gap: isMobile ? '6px 12px' : '16px' },
+          w3BarLabelStyle: { fontFamily: geist, fontSize: '14px', fontWeight: 600, color: INK, margin: 0, gridColumn: isMobile ? '1 / 2' : 'auto' },
+          w3TrackStyle: { position: 'relative', height: '12px', borderRadius: '999px', background: LAV, overflow: 'hidden', gridColumn: isMobile ? '1 / -1' : 'auto', gridRow: isMobile ? '2' : 'auto' },
+          w3BarNumStyle: { fontFamily: geist, fontSize: '14px', color: '#4A4560', margin: 0, textAlign: 'right', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' },
+          w3LegendStyle: { display: 'flex', gap: '18px', fontFamily: geist, fontSize: '12px', color: '#4A4560', paddingTop: '4px' },
+          w3LegItemStyle: { display: 'inline-flex', alignItems: 'center', gap: '6px' },
+          w3LegBeforeStyle: { width: '12px', height: '12px', borderRadius: '3px', background: '#CFC8F5' },
+          w3LegAfterStyle: { width: '12px', height: '12px', borderRadius: '3px', background: P },
+          w3Flow: [['01', 'ph ph-figma-logo', 'Figma canvas', 'Design starts on the canvas, bound to semantic tokens.'], ['02', 'ph ph-browser', 'Prototype', 'Claude reads the frames and builds a clickable artefact.'], ['03', 'ph ph-arrows-clockwise', 'Iterate', 'Small fixes in code, structural changes back in Figma.']].map(([num, icon, title, text]) => ({ num, icon, title, text })),
+          w3FlowStyle: { position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))', gap: '12px' },
+          w3StepStyle: { display: 'flex', flexDirection: 'column', gap: '10px', background: '#FFFFFF', borderRadius: '16px', padding: isMobile ? '18px' : '24px', color: INK, minWidth: 0, boxShadow: '0 20px 50px rgba(5,0,29,0.25)' },
+          w3StepNumStyle: { fontFamily: mono, fontSize: '11px', color: '#6B6680' },
+          w3StepIconStyle: { fontSize: '36px', color: P },
+          w3StepTitleStyle: { fontFamily: clash, fontSize: '20px', fontWeight: 600, color: INK, margin: 0 },
+          w3StepTextStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.5, color: '#4A4560', margin: 0, textWrap: 'pretty' },
+        };
+      })(),
+      gaps: [
+        ['Design', '#4A4560', '#EFEDF5', 'Complete the component set', 'A couple of components are still in design and will join the library as they’re finalised.'],
+        ['Tooling', '#7A4B00', '#FFE8A3', 'Connect the brand font', 'Sharing the brand font across the team’s Figma workspace lets automated checks cover typography too.'],
+        ['Alignment', P, LAV, 'Agree one type scale', 'A quick team decision on the preferred type scale keeps every heading consistent.'],
+      ].map(([tag, c, bg, title, text]) => ({ tag, title, text, tagStyle: { alignSelf: 'flex-start', fontFamily: geist, fontSize: '11px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', color: c, background: bg, borderRadius: '999px', padding: '4px 10px' } })),
+      gapWrapStyle: { display: 'flex', flexDirection: 'column', gap: '14px', padding: isMobile ? '20px' : '28px', borderRadius: '20px', border: `1px solid ${cLine}`, background: cSurface },
+      gapHeadStyle: { display: 'flex', alignItems: 'center', gap: '10px' },
+      gapIconStyle: { fontSize: '22px', color: cAccent },
+      gapTitleStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '20px' : '24px', fontWeight: 700, color: cText, margin: 0 },
+      gapLeadStyle: { fontFamily: geist, fontSize: '15px', lineHeight: 1.55, color: cMuted, margin: 0, maxWidth: '62ch', textWrap: 'pretty' },
+      gapGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))', gap: '10px' },
+      gapCardStyle: { display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px', borderRadius: '14px', border: `1px solid ${cLine}`, minWidth: 0 },
+      gapCardTitleStyle: { fontFamily: geist, fontSize: '15px', fontWeight: 600, color: cText, margin: 0 },
+      gapCardTextStyle: { fontFamily: geist, fontSize: '13.5px', lineHeight: 1.5, color: cMuted, margin: 0, textWrap: 'pretty' },
+      handover: [
+        ['ph ph-figma-logo', 'Design', 'Figma, variants left in', false],
+        ['ph ph-arrows-left-right', 'Handover', 'No spec, MCP only', true],
+        ['ph ph-code', 'Build', 'Values overridden by hand', true],
+        ['ph ph-check-circle', 'QA', 'Automated, then human', false],
+        ['ph ph-globe-simple', 'Live', 'The source of truth', false],
+      ].map(([icon, title, text, fr], i, arr) => ({ icon, title, text, shot: 'SH ' + String(i + 1).padStart(2, '0'),
+        flagStyle: fr ? { display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: geist, fontSize: '10.5px', fontWeight: 600, color: '#7A4B00', background: '#FFE8A3', borderRadius: '999px', padding: '3px 8px' } : { display: 'none' },
+        arrowStyle: i < arr.length - 1 && !isMobile ? { position: 'absolute', right: '-17px', top: '50%', transform: 'translateY(-50%)', width: '24px', height: '24px', borderRadius: '50%', background: INK, color: '#FFFFFF', fontSize: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 } : { display: 'none' } })),
+      sbPanelStyle: { display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 },
+      sbTopStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px', minHeight: '22px' },
+      sbShotStyle: { fontFamily: mono, fontSize: '11px', letterSpacing: '0.06em', color: '#E4E0FA' },
+      sbFrameStyle: { position: 'relative', aspectRatio: isMobile ? '16 / 7' : '4 / 3', borderRadius: '12px', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 14px 30px rgba(5,0,29,0.25)' },
+      sbIconStyle: { fontSize: isMobile ? '34px' : '44px', color: P },
+      sbTitleStyle: { fontFamily: clash, fontSize: '18px', fontWeight: 600, color: '#FFFFFF', margin: '4px 0 0', lineHeight: 1.1 },
+      sbTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.4, color: '#E4E0FA', margin: 0 },
+      heroLockupStyle: { display: 'flex', alignItems: 'center', gap: isMobile ? '10px' : '14px', flexWrap: 'wrap', marginBottom: isMobile ? '8px' : '24px' },
+      heroTimesStyle: { fontFamily: clash, fontSize: isMobile ? '20px' : '26px', fontWeight: 400, color: '#CFC8F5', lineHeight: 1 },
+      heroClaudeStyle: { display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: clash, fontSize: isMobile ? '22px' : '28px', fontWeight: 500, color: '#FFFFFF', lineHeight: 1 },
+      heroClaudeMarkStyle: { display: 'block', width: isMobile ? '30px' : '40px', height: isMobile ? '30px' : '40px', objectFit: 'contain', filter: 'brightness(0) invert(1)', flexShrink: 0 },
+      friction: [
+        ['Build', 'Button radius: 8px in the spec, 10px in the hero and header, 16px on the form submit.', 'No single token referenced'],
+        ['Build / Content', 'Footer missing privacy and cookies links and a phone number. Support email differs from the design copy.', 'Unclear ownership'],
+      ].map(([stage, text, cause]) => ({ stage, text, cause })),
+      hoRowStyle: { position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(5, minmax(0, 1fr))', gap: isMobile ? '14px' : '10px' },
+      hoCardStyle: { display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px', borderRadius: '14px', background: '#FFFFFF', color: INK, minWidth: 0 },
+      hoTopStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px', minHeight: '22px' },
+      hoStepStyle: { fontFamily: mono, fontSize: '11px', color: '#4A4560', whiteSpace: 'nowrap' },
+      hoTitleStyle: { fontFamily: clash, fontSize: '18px', fontWeight: 600, color: INK, margin: 0, lineHeight: 1.15 },
+      hoTextStyle: { fontFamily: geist, fontSize: '13px', lineHeight: 1.5, color: '#4A4560', margin: 0, textWrap: 'pretty', overflowWrap: 'anywhere' },
+      hoGapStyle: { position: 'relative', display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 16px', borderRadius: '12px', background: INK, color: '#FFFFFF', fontFamily: geist, fontSize: '14px', lineHeight: 1.5 },
+      frRowStyle: { position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : '130px minmax(0, 1fr) auto', alignItems: 'center', gap: isMobile ? '6px' : '16px', padding: '12px 16px', borderRadius: '12px', background: 'rgba(255,255,255,0.12)', color: '#FFFFFF' },
+      frStageStyle: { fontFamily: mono, fontSize: '11px', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#E4E0FA' },
+      frTextStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.5, margin: 0, textWrap: 'pretty' },
+      frCauseStyle: { justifySelf: isMobile ? 'start' : 'end', fontFamily: geist, fontSize: '12px', fontWeight: 600, color: INK, background: '#FFE8A3', borderRadius: '999px', padding: '4px 10px', whiteSpace: 'nowrap' },
+      heroBbcStyle: { position: 'relative', width: '100%', height: isMobile ? 'auto' : '100%', minHeight: isMobile ? '600px' : '520px', background: P, color: '#FFFFFF', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'minmax(0, 0.8fr) minmax(0, 1.2fr)', gap: isMobile ? '28px' : '40px', padding: isMobile ? '28px 22px 64px' : '56px 56px 60px', overflow: 'hidden', boxSizing: 'border-box' },
+      heroArchBgStyle: { position: 'absolute', left: 0, bottom: isMobile ? '64px' : '60px', width: isMobile ? '260px' : '414px', aspectRatio: '414 / 338', backgroundImage: BBC_MARK_BG, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', pointerEvents: 'none' },
+      heroBbcLeftStyle: { position: 'relative', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '22px', alignSelf: isMobile ? 'start' : 'stretch', minWidth: 0 },
+      heroLogoStyle: { height: isMobile ? '34px' : '44px', width: 'auto', display: 'block' },
+      heroBbcHeadStyle: { fontFamily: clash, fontSize: isMobile ? '34px' : 'clamp(36px, 4.2vw, 60px)', fontWeight: 600, lineHeight: 1.02, letterSpacing: '-0.01em', margin: isMobile ? 0 : 'auto 0', textWrap: 'balance' },
+      heroBbcSubStyle: { fontFamily: clash, fontSize: isMobile ? '17px' : '20px', fontWeight: 400, color: '#E4E0FA', margin: 0 },
+      heroPillRowStyle: { display: 'flex', flexWrap: 'wrap', gap: '8px' },
+      heroPillStyle: { fontFamily: clash, fontSize: '14px', fontWeight: 500, color: INK, background: '#FFFFFF', borderRadius: '999px', padding: '10px 18px', whiteSpace: 'nowrap' },
+      heroPillDarkStyle: { fontFamily: clash, fontSize: '14px', fontWeight: 500, color: '#FFFFFF', background: INK, borderRadius: '999px', padding: '10px 18px', whiteSpace: 'nowrap' },
+      ...(() => {
+        const narrow = (this.state.viewportWidth || 1200) < 1100;
+        const L = '30%';
+        const rows = [['#5544BB', 'color/action/bg-primary'], ['10px', 'button/radius'], ['Rectangle 3', 'Button/Primary'], ['8px · SP-4', 'space/xs'], ['0 14 32 rgba', 'shadow/md-blur']];
+        return {
+          heroVisStyle: { position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch', minHeight: isMobile ? '360px' : 0 },
+          heroVisArchStyle: { width: '100%', maxWidth: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px', padding: narrow ? '0 0 16px' : '0 0 24px', alignSelf: 'center' },
+          scanCardStyle: { position: 'relative', width: '100%', marginTop: 'auto', background: '#FFFFFF', borderRadius: isMobile ? '18px' : '24px', padding: narrow ? '46px 0 12px' : '60px 0 18px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(5,0,29,0.35)' },
+          scanGlowStyle: { position: 'absolute', top: 0, bottom: 0, left: `calc(${L} - 110px)`, width: '110px', background: 'linear-gradient(to right, rgba(85,68,187,0), rgba(85,68,187,0.22))', pointerEvents: 'none' },
+          scanLineStyle: { position: 'absolute', top: isMobile ? '34px' : '40px', bottom: isMobile ? '10px' : '14px', left: L, width: '2px', marginLeft: '-1px', background: '#5544BB', borderRadius: '2px' },
+          scanDots: Array.from({ length: 12 }, (_, i) => ({ style: { position: 'absolute', left: `calc(${L} - ${[6, 18, 30, 10, 44, 24, 14, 36, 8, 52, 20, 40][i]}px)`, top: `${18 + i * 6.5}%`, width: i % 3 === 0 ? '4px' : '3px', height: i % 3 === 0 ? '4px' : '3px', borderRadius: '50%', background: i % 2 ? '#FFFFFF' : '#8E81E0', boxShadow: '0 0 6px rgba(85,68,187,0.6)', pointerEvents: 'none' } })),
+          scanTopStyle: { position: 'absolute', top: isMobile ? '12px' : '16px', left: L, transform: 'translateX(-50%)', display: 'inline-flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap', fontFamily: clash, fontSize: isMobile ? '13px' : '15px', fontWeight: 500, color: '#FFFFFF', background: 'linear-gradient(180deg, #7465D6, #5544BB)', borderRadius: '10px', padding: isMobile ? '6px 12px' : '8px 14px', boxShadow: '0 8px 20px rgba(85,68,187,0.35)', zIndex: 2 },
+          scanRingStyle: { width: '16px', height: '16px', borderRadius: '50%', background: 'conic-gradient(#3DDC84 0 93%, rgba(255,255,255,0.3) 93% 100%)', WebkitMask: 'radial-gradient(circle, transparent 4px, #000 5px)', mask: 'radial-gradient(circle, transparent 4px, #000 5px)', flexShrink: 0 },
+          scanRowsStyle: { position: 'relative', display: 'flex', flexDirection: 'column', gap: narrow ? '6px' : '10px' },
+          scanRowStyle: { display: 'grid', gridTemplateColumns: `${L} minmax(0, 1fr)`, alignItems: 'center', columnGap: isMobile ? '8px' : '12px' },
+          scanRows: rows.map(([raw, token], i) => ({ raw, token, rawStyle: { justifySelf: 'end', marginRight: isMobile ? '4px' : '8px', fontFamily: mono, fontSize: narrow ? '10px' : '12px', color: '#8C87A0', background: '#EFEDF5', borderRadius: '999px', padding: isMobile ? '6px 10px' : '8px 14px', whiteSpace: 'nowrap', filter: `blur(${0.6 + (i % 3) * 0.5}px)`, opacity: 0.85 - (i % 2) * 0.2, maxWidth: '100%', overflow: 'hidden' } })),
+          scanTokenStyle: { justifySelf: 'start', display: 'inline-flex', alignItems: 'center', gap: '8px', width: 'max-content', fontFamily: mono, fontSize: narrow ? '10.5px' : '12.5px', color: INK, background: '#FFFFFF', border: '1px solid #DCD7F2', borderRadius: '14px', padding: isMobile ? '5px 6px 5px 10px' : '6px 7px 6px 14px', boxShadow: '0 2px 6px rgba(5,0,29,0.06)' },
+          scanTokenTextStyle: { whiteSpace: 'nowrap', lineHeight: 1.3 },
+          scanCheckStyle: { width: isMobile ? '16px' : '20px', height: isMobile ? '16px' : '20px', borderRadius: '50%', background: '#1FA35C', color: '#FFFFFF', fontSize: isMobile ? '9px' : '11px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+          scanCapStyle: { whiteSpace: 'nowrap', fontFamily: clash, fontSize: narrow ? '13px' : '15px', fontWeight: 500, color: '#FFFFFF', margin: 0, opacity: 0.92, textAlign: 'center' },
+        };
+      })(),
+      heroArchRowStyle: { position: 'relative', display: 'flex', gap: isMobile ? '12px' : '20px', alignItems: 'flex-end', height: isMobile ? '280px' : 'auto', alignSelf: 'stretch', marginBottom: isMobile ? '-64px' : '-60px', paddingBottom: isMobile ? '64px' : '60px' },
+      heroArchAStyle: { flex: '1 1 0', height: isMobile ? '100%' : '92%', borderRadius: '999px 999px 0 0', background: LAV, padding: isMobile ? '7px 7px 0' : '10px 10px 0', boxSizing: 'border-box' },
+      heroArchBStyle: { flex: '1 1 0', height: isMobile ? '82%' : '74%', borderRadius: '999px 999px 0 0', background: LAV, padding: isMobile ? '7px 7px 0' : '10px 10px 0', boxSizing: 'border-box' },
+      heroArchImgAStyle: { width: '100%', height: '100%', borderRadius: '999px 999px 0 0', backgroundColor: '#FFFFFF', backgroundImage: 'url("./uploads/bbc/website-home.jpg")', backgroundSize: '260% auto', backgroundPosition: '8% 0%' },
+      heroArchImgBStyle: { width: '100%', height: '100%', borderRadius: '999px 999px 0 0', backgroundColor: '#B9B2E6', backgroundImage: 'url("./uploads/bbc/photo-housing-terrace.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' },
+      heroBarStyle: { position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', background: INK, color: '#FFFFFF', fontFamily: clash, fontSize: isMobile ? '13px' : '16px', fontWeight: 400, padding: isMobile ? '0 22px' : '0 56px', height: isMobile ? '64px' : '60px' },
+      heroBarUrlStyle: { display: (this.state.viewportWidth || 1200) < 1100 ? 'none' : 'inline', color: '#CFC8F5', whiteSpace: 'nowrap' },
+    };
+  }
+
+  renderVals() {
+    const dark = (this.state.theme || this.theme0) !== 'light';
+    const w = this.state.viewportWidth;
+    const isMobile = w < 860;
+    const stackNav = w < 1040;
+    const accent = '#8B6CF5';
+    const bg = dark ? '#0C0A12' : '#FAF9FC';
+    const cardBg = dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF';
+    const border = dark ? 'rgba(255,255,255,0.1)' : 'rgba(20,15,35,0.08)';
+    const text = dark ? '#F3F1F9' : '#171325';
+    const muted = dark ? '#A69FBE' : '#635C77';
+    const fontDisplay = "'Filson Soft', 'Fraunces', Georgia, serif";
+    const fontBody = "'DM Sans', -apple-system, sans-serif";
+    const geist = "'Geist', 'DM Sans', -apple-system, sans-serif";
+    const mono = "'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace";
+    const cBg = dark ? '#0A0A0A' : '#F3F1F8';
+    const cSurface = dark ? '#141416' : '#FFFFFF';
+    const cLine = dark ? 'rgba(255,255,255,0.12)' : 'rgba(20,15,35,0.1)';
+    const cText = dark ? '#FFFFFF' : '#171325';
+    const cMuted = dark ? '#B8B5BE' : '#5F5A6B';
+    const cFaint = dark ? 'rgba(255,255,255,0.45)' : 'rgba(20,15,35,0.55)';
+    const cAccent = dark ? '#CBAFF8' : '#5010B8';
+    const onAccent = dark ? '#0A0A0A' : '#FFFFFF';
+    const board = dark
+      ? { backgroundImage: 'radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px), radial-gradient(120% 90% at 20% 0%, rgba(139,108,245,0.32), rgba(139,108,245,0) 60%), linear-gradient(160deg, #1A1430, #0A0A0A 70%)', backgroundSize: '22px 22px, auto, auto' }
+      : { backgroundImage: 'radial-gradient(rgba(80,16,184,0.16) 1px, transparent 1px), radial-gradient(120% 90% at 20% 0%, rgba(139,108,245,0.20), rgba(139,108,245,0) 60%), linear-gradient(160deg, #FFFFFF, #EEE9FA 70%)', backgroundSize: '22px 22px, auto, auto' };
+    const eInk = '#12101A', ePanel = '#1A1724', eLine = 'rgba(255,255,255,0.08)', eText = '#F3F1F9', eMuted = '#A69FBE';
+    const svc = (slug) => { const S = typeof window !== 'undefined' && window.SOREN_SERVICES; const e = S && S.index[slug]; return e ? S.resolve(e.data) : '/' + slug; };
+    const isBefore = this.state.baView === 'before';
+
+    const chapters = this.chapterMeta.map((c) => {
+      const on = this.state.active === c.id;
+      const proc = !!c.week;
+      const grpLabel = { fontFamily: geist, fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: cAccent, margin: 0 };
+      return {
+        num: c.num, title: c.title, href: '#' + c.id, week: c.week || '', group: c.group || '',
+        groupStyle: c.group ? { ...grpLabel, padding: '14px 0 6px 14px', borderLeft: `2px solid ${dark ? 'rgba(203,175,248,0.28)' : 'rgba(80,16,184,0.2)'}` } : { display: 'none' },
+        menuGroupStyle: c.group ? { ...grpLabel, padding: '12px 14px 4px' } : { display: 'none' },
+        weekStyle: proc ? { marginLeft: 'auto', paddingLeft: '10px', fontFamily: geist, fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.04em', color: on ? cAccent : cFaint } : { display: 'none' },
+        linkStyle: { display: 'flex', gap: '10px', alignItems: 'baseline', textDecoration: 'none', fontFamily: geist, fontSize: '14px', fontWeight: on ? 600 : 400, color: on ? cText : cMuted, padding: '7px 0', background: proc ? (dark ? 'rgba(203,175,248,0.06)' : 'rgba(80,16,184,0.04)') : 'transparent', borderLeft: stackNav ? 'none' : `2px solid ${on ? cAccent : proc ? (dark ? 'rgba(203,175,248,0.28)' : 'rgba(80,16,184,0.2)') : 'transparent'}`, paddingRight: proc ? '10px' : 0, paddingLeft: stackNav ? 0 : '14px', whiteSpace: 'nowrap', transition: 'color .2s ease' },
+        numStyle: { fontFamily: geist, fontSize: '11px', fontWeight: 500, color: on ? cAccent : cFaint, letterSpacing: '0.06em' },
+        menuLinkStyle: { display: 'flex', gap: '12px', alignItems: 'baseline', textDecoration: 'none', fontFamily: geist, fontSize: '15px', fontWeight: on ? 600 : 400, color: on ? cText : cMuted, padding: '12px 14px', minHeight: '44px', borderRadius: '10px', background: on ? (dark ? 'rgba(203,175,248,0.12)' : 'rgba(80,16,184,0.08)') : 'transparent' },
+      };
+    });
+    const activeMeta = this.chapterMeta.find((c) => c.id === this.state.active) || this.chapterMeta[0];
+
+    const weeks = [
+      { week: 'Week 1', stage: 'Review', icon: 'ph ph-magnifying-glass', text: 'Foundations and components audited against the BBC website.', href: '#review', fill: 0.33 },
+      { week: 'Week 2', stage: 'Define', icon: 'ph ph-warning-diamond', text: 'The issues blocking a consistent, compliant AI workflow.', href: '#define', fill: 0.66 },
+      { week: 'Week 3', stage: 'Recommend', icon: 'ph ph-terminal-window', text: 'System optimised for Claude Code, tested and refined.', href: '#recommend', fill: 1 },
+    ].map((wk) => ({ ...wk, fillStyle: { display: 'block', height: '100%', width: `${wk.fill * 100}%`, background: cAccent, borderRadius: '999px' } }));
+
+    const sevColor = { High: '#E5484D', Medium: '#F4BF4F', Low: '#1FA35C' };
+    const issues = [
+      ['Docs vs Figma mismatch', 'ph ph-files', 5, 'High'],
+      ['Two naming orders', 'ph ph-shuffle', 5, 'High'],
+      ['Hardcoded primitives', 'ph ph-hash', 4, 'High'],
+      ['No focus state', 'ph ph-cursor-click', 3, 'Medium'],
+      ['Unnamed layers', 'ph ph-stack', 3, 'Medium'],
+    ].map(([title, icon, lvl, sev], i) => {
+      const c = sevColor[sev];
+      return { title, icon, sev, num: String(i + 1).padStart(2, '0'),
+        bars: [0, 1, 2, 3, 4].map((k) => ({ style: { display: 'block', width: isMobile ? '6px' : '10px', height: `${10 + k * 4}px`, borderRadius: '3px', background: k < lvl ? c : '#E6E3EF' } })),
+        sevStyle: { fontFamily: mono, fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: sev === 'High' ? '#B42318' : '#8A5A00', background: sev === 'High' ? '#FEE4E2' : '#FFF1CC', borderRadius: '999px', padding: '4px 10px', whiteSpace: 'nowrap', justifySelf: 'end' } };
+    });
+
+    const ln = (t, kind) => ({ text: t, style: { fontFamily: mono, fontSize: isMobile ? '11.5px' : '12.5px', lineHeight: 1.7, margin: 0, whiteSpace: 'pre', color: kind === 'bad' ? '#FF8A8E' : kind === 'good' ? '#7EE2A8' : kind === 'dim' ? eMuted : eText } });
+    const treeLines = isBefore
+      ? [ln('▾ Frame 427', ''), ln('   ▾ Group 12', ''), ln('      ▭ Rectangle 3   fill #5544BB', 'bad'), ln('      T  Get started', ''), ln('   ◇ Button copy (detached)', 'bad'), ln('   states: default · hover', 'dim')]
+      : [ln('▾ Button / Primary', ''), ln('   size: Medium', 'dim'), ln('   bg   color/action/bg-primary-default', 'good'), ln('   text color/text/on-action-default', 'good'), ln('   radius button/radius', 'good'), ln('   padding button/padding-horizontal', 'good'), ln('   states: default · hover · pressed · disabled', 'dim')];
+    const codeLines = isBefore
+      ? [ln('<div className="frame-427">', ''), ln('  <div style={{', ''), ln("    background: '#5544BB',", 'bad'), ln("    borderRadius: 26,", 'bad'), ln('  }}>Get started</div>', ''), ln('</div>', '')]
+      : [ln('<Button', ''), ln('  variant="primary"', 'good'), ln('  size="md"', 'good'), ln('>', ''), ln('  Get started', ''), ln('</Button>', '')];
+
+    const di = this.state.docIdx;
+    const docs = DOCS.map((d, i) => {
+      const on = i === di;
+      return {
+        name: d.name, icon: d.icon,
+        select: () => this.setState({ docIdx: i }),
+        style: { display: 'flex', alignItems: 'center', gap: '8px', width: '100%', textAlign: 'left', border: 'none', cursor: 'pointer', borderRadius: '6px', padding: '7px 10px', minHeight: isMobile ? '40px' : '32px', fontFamily: mono, fontSize: '12px', color: on ? eText : eMuted, backgroundColor: on ? 'rgba(139,108,245,0.2)' : 'rgba(0,0,0,0)', whiteSpace: 'nowrap', flexShrink: 0 },
+        iconStyle: { fontSize: '14px', color: on ? '#CBAFF8' : eMuted },
+      };
+    });
+    const dA = DOCS[di];
+    const docActive = {
+      name: dA.name, title: dA.title, purpose: dA.purpose,
+      lines: dA.lines.map(([k, t]) => ({ text: t, style: k === 'h' ? { fontFamily: mono, fontSize: '13px', fontWeight: 600, color: '#CBAFF8', margin: '16px 0 4px' } : k === 'c' ? { fontFamily: mono, fontSize: '12.5px', color: '#7EE2A8', margin: 0, background: 'rgba(255,255,255,0.04)', padding: '3px 8px', borderRadius: '4px', width: 'fit-content', maxWidth: '100%', overflowWrap: 'anywhere' } : { fontFamily: geist, fontSize: '14px', lineHeight: 1.6, color: eText, margin: 0, textWrap: 'pretty' } })),
+    };
+
+    const flow = [
+      ['Read all project guidance files', 'Plan'], ['Inspect relevant Figma frames via MCP', 'Plan'], ['Work in plan mode before editing code', 'Plan'], ['Identify components, tokens and states', 'Plan'], ['Produce a section-by-section plan', 'Plan'],
+      ['Build in small, reviewable increments', 'Build'], ['Run the QA checklist', 'Check'], ['Self-review against Figma', 'Check'], ['Address review findings, re-check', 'Check'], ['Final security review before PR', 'Check'],
+    ].map(([t, tag], i) => ({ num: String(i + 1).padStart(2, '0'), text: t, tag, tagStyle: { fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.08em', textTransform: 'uppercase', color: tag === 'Build' ? onAccent : cAccent, background: tag === 'Build' ? cAccent : 'transparent', border: `1px solid ${cAccent}`, borderRadius: '999px', padding: '3px 9px', marginLeft: 'auto', flexShrink: 0 } }));
+
+    const pAt = (i) => { const x = Math.max(0, Math.min(1, (this.state.countP * 2200 - i * 400) / 1000)); return 1 - Math.pow(1 - x, 3); };
+    const stats = [
+      { num: Math.round(3 * pAt(0)) + ' wks', label: 'From first review to a refined, AI-ready system' },
+      { num: String(Math.round(13 * pAt(1))), label: 'Guidance files written for Claude Code' },
+      { num: String(Math.round(5 * pAt(2))), label: 'Key component issues defined and prioritised' },
+      { num: String(Math.round(7 * pAt(3))), label: 'New on-brand templates generated from the system' },
+    ];
+
+    const segBtn = (on) => ({ fontFamily: geist, fontSize: '13px', fontWeight: 600, minHeight: '36px', padding: '8px 18px', borderRadius: '999px', border: 'none', cursor: 'pointer', backgroundColor: on ? '#8B6CF5' : 'rgba(255,255,255,0.06)', color: on ? '#fff' : eMuted });
+
+    return {
+      ...this.bbcVals({ isMobile, cLine, cText, cMuted, cFaint, cAccent, cSurface, geist, mono, fontDisplay }),
+      dark, toggleTheme: this.toggleTheme,
+      modalOpen: this.state.modalOpen, openModal: this.openModal, closeModal: this.closeModal,
+      siteUrl: this.props.siteUrl || 'https://www.brightbridgeconnect.co.uk',
+      chapters, weeks, issues, treeLines, codeLines, docs, docActive, flow, stats,
+      showBefore: this.showBefore, showAfter: this.showAfter,
+      showSideNav: !stackNav,
+      showBubble: stackNav && !!this.state.pastHero,
+      menuOpen: !!this.state.menuOpen, toggleMenu: this.toggleMenu, closeMenu: this.closeMenu,
+      activeNum: activeMeta.num, activeTitle: activeMeta.title,
+      bubbleIcon: this.state.menuOpen ? 'ph ph-x' : 'ph ph-list',
+      bubbleWrapStyle: { position: 'fixed', right: '16px', bottom: 'calc(16px + env(safe-area-inset-bottom))', zIndex: 60, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px' },
+      bubbleBtnStyle: { display: 'flex', alignItems: 'center', gap: '10px', minHeight: '48px', padding: '0 18px', borderRadius: '999px', border: `1px solid ${cLine}`, background: dark ? 'rgba(20,20,22,0.88)' : 'rgba(255,255,255,0.92)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', color: cText, fontFamily: geist, fontSize: '14px', fontWeight: 600, cursor: 'pointer', boxShadow: dark ? '0 12px 32px rgba(0,0,0,0.5)' : '0 12px 32px rgba(40,20,90,0.18)' },
+      bubbleNumStyle: { fontSize: '11px', color: cAccent, letterSpacing: '0.06em', fontWeight: 500 },
+      bubbleMenuStyle: { display: 'flex', flexDirection: 'column', gap: '2px', padding: '10px', width: '260px', maxWidth: 'calc(100vw - 32px)', borderRadius: '18px', border: `1px solid ${cLine}`, background: dark ? 'rgba(20,20,22,0.94)' : 'rgba(255,255,255,0.96)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', boxShadow: dark ? '0 20px 48px rgba(0,0,0,0.55)' : '0 20px 48px rgba(40,20,90,0.2)' },
+      bubbleMenuLabelStyle: { fontFamily: geist, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: cFaint, margin: '6px 14px 6px' },
+
+      pageStyle: { animation: 'soren-page-in .5s ease both', background: bg, color: text, fontFamily: fontBody, minHeight: '100vh', paddingTop: '24px', overflowX: 'clip', maxWidth: '100%', transition: 'background .3s ease' },
+      heroSectionStyle: { padding: isMobile ? '40px 20px 0' : '72px 24px 0', maxWidth: '1160px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: isMobile ? '28px' : '40px' },
+      heroGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : '1.1fr 1fr', gap: isMobile ? '24px' : '48px', alignItems: 'start' },
+      heroDescColStyle: { paddingTop: '10px', display: 'flex', flexDirection: 'column', gap: '8px' },
+      tagStyle: { fontWeight: 700, fontSize: '12px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px', display: 'block' },
+      h1Style: { fontFamily: fontDisplay, fontSize: isMobile ? '30px' : '44px', lineHeight: 1.12, fontWeight: 700, margin: 0, textWrap: 'pretty', color: text },
+      metaLabelStyle: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', color: muted, margin: '0 0 4px', fontWeight: 600 },
+      metaValueStyle: { fontSize: '14px', color: text, margin: 0, fontWeight: 600 },
+      siteLinkStyle: { marginTop: '16px', display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '15px', fontWeight: 600, color: accent, textDecoration: 'none', transition: 'opacity .2s ease' },
+      heroSlotWrapStyle: { position: 'relative', width: '100%', aspectRatio: w < 1100 ? 'auto' : '16/9', borderRadius: '24px', overflow: 'hidden', background: dark ? '#141416' : '#EDEBF2' },
+      paraStyle: { fontSize: '16px', lineHeight: 1.75, color: dark ? muted : cMuted, margin: '0 0 16px', textWrap: 'pretty' },
+      scopeTags: [['Design systems', 'service-design-system-build'], ['AI integration', 'service-ai-workflow-acceleration'], ['Coaching', 'service-ai-enablement-workshops']].map(([label, slug]) => ({ label, href: svc(slug) })),
+      scopeTagStyle: { display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '12px', fontWeight: 600, color: text, textDecoration: 'none', border: `1px solid ${border}`, borderRadius: '999px', padding: '5px 10px', whiteSpace: 'nowrap', transition: 'border-color .2s ease, color .2s ease' },
+
+      chapterCanvasStyle: { background: cBg, color: cText, marginTop: isMobile ? '40px' : '72px', padding: isMobile ? '48px 20px' : '88px 24px', fontFamily: geist, transition: 'background .3s ease' },
+      chapterShellStyle: { maxWidth: '1160px', margin: '0 auto', display: stackNav ? 'block' : 'grid', gridTemplateColumns: '210px minmax(0, 1fr)', gap: '64px', alignItems: 'start' },
+      chapterNavStyle: { position: 'sticky', top: '120px', display: 'flex', flexDirection: 'column' },
+      chapterNavLabelStyle: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: cFaint, margin: '0 0 16px', paddingLeft: '16px' },
+      chapterColStyle: { display: 'flex', flexDirection: 'column', gap: isMobile ? '72px' : '128px', minWidth: 0 },
+      chapterSectionStyle: { display: 'flex', flexDirection: 'column', gap: '20px' },
+      chapterKickerStyle: { display: 'flex', alignItems: 'center', gap: '12px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', color: cAccent, margin: 0, fontWeight: 500 },
+      chapterNumBigStyle: { fontSize: '12px', color: cFaint, letterSpacing: '0.12em' },
+      h2Style: { fontFamily: fontDisplay, fontSize: isMobile ? '28px' : '40px', lineHeight: 1.15, fontWeight: 700, margin: 0, color: cText, textWrap: 'pretty' },
+      twoColTextStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: isMobile ? '4px' : '40px', marginTop: '4px' },
+      captionStyle: { fontSize: '13px', color: cFaint, margin: 0, fontFamily: geist },
+      boardStyle: { padding: isMobile ? '16px' : '36px', borderRadius: '24px', border: `1px solid ${cLine}`, display: 'flex', flexDirection: 'column', gap: isMobile ? '18px' : '24px', ...board },
+      mockHeadStyle: { display: 'flex', flexDirection: 'column', gap: '6px', marginTop: isMobile ? '28px' : '44px' },
+      mockLeadStyle: { fontFamily: fontDisplay, fontWeight: 700, fontSize: isMobile ? '22px' : '28px', lineHeight: 1.2, color: cText, margin: 0, textWrap: 'pretty', maxWidth: '640px' },
+      smallKickerStyle: { fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.12em', color: cAccent, margin: 0, fontWeight: 600, fontFamily: geist },
+      outputSlotStyle: { position: 'relative', width: '100%', aspectRatio: '16 / 10', borderRadius: '12px', overflow: 'hidden', background: cSurface },
+      mockTagStyle: { position: 'absolute', left: '10px', bottom: '10px', fontFamily: geist, fontSize: '12px', fontWeight: 600, color: '#171325', background: 'rgba(255,255,255,0.9)', borderRadius: '999px', padding: '5px 11px', pointerEvents: 'none', whiteSpace: 'nowrap', maxWidth: 'calc(100% - 20px)', overflow: 'hidden', textOverflow: 'ellipsis' },
+
+      briefCardStyle: { display: 'flex', flexDirection: 'column', gap: '14px', minWidth: 0, border: `1px solid ${cLine}`, borderRadius: '18px', padding: isMobile ? '18px' : '22px', background: cSurface },
+      briefHeadStyle: { display: 'flex', alignItems: 'center', gap: '12px' },
+      briefIconStyle: { width: '40px', height: '40px', borderRadius: '12px', border: `1px solid ${cLine}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: cAccent, fontSize: '20px', flexShrink: 0 },
+      briefStepStyle: { fontFamily: geist, fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: cMuted },
+      briefTextStyle: { fontFamily: geist, fontSize: '15px', lineHeight: 1.55, color: cText, margin: 0, textWrap: 'pretty', flex: '1 1 auto' },
+      briefChipRowStyle: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '6px' },
+      briefChipStyle: { fontFamily: geist, fontSize: '12px', fontWeight: 600, color: cText, border: `1px solid ${cLine}`, borderRadius: '999px', padding: '5px 11px', whiteSpace: 'nowrap' },
+      briefArrowStyle: { fontSize: '12px', color: cFaint },
+
+      tlHeadStyle: { display: 'flex', flexDirection: 'column', gap: '6px' },
+      sheetEyebrowStyle: { fontFamily: mono, fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: cAccent, margin: 0 },
+      sheetTitleStyle: { fontFamily: fontDisplay, fontWeight: 700, fontSize: isMobile ? '22px' : '28px', color: cText, margin: 0 },
+      tlGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))', gap: '12px' },
+      tlCardStyle: { display: 'flex', flexDirection: 'column', gap: '10px', textDecoration: 'none', padding: '20px', borderRadius: '16px', border: `1px solid ${cLine}`, background: cSurface, transition: 'border-color .2s ease' },
+      tlTopStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' },
+      tlWeekStyle: { fontFamily: mono, fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: cFaint },
+      tlIconStyle: { fontSize: '20px', color: cAccent },
+      tlStageStyle: { fontFamily: fontDisplay, fontWeight: 700, fontSize: '22px', color: cText, margin: 0 },
+      tlTextStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.5, color: cMuted, margin: 0, flex: '1 1 auto', textWrap: 'pretty' },
+      tlBarStyle: { display: 'block', height: '4px', borderRadius: '999px', background: cLine, marginTop: '6px', overflow: 'hidden' },
+
+      sources: [
+        { icon: 'ph ph-browser', label: 'BBC website', text: 'The live reference: colour, type, spacing and components as customers see them.' },
+        { icon: 'ph ph-figma-logo', label: 'Figma library', text: 'Variables, component sets and their variants, checked against the site.' },
+        { icon: 'ph ph-users-three', label: 'User interviews', text: 'Designers and developers on how they build today and where AI breaks down.' },
+      ],
+      sourceRowStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))', gap: '12px', marginTop: '4px' },
+      sourceCardStyle: { display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px', borderRadius: '16px', border: `1px solid ${cLine}`, background: cSurface },
+      sourceIconStyle: { fontSize: '22px', color: cAccent },
+      sourceLabelStyle: { fontFamily: geist, fontSize: '15px', fontWeight: 600, color: cText, margin: 0 },
+      sourceTextStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.5, color: cMuted, margin: 0, textWrap: 'pretty' },
+
+      leadShortStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '20px' : '24px', lineHeight: 1.3, color: cMuted, margin: 0, textWrap: 'pretty', maxWidth: '640px' },
+      prListStyle: { position: 'relative', display: 'flex', flexDirection: 'column', gap: '8px' },
+      prRowStyle: { display: 'grid', gridTemplateColumns: isMobile ? '28px 36px minmax(0, 1fr) auto' : '36px 44px minmax(0, 1fr) auto 96px', alignItems: 'center', gap: isMobile ? '10px' : '16px', padding: isMobile ? '12px 14px' : '14px 20px', borderRadius: '14px', background: '#FFFFFF', color: '#05001D' },
+      prRankStyle: { fontFamily: "'Clash Grotesk', 'Geist', sans-serif", fontSize: isMobile ? '18px' : '22px', fontWeight: 600, color: '#5544BB' },
+      prIconStyle: { width: isMobile ? '36px' : '44px', height: isMobile ? '36px' : '44px', borderRadius: '12px', background: '#EDEAFB', color: '#5544BB', fontSize: isMobile ? '18px' : '22px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' },
+      prTitleStyle: { fontFamily: "'Clash Grotesk', 'Geist', sans-serif", fontSize: isMobile ? '15px' : '19px', fontWeight: 500, color: '#05001D', minWidth: 0 },
+      prMeterStyle: { display: isMobile ? 'none' : 'inline-flex', alignItems: 'flex-end', gap: '4px', height: '26px' },
+      prLegendStyle: { display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' },
+      prLegendHighStyle: { width: '10px', height: '10px', borderRadius: '3px', background: '#E5484D', marginLeft: '6px' },
+      prLegendMedStyle: { width: '10px', height: '10px', borderRadius: '3px', background: '#F4BF4F', marginLeft: '10px' },
+      issueGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px', marginTop: '4px' },
+      issueCardStyle: { display: 'flex', flexDirection: 'column', gap: '10px', padding: '20px', borderRadius: '16px', border: `1px solid ${cLine}`, background: cSurface },
+      issueTopStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' },
+      issueNumStyle: { fontFamily: mono, fontSize: '12px', color: cFaint },
+      issueTitleStyle: { fontFamily: geist, fontSize: '16px', fontWeight: 600, color: cText, margin: 0, textWrap: 'pretty' },
+      issueTextStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.55, color: cMuted, margin: 0, textWrap: 'pretty' },
+
+      codeWindowStyle: { borderRadius: '14px', overflow: 'hidden', background: eInk, border: '1px solid rgba(0,0,0,0.4)', boxShadow: dark ? '0 40px 90px rgba(0,0,0,0.55)' : '0 30px 70px rgba(40,20,90,0.22)' },
+      codeChromeStyle: { display: 'flex', alignItems: 'center', gap: '16px', padding: '10px 14px', background: ePanel, borderBottom: `1px solid ${eLine}`, minWidth: 0 },
+      baLightsStyle: { display: 'flex', gap: '7px', flexShrink: 0 },
+      baLightRedStyle: { width: '11px', height: '11px', borderRadius: '50%', background: '#EC6A5E', display: 'block' },
+      baLightAmberStyle: { width: '11px', height: '11px', borderRadius: '50%', background: '#F4BF4F', display: 'block' },
+      baLightGreenStyle: { width: '11px', height: '11px', borderRadius: '50%', background: '#61C554', display: 'block' },
+      segStyle: { display: 'flex', gap: '6px', marginLeft: 'auto' },
+      segBeforeStyle: segBtn(isBefore),
+      segAfterStyle: segBtn(!isBefore),
+      codeSplitStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: '1px', background: eLine },
+      codePaneStyle: { background: eInk, padding: isMobile ? '14px' : '20px', overflowX: 'auto', minHeight: isMobile ? 'auto' : '230px' },
+      codePaneLabelStyle: { display: 'flex', alignItems: 'center', gap: '6px', fontFamily: mono, fontSize: '10.5px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#CBAFF8', margin: '0 0 12px' },
+      codeFootStyle: { display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: ePanel, borderTop: `1px solid ${eLine}`, fontFamily: geist, fontSize: '13px', color: eText },
+      codeVerdictIcon: isBefore ? 'ph-fill ph-warning-circle' : 'ph-fill ph-check-circle',
+      codeVerdictIconStyle: { fontSize: '18px', color: isBefore ? '#FF8A8E' : '#7EE2A8', flexShrink: 0 },
+      codeVerdict: isBefore ? 'The model guesses: hardcoded colour, magic radius, no focus state, no reusable component.' : 'The model resolves: approved component, bound semantic tokens, size carried by mode.',
+
+      docWindowStyle: { borderRadius: '14px', overflow: 'hidden', background: eInk, border: '1px solid rgba(0,0,0,0.4)', boxShadow: dark ? '0 40px 90px rgba(0,0,0,0.55)' : '0 30px 70px rgba(40,20,90,0.22)' },
+      docPathStyle: { fontFamily: mono, fontSize: '11.5px', color: eMuted, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+      docSplitStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : '240px minmax(0, 1fr)', minHeight: isMobile ? 'auto' : '420px' },
+      docListStyle: isMobile
+        ? { display: 'flex', gap: '4px', overflowX: 'auto', padding: '8px', background: ePanel, borderBottom: `1px solid ${eLine}`, scrollbarWidth: 'none' }
+        : { display: 'flex', flexDirection: 'column', gap: '2px', padding: '10px', background: ePanel, borderRight: `1px solid ${eLine}` },
+      docBodyStyle: { padding: isMobile ? '18px' : '28px 32px', display: 'flex', flexDirection: 'column', gap: '6px', minWidth: 0 },
+      docH1Style: { fontFamily: mono, fontSize: isMobile ? '16px' : '19px', fontWeight: 600, color: eText, margin: 0 },
+      docPurposeStyle: { fontFamily: geist, fontSize: '14px', lineHeight: 1.6, color: eMuted, margin: '0 0 4px', textWrap: 'pretty' },
+
+      flowListStyle: { listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gridAutoFlow: isMobile ? 'row' : 'column', gridTemplateRows: isMobile ? 'none' : 'repeat(5, auto)', gap: '8px 16px' },
+      flowItemStyle: { display: 'flex', alignItems: 'center', gap: '14px', padding: '14px 16px', borderRadius: '12px', border: `1px solid ${cLine}`, background: cSurface },
+      flowNumStyle: { fontFamily: mono, fontSize: '12px', color: cFaint, flexShrink: 0 },
+      flowTextStyle: { fontFamily: geist, fontSize: '14.5px', color: cText, lineHeight: 1.4, minWidth: 0 },
+
+
+      coachChips: ['AI design best practice', 'Claude Code workflows', 'Figma MCP', 'Design to dev handover', 'Design operations', 'Workshops'],
+      chipRowStyle: { display: 'flex', flexWrap: 'wrap', gap: '8px' },
+      chipStyle: { fontFamily: geist, fontSize: '13px', color: cMuted, border: `1px solid ${cLine}`, borderRadius: '999px', padding: '7px 14px' },
+
+      statGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(4, minmax(0, 1fr))', gap: isMobile ? '20px' : '28px', marginTop: '12px' },
+      statCardStyle: { borderTop: `1px solid ${cLine}`, paddingTop: '18px' },
+      statNumStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '40px' : '56px', fontWeight: 700, color: cAccent, margin: '0 0 8px', fontVariantNumeric: 'tabular-nums', lineHeight: 1 },
+      statLabelStyle: { fontFamily: geist, fontSize: '14px', color: cMuted, margin: 0, lineHeight: 1.5 },
+      reviewUrl: 'https://www.google.com/search?q=Studio+Soren+reviews',
+      quoteFigureStyle: { margin: isMobile ? '28px 0 0' : '40px 0 0', padding: isMobile ? '24px 20px' : '40px 44px', border: `1px solid ${cLine}`, borderRadius: '24px', background: cSurface, display: 'flex', flexDirection: 'column', gap: isMobile ? '18px' : '24px' },
+      quoteStarsStyle: { display: 'flex', gap: '4px', color: '#F5B301', fontSize: '18px' },
+      quoteTextStyle: { margin: 0, fontFamily: fontDisplay, fontWeight: 700, fontSize: isMobile ? '20px' : '22px', lineHeight: 1.35, color: cText, textWrap: 'pretty', maxWidth: '760px' },
+      quoteFootStyle: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', borderTop: `1px solid ${cLine}`, paddingTop: isMobile ? '16px' : '20px' },
+      quoteWhoStyle: { display: 'flex', flexDirection: 'column', gap: '2px' },
+      quoteNameStyle: { fontFamily: geist, fontSize: '15px', fontWeight: 600, color: cText, margin: 0 },
+      quoteRoleStyle: { fontFamily: geist, fontSize: '13px', color: cMuted, margin: 0 },
+      quoteLinkStyle: { whiteSpace: 'nowrap', flexShrink: 0, display: 'inline-flex', alignItems: 'center', gap: '8px', minHeight: '44px', padding: '0 18px', borderRadius: '999px', border: `1px solid ${cLine}`, fontFamily: geist, fontSize: '14px', fontWeight: 600, color: cAccent, textDecoration: 'none', transition: 'opacity .2s ease' },
+
+      roles: [
+        { icon: 'ph ph-magnifying-glass', text: 'Design system audit against the live website', slug: 'service-ux-ui-audit' },
+        { icon: 'ph ph-swatches', text: 'Design system restructure: tokens, components, states', slug: 'service-design-system-build' },
+        { icon: 'ph ph-terminal-window', text: 'AI integration and Claude Code optimisation', slug: 'service-ai-workflow-acceleration' },
+        { icon: 'ph ph-users-three', text: 'User research and interviews with the team', slug: 'service-user-research-programmes' },
+        { icon: 'ph ph-chalkboard-teacher', text: 'Workshops and design coaching on AI best practice', slug: 'service-ai-enablement-workshops' },
+        { icon: 'ph ph-flow-arrow', text: 'Design operations and review gates', slug: 'service-design-ops' },
+        { icon: 'ph ph-arrows-left-right', text: 'Design to dev handover conventions', slug: 'service-tooling-handoff-setup' },
+        { icon: 'ph ph-handshake', text: 'Close collaboration with design and engineering', slug: 'service-embedded-design-partner' },
+      ].map((r) => ({ ...r, href: svc(r.slug) })),
+      roleGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '12px' },
+      roleRowStyle: { textDecoration: 'none', transition: 'border-color .2s ease', display: 'flex', gap: '14px', alignItems: 'center', border: `1px solid ${cLine}`, borderRadius: '14px', padding: '18px 20px', background: dark ? 'transparent' : cSurface },
+      roleIconStyle: { color: cAccent, fontSize: '22px', lineHeight: 1, flexShrink: 0 },
+      roleTextStyle: { fontFamily: geist, fontSize: '15px', color: cText, margin: 0, lineHeight: 1.5 },
+      roleArrowStyle: { color: cFaint, fontSize: '16px', marginLeft: 'auto', flexShrink: 0 },
+
+      sectionStyle: { padding: isMobile ? '48px 20px' : '80px 24px' },
+      wideStyle: { maxWidth: '1040px', margin: '0 auto' },
+      kickerStyle: { fontFamily: fontBody, fontWeight: 600, fontSize: '13px', color: accent, letterSpacing: '0.04em', margin: '0 auto 12px', textTransform: 'uppercase', textAlign: 'center' },
+      moreGridStyle: { display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'repeat(2, 1fr)', gap: '20px' },
+      moreCardStyle: { textDecoration: 'none', color: text, background: cardBg, border: `1px solid ${border}`, borderRadius: '18px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+      moreCardTagStyle: { fontWeight: 700, fontSize: '11px', color: accent, textTransform: 'uppercase', letterSpacing: '0.04em', padding: '18px 20px 0' },
+      moreCardTitleStyle: { fontSize: '16px', fontWeight: 700, padding: '6px 20px 20px', color: text },
+      moreCaseStudies: [
+        { tag: 'Brand · Film · Web', title: 'Optaro', hero: './uploads/optaro-mockups/m-hand.jpg', href: (typeof window !== 'undefined' && window.SOREN_SERVICES ? window.SOREN_SERVICES.page('csOptaro') : './case-study-optaro.html') },
+        { tag: 'Commercial', title: 'KEYS Community', hero: 'https://framerusercontent.com/images/9hitZPZgRsu0ExlX0tphm2g5SUU.png', href: (typeof window !== 'undefined' && window.SOREN_SERVICES ? window.SOREN_SERVICES.page('csKeys') : './case-study-keys.html') },
+      ].map((c) => ({ ...c, imgStyle: { width: '100%', aspectRatio: '16/9', backgroundImage: `url("${c.hero}")`, backgroundSize: 'cover', backgroundPosition: 'center' } })),
+
+      inquirySectionStyle: { padding: isMobile ? '56px 20px' : '96px 24px', background: dark ? '#171225' : '#EDE7FB', color: text, transition: 'background .3s ease' },
+      inquiryInnerStyle: { maxWidth: '1040px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : 'minmax(0, 340px) minmax(0, 1fr)', gap: isMobile ? '32px' : '64px', alignItems: 'center', padding: isMobile ? '28px 20px' : '48px', borderRadius: '28px', border: `1px solid ${border}`, background: dark ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.7)' },
+      ctaPhotoColStyle: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '18px', minWidth: 0 },
+      ctaPhotoWrapStyle: { position: 'relative', width: '100%', maxWidth: isMobile ? '200px' : '280px', aspectRatio: '1 / 1' },
+      ctaPhotoStyle: { width: '100%', height: '100%', display: 'block', objectFit: 'cover', borderRadius: '999px', filter: 'drop-shadow(0 18px 34px rgba(0,0,0,0.35))' },
+      ctaStatusStyle: { position: 'absolute', left: '50%', bottom: '-6px', transform: 'translateX(-50%)', display: 'inline-flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap', fontFamily: geist, fontSize: '12px', fontWeight: 600, color: text, background: dark ? '#0C0A12' : '#FFFFFF', border: `1px solid ${border}`, borderRadius: '999px', padding: '7px 14px', boxShadow: '0 8px 24px rgba(0,0,0,0.2)' },
+      ctaDotStyle: { width: '8px', height: '8px', borderRadius: '50%', background: '#1FA35C', boxShadow: '0 0 0 3px rgba(31,163,92,0.25)' },
+      ctaNameBlockStyle: { textAlign: 'center', marginTop: '8px' },
+      ctaNameStyle: { fontFamily: fontDisplay, fontSize: '18px', fontWeight: 700, margin: 0, color: text },
+      ctaRoleStyle: { fontFamily: geist, fontSize: '13px', margin: '4px 0 0', color: muted },
+      ctaTextColStyle: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '18px', minWidth: 0 },
+      ctaKickerStyle: { fontWeight: 700, fontSize: '12px', color: accent, textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 },
+      inquiryHeadStyle: { fontFamily: fontDisplay, fontSize: isMobile ? '26px' : '38px', lineHeight: 1.15, fontWeight: 700, margin: 0, color: text, textWrap: 'balance' },
+      ctaSubStyle: { fontFamily: fontBody, fontSize: isMobile ? '15px' : '17px', lineHeight: 1.6, color: muted, margin: 0, textWrap: 'pretty', maxWidth: '560px' },
+      ctaPerkRowStyle: { display: 'flex', flexWrap: 'wrap', gap: '8px' },
+      ctaPerkStyle: { display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: geist, fontSize: '13px', fontWeight: 600, color: text, border: `1px solid ${border}`, borderRadius: '999px', padding: '8px 14px' },
+      ctaPerkIconStyle: { fontSize: '16px', color: accent },
+      ctaBtnRowStyle: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', marginTop: '6px' },
+      primaryBtnStyle: { background: accent, color: '#fff', padding: '14px 26px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, border: 'none', cursor: 'pointer', transition: 'transform .2s ease, box-shadow .2s ease' },
+      ctaSecondaryStyle: { display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 22px', borderRadius: '999px', fontSize: '15px', fontWeight: 600, textDecoration: 'none', color: text, border: `1px solid ${dark ? 'rgba(255,255,255,0.2)' : 'rgba(20,15,35,0.18)'}`, transition: 'opacity .2s ease' },
+    };
+  }
+}
+</script>
+</body>
+</html>
